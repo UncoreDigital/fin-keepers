@@ -2,6 +2,8 @@
 import HowItWorks from "./HowItWorks.astro";
 import HowItWorksDesk from "./HowItWorksDesk.astro";
 import Accordion from "./Accordion.astro";
+import Building from "./Building.astro";
+import BuildDesk from "./BuildDesk.astro";
 ---
 
 <div
@@ -28,11 +30,13 @@ import Accordion from "./Accordion.astro";
           affordable, and always audit-ready.
         </p>
       </div>
-      <button
-        class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white transition"
+      <a href="#" target="_blank" rel="noopener noreferrer"
+        ><button
+          class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white hover:cursor-pointer transition"
+        >
+          Talk to an Expert
+        </button></a
       >
-        Talk to an Expert
-      </button>
     </div>
 
     <!-- Right Stats -->
@@ -102,7 +106,7 @@ import Accordion from "./Accordion.astro";
     </div>
   </div>
 
-  <div
+  <!-- <div
     class="flex w-full pt-[80px] pr-[120px] pb-[80px] pl-[120px] gap-[24px] items-start flex-nowrap bg-[#106253] relative z-[31] mt-0 mr-0 mb-0 ml-0 justify-center"
   >
     <div
@@ -356,6 +360,16 @@ import Accordion from "./Accordion.astro";
         </div>
       </div>
     </div>
+  </div> -->
+
+  <!-- Desktop only -->
+  <div class="hidden lg:block w-full">
+    <BuildDesk />
+  </div>
+
+  <!-- Mobile only -->
+  <div class="block lg:hidden">
+    <Building />
   </div>
 
   <div
@@ -373,9 +387,11 @@ import Accordion from "./Accordion.astro";
       <div
         class="flex w-full sm:w-[286px] h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px]"
       >
-        <span class="text-[18px] font-semibold leading-[24px] text-white">
-          Schedule a Free Consultation
-        </span>
+        <a href="#"
+          ><span class="text-[18px] font-semibold leading-[24px] text-white">
+            Schedule a Free Consultation
+          </span></a
+        >
       </div>
     </div>
 
