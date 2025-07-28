@@ -939,8 +939,15 @@ import HowItWorksDesk from "./HowItWorksDesk.astro";
         </div>
 
         <!-- Line separator -->
+        <!-- Mobile view line (orange image line) -->
         <div
-          class="w-[670px] h-px bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/CZVb24VtwD.png')] bg-no-repeat bg-contain z-[247]"
+          class="block md:hidden w-[670px] h-px bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/CZVb24VtwD.png')] bg-no-repeat bg-contain z-[247]"
+        >
+        </div>
+
+        <!-- Desktop view line (white solid line) -->
+        <div
+          class="hidden md:block w-[670px] h-px bg-white bg-no-repeat bg-contain z-[247]"
         >
         </div>
       </div>
