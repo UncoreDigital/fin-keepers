@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header3 from "../components/Header3.astro";
+import Footer4Resp from "../components/Footer4Resp.astro";
+import HeroAbout from "../components/about/HeroAbout.astro";
+import HeroAbout2 from "../components/about/HeroAbout2.astro";
+import HeroResp from "../components/about/HeroResp.astro";
+---
+
+<Layout>
+  <Header3 />
+  <div class="bg-[#213d3c] w-full">
+    <!-- Desktop version only (visible from lg and up) -->
+    <div class="hidden lg:block">
+      <HeroAbout2 />
+    </div>
+
+    <!-- Mobile/Tablet version only (visible below lg) -->
+    <div class="block lg:hidden">
+      <HeroResp />
+    </div>
+  </div>
+
+  <div class="">
+    <Footer4Resp />
+  </div>
+</Layout>
