@@ -2,9 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Header3 from "../components/Header3.astro";
 import Footer4Resp from "../components/Footer4Resp.astro";
-import HeroAbout from "../components/about/HeroAbout.astro";
+
 import HeroAbout2 from "../components/about/HeroAbout2.astro";
 import HeroResp from "../components/about/HeroResp.astro";
+
+import Vision from "../components/about/Vision.astro";
+
+import CoreValues from "../components/about/CoreValues.astro";
+import CoreResp from "../components/about/CoreResp.astro";
+
+import Cta from "../components/about/Cta.astro";
+
+import Blogs from "../components/about/Blogs.astro";
 ---
 
 <Layout>
@@ -20,7 +29,17 @@ import HeroResp from "../components/about/HeroResp.astro";
       <HeroResp />
     </div>
   </div>
+  <div class="p-10">
+    <!-- <Vision /> -->
+  </div>
 
+  <!-- <div class="bg-[#106253] w-full">
+    <CoreValues />
+    <CoreResp />
+  </div> -->
+
+  <Cta />
+  <Blogs />
   <div class="">
     <Footer4Resp />
   </div>
