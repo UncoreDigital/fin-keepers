@@ -2,15 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import Header3 from "../components/Header3.astro";
 import HeroBlog from "../components/blog/HeroBlog.astro";
+import BlogList from "../components/blog/BlogList.astro";
+import BlogListResp from "../components/blog/BlogListResp.astro";
 import Footer4Resp from "../components/Footer4Resp.astro";
 ---
 
 <Layout>
   <Header3 />
-  <div class="p-10">
-    <HeroBlog />
-  </div>
-  <!-- <div class="p-10">bloglist</div> -->
+
+  <HeroBlog />
+  <!-- <BlogList /> -->
+  <BlogListResp />
   <div class="mt-10">
     <div class="relative z-0 -mt-[80px]">
       <Footer4Resp />
