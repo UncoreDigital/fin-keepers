@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header3 from "../components/Header3.astro";
+import InnerHero from "../components/blog/inner/InnerHero.astro";
+import Inner from "../components/blog/inner/Inner.astro";
+import ContactResp from "../components/home/ContactResp.astro";
+import Footer4Resp from "../components/Footer4Resp.astro";
+---
+
+<Layout>
+  <Header3 />
+  <InnerHero />
+  <Inner />
+  <div class="mt-10">
+    <!-- cta goes here -->
+    <ContactResp />
+    <div class="relative z-0 -mt-[80px]">
+      <Footer4Resp />
+    </div>
+  </div>
+</Layout>
