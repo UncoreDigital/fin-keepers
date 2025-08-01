@@ -1,16 +1,17 @@
 <div class="bg-white py-16 px-4 sm:px-6 lg:px-20">
   <div class="max-w-[1280px] mx-auto flex flex-col gap-16">
     {/* VISION */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
-      {/* Text */}
-      <div class="flex flex-col gap-4">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 items-center lg:items-start gap-10"
+    >
+      {/* Text - This will be order-1 on desktop, order-2 on mobile */}
+      <div class="order-2 lg:order-1 flex flex-col gap-4">
         <div class="flex items-center gap-4">
           <img
             src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-29/VkwT7RwL4M.png"
             alt="Vision Icon"
             class="w-12 h-12"
           />
-
           <h2 class="text-2xl font-bold text-[#1d2939]">Our Vision</h2>
         </div>
         <p class="text-[18px] leading-[30px] text-[#1d2939]">
@@ -20,25 +21,34 @@
         </p>
       </div>
 
-      {/* Image */}
-
-      <img
-        src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-29/JxNq95QvYR.png"
-        alt="Mission Image"
-        class="w-full max-w-[500px] h-auto rounded-[20px] object-cover mx-auto"
-      />
+      {/* Image - This will be order-1 on mobile, order-2 on desktop */}
+      <div
+        class="order-1 lg:order-2 w-full max-w-[500px] h-[250px] lg:h-[350px] mx-auto rounded-[20px] overflow-hidden"
+      >
+        <img
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-29/JxNq95QvYR.png"
+          alt="Vision Image"
+          class="w-full h-full object-cover"
+        />
+      </div>
     </div>
 
     {/* MISSION */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
-      {/* Image */}
-      <img
-        src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-29/9MLr7ShWBz.png"
-        alt="Vision Image"
-        class="w-full max-w-[500px] h-auto rounded-[20px] object-cover mx-auto"
-      />
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 items-center lg:items-start gap-10"
+    >
+      {/* Image - Remains first in HTML order, so it's first on both views */}
+      <div
+        class="w-full max-w-[500px] h-[250px] lg:h-[350px] mx-auto rounded-[20px] overflow-hidden"
+      >
+        <img
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-29/9MLr7ShWBz.png"
+          alt="Mission Image"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
-      {/* Text */}
+      {/* Text - Remains second in HTML order, so it's second on both views */}
       <div class="flex flex-col gap-4">
         <div class="flex items-center gap-4">
           <img
