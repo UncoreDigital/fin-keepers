@@ -1,0 +1,86 @@
+---
+const cards = [
+  {
+    title: "US GAAP-compliant processes",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+  {
+    title: "Consistent weekly/monthly bookkeeping",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+  {
+    title: "Secure, cloud-based collaboration",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+  {
+    title: "Dedicated account manager",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+  {
+    title: "Custom financial reports delivered regularly",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+  {
+    title: "Clear communication, no hidden fees",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+];
+---
+
+<div
+  class="main-container w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] lg:pr-[120px] lg:pl-[120px] flex flex-col gap-[32px] justify-center items-center bg-[#106253] relative mx-auto"
+>
+  <!-- Heading -->
+  <div class="w-full max-w-[1200px] flex justify-between items-center">
+    <span
+      class="font-['Inter'] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-white"
+    >
+      Why Choose FinnKeepers?
+    </span>
+  </div>
+
+  <!-- Cards Container -->
+  <div class="w-full max-w-[1200px] flex flex-col gap-[25px]">
+    <!-- Row 1 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]">
+      {
+        cards.slice(0, 3).map((card, index) => (
+          <div class="flex flex-col gap-[18px] bg-[#106253] rounded-[16px] border border-white shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1">
+            <div class="flex w-[50px] h-[50px] justify-center items-center bg-white rounded-full">
+              <span class="text-[#106253] font-semibold text-[24px] leading-[28px]">
+                {index + 1}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px]">
+              {card.title}
+            </span>
+            <span class="text-white font-medium text-[16px] leading-[22px]">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]">
+      {
+        cards.slice(3).map((card, index) => (
+          <div class="flex flex-col gap-[18px] bg-[#106253] rounded-[16px] border border-white shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1">
+            <div class="flex w-[50px] h-[50px] justify-center items-center bg-white rounded-full">
+              <span class="text-[#106253] font-semibold text-[24px] leading-[28px]">
+                {index + 4}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px]">
+              {card.title}
+            </span>
+            <span class="text-white font-medium text-[16px] leading-[22px]">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
