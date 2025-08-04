@@ -1,0 +1,132 @@
+<!-- HTML -->
+<div
+  class="main-container w-full py-16 px-4 sm:px-6 lg:px-[120px] bg-white mx-auto"
+>
+  <div class="flex flex-col items-center gap-12 relative">
+    <!-- Heading -->
+    <h2
+      class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#04092a] text-center"
+    >
+      What Drives Us Forward
+    </h2>
+
+    <!-- Description -->
+    <p
+      class="text-sm sm:text-base lg:text-[18px] text-[#5c667a] text-center max-w-[782px]"
+    >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </p>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 bg-white p-2 rounded-md">
+      <button
+        id="tab-vision"
+        class="tab-button px-4 py-2 rounded-md text-sm font-semibold bg-[#ed7c00] text-white cursor-pointer"
+        data-tab="vision"
+      >
+        Our Vision
+      </button>
+      <button
+        id="tab-mission"
+        class="tab-button px-4 py-2 rounded-md text-sm text-[#797979] cursor-pointer"
+        data-tab="mission"
+      >
+        Our Mission
+      </button>
+    </div>
+
+    <!-- Content Container -->
+    <div
+      id="tab-content"
+      class="flex flex-col lg:flex-row gap-6 w-full max-w-[1200px] mt-6"
+    >
+      <!-- Left Text Block -->
+      <div
+        id="text-block"
+        class="bg-white border border-[rgba(121,121,121,0.22)] rounded-[16px] p-6 flex-1 flex flex-col gap-6"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            id="icon"
+            class="w-10 h-10 bg-cover bg-no-repeat"
+            style="background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-04/05p7roL66M.png')"
+          >
+          </div>
+          <h3 id="title" class="text-xl font-semibold text-[#151515]">
+            Our Vision
+          </h3>
+        </div>
+        <p
+          id="description"
+          class="text-sm sm:text-base text-[#797979] font-medium"
+        >
+          To provide value-driven, tech-enabled, and people-driven financial
+          solutions to make accounting and tax complexities easy for small and
+          emerging businesses in the U.S.
+        </p>
+        <a href="#" class="text-[#ed7c00] font-semibold text-base">Contact Us</a
+        >
+      </div>
+
+      <!-- Right Image -->
+      <div
+        class="bg-[#f5f7fa] rounded-[16px] p-4 flex-1 flex justify-center items-center"
+      >
+        <img
+          id="image"
+          src="/img/services/book-keeping/sales.png"
+          alt=""
+          class="w-full max-w-[500px] h-auto rounded-md"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script type="module">
+  const data = {
+    vision: {
+      title: "Our Vision",
+      description:
+        "To provide value-driven, tech-enabled, and people-driven financial solutions to make accounting and tax complexities easy for small and emerging businesses in the U.S.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-04/05p7roL66M.png",
+      image:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-04/p2JWcUBBRB.png",
+    },
+    mission: {
+      title: "Our Mission",
+      description:
+        "To empower small and mid-sized U.S. businesses through accessible, expert-backed accounting services that adapt to their unique challenges.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-04/05p7roL66M.png",
+      image: "/img/services/book-keeping/sales.png",
+    },
+  };
+
+  const buttons = document.querySelectorAll(".tab-button");
+  const title = document.getElementById("title");
+  const description = document.getElementById("description");
+  const icon = document.getElementById("icon");
+  const image = document.getElementById("image");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tab = btn.dataset.tab;
+
+      // Update tab styles
+      buttons.forEach((b) => {
+        b.classList.remove("bg-[#ed7c00]", "text-white", "font-semibold");
+        b.classList.add("text-[#797979]");
+      });
+      btn.classList.add("bg-[#ed7c00]", "text-white", "font-semibold");
+      btn.classList.remove("text-[#797979]");
+
+      // Safely update content
+      const t = data[tab];
+      if (title) title.textContent = t.title;
+      if (description) description.textContent = t.description;
+      if (icon) icon.style.backgroundImage = `url(${t.icon})`;
+      if (image) image.src = t.image;
+    });
+  });
+</script>
