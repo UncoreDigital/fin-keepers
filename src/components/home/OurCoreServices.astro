@@ -1,3 +1,8 @@
+---
+import CoreCard2 from "./CoreCard2.astro";
+import CoreCard3 from "./CoreCard3.astro";
+---
+
 <div
   class="flex w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] flex-col gap-[32px] items-center flex-nowrap bg-[#fff] relative z-[81] mt-0 mr-0 mb-0 ml-0"
 >
@@ -14,221 +19,64 @@
 
   <!-- Cards Grid -->
   <div
-    class="flex w-full max-w-[1200px] flex-col gap-[25px] items-start relative z-[87]"
+    class="flex w-full max-w-[1200px] flex-col gap-[25px] items-start relative"
   >
     <!-- Row 1 -->
     <div class="flex flex-col lg:flex-row gap-[25px] w-full">
       <!-- Bookkeeping -->
-      <div
-        class="flex flex-col h-auto p-[20px] gap-[18px] bg-white rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1"
-      >
-        <div class="flex flex-col gap-[12px] self-stretch grow relative">
-          <div class="flex flex-col gap-[24px]">
-            <div class="w-[48px] h-[48px] overflow-hidden">
-              <div
-                class="w-[37px] h-[43px] mt-[4px] ml-[7px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/Rrb4n8qbbe.png')] bg-contain bg-no-repeat"
-              >
-              </div>
-            </div>
-            <span class="text-[24px] font-semibold text-[#151515]">
-              Bookkeeping
-            </span>
-          </div>
-          <span class="text-[16px] font-medium leading-[22px] text-[#797979]">
-            Accurate, timely recording of your day-to-day financial transactions
-            to keep your books clean and audit-ready.
-          </span>
-        </div>
-        <div class="flex justify-end items-center gap-[14px]">
-          <div
-            class="w-[30px] h-[30px] bg-[#ed7c00] rounded-full flex items-center justify-center"
-          >
-            <div
-              class="w-[20px] h-[20px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreCard2 />
 
       <!-- Financial Modeling -->
-      <div
-        class="flex flex-col h-auto p-[20px] gap-[18px] bg-white rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1"
-      >
-        <div class="flex flex-col gap-[12px] self-stretch grow relative">
-          <div class="flex flex-col gap-[24px]">
-            <div class="w-[48px] h-[48px] overflow-hidden">
-              <div
-                class="w-[32px] h-[40px] mt-[4px] ml-[7px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/h2o3xiyb1w.png')] bg-contain bg-no-repeat"
-              >
-              </div>
-            </div>
-            <span class="text-[24px] font-semibold text-[#151515]">
-              Financial Modeling
-            </span>
-          </div>
-          <span class="text-[16px] font-medium leading-[22px] text-[#797979]">
-            Custom-built financial models to forecast revenue, costs, and cash
-            flow — empowering smarter strategic planning.
-          </span>
-        </div>
-        <div class="flex justify-end items-center gap-[14px]">
-          <div
-            class="w-[30px] h-[30px] bg-[#ed7c00] rounded-full flex items-center justify-center"
-          >
-            <div
-              class="w-[20px] h-[20px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/h2o3xiyb1w.png"
+        title="Financial Modeling"
+        description="Custom-built financial models to forecast revenue, costs, and cash flow — empowering smarter strategic planning."
+      />
 
       <!-- Historical Cleanup -->
-      <div
-        class="flex flex-col h-auto p-[20px] gap-[18px] bg-white rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1"
-      >
-        <div class="flex flex-col gap-[12px] self-stretch grow relative">
-          <div class="flex flex-col gap-[24px]">
-            <div
-              class="w-[48px] h-[48px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/b5TprYOVpR.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-            <span class="text-[24px] font-semibold text-[#151515]">
-              Historical Cleanup
-            </span>
-          </div>
-          <span class="text-[16px] font-medium leading-[22px] text-[#797979]">
-            We organize and correct your past financial data, ensuring your
-            records are accurate and compliant.
-          </span>
-        </div>
-        <div class="flex justify-end items-center gap-[14px]">
-          <div
-            class="w-[30px] h-[30px] bg-[#ed7c00] rounded-full flex items-center justify-center"
-          >
-            <div
-              class="w-[20px] h-[20px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/b5TprYOVpR.png"
+        title="Historical Cleanup"
+        description="We organize and correct your past financial data, ensuring your records are accurate and compliant."
+      />
     </div>
 
     <!-- Row 2 -->
     <div class="flex flex-col lg:flex-row gap-[25px] w-full">
       <!-- Accounts Reconciliation -->
-      <div
-        class="flex flex-col h-auto p-[20px] gap-[18px] bg-white rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1"
-      >
-        <div class="flex flex-col gap-[12px] self-stretch grow relative">
-          <div class="flex flex-col gap-[24px]">
-            <div class="w-[48px] h-[48px] overflow-hidden">
-              <div
-                class="w-[44px] h-[40px] mt-[4px] ml-[1px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5GY0tAVakX.png')] bg-contain bg-no-repeat"
-              >
-              </div>
-            </div>
-            <span class="text-[24px] font-semibold text-[#151515]">
-              Accounts Reconciliation
-            </span>
-          </div>
-          <span class="text-[16px] font-medium leading-[22px] text-[#797979]">
-            Reconcile bank statements, vendor accounts, and ledgers to identify
-            discrepancies and maintain financial integrity.
-          </span>
-        </div>
-        <div class="flex justify-end items-center gap-[14px]">
-          <div
-            class="w-[30px] h-[30px] bg-[#ed7c00] rounded-full flex items-center justify-center"
-          >
-            <div
-              class="w-[20px] h-[20px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5GY0tAVakX.png"
+        title="Accounts Reconciliation"
+        description="Reconcile bank statements, vendor accounts, and ledgers to identify discrepancies and maintain financial integrity."
+      />
 
       <!-- Payroll Assistance -->
-      <div
-        class="flex flex-col h-auto p-[20px] gap-[18px] bg-white rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1"
-      >
-        <div class="flex flex-col gap-[12px] self-stretch grow relative">
-          <div class="flex flex-col gap-[24px]">
-            <div
-              class="w-[48px] h-[48px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KaMAebN9Gy.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-            <span class="text-[24px] font-semibold text-[#151515]">
-              Payroll Assistance
-            </span>
-          </div>
-          <span class="text-[16px] font-medium leading-[22px] text-[#797979]">
-            End-to-end support for processing employee payroll, managing taxes,
-            and ensuring timely compliance.
-          </span>
-        </div>
-        <div class="flex justify-end items-center gap-[14px]">
-          <div
-            class="w-[30px] h-[30px] bg-[#ed7c00] rounded-full flex items-center justify-center"
-          >
-            <div
-              class="w-[20px] h-[20px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KaMAebN9Gy.png"
+        title="Payroll Assistance"
+        description="End-to-end support for processing employee payroll, managing taxes, and ensuring timely compliance."
+      />
 
       <!-- Audit Support -->
-      <div
-        class="flex flex-col h-auto p-[20px] gap-[18px] bg-white rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1"
-      >
-        <div class="flex flex-col gap-[12px] self-stretch grow relative">
-          <div class="flex flex-col gap-[24px]">
-            <div class="w-[48px] h-[48px] overflow-hidden">
-              <div
-                class="w-[35px] h-[41px] mt-[4px] ml-[7px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5jzhu7e1ie.png')] bg-contain bg-no-repeat"
-              >
-              </div>
-            </div>
-            <span class="text-[24px] font-semibold text-[#151515]">
-              Audit Support
-            </span>
-          </div>
-          <span class="text-[16px] font-medium leading-[22px] text-[#797979]">
-            From documentation to clarifications, we help prepare and present
-            your books with confidence during audits.
-          </span>
-        </div>
-        <div class="flex justify-end items-center gap-[14px]">
-          <div
-            class="w-[30px] h-[30px] bg-[#ed7c00] rounded-full flex items-center justify-center"
-          >
-            <div
-              class="w-[20px] h-[20px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5jzhu7e1ie.png"
+        title="Audit Support"
+        description="End-to-end support for processing employee payroll, managing taxes, and ensuring timely compliance."
+      />
     </div>
   </div>
 
-  <!-- CTA Button -->
   <div class="flex justify-center w-full mt-[40px]">
-    <div
-      class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer hover:opacity-90 transition"
-    >
-      <a href="#">
+    <a href="#">
+      <div
+        class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center border border-[#ed7c00] bg-white text-[#ed7c00] rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white cursor-pointer transition"
+      >
         <span
-          class="text-[14px] sm:text-[18px] font-semibold leading-[24px] text-white whitespace-nowrap"
+          class="text-[14px] sm:text-[16px] font-semibold leading-[24px] whitespace-nowrap"
         >
           Schedule a Free Consultation
         </span>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </div>

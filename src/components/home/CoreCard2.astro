@@ -1,0 +1,57 @@
+<style>
+  .card-hover .arrow-icon {
+    transform: rotate(0deg);
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    /* filter: brightness(0) saturate(100%) invert(13%) sepia(91%) saturate(749%)
+      hue-rotate(3deg) brightness(99%) contrast(102%); */
+    /* dark gray by default */
+  }
+
+  .card-hover:hover .arrow-icon {
+    transform: rotate(45deg);
+    filter: brightness(0) saturate(100%) invert(47%) sepia(94%) saturate(747%)
+      hue-rotate(359deg) brightness(100%) contrast(102%);
+    /* turns to #ed7c00 */
+  }
+</style>
+
+<div
+  class="flex flex-col h-auto p-[20px] gap-[18px] bg-white hover:bg-[#ed7c00] rounded-[16px] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] flex-1 transition-colors duration-300 group card-hover cursor-pointer"
+>
+  <!-- Content Section -->
+  <div class="flex flex-col gap-[12px] self-stretch grow relative">
+    <div class="flex flex-col gap-[24px]">
+      <div class="w-[48px] h-[48px] overflow-hidden">
+        <div
+          class="w-[37px] h-[43px] mt-[4px] ml-[7px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/Rrb4n8qbbe.png')] bg-contain bg-no-repeat transition group-hover:filter group-hover:brightness-0 group-hover:invert"
+        >
+        </div>
+      </div>
+      <span
+        class="text-[24px] font-semibold text-[#151515] group-hover:text-white transition"
+      >
+        Bookkeeping
+      </span>
+    </div>
+    <span
+      class="text-[16px] font-medium leading-[22px] text-[#797979] group-hover:text-white transition"
+    >
+      Accurate, timely recording of your day-to-day financial transactions to
+      keep your books clean and audit-ready.
+    </span>
+  </div>
+
+  <!-- Arrow Section -->
+  <div class="flex justify-end items-center gap-[14px]">
+    <div
+      class="w-[40px] h-[40px] bg-[#ed7c00] group-hover:bg-white rounded-full flex items-center justify-center transition"
+    >
+      <div
+        class="w-[25px] h-[25px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/BFCu8rXefs.png')] bg-cover bg-no-repeat arrow-icon"
+      >
+      </div>
+    </div>
+  </div>
+</div>
