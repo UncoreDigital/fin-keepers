@@ -4,6 +4,7 @@ import HowItWorksDesk from "./HowItWorksDesk.astro";
 import Accordion from "./Accordion.astro";
 import Wcs2 from "../Wcs2.astro";
 import Accordion2 from "./Accordian2.astro";
+import Accordion3 from "./Accordian3.astro";
 import Building from "./Building.astro";
 import BuildDesk from "./BuildDesk.astro";
 
@@ -970,5 +971,13 @@ import OurCoreServices from "./OurCoreServices.astro";
     </div>
   </div> -->
   <!-- <Accordion /> -->
-  <Accordion2 />
+  <!-- Accordion2 (desktop only) -->
+  <div class="hidden md:block">
+    <Accordion2 />
+  </div>
+
+  <!-- Accordion3 (mobile only) -->
+  <div class="block md:hidden">
+    <Accordion3 />
+  </div>
 </div>
