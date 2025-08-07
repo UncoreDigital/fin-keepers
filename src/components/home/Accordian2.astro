@@ -180,7 +180,7 @@
 
 <script>
   document.querySelectorAll("[data-accordion-toggle]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("mouseenter", () => {
       const card = btn.closest(".accordion-card");
       if (!(card instanceof HTMLElement)) return;
 
