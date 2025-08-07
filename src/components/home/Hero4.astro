@@ -2,6 +2,7 @@
   <div
     class="w-full h-[570px] bg-[#213d3c] absolute top-0 left-0 overflow-hidden mb-0 lg:mb-2"
   >
+    <!-- Background pattern remains the same -->
     <div
       class="flex w-[1440px] h-[870.759px] flex-col items-start flex-nowrap absolute top-1/2 left-0 translate-x-0 translate-y-[-49.96%]"
     >
@@ -9,12 +10,14 @@
         <div
           class="w-[1835.026px] h-[654.623px] relative z-[12] mt-[327.142px] mr-0 mb-0 ml-[-180.691px]"
         >
+          <!-- All your existing background divs remain unchanged -->
           <div class="w-[94.21%] h-[26.66%] absolute top-0 left-0">
             <div
               class="w-full h-full bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nT4KkmgsiZ.png)] bg-[length:100%_100%] bg-no-repeat absolute top-0 left-0 z-[14]"
             >
             </div>
           </div>
+          <!-- ... (all other background pattern divs) ... -->
           <div class="w-[94.93%] h-[25.01%] absolute top-[3.13%] left-[0.03%]">
             <div
               class="w-full h-full bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/9u1nihC9uf.png)] bg-[length:100%_100%] bg-no-repeat absolute top-0 left-0 z-[16]"
@@ -198,100 +201,83 @@
         </div>
       </div>
     </div>
+
+    <!-- Centered content container -->
     <div
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 w-full px-6 lg:w-[744px] lg:left-[141px] lg:translate-x-0 lg:px-0"
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 lg:-translate-y-1/2 w-full max-w-[1314px] px-4 sm:px-6 md:px-10"
     >
-      <div class="flex flex-col gap-3 items-start w-full z-[2]">
-        <!-- Heading -->
+      <div
+        class="flex flex-col lg:flex-row items-center lg:items-start justify-between w-full gap-8"
+      >
+        <!-- Text Content (Left Side) -->
         <div
-          class="text-white font-bold text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] leading-tight tracking-[-0.5px] lg:tracking-[-1.04px] z-[3]"
+          class="flex flex-col gap-3 items-start lg:items-start text-center lg:text-left lg:flex-1 max-w-[744px]"
         >
-          Smarter <span class="">Accounting</span>.<br />
-          Stronger <span class="">Businesses.</span>
+          <!-- Heading -->
+          <div
+            class="text-white font-bold text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] leading-tight tracking-[-0.5px] lg:tracking-[-1.04px] z-[3]"
+          >
+            Smarter <span class="">Accounting</span>.<br />
+            Stronger <span class="">Businesses.</span>
+          </div>
+
+          <!-- Paragraph -->
+          <p
+            class="text-white text-sm text-left sm:text-base md:text-lg leading-[1.6] max-w-[90%] lg:max-w-[546px] z-[4]"
+          >
+            Expert U.S. based bookkeeping, payroll, and tax solutions <br
+              class="hidden sm:block"
+            />tailored for small businesses and startups - all at competitive <br
+              class="hidden sm:block"
+            />prices.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="mt-6">
+            <a
+              href="#"
+              class="flex w-[200px] sm:w-[286px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-white transition duration-300"
+            >
+              <span
+                class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-white"
+              >
+                Book your Consultation
+              </span>
+            </a>
+          </div>
         </div>
 
-        <!-- Paragraph -->
-        <p
-          class="text-white text-sm sm:text-base md:text-lg leading-[1.6] max-w-[90%] lg:max-w-[546px] z-[4]"
-        >
-          Expert U.S. based bookkeeping, payroll, and tax solutions <br
-            class="hidden sm:block"
-          />tailored for small businesses and startups - all at competitive <br
-            class="hidden sm:block"
-          />prices.
-        </p>
-      </div>
-
-      <!-- CTA Button -->
-      <div class="mt-6">
-        <!-- <a
-          href="/"
-          class="flex items-center gap-2 bg-[#ed7c00] w-[220px] text-white text-nowrap text-sm font-semibold px-6 py-2 rounded-full shadow-md z-[200]"
-        >
-          Book your Consultation
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke="white"
-            stroke-width="1"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a> -->
-
-        <!-- <div
-        class="flex w-full sm:w-[286px] h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px]"
-      >
-        <a href="#"
-          ><span class="text-[18px] font-semibold leading-[24px] text-white">
-            Schedule a Free Consultation
-          </span></a
-        >
-      </div> -->
-
-        <!-- <div
-          class="flex w-[200px] sm:w-[286px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer"
-        >
-          <a href="#">
-            <span
-              class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-white"
-            >
-              Book your Consultation
-            </span>
-          </a>
+        <!-- Hero Image (Right Side) -->
+        <!-- <div class="lg:flex-1 flex justify-end hidden sm:block">
+          <img
+            src="/img/home/hero/1.png"
+            alt="Hero"
+            class="w-[500px] sm:w-[600px] lg:w-[690px] aspect-[640/420] object-contain z-[9]"
+          />
         </div> -->
-        <a
-          href="#"
-          class="flex w-[200px] sm:w-[286px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-white transition duration-300"
+        <div
+          class="lg:flex-1 flex justify-end items-center hidden sm:block group relative w-[580px] sm:w-[680px] lg:w-[760px] aspect-[640/420]"
         >
-          <span
-            class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-white"
-          >
-            Book your Consultation
-          </span>
-        </a>
+          <!-- Image 1 (Default) -->
+          <img
+            src="/img/home/hero/1.png"
+            alt="Hero Default"
+            class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-10"
+          />
+
+          <!-- Image 2 (On Hover) -->
+          <img
+            src="/img/home/hero/2.png"
+            alt="Hero Hover"
+            class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-10"
+          />
+          <div class="mb-6"></div>
+        </div>
       </div>
     </div>
-    <img
-      src="/img/home/hero/1.png"
-      alt="Hero"
-      class="w-[690px] aspect-[640/420] object-contain absolute top-[30px] left-[780px] hidden md:block mb-20 lg:!mr-10"
-    />
-    <!-- <div
-      class="w-[599.542px] h-[390.572px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/fWZXWuW79M.png)] bg-cover bg-no-repeat absolute top-[82px] left-[800px] z-[9]"
-    >
-    </div> -->
   </div>
-  <!-- <div
-    class="w-[599.542px] h-[390.572px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/fWZXWuW79M.png)] bg-cover bg-no-repeat absolute top-[82px] left-[900px] z-[9] hidden md:block mb-5"
-  >
-  </div> -->
 
+  <!-- Trusted Partners Container -->
   <div
     class="flex w-full max-w-[1314px] h-auto px-4 sm:px-6 md:px-10 py-6 flex-col gap-[36px] items-start bg-white absolute top-[448px] left-1/2 -translate-x-1/2 overflow-hidden shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] z-[80] mt-10 rounded-xl"
   >
@@ -307,11 +293,12 @@
         id="logoSlider"
         class="flex gap-[40px] sm:gap-[66px] items-center w-max animate-scroll-logos"
       >
-        <!-- Logos -->
+        <!-- Your existing logos -->
         <div
           class="w-[100px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KkCHEb9kWG.png')] bg-contain bg-no-repeat"
         >
         </div>
+        <!-- Add all your other logo divs here -->
         <div
           class="w-[100px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/8gnRNwvbbo.png')] bg-contain bg-no-repeat"
         >
