@@ -1,0 +1,125 @@
+<div
+  class="main-container w-full py-16 px-4 sm:px-6 lg:px-[120px] bg-white mx-auto"
+>
+  <div
+    class="main-container max-w-[1200px] relative mx-auto my-0 flex flex-col"
+  >
+    <!-- Top Row -->
+    <div
+      class="flex flex-col lg:flex-row w-full gap-[24px] lg:gap-[48px] items-start"
+    >
+      <div
+        class="flex flex-col gap-[24px] lg:gap-[40px] items-start lg:w-[505px] flex-shrink-0"
+      >
+        <span
+          class="font-['Inter'] text-[24px] sm:text-[28px] lg:text-[36px] font-bold leading-[1.3] text-[#04092a] text-left"
+        >
+          Meet the Experts Behind Your Success
+        </span>
+        <div
+          class="flex w-auto min-w-[141px] h-[50px] px-[24px] justify-center items-center rounded-[8px] border border-[#ed7c00] whitespace-nowrap"
+        >
+          <span
+            class="font-['Inter'] text-[16px] sm:text-[18px] font-semibold leading-[24px] text-[#ed7c00]"
+          >
+            View More
+          </span>
+        </div>
+      </div>
+
+      <span
+        class="font-['Inter'] text-[16px] sm:text-[18px] leading-[1.6] text-[#5c667a] text-left"
+      >
+        Our success is in our people, seasoned finance professionals with a
+        unique blend of knowledge and flexibility. At Finnkeepers, our staff
+        includes U.S.-trained CPAs certified bookkeepers, tax professionals, and
+        experts with investment banking and financial planning backgrounds.
+        <br /><br />
+        Supported by Knowcraft Analytics’ global delivery strength, we can provide
+        you with the strategic benefit of onshore quality combined with offshore
+        efficiency. Whether it’s year-end tax planning or developing board-worthy
+        financial models, our team is your team, working behind the scenes so that
+        you can stay ahead.
+      </span>
+    </div>
+
+    <!-- Cards Grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mt-[40px]"
+    >
+      {
+        Array.from({ length: 4 }).map((_, i) => (
+          <div class="relative w-full h-[389px]">
+            <div class="absolute bottom-[59px] left-[24px] w-[240px] h-[35px] bg-[rgba(40,36,31,0.7)] rounded-[17.289px] flex items-center px-[12px]">
+              <span class="font-['Inter'] text-[12px] font-medium text-white capitalize">
+                Vice President
+              </span>
+            </div>
+            <div
+              class={`absolute inset-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/${
+                [
+                  "nKt7NfVjcJ.png",
+                  "p6OpqN8d2V.png",
+                  "8PzC004ciu.png",
+                  "APNUWNc4UJ.png",
+                ][i]
+              })] bg-cover bg-no-repeat rounded-[16px]`}
+            />
+            <span class="absolute bottom-[95px] left-[24px] font-['Inter'] text-[18px] font-semibold text-white">
+              John deo
+            </span>
+            <div
+              class={`absolute bottom-[95px] right-[24px] w-[24px] h-[24px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/${
+                [
+                  "T1tWZWk9kc.png",
+                  "uQZjuEYDRx.png",
+                  "fFqKkaLacH.png",
+                  "yfyvSE1gxT.png",
+                ][i]
+              })] bg-cover bg-no-repeat`}
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center gap-[10px] mt-[40px]">
+      <div class="flex w-[36.571px] h-[36.571px] justify-center items-center">
+        <div
+          class="w-[17.5px] h-[17.5px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/iRRTdFc42D.png)] bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+      <div
+        class="flex w-[36.571px] h-[36.571px] justify-center items-center bg-[#ed7c00] rounded-full"
+      >
+        <span
+          class="font-['Inter'] text-[16px] font-normal leading-[28px] text-white"
+        >
+          1
+        </span>
+      </div>
+      <div class="flex w-[36.571px] h-[36.571px] justify-center items-center">
+        <span
+          class="font-['Inter'] text-[16px] font-normal leading-[28px] text-[#151515]"
+        >
+          2
+        </span>
+      </div>
+      <div class="flex w-[36.571px] h-[36.571px] justify-center items-center">
+        <span
+          class="font-['Inter'] text-[16px] font-normal leading-[28px] text-[#151515]"
+        >
+          3
+        </span>
+      </div>
+      <div class="flex w-[36.571px] h-[36.571px] justify-center items-center">
+        <div
+          class="w-[17.5px] h-[17.5px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/974nCEAKu2.png)] bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
