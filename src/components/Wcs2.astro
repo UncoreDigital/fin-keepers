@@ -508,7 +508,7 @@
     }
 
     // Start auto-play (every 5 seconds)
-    let autoPlayInterval = setInterval(autoPlay, 5000);
+    let autoPlayInterval = setInterval(autoPlay, 3000);
 
     // Pause auto-play on hover
     const carouselContainer = slides?.parentElement;
@@ -518,7 +518,7 @@
       });
 
       carouselContainer.addEventListener("mouseleave", () => {
-        autoPlayInterval = setInterval(autoPlay, 5000);
+        autoPlayInterval = setInterval(autoPlay, 3000);
       });
     }
 
