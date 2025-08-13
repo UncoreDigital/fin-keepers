@@ -1,0 +1,331 @@
+<div
+  class="main-container flex w-[1220px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] flex-col gap-[10px] items-start flex-nowrap relative mx-auto my-0"
+>
+  <div
+    class="flex flex-col gap-[32px] items-start self-stretch shrink-0 flex-nowrap relative"
+  >
+    <div
+      class="flex gap-[6px] items-start self-stretch shrink-0 flex-nowrap relative z-[1]"
+    >
+      <div
+        class="flex w-[1043px] flex-col gap-[36px] items-center shrink-0 flex-nowrap relative z-[2]"
+      >
+        <div class="w-[1042px] h-[44px] shrink-0 relative z-[3]">
+          <span
+            class="flex h-[42px] justify-start items-start font-['Inter'] text-[36px] font-bold leading-[42px] text-[#28241f] absolute top-[calc(50%-28px)] left-[calc(50%-522px)] text-left whitespace-nowrap z-[4]"
+          >
+            All Case Studies
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex w-[151px] h-[40px] pt-0 pr-[24px] pb-0 pl-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[6px] border-solid border border-[#d0d5dd] relative z-[5]"
+      >
+        <div
+          class="flex w-[103px] h-[32px] gap-[12px] justify-center items-center shrink-0 flex-nowrap relative z-[6]"
+        >
+          <span
+            class="h-[22px] shrink-0 basis-auto font-['Inter'] text-[14px] font-normal leading-[22px] text-[#28241f] relative text-left whitespace-nowrap z-[7]"
+          >
+            Accounting
+          </span>
+          <div
+            class="w-[16px] h-[16px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/8NRHhfPFPs.png)] bg-cover bg-no-repeat relative overflow-hidden z-[8]"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies Container -->
+    <div
+      id="case-studies-container"
+      class="flex flex-col gap-[32px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[9]"
+    >
+      <!-- Case study cards will be rendered here by JavaScript -->
+    </div>
+
+    <!-- Pagination -->
+    <div
+      class="flex flex-col gap-[40px] items-center self-stretch shrink-0 flex-nowrap relative z-[52]"
+    >
+      <div
+        class="flex w-[316px] gap-[10px] items-start shrink-0 flex-nowrap relative z-[74]"
+      >
+        <div
+          id="prev-page"
+          class="flex w-[36.571px] h-[36.571px] pt-0 pr-[7.5px] pb-0 pl-[7.5px] flex-col gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6.857px] relative z-[75] cursor-pointer"
+        >
+          <div
+            class="w-[17.5px] h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/40S8FAC868.png)] bg-cover bg-no-repeat relative overflow-hidden z-[76]"
+          >
+          </div>
+        </div>
+
+        <div
+          id="pagination-numbers"
+          class="flex gap-[10px] items-start shrink-0 flex-nowrap relative"
+        >
+          <!-- Pagination numbers will be rendered here by JavaScript -->
+        </div>
+
+        <div
+          id="next-page"
+          class="flex w-[36.571px] h-[36.571px] pt-0 pr-[7.5px] pb-0 pl-[7.5px] flex-col gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6.857px] relative z-[87] cursor-pointer"
+        >
+          <div
+            class="w-[17.5px] h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/S4VQU7COgB.png)] bg-cover bg-no-repeat relative overflow-hidden z-[88]"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const allCaseStudies = [];
+
+    // Sample case study data - replace with your actual data
+    allCaseStudies.push({
+      id: 1,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/ieunrYPTh4.png",
+      title:
+        "Streamlining Multi-State Tax Compliance for a Growing E-Commerce Brand",
+      description:
+        "We helped a U.S.-based e-commerce company navigate complex multi-state tax regulations, automating compliance processes and reducing filing time by 60%, while ensuring accuracy and avoiding costly penalties.",
+      author: "Joanna Wellick",
+      date: "Monday, 11 Aug 2025",
+      readTime: "2 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/MvQtVFnwBh.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/HGCdPhBbTf.png",
+      link: "/case-study/1",
+    });
+
+    allCaseStudies.push({
+      id: 2,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/4HGTFOCRPY.png",
+      title: "Digital Transformation for Traditional Manufacturing Company",
+      description:
+        "Complete overhaul of legacy accounting systems, implementing cloud-based solutions that improved processing speed by 75% and reduced manual errors by 90% for a century-old manufacturing business.",
+      author: "Michael Chen",
+      date: "Friday, 9 Aug 2025",
+      readTime: "3 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/iPqWohQeHg.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/3FEzD7WQnV.png",
+      link: "/case-study/2",
+    });
+
+    allCaseStudies.push({
+      id: 3,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/35pqbRLDY5.png",
+      title: "International Expansion Financial Strategy for Tech Startup",
+      description:
+        "Developed comprehensive financial framework for rapid international expansion, establishing compliant operations in 12 countries within 18 months while maintaining cash flow stability.",
+      author: "Sarah Johnson",
+      date: "Wednesday, 7 Aug 2025",
+      readTime: "4 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/4qoArEEgWO.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/aKuQV863cd.png",
+      link: "/case-study/3",
+    });
+
+    allCaseStudies.push({
+      id: 4,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/ieunrYPTh4.png",
+      title: "Restructuring Financial Operations for Healthcare Network",
+      description:
+        "Consolidated and streamlined financial operations across 15 healthcare facilities, implementing unified reporting systems that reduced administrative costs by 40%.",
+      author: "Dr. Emily Rodriguez",
+      date: "Monday, 5 Aug 2025",
+      readTime: "5 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/MvQtVFnwBh.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/HGCdPhBbTf.png",
+      link: "/case-study/4",
+    });
+
+    allCaseStudies.push({
+      id: 5,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/4HGTFOCRPY.png",
+      title: "Crisis Management and Financial Recovery for Retail Chain",
+      description:
+        "Guided a struggling retail chain through financial crisis, implementing cost reduction strategies and revenue optimization that resulted in 200% profit increase within 2 years.",
+      author: "James Thompson",
+      date: "Saturday, 3 Aug 2025",
+      readTime: "3 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/iPqWohQeHg.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/3FEzD7WQnV.png",
+      link: "/case-study/5",
+    });
+
+    allCaseStudies.push({
+      id: 6,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/35pqbRLDY5.png",
+      title: "Automation Implementation for Professional Services Firm",
+      description:
+        "Deployed AI-driven automation solutions for invoice processing and client billing, reducing manual work by 80% and improving client satisfaction scores by 45%.",
+      author: "Lisa Wang",
+      date: "Thursday, 1 Aug 2025",
+      readTime: "2 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/4qoArEEgWO.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/aKuQV863cd.png",
+      link: "/case-study/6",
+    });
+
+    const cardsPerPage = 3; // Show 3 cards vertically per page
+    let currentPage = 1;
+
+    const caseStudiesContainer = document.getElementById(
+      "case-studies-container"
+    );
+    const paginationNumbersContainer =
+      document.getElementById("pagination-numbers");
+    const prevPageButton = document.getElementById("prev-page");
+    const nextPageButton = document.getElementById("next-page");
+
+    function renderCaseStudyCards() {
+      caseStudiesContainer.innerHTML = ""; // Clear existing cards
+
+      const startIndex = (currentPage - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+      const caseStudiesToDisplay = allCaseStudies.slice(startIndex, endIndex);
+
+      caseStudiesToDisplay.forEach((caseStudy, index) => {
+        const card = document.createElement("div");
+        card.className =
+          "h-[305px] self-stretch shrink-0 bg-[#fff] rounded-[16px] border-solid border border-[#d0d5dd] relative";
+        card.innerHTML = `
+        <div class="flex w-[1152px] gap-[32px] items-start flex-nowrap relative z-[11] mt-[24px] mr-0 mb-0 ml-[24px]">
+          <div class="w-[257px] h-[257px] shrink-0 bg-[url(${caseStudy.imageUrl})] bg-cover bg-no-repeat rounded-[5.002px] relative overflow-hidden z-[12]">
+          </div>
+          <div class="flex justify-between items-start grow shrink-0 basis-0 flex-nowrap relative z-[13]">
+            <div class="flex w-[585px] h-[257px] flex-col gap-[12px] items-start shrink-0 flex-nowrap relative z-[14]">
+              <span class="flex w-[585px] h-[56px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[24px] font-semibold leading-[28px] text-[#151515] relative text-left z-[15]">
+                ${caseStudy.title}
+              </span>
+              <div class="flex flex-col justify-between items-start self-stretch grow shrink-0 basis-0 flex-nowrap relative z-[16]">
+                <span class="flex w-[585px] h-[66px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[16px] font-medium leading-[22px] text-[#797979] relative text-left z-[17]">
+                  ${caseStudy.description}
+                </span>
+                <div class="w-[554px] h-[40px] shrink-0 relative z-[18]">
+                  <div class="flex w-[554px] h-[40px] gap-[10px] items-center flex-nowrap absolute top-0 left-0 z-[19]">
+                    <div class="flex w-[170px] gap-[3px] items-center shrink-0 flex-nowrap relative z-20">
+                      <span class="h-[40px] shrink-0 basis-auto font-['Inter'] text-[20px] font-normal leading-[40px] text-[#797979] relative text-left whitespace-nowrap z-[21]">
+                        by ${caseStudy.author}
+                      </span>
+                    </div>
+                    <div class="w-[20px] h-px shrink-0 bg-[#797979] relative z-[22]">
+                    </div>
+                    <div class="flex w-[168px] gap-[4px] items-center shrink-0 flex-nowrap relative z-[23]">
+                      <span class="flex w-[168px] h-[19px] justify-center items-center shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[19px] text-[#797979] tracking-[0.32px] relative text-center whitespace-nowrap z-[24]">
+                        ${caseStudy.date}
+                      </span>
+                    </div>
+                    <div class="w-[20px] h-px shrink-0 bg-[#797979] relative z-[25]">
+                    </div>
+                    <div class="flex w-[136px] gap-[4px] items-center shrink-0 flex-nowrap relative z-[26]">
+                      <div class="w-[24px] h-[24px] shrink-0 bg-[url(${caseStudy.clockIcon})] bg-cover bg-no-repeat relative overflow-hidden z-[27]">
+                      </div>
+                      <div class="w-[108px] shrink-0 font-['Syne'] text-[16px] font-semibold leading-[19px] tracking-[0.32px] relative text-center whitespace-nowrap z-[28]">
+                        <span class="font-['Inter'] text-[16px] font-normal leading-[19.2px] text-[#797979] tracking-[0.32px] relative text-center">
+                          ${caseStudy.readTime}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-[65px] h-[65.671px] shrink-0 bg-[#ed7c00] rounded-[32.67px] relative z-[29] cursor-pointer" onclick="window.location.href='${caseStudy.link}'">
+              <div class="w-[28.77px] h-[28.77px] bg-[url(${caseStudy.arrowIcon})] bg-cover bg-no-repeat relative z-30 mt-[18.114px] mr-0 mb-0 ml-[18.115px]">
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+        caseStudiesContainer.appendChild(card);
+
+        // Add gap between cards except for the last one
+        if (index < caseStudiesToDisplay.length - 1) {
+          const gap = document.createElement("div");
+          gap.className = "h-[32px]";
+          caseStudiesContainer.appendChild(gap);
+        }
+      });
+    }
+
+    function renderPaginationNumbers() {
+      paginationNumbersContainer.innerHTML = ""; // Clear existing numbers
+
+      const totalPages = Math.ceil(allCaseStudies.length / cardsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageNumberDiv = document.createElement("div");
+        pageNumberDiv.className = `flex w-[36.571px] h-[36.571px] pt-0 pr-[7.5px] pb-0 pl-[7.5px] flex-col gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6.857px] relative cursor-pointer ${
+          i === currentPage ? "bg-[#ed7c00] rounded-[36.86px]" : ""
+        }`;
+
+        const span = document.createElement("span");
+        span.className = `h-[28px] self-stretch shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[28px] relative text-center whitespace-nowrap ${
+          i === currentPage ? "text-[#fff]" : "text-[#151515]"
+        }`;
+        span.textContent = i;
+
+        pageNumberDiv.appendChild(span);
+        pageNumberDiv.addEventListener("click", () => {
+          currentPage = i;
+          renderCaseStudyCards();
+          renderPaginationNumbers(); // Re-render to update active style
+        });
+        paginationNumbersContainer.appendChild(pageNumberDiv);
+      }
+
+      // Disable/enable navigation buttons
+      prevPageButton.style.opacity = currentPage === 1 ? "0.5" : "1";
+      prevPageButton.style.pointerEvents = currentPage === 1 ? "none" : "auto";
+      nextPageButton.style.opacity = currentPage === totalPages ? "0.5" : "1";
+      nextPageButton.style.pointerEvents =
+        currentPage === totalPages ? "none" : "auto";
+    }
+
+    prevPageButton.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderCaseStudyCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    nextPageButton.addEventListener("click", () => {
+      const totalPages = Math.ceil(allCaseStudies.length / cardsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderCaseStudyCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    // Initial render
+    renderCaseStudyCards();
+    renderPaginationNumbers();
+  });
+</script>
