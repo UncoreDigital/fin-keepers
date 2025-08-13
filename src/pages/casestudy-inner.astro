@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header4 from "../components/Header4.astro";
+import InnerHero from "../components/casestudy/Inner/InnerHero.astro";
+import Info from "../components/casestudy/Inner/InfoResp.astro";
+import ChallengesResp from "../components/casestudy/Inner/ChallengesResp.astro";
+import WhyCase from "../components/casestudy/Inner/WhyCase.astro";
+import Phases from "../components/casestudy/Inner/Phases.astro";
+import Result from "../components/casestudy/Inner/Result.astro";
+import Result2 from "../components/casestudy/Inner/Result2.astro";
+import Result3 from "../components/casestudy/Inner/Result3.astro";
+import Testimonial from "../components/casestudy/Inner/Testimonial.astro";
+import ContactResp from "../components/home/ContactResp.astro";
+import Footer6 from "../components/Footer6.astro";
+---
+
+<Layout>
+  <Header4 />
+  <div class="mt-20">
+    <InnerHero />
+  </div>
+  <Info />
+  <div class="mt-20">
+    <ChallengesResp />
+  </div>
+  <WhyCase />
+  <Phases />
+  <!-- <Result /> -->
+  <!-- <Result2 /> -->
+  <Result3 />
+  <Testimonial />
+  <div class="mt-10">
+    <ContactResp />
+    <div class="relative z-0 -mt-[100px]">
+      <Footer6 />
+    </div>
+  </div>
+</Layout>
