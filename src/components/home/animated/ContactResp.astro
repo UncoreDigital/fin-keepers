@@ -1,5 +1,5 @@
 <div
-  class="main-container w-full min-h-[622px] z-[50] relative mx-auto my-0 px-4 py-10 lg:py-0"
+  class="main-container w-full min-h-[622px] z-[50] relative mx-auto my-0 px-4 py-10 lg:py-0 cta"
 >
   <div
     class="max-w-[1320px] mx-auto h-auto lg:h-[622px] bg-[#106253] rounded-[30px] relative flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 pb-20"
@@ -99,3 +99,27 @@
     </div>
   </div>
 </div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const ctaEl = document.querySelector(".cta");
+    if (!ctaEl) return;
+
+    gsap.from(ctaEl, {
+      opacity: 0,
+      y: 50, // start 50px lower
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ctaEl,
+        start: "top 50%",
+        once: true,
+      },
+    });
+  });
+</script>
