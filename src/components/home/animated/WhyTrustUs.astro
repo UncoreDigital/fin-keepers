@@ -48,42 +48,42 @@
 <script>
   import { gsap } from "gsap";
   import { TextPlugin } from "gsap/TextPlugin";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
   window.addEventListener("DOMContentLoaded", () => {
     const headingEl = document.querySelector(".why-heading");
     const paraEl = document.querySelector(".why-para");
 
-    // Stop if elements are not found
     if (!headingEl || !paraEl) return;
 
-    // Store the original heading text
     const headingText = headingEl.textContent || "";
-
-    // Clear the heading before animation
     headingEl.textContent = "";
 
-    // Create a timeline
-    const tl = gsap.timeline({ delay: 0.3 });
-
-    // Typing effect for heading
-    tl.to(headingEl, {
-      text: headingText,
-      duration: 2,
-      ease: "none",
-    });
-
-    // Paragraph fade + rise effect after heading finishes
-    tl.from(
-      paraEl,
-      {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      "+=0.3"
-    );
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: headingEl.closest("section") || headingEl,
+          start: "top 75%", // adjust when animation starts
+          once: true,
+        },
+        delay: 0.3,
+      })
+      .to(headingEl, {
+        text: headingText,
+        duration: 2,
+        ease: "none",
+      })
+      .from(
+        paraEl,
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "+=0.3"
+      );
   });
 </script>
