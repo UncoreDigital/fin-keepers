@@ -8,13 +8,13 @@
       class="flex w-[570px] flex-col gap-[32px] items-start shrink-0 flex-nowrap relative z-[33]"
     >
       <span
-        class="flex w-[570px] h-[105px] justify-start items-start self-stretch shrink-0 font-inter font-bold text-[36px] font-bold leading-[42px] text-[#fff] relative text-left z-[34]"
+        class="build-title flex w-[570px] h-[105px] justify-start items-start self-stretch shrink-0 font-inter font-bold text-[36px] font-bold leading-[42px] text-[#fff] relative text-left z-[34]"
       >
         Building Resilient<br class="hidden sm:block" /> Financial Strategies
       </span>
       <div class="w-[534.619px] h-[445.667px] shrink-0 relative z-[35]">
         <div
-          class="w-[468.349px] h-[129.227px] relative z-[36] mt-0 mr-0 mb-0 ml-[66.271px]"
+          class="build-card-1 w-[468.349px] h-[129.227px] relative z-[36] mt-0 mr-0 mb-0 ml-[66.271px]"
         >
           <div
             class="group rounded-[124.257px] border-solid border-[0.83px] border-[#eaeaea] absolute top-0 bottom-0 left-0 right-0 z-[37] transition-transform transform hover:scale-[1.03] hover:shadow-lg hover:z-10"
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div
-          class="w-[468.349px] h-[129.227px] relative z-[42] mt-[28.994px] mr-0 mb-0 ml-0"
+          class="build-card-2 w-[468.349px] h-[129.227px] relative z-[42] mt-[28.994px] mr-0 mb-0 ml-0"
         >
           <div
             class="group rounded-[124.257px] border-solid border-[0.83px] border-[#eaeaea] absolute top-0 bottom-0 left-0 right-0 z-[43] transition-transform transform hover:scale-[1.03] hover:shadow-lg hover:z-10"
@@ -76,7 +76,7 @@
           </div>
         </div>
         <div
-          class="w-[468.349px] h-[129.227px] relative z-[48] mt-[28.993px] ml-[66.271px]"
+          class="build-card-3 w-[468.349px] h-[129.227px] relative z-[48] mt-[28.993px] ml-[66.271px]"
         >
           <div
             class="group rounded-[124.257px] border-solid border-[0.83px] border-[#eaeaea] absolute top-0 bottom-0 left-0 right-0 z-[49] transition-transform transform hover:scale-[1.03] hover:shadow-lg hover:z-10"
@@ -112,7 +112,7 @@
       class="w-[569px] h-[370.512px] shrink-0 rounded-[11.027px] relative z-[54]"
     >
       <div
-        class="w-[569px] h-[370.512px] rounded-[11.027px] absolute top-0 left-0 z-[55]"
+        class="build-vector w-[569px] h-[370.512px] rounded-[11.027px] absolute top-0 left-0 z-[55]"
       >
         <img
           src="/img/home/build-img.png"
@@ -123,3 +123,111 @@
     </div>
   </div>
 </div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const titleEl = document.querySelector(".build-title");
+    const card1 = document.querySelector(".build-card-1");
+    const card2 = document.querySelector(".build-card-2");
+    const card3 = document.querySelector(".build-card-3");
+    const vector = document.querySelector(".build-vector");
+
+    // Debug: log found elements
+    console.log({
+      titleEl,
+      card1,
+      card2,
+      card3,
+      vector,
+    });
+
+    // If none of the elements exist, stop script
+    if (![titleEl, card1, card2, card3, vector].some(Boolean)) return;
+
+    // Create a timeline — trigger on section wrapper
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger:
+          titleEl?.closest("section") ||
+          titleEl ||
+          card1 ||
+          card2 ||
+          card3 ||
+          vector,
+        start: "top 80%",
+        once: true,
+      },
+    });
+
+    // Title animation
+    if (titleEl) {
+      tl.from(titleEl, {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    }
+
+    // Card 1
+    if (card1) {
+      tl.from(
+        card1,
+        {
+          x: -80,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "+=0.1"
+      );
+    }
+
+    // Card 2
+    if (card2) {
+      tl.from(
+        card2,
+        {
+          x: 80,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+    }
+
+    // Card 3
+    if (card3) {
+      tl.from(
+        card3,
+        {
+          x: -80,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+    }
+
+    // Vector
+    if (vector) {
+      tl.from(
+        vector,
+        {
+          x: 100,
+          opacity: 0,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+    }
+  });
+</script>
