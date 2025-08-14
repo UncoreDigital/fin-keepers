@@ -159,20 +159,28 @@
   });
 </script> -->
 
+<!-- hover effect 2 -->
+
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
   window.addEventListener("DOMContentLoaded", () => {
-    const steps = document.querySelectorAll<HTMLElement>(".auto-hover"); // add this class to each number circle
+    const steps = document.querySelectorAll(".auto-hover");
     let index = 0;
+    let intervalId = null;
+
+    if (!steps.length) return;
 
     function cycleFill() {
-      // Fill the current step
       const current = steps[index];
       current.classList.add("bg-[#ed7c00]", "text-[#f5f7fa]");
       current.classList.remove("bg-[#f5f7fa]", "text-[#ed7c00]");
 
       index++;
 
-      // When all are filled, reset after short delay
       if (index >= steps.length) {
         setTimeout(() => {
           steps.forEach((step) => {
@@ -184,15 +192,19 @@
       }
     }
 
-    // Initial state: all unfilled
     steps.forEach((step) => {
       step.classList.remove("bg-[#ed7c00]", "text-[#f5f7fa]");
       step.classList.add("bg-[#f5f7fa]", "text-[#ed7c00]");
     });
 
-    // Fill first immediately
-    cycleFill();
-    // Fill next every 1.5 seconds
-    setInterval(cycleFill, 1500);
+    ScrollTrigger.create({
+      trigger: steps[0].closest("section") || steps[0],
+      start: "top 75%",
+      once: true,
+      onEnter: () => {
+        cycleFill();
+        intervalId = setInterval(cycleFill, 1500);
+      },
+    });
   });
 </script>
