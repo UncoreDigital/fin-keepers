@@ -2,13 +2,14 @@
 import HowItWorks from "./HowItWorks.astro";
 import HowItWorksDesk from "./HowItWorksDesk.astro";
 import Accordion from "./Accordion.astro";
+import WhyTrustUs from "./animated/WhyTrustUs.astro";
 import Partner from "./Partner.astro";
 import Wcs2 from "../Wcs2.astro";
 import Accordion2 from "./Accordian2.astro";
 import Accordion3 from "./Accordian3.astro";
 import Building from "./Building.astro";
 import BuildDesk from "./BuildDesk.astro";
-import BuildDesk2 from "./BuildDesk2.astro";
+import BuildDesk2 from "./animated/BuildDesk2.astro";
 
 import OurCoreServices from "./OurCoreServices.astro";
 ---
@@ -84,53 +85,7 @@ import OurCoreServices from "./OurCoreServices.astro";
 
   <Partner />
 
-  <!-- Full-width section with background -->
-  <div class="w-full bg-[#f5f7fa] py-[80px] px-6 lg:px-[120px] relative z-[22]">
-    <!-- Centered content inside -->
-    <div
-      class="flex flex-col lg:flex-row max-w-[1440px] mx-auto gap-12 items-center justify-around"
-    >
-      <!-- Image section -->
-      <div class="relative w-full max-w-[576px] h-auto">
-        <!-- <div
-          class="absolute top-[118px] left-1/2 transform -translate-x-1/2 z-10 w-[50px] h-[50px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/VnKF0fMc22.png')] bg-cover bg-no-repeat"
-        >
-        </div> -->
-        <div
-          class="absolute top-[118px] left-1/2 transform -translate-x-1/2 z-10
-         w-[50px] h-[50px] rounded-full
-         bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/VnKF0fMc22.png')] bg-cover bg-no-repeat
-         transition-all duration-300 hover:ring-2 hover:ring-white hover:ring-offset-1 hover:ring-offset-transparent"
-        >
-        </div>
-
-        <div
-          class="w-full h-[300px] rounded-[21px] bg-[rgba(0,0,0,0.12)] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/mjsskrpPBj.png')] bg-cover bg-no-repeat relative z-0"
-        >
-        </div>
-      </div>
-
-      <!-- Text section -->
-      <div class="flex flex-col gap-6 w-full max-w-[576px] z-10">
-        <h2
-          class="text-[28px] sm:text-[32px] lg:text-[36px] font-bold leading-[1.3] text-[#04092a]"
-        >
-          Why Businesses Trust Us
-        </h2>
-        <p
-          class="text-[16px] sm:text-[17px] lg:text-[18px] leading-[27px] text-[#5c667a]"
-        >
-          <span class="font-bold">Trusted by Leaders. Backed by Results.</span
-          ><br />Our clients choose us to transform financial chaos into
-          clarity. With accurate bookkeeping, insightful financial analysis, and
-          real-time dashboards, we don’t just manage numbers, we empower
-          decisions. Our team pairs expert financial support with automation to
-          deliver scalable, compliant, and growth-ready systems. From startups
-          to scaling enterprises, we deliver confidence at every step.
-        </p>
-      </div>
-    </div>
-  </div>
+  <WhyTrustUs />
 
   <!-- <div
     class="flex w-full pt-[80px] pr-[120px] pb-[80px] pl-[120px] gap-[24px] items-start flex-nowrap bg-[#106253] relative z-[31] mt-0 mr-0 mb-0 ml-0 justify-center"
