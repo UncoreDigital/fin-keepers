@@ -1,6 +1,6 @@
 ---
-import CoreCard2 from "./CoreCard2.astro";
-import CoreCard3 from "./CoreCard3.astro";
+import CoreCard2 from "../CoreCard2.astro";
+import CoreCard3 from "../CoreCard3.astro";
 ---
 
 <div
@@ -24,8 +24,13 @@ import CoreCard3 from "./CoreCard3.astro";
     <!-- Row 1 -->
     <div class="flex flex-col lg:flex-row gap-[25px] w-full">
       <!-- Bookkeeping -->
-      <CoreCard2 class="core-card" />
 
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/Rrb4n8qbbe.png"
+        title="Bookkeeping"
+        description="Day-to-day transaction tracking to ensure your books are audit-ready, accurate, and up to date."
+        class="core-card"
+      />
       <!-- Financial Modeling -->
       <CoreCard3
         iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/h2o3xiyb1w.png"
@@ -85,3 +90,29 @@ import CoreCard3 from "./CoreCard3.astro";
     </a>
   </div>
 </div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll<HTMLElement>(".core-card"); // ✅ HTMLElement type
+
+    if (!cards.length) return;
+
+    // Fade-in animation on scroll
+    gsap.from(cards, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: cards[0].closest("section") || cards[0],
+        start: "top 85%",
+        once: true,
+      },
+    });
+  });
+</script>
