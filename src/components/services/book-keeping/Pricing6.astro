@@ -10,50 +10,12 @@
   }
 
   /* Hover effect for premium card */
-  .premium-card:hover {
-    background-color: #151515;
+  .pricing-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-
-  .premium-card:hover .premium-text {
-    color: white;
-  }
-
-  .premium-card:hover .premium-button {
-    background-color: #ed7c00;
-    color: white;
-    border-color: #ed7c00;
-  }
-
-  .premium-card:hover .premium-badge {
-    display: flex;
-  }
-
-  .premium-card:hover .premium-check {
-    filter: brightness(0) invert(1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 
   /* Smooth transitions */
-  .premium-card {
-    transition: all 0.3s ease;
-  }
-
-  .premium-text {
-    transition: color 0.3s ease;
-  }
-
-  .premium-button {
-    transition: all 0.3s ease;
-  }
-
-  .premium-badge {
-    transition: opacity 0.3s ease;
-  }
-
-  .premium-check {
-    transition: filter 0.3s ease;
-  }
 </style>
 
 <div class="main-container bg-white py-16 px-4 sm:px-6 lg:px-20 mx-auto">
@@ -105,7 +67,7 @@
       <div class="block lg:hidden space-y-8">
         <!-- Card 1: Monthly Retainers - Mobile -->
         <div
-          class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+          class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-300 hover:transform hover:-translate-y-2"
         >
           <div class="flex items-baseline gap-3 mb-6">
             <span
@@ -194,7 +156,7 @@
 
         <!-- Card 2: Project-Based - Mobile -->
         <div
-          class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+          class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-300 hover:transform hover:-translate-y-2"
         >
           <div class="flex items-baseline gap-3 mb-6">
             <span
@@ -283,57 +245,37 @@
 
         <!-- Card 3: Premium - Mobile -->
         <div
-          class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 relative premium-card"
+          class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-300 hover:transform hover:-translate-y-2"
         >
-          <!-- Most Popular Badge -->
-          <div
-            class="w-[154.963px] h-[34.578px] bg-[#fdf2e8] rounded-[17.289px] justify-center items-center mx-auto mb-6 premium-badge hidden"
-          >
-            <span
-              class="font-['Inter'] text-[14px] font-medium leading-[16.943px] text-[#ed7c00] tracking-[1.07px]"
-            >
-              MOST POPULAR
-            </span>
-          </div>
-
           <div class="flex items-baseline gap-3 mb-6">
             <span
-              class="text-[45px] font-bold leading-[58.911px] premium-text text-[#151515]"
-              >$</span
-            >
-            <span
               id="premium-price-mobile"
-              class="text-[45px] font-bold leading-[58.911px] premium-text text-[#151515]"
-              >500</span
+              class="text-[45px] font-bold leading-[58.911px] text-[#151515]"
+              >$500</span
             >
             <span
               id="premium-period-mobile"
-              class="text-[20px] font-medium leading-[24px] premium-text text-[#797979]"
+              class="text-[20px] font-medium leading-[24px] text-[#797979]"
               >/month</span
             >
           </div>
 
           <div class="mb-8">
             <h3
-              class="text-[24px] font-medium leading-[29.045px] premium-text text-[#151515] mb-2"
+              class="text-[24px] font-medium leading-[29.045px] text-[#151515] mb-2"
             >
-              Multi-Entity Businesses
+              Premium Package
             </h3>
             <p
-              class="text-[18px] font-medium leading-[21.784px] premium-text text-[#797979]"
+              class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
             >
               Lorem Ipsum is simply text
             </p>
           </div>
 
-          <!-- Features -->
           <div class="space-y-3 mb-8">
             <div class="flex items-center">
-              <svg
-                class="w-6 h-6 mr-4 premium-check"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+              <svg class="w-6 h-6 mr-4" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
                 <path
                   d="m9 12 2 2 4-4"
@@ -343,16 +285,12 @@
                   stroke-linejoin="round"></path>
               </svg>
               <span
-                class="text-[18px] font-medium leading-[21.784px] premium-text text-[#797979]"
-                >Amazing feature one</span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Premium feature one</span
               >
             </div>
             <div class="flex items-center">
-              <svg
-                class="w-6 h-6 mr-4 premium-check"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+              <svg class="w-6 h-6 mr-4" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
                 <path
                   d="m9 12 2 2 4-4"
@@ -362,16 +300,12 @@
                   stroke-linejoin="round"></path>
               </svg>
               <span
-                class="text-[18px] font-medium leading-[21.784px] premium-text text-[#797979]"
-                >Wonderful feature two</span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Premium feature two</span
               >
             </div>
             <div class="flex items-center">
-              <svg
-                class="w-6 h-6 mr-4 premium-check"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+              <svg class="w-6 h-6 mr-4" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
                 <path
                   d="m9 12 2 2 4-4"
@@ -381,55 +315,17 @@
                   stroke-linejoin="round"></path>
               </svg>
               <span
-                class="text-[18px] font-medium leading-[21.784px] premium-text text-[#797979]"
-                >Priceless feature three</span
-              >
-            </div>
-            <div class="flex items-center">
-              <svg
-                class="w-6 h-6 mr-4 premium-check"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                <path
-                  d="m9 12 2 2 4-4"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-              <span
-                class="text-[18px] font-medium leading-[21.784px] premium-text text-[#797979]"
-                >Splended feature four</span
-              >
-            </div>
-            <div class="flex items-center">
-              <svg
-                class="w-6 h-6 mr-4 premium-check"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                <path
-                  d="m9 12 2 2 4-4"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-              <span
-                class="text-[18px] font-medium leading-[21.784px] premium-text text-[#797979]"
-                >Delightful feature five</span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Premium feature three</span
               >
             </div>
           </div>
 
           <button
-            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00] premium-button"
+            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00] transition-all duration-300 hover:bg-[#ed7c00] hover:text-white"
           >
             <span
-              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00]"
+              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] hover:text-white transition-colors duration-300"
               >Call</span
             >
           </button>
@@ -440,214 +336,141 @@
       <div class="hidden lg:block w-[1200px] h-[631.376px] mx-auto relative">
         <!-- Background -->
         <div
-          class="w-[1200px] h-[598.079px] bg-[#f5f7fa] rounded-[33.298px] absolute top-[33.297px] left-0 z-10"
+          class="w-[1120px] h-[598.079px] bg-[#f5f7fa] rounded-[33.298px] absolute top-[33.297px] left-0 z-10"
         >
         </div>
 
         <!-- Premium Card (Right) - Now matches other cards with hover effect -->
+        <!-- Premium Card (Right) -->
         <div
-          class="w-[373.959px] h-[605.763px] rounded-[33.298px] absolute top-[84px] left-[768.41px] z-[33] premium-card bg-[#f5f7fa]"
+          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[767px] z-[81] transition-all duration-300 hover:transform hover:-translate-y-2"
         >
           <div
-            class="flex w-[373.959px] h-[605.763px] pt-[25.614px] pr-[38.42px] pb-[25.614px] pl-[38.42px] flex-col gap-[25.614px] items-end flex-nowrap rounded-[33.298px] relative"
+            class="w-[204.909px] h-[58.911px] relative overflow-hidden z-[82]"
           >
-            <!-- Most Popular Badge - Hidden by default, shown on hover -->
             <div
-              class="w-[154.963px] h-[34.578px] shrink-0 relative overflow-hidden z-[35] premium-badge hidden"
+              class="flex w-[199px] gap-[12px] items-center flex-nowrap relative z-[83]"
             >
-              <div
-                class="w-full h-full bg-[#fdf2e8] rounded-[17.289px] absolute top-0 left-0 z-[36]"
-              >
-              </div>
               <span
-                class="flex w-[80.02%] h-[17px] justify-center items-start font-['Inter'] text-[14px] font-medium leading-[16.943px] text-[#ed7c00] tracking-[1.07px] absolute top-[calc(50%-8.32px)] left-[9.35%] text-center whitespace-nowrap z-[37]"
+                id="premium-price"
+                class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] text-[#151515] relative text-left whitespace-nowrap z-[84]"
+                >$500</span
               >
-                MOST POPULAR
-              </span>
-            </div>
-
-            <div
-              class="flex w-[297.118px] flex-col gap-[29.456px] items-start shrink-0 flex-nowrap relative z-[38]"
-            >
-              <div
-                class="flex w-[297.118px] flex-col gap-[25.614px] items-start shrink-0 flex-nowrap relative z-[39]"
+              <span
+                id="premium-period"
+                class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[20px] font-medium leading-[24px] text-[#797979] relative text-left whitespace-nowrap z-[85]"
+                >/month</span
               >
-                <div
-                  class="h-[58.911px] shrink-0 relative overflow-hidden z-40"
-                >
-                  <div
-                    class="flex gap-[12px] items-center flex-nowrap relative z-[41]"
-                  >
-                    <span
-                      class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] premium-text text-[#151515] relative text-left whitespace-nowrap z-[42]"
-                      >$</span
-                    >
-                    <span
-                      id="premium-price"
-                      class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] premium-text text-[#151515] relative text-left whitespace-nowrap z-[42]"
-                      >500</span
-                    >
-                    <span
-                      id="premium-period"
-                      class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[20px] font-medium leading-[24px] premium-text text-[#797979] relative text-left whitespace-nowrap z-[43]"
-                      >/month</span
-                    >
-                  </div>
-                </div>
-
-                <div
-                  class="w-[297.118px] h-[112.7px] shrink-0 text-[0px] relative overflow-hidden z-[44]"
-                >
-                  <span
-                    class="flex w-[254px] h-[58px] justify-start items-start font-['Inter'] text-[24px] font-medium leading-[29.045px] premium-text text-[#151515] relative text-left z-[45] mt-[-0.33px] mr-0 mb-0 ml-[0.17px]"
-                  >
-                    Multi-Entity Businesses
-                  </span>
-                  <span
-                    class="block h-[22px] font-['Inter'] text-[18px] font-medium leading-[21.784px] premium-text text-[#797979] relative text-left whitespace-nowrap z-[46] mt-[3.804px] mr-0 mb-0 ml-0"
-                  >
-                    Lorem Ipsum is simply text
-                  </span>
-                </div>
-
-                <div
-                  class="flex w-[265.101px] flex-col gap-[12.807px] items-start shrink-0 flex-nowrap relative z-[47]"
-                >
-                  <div
-                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[48]"
-                  >
-                    <span
-                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] premium-text text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-50"
-                    >
-                      Amazing feature one
-                    </span>
-                    <svg
-                      class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-0 z-[49] premium-check"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                      <path
-                        d="m9 12 2 2 4-4"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    </svg>
-                  </div>
-                  <div
-                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[51]"
-                  >
-                    <span
-                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] premium-text text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[53]"
-                    >
-                      Wonderful feature two
-                    </span>
-                    <svg
-                      class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-0 z-[52] premium-check"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                      <path
-                        d="m9 12 2 2 4-4"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    </svg>
-                  </div>
-                  <div
-                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[54]"
-                  >
-                    <span
-                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] premium-text text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[56]"
-                    >
-                      Priceless feature three
-                    </span>
-                    <svg
-                      class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-0 z-[55] premium-check"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                      <path
-                        d="m9 12 2 2 4-4"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    </svg>
-                  </div>
-                  <div
-                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[57]"
-                  >
-                    <span
-                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] premium-text text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[59]"
-                    >
-                      Splended feature four
-                    </span>
-                    <svg
-                      class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-0 z-[58] premium-check"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                      <path
-                        d="m9 12 2 2 4-4"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    </svg>
-                  </div>
-                  <div
-                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[60]"
-                  >
-                    <span
-                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] premium-text text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[62]"
-                    >
-                      Delightful feature five
-                    </span>
-                    <svg
-                      class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-0 z-[61] premium-check"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
-                      <path
-                        d="m9 12 2 2 4-4"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <a href="#">
-                <div
-                  class="flex w-[265.1px] h-[50px] px-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[8px] border border-[#ed7c00] relative z-[63] transition-colors duration-300 cursor-pointer premium-button"
-                >
-                  <div
-                    class="flex w-[34px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[64]"
-                  >
-                    <span
-                      class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] relative text-left whitespace-nowrap z-[65]"
-                    >
-                      Call
-                    </span>
-                  </div>
-                </div>
-              </a>
             </div>
           </div>
+          <div
+            class="flex w-[265px] h-[88px] flex-col gap-[8px] items-start flex-nowrap mt-[56px] z-[66]"
+          >
+            <div class="w-[265px] h-[88px] shrink-0 text-[0px] relative z-[67]">
+              <span
+                class="flex w-[265px] h-[58px] justify-start items-start font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#151515] relative text-left z-[68]"
+              >
+                Premium Package
+              </span>
+              <span
+                class="block h-[22px] font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] relative text-left whitespace-nowrap z-[69] mt-[8px]"
+              >
+                Lorem Ipsum is simply text
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex w-[265.101px] h-[106.297px] flex-col gap-[12.807px] items-start flex-nowrap mt-[50px] z-[70]"
+          >
+            <div class="w-[265.101px] h-[106.297px] shrink-0 relative z-[71]">
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[72]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[74]"
+                >
+                  Premium feature one
+                </span>
+                <svg
+                  class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-[0%] z-[73]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
+                  <path
+                    d="m9 12 2 2 4-4"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[75] mt-[12.807px]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[77]"
+                >
+                  Premium feature two
+                </span>
+                <svg
+                  class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-[0%] z-[76]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
+                  <path
+                    d="m9 12 2 2 4-4"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[78] mt-[12.807px]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[80]"
+                >
+                  Premium feature three
+                </span>
+                <svg
+                  class="w-[9.66%] h-[95.24%] absolute top-[4.76%] left-[0%] z-[79]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <circle cx="12" cy="12" r="10" fill="#ed7c00"></circle>
+                  <path
+                    d="m9 12 2 2 4-4"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div
+              class="flex w-[265.1px] h-[50px] px-[24px] flex-col gap-[8px] justify-center items-center flex-nowrap rounded-[8px] border border-[#ed7c00] mt-[80px] z-[86] transition-colors duration-300 hover:bg-[#ed7c00] group"
+            >
+              <div
+                class="flex w-[34px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[87]"
+              >
+                <span
+                  class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] group-hover:text-white relative text-left whitespace-nowrap z-[88]"
+                >
+                  Call
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
 
         <!-- Standard Card (Center) -->
         <div
-          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[427px] z-[81] transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[427px] z-[81] transition-all duration-300 hover:transform hover:-translate-y-2"
         >
           <div
             class="w-[204.909px] h-[58.911px] relative overflow-hidden z-[82]"
@@ -774,7 +597,7 @@
 
         <!-- Basic Card (Left) -->
         <div
-          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[87px] z-[81] transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg"
+          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[87px] z-[81] transition-all duration-300 hover:transform hover:-translate-y-2"
         >
           <div
             class="w-[204.909px] h-[58.911px] relative overflow-hidden z-[82]"
@@ -915,8 +738,8 @@
       yearly: { price: "$122", period: "/year" }, // 15% discount: 12 * 12 * 0.85
     },
     premium: {
-      monthly: { price: "500", period: "/month" },
-      yearly: { price: "5100", period: "/year" }, // 15% discount: 500 * 12 * 0.85
+      monthly: { price: "$500", period: "/month" },
+      yearly: { price: "$5100", period: "/year" }, // 15% discount: 500 * 12 * 0.85
     },
   };
 
