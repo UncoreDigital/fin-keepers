@@ -213,55 +213,74 @@
         const card = document.createElement("div");
         card.className =
           "min-h-[250px] sm:min-h-[280px] lg:h-[305px] self-stretch shrink-0 bg-[#fff] rounded-[12px] sm:rounded-[16px] border-solid border border-[#d0d5dd] relative overflow-hidden";
+        //
         card.innerHTML = `
-        <div class="flex w-full flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-[32px] items-start flex-nowrap relative p-4 sm:p-6 lg:p-[24px]">
-          <div class="w-full lg:w-[257px] h-[200px] sm:h-[220px] lg:h-[257px] shrink-0 bg-[url(${caseStudy.imageUrl})] bg-cover bg-no-repeat bg-center rounded-[8px] lg:rounded-[5.002px] relative overflow-hidden">
-          </div>
-          <div class="flex flex-col lg:flex-row justify-between items-start grow shrink-0 basis-0 flex-nowrap relative w-full gap-4 lg:gap-0">
-            <div class="flex w-full lg:w-[585px] flex-col gap-3 sm:gap-4 lg:gap-[12px] items-start shrink-0 flex-nowrap relative">
-              <h3 class="flex justify-start items-start self-stretch shrink-0 font-['Inter'] text-[18px] sm:text-[20px] lg:text-[24px] font-semibold leading-[22px] sm:leading-[24px] lg:leading-[28px] text-[#151515] relative text-left">
-                ${caseStudy.title}
-              </h3>
-              <div class="flex flex-col justify-between items-start self-stretch grow shrink-0 basis-0 flex-nowrap relative">
-                <p class="flex justify-start items-start self-stretch shrink-0 font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] font-medium leading-[20px] sm:leading-[21px] lg:leading-[22px] text-[#797979] relative text-left mb-4 lg:mb-0">
-                  ${caseStudy.description}
-                </p>
-                <div class="w-full lg:w-[554px] shrink-0 relative">
-                  <div class="flex w-full flex-col sm:flex-row gap-2 sm:gap-[10px] items-start sm:items-center flex-wrap">
-                    <div class="flex gap-[3px] items-center shrink-0 flex-nowrap relative">
-                      <span class="shrink-0 basis-auto font-['Inter'] text-[16px] sm:text-[18px] lg:text-[20px] font-normal leading-[20px] sm:leading-[24px] lg:leading-[40px] text-[#797979] relative text-left whitespace-nowrap">
-                        by ${caseStudy.author}
-                      </span>
-                    </div>
-                    <div class="hidden sm:block w-[20px] h-px shrink-0 bg-[#797979] relative">
-                    </div>
-                    <div class="flex gap-[4px] items-center shrink-0 flex-nowrap relative">
-                      <span class="flex justify-center items-center shrink-0 basis-auto font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] font-normal leading-[18px] sm:leading-[18px] lg:leading-[19px] text-[#797979] tracking-[0.32px] relative text-center whitespace-nowrap">
-                        ${caseStudy.date}
-                      </span>
-                    </div>
-                    <div class="hidden sm:block w-[20px] h-px shrink-0 bg-[#797979] relative">
-                    </div>
-                    <div class="flex gap-[4px] items-center shrink-0 flex-nowrap relative">
-                      <div class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] shrink-0 bg-[url(${caseStudy.clockIcon})] bg-cover bg-no-repeat relative overflow-hidden">
-                      </div>
-                      <div class="shrink-0 font-['Syne'] text-[14px] sm:text-[15px] lg:text-[16px] font-semibold leading-[17px] sm:leading-[18px] lg:leading-[19px] tracking-[0.32px] relative text-center whitespace-nowrap">
-                        <span class="font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] font-normal leading-[17px] sm:leading-[18px] lg:leading-[19.2px] text-[#797979] tracking-[0.32px] relative text-center">
-                          ${caseStudy.readTime}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div class="flex w-full flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-[32px] items-start relative p-4 sm:p-6 lg:p-[24px]">
+    <!-- Left Image -->
+    <div class="w-full lg:w-[257px] h-[200px] sm:h-[220px] lg:h-[257px] shrink-0 bg-[url(${caseStudy.imageUrl})] bg-cover bg-no-repeat bg-center rounded-[8px] lg:rounded-[5.002px] relative overflow-hidden">
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex flex-col lg:flex-row justify-between items-start grow shrink-0 basis-0 relative w-full gap-4 lg:gap-0">
+      <!-- Text Column -->
+      <div class="flex w-full lg:w-[585px] flex-col justify-between h-full gap-3 sm:gap-4 lg:gap-[12px] items-start relative">
+        
+        <!-- Title -->
+        <h3 class="flex justify-start items-start self-stretch font-['Inter'] text-[18px] sm:text-[20px] lg:text-[24px] font-semibold leading-[22px] sm:leading-[24px] lg:leading-[28px] text-[#151515] text-left">
+          ${caseStudy.title}
+        </h3>
+
+        <!-- Description -->
+        <p class="flex justify-start items-start self-stretch font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] font-medium leading-[20px] sm:leading-[21px] lg:leading-[22px] text-[#797979] text-left">
+          ${caseStudy.description}
+        </p>
+
+        <!-- Meta Info at Bottom -->
+        <div class="mt-auto sm:mt-[50px] w-full pt-5 sm:text-nowrap relative">
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-[10px] items-start sm:items-center flex-wrap">
+            
+            <!-- Author -->
+            <div class="flex gap-[3px] items-center">
+              <span class="font-['Inter'] text-[16px] sm:text-[18px] lg:text-[20px] text-[#797979] whitespace-nowrap">
+                by ${caseStudy.author}
+              </span>
             </div>
-            <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] lg:w-[65px] lg:h-[65.671px] shrink-0 bg-[#ed7c00] rounded-[25px] sm:rounded-[30px] lg:rounded-[32.67px] relative cursor-pointer hover:bg-[#d16a00] transition-colors flex items-center justify-center" onclick="window.location.href='${caseStudy.link}'">
-              <div class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] lg:w-[28.77px] lg:h-[28.77px] bg-[url(${caseStudy.arrowIcon})] bg-cover bg-no-repeat relative">
-              </div>
+
+            <!-- Divider -->
+            <div class="hidden sm:block w-[20px] h-px bg-[#797979]"></div>
+
+            <!-- Date -->
+            <div class="flex gap-[4px] items-center">
+              <span class="font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] text-[#797979] whitespace-nowrap">
+                ${caseStudy.date}
+              </span>
+            </div>
+
+            <!-- Divider -->
+            <div class="hidden sm:block w-[20px] h-px bg-[#797979]"></div>
+
+            <!-- Read Time -->
+            <div class="flex gap-[4px] items-center">
+              <div class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] shrink-0 bg-[url(${caseStudy.clockIcon})] bg-cover bg-no-repeat"></div>
+              <span class="font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] text-[#797979] whitespace-nowrap">
+                ${caseStudy.readTime}
+              </span>
             </div>
           </div>
         </div>
-      `;
+      </div>
+
+      <!-- Arrow Button -->
+      <div
+        class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] lg:w-[65px] lg:h-[65.671px] shrink-0 bg-[#ed7c00] rounded-full cursor-pointer hover:bg-[#d16a00] transition-colors flex items-center justify-center"
+        onclick="window.location.href='${caseStudy.link}'"
+      >
+        <div class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] lg:w-[28.77px] lg:h-[28.77px] bg-[url(${caseStudy.arrowIcon})] bg-cover bg-no-repeat"></div>
+      </div>
+    </div>
+  </div>
+`;
+
         caseStudiesContainer.appendChild(card);
       });
     }
