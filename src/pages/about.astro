@@ -1,69 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header3 from "../components/Header3.astro";
+import Hero from "../components/about2/Hero.astro";
+import Hero2 from "../components/about2/Hero2.astro";
+import Vision from "../components/about2/Vision.astro";
+import Vision2 from "../components/about2/Vision2.astro";
+import Vision3 from "../components/about2/Vision3.astro";
+import Core from "../components/about2/Core.astro";
+import Core2 from "../components/about2/Core2.astro";
+import Core3 from "../components/about2/Core3.astro";
+import Team from "../components/about2/Team.astro";
+import TeamResp from "../components/about2/TeamResp2.astro";
+import BlogResp from "../components/about2/BlogResp.astro";
+import Cta from "../components/home/animated/ContactResp.astro";
 import Footer4Resp from "../components/Footer4Resp.astro";
-
-import HeroAbout2 from "../components/about/HeroAbout2.astro";
-import HeroResp from "../components/about/HeroResp.astro";
-
-import Vision from "../components/about/Vision.astro";
-
-import Vision2 from "../components/about/Vision2.astro";
-
-import Vision3 from "../components/about/Vision3.astro";
-
-import Vision4 from "../components/about/Vision4.astro";
-
-import Vision5 from "../components/about/Vision5.astro";
-
-import CoreValues from "../components/about/CoreValues.astro";
-import CoreResp from "../components/about/CoreResp.astro";
-
-import TeamResp from "../components/about/TeamResp.astro";
-import Cta from "../components/about/Cta.astro";
-
-import Blogs from "../components/about/Blogs.astro";
+import Footer6 from "../components/Footer6.astro";
 import Header4 from "../components/Header4.astro";
+import TeamResp2 from "../components/about2/TeamResp2.astro";
 ---
 
 <Layout>
   <Header4 />
-  <div class="bg-[#213d3c] w-full">
-    <!-- Desktop version only (visible from lg and up) -->
-    <div class="hidden lg:block">
-      <HeroAbout2 />
-    </div>
-
-    <!-- Mobile/Tablet version only (visible below lg) -->
-    <div class="block lg:hidden">
-      <HeroResp />
-    </div>
-  </div>
-  <div class="p-10">
-    <!-- <Vision /> -->
-    <!-- <Vision2 /> -->
-    <!-- <Vision3 /> -->
-
-    <!-- <Vision4 /> -->
-    <Vision5 />
-  </div>
-
-  <!-- <div class="bg-[#106253] w-full">
-    <CoreValues />
-    <CoreResp />
-  </div> -->
+  <!-- <Hero /> -->
+  <div class="mt-20"><Hero2 /></div>
+  <!-- <Vision /> -->
+  <Vision3 />
+  <!-- <Core /> -->
+  <!-- <Core2 /> -->
+  <Core3 />
+  <!-- <TeamResp2 /> -->
   <TeamResp />
-  <Blogs />
-
+  <!-- <Team /> -->
+  <BlogResp />
   <div class="mt-10">
-    <!-- <Contact /> -->
     <Cta />
-    <div class="relative z-0 -mt-[80px]">
-      <!-- <Footer /> -->
-      <!-- <FooterResp /> -->
-      <!-- <FooterResp2 /> -->
-      <!-- <FooterResp3 /> -->
-      <Footer4Resp />
+    <div class="relative z-0 -mt-[120px]">
+      <Footer6 />
     </div>
   </div>
 </Layout>
