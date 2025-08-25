@@ -16,7 +16,7 @@
     <div class="flex flex-col gap-[20px] w-full lg:w-1/2">
       <!-- Card 1 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10 transition-all duration-700"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -44,7 +44,7 @@
 
       <!-- Card 2 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10 transition-all duration-700"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -70,7 +70,7 @@
 
       <!-- Card 3 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10 transition-all duration-700"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -99,7 +99,7 @@
     <div class="flex flex-col gap-[20px] w-full lg:w-1/2">
       <!-- Card 4 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10 transition-all duration-700"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -125,7 +125,7 @@
 
       <!-- Card 5 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10 transition-all duration-700"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -151,7 +151,7 @@
 
       <!-- Card 6 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10 transition-all duration-700"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -179,6 +179,7 @@
 </div>
 
 <script>
+  // Accordion toggle
   document.querySelectorAll("[data-accordion-toggle]").forEach((btn) => {
     btn.addEventListener("mouseenter", () => {
       const card = btn.closest(".accordion-card");
@@ -201,10 +202,27 @@
 
       if (!isOpen) {
         content.classList.remove("hidden");
-        content.classList.remove("bg-[#f5f7fa]");
         btn.classList.add("!bg-[#ed7c00]", "text-white");
         btn.textContent = "–";
       }
     });
+  });
+
+  // Scroll animation
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-10");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".accordion-card").forEach((card) => {
+    observer.observe(card);
   });
 </script>

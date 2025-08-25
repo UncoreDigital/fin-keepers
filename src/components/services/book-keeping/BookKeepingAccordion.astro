@@ -1,20 +1,24 @@
+---
+import { onMount } from "solid-js"; // Astro supports client:load hydration
+---
+
 <div
   class="flex w-full pt-[80px] pb-[80px] px-[20px] md:px-[60px] lg:px-[120px] flex-col gap-[32px] items-center bg-[#fff]"
 >
   <span
-    class="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-[#28241f] text-center w-full"
+    class="section-title text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-[#28241f] text-center w-full opacity-0 translate-y-10"
   >
     Finance Consulting: What You Need to Know
   </span>
 
   <div
-    class="flex flex-col lg:flex-row gap-[32px] w-full max-w-[1184px] items-start"
+    class="section-wrapper flex flex-col lg:flex-row gap-[32px] w-full max-w-[1184px] items-start opacity-0 translate-y-10"
   >
     <!-- Left Column -->
     <div class="flex flex-col gap-[20px] w-full lg:w-1/2">
       <!-- Card 1 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -42,7 +46,7 @@
 
       <!-- Card 2 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -68,7 +72,7 @@
 
       <!-- Card 3 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -97,7 +101,7 @@
     <div class="flex flex-col gap-[20px] w-full lg:w-1/2">
       <!-- Card 4 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -123,7 +127,7 @@
 
       <!-- Card 5 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -149,7 +153,7 @@
 
       <!-- Card 6 -->
       <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px]"
+        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
       >
         <div class="flex justify-between items-center w-full">
           <span
@@ -177,6 +181,11 @@
 </div>
 
 <script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Accordion open/close
   document.querySelectorAll("[data-accordion-toggle]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".accordion-card");
@@ -199,10 +208,25 @@
 
       if (!isOpen) {
         content.classList.remove("hidden");
-        content.classList.remove("bg-[#f5f7fa]");
         btn.classList.add("!bg-[#ed7c00]", "text-white");
         btn.textContent = "–";
       }
     });
   });
+
+  // Scroll animations
+  gsap.utils.toArray(".section-title, .section-wrapper, .accordion-card").forEach(
+    (el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: i * 0.15,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+        },
+      });
+    }
+  );
 </script>

@@ -1,6 +1,24 @@
 ---
 import WhyImage from "../../../assets/services/book-keeping/why.png";
 ---
+
+<style>
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+</style>
+
 <div
   class="main-container flex flex-col lg:flex-row w-full max-w-[1440px] px-4 sm:px-6 lg:px-[120px] pt-[80px] pb-[80px] gap-[24px] justify-center items-start mx-auto relative"
 >
@@ -10,13 +28,14 @@ import WhyImage from "../../../assets/services/book-keeping/why.png";
     <div class="flex flex-col gap-[32px] items-center grow shrink-0 basis-0">
       <div class="flex flex-col gap-[12px] justify-center items-center w-full">
         <span
-          class="w-full text-[28px] sm:text-[36px] font-bold leading-[1.2] text-[#04092a] text-center sm:text-left"
+          class="animate-on-scroll w-full text-[28px] sm:text-[36px] font-bold leading-[1.2] text-[#04092a] text-center sm:text-left opacity-0"
         >
           Why Bookkeeping Matters
         </span>
+
         <div class="flex flex-col gap-[40px] sm:gap-[80px] items-center w-full">
           <span
-            class="w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-center sm:text-left"
+            class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-center sm:text-left opacity-0"
           >
             At FinnKeepers, we offer reasonably priced bookkeeping services
             designed to streamline your financial processes and give you a clear understanding of your business
@@ -27,47 +46,45 @@ import WhyImage from "../../../assets/services/book-keeping/why.png";
             class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
           >
             <!-- Image -->
-            <!-- <div
-              class="w-full lg:w-[576px] h-[300px] sm:h-[400px] lg:h-[594px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/XoMOO2CPYw.png)] bg-cover bg-no-repeat rounded-[9.174px]"
-            >
-            </div> -->
- <img src={WhyImage.src} class="w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-[594px] rounded-[9.174px]" />
+            <img src={WhyImage.src} class="animate-on-scroll w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-[594px] rounded-[9.174px] opacity-0" />
+
             <!-- Right Text Content -->
             <div
               class="flex flex-col gap-[32px] lg:gap-[40px] items-start w-full lg:w-[576px]"
             >
-              <!-- Reusable Info Blocks -->
               {
                 [
                   {
                     icon: "/img/services/book-keeping/true.svg",
                     title: "Daily financial entries",
-                    desc: "Lorem Ipsum is simply dummy text of the printing and typeset",
+                    desc: "Lorem Ipsum is simply dummy text of the printing and typeset",
                   },
                   {
                     icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/SpH44HYd49.png",
                     title: "Bank and credit card reconciliations",
-                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
                   },
                   {
                     icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/mk48MSUTRM.png",
                     title: "Expense categorization",
-                    desc: "Lorem Ipsum is simply dummy text of the printing",
+                    desc: "Lorem Ipsum is simply dummy text of the printing",
                   },
                   {
                     icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/9eSJxKc0ee.png",
                     title: "Client invoicing",
-                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
                   },
                   {
                     icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/rep7JV7fMz.png",
                     title: "Month-end reporting",
-                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
                   },
-                ].map((item) => (
-                  <div class="flex gap-[16px] items-start w-full">
-                   <img src=`${item.icon}` class="w-[32px] h-[32px] shrink-0"/>
-                    {/* // <div class="w-[32px] h-[32px] bg-[url(${item.icon})] bg-cover bg-no-repeat shrink-0" /> */}
+                ].map((item, i) => (
+                  <div
+                    class="animate-on-scroll flex gap-[16px] items-start w-full opacity-0"
+                    style={`transition-delay: ${i * 150}ms`}
+                  >
+                    <img src={item.icon} class="w-[32px] h-[32px] shrink-0" />
                     <div class="flex flex-col gap-[8px]">
                       <span class="text-[18px] font-semibold text-[#151515]">
                         {item.title}
@@ -86,3 +103,22 @@ import WhyImage from "../../../assets/services/book-keeping/why.png";
     </div>
   </div>
 </div>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
