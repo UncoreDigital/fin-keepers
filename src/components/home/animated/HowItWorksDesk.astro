@@ -7,7 +7,8 @@
     <span
       class="h-[42px] shrink-0 basis-auto font-['Inter'] text-[36px] font-bold leading-[42px] text-[#28241f] relative self-start whitespace-nowrap"
     >
-      How It Works
+     A Process built around your Firm’s needs
+
     </span>
     <div
       class="flex w-[987px] justify-between items-center shrink-0 flex-nowrap relative"
@@ -72,13 +73,14 @@
         <span
           class="flex w-[255px] h-[56px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[24px] font-semibold leading-[28px] text-[#151515] relative text-left"
         >
-          Schedule a Consultation
+          Getting Started
+
         </span>
         <span
           class="flex w-[255px] h-[66px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[16px] font-medium leading-[22px] text-[#797979] relative text-left"
         >
-          Talk to us about your business goals and challenges, no strings
-          attached.
+          Begin with a discovery call, receive a detailed proposal, and finalize with a service agreement. 
+
         </span>
       </div>
       <div
@@ -87,13 +89,14 @@
         <span
           class="flex w-[225px] h-[56px] justify-start items-start shrink-0 font-['Inter'] text-[24px] font-semibold leading-[28px] text-[#151515] relative text-left"
         >
-          Customized Proposal
+         Day-to-Day Execution 
+
         </span>
         <span
           class="flex w-[255px] h-[66px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[16px] font-medium leading-[22px] text-[#797979] relative text-left"
         >
-          Receive a transparent quote based on your business size and
-          complexity.
+          Day-to-Day tasks, milestones, and outputs delivered smoothly, with automation and clear communication.
+
         </span>
       </div>
       <div
@@ -102,13 +105,14 @@
         <span
           class="flex w-[255px] h-[56px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[24px] font-semibold leading-[28px] text-[#151515] relative text-left"
         >
-          Onboarding & Data Setup
+          Business at a Glance
+
         </span>
         <span
           class="flex w-[225px] h-[66px] justify-start items-start shrink-0 font-['Inter'] text-[16px] font-medium leading-[22px] text-[#797979] relative text-left"
         >
-          Share your docs. We set up your systems and ensure nothing gets
-          missed.
+         Receive a concise dashboard summarizing revenue, expenses, cash flow, and other essentials. 
+
         </span>
       </div>
       <div
@@ -117,13 +121,14 @@
         <span
           class="flex w-[225px] h-[56px] justify-start items-start shrink-0 font-['Inter'] text-[24px] font-semibold leading-[28px] text-[#151515] relative text-left"
         >
-          Monthly Support & Monitoring{" "}
+         Continuous Improvement:
+{" "}
         </span>
         <span
           class="flex w-[255px] h-[66px] justify-start items-start self-stretch shrink-0 font-['Inter'] text-[16px] font-medium leading-[22px] text-[#797979] relative text-left"
         >
-          Get consistent bookkeeping, payroll, and tax support plus insights to
-          stay ahead.
+          As you grow, we scale our services. We actively incorporate your feedback to reduce friction and increase reliability. 
+
         </span>
       </div>
     </div>
@@ -174,28 +179,8 @@
 
     if (!steps.length) return;
 
-    function cycleFill() {
-      const current = steps[index];
-      current.classList.add("bg-[#ed7c00]", "text-[#f5f7fa]");
-      current.classList.remove("bg-[#f5f7fa]", "text-[#ed7c00]");
-
-      index++;
-
-      if (index >= steps.length) {
-        setTimeout(() => {
-          steps.forEach((step) => {
-            step.classList.remove("bg-[#ed7c00]", "text-[#f5f7fa]");
-            step.classList.add("bg-[#f5f7fa]", "text-[#ed7c00]");
-          });
-          index = 0;
-        }, 1000);
-      }
-    }
-
-    steps.forEach((step) => {
-      step.classList.remove("bg-[#ed7c00]", "text-[#f5f7fa]");
-      step.classList.add("bg-[#f5f7fa]", "text-[#ed7c00]");
-    });
+   
+   
 
     ScrollTrigger.create({
       trigger: steps[0].closest("section") || steps[0],
