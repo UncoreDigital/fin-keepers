@@ -1,0 +1,175 @@
+---
+import salesImage from "../../../assets/services/book-keeping/sales.png";
+---
+
+<div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+  <div class="max-w-screen-xl mx-auto flex flex-col gap-12 sm:gap-16 lg:gap-12 items-center animate-on-scroll opacity-0">
+    
+    <!-- Heading -->
+    <div class="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center text-center w-full animate-on-scroll-child opacity-0">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-[#04092a]">
+        Whom do we help?
+
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed text-[#5c667a] max-w-3xl mx-auto">
+       We provide cashflow management services to small businesses that are new to the market
+or aren’t old enough to incur huge losses. Our area of expertise lies in providing cash payable
+and receivables, working capital management, cashflow reporting and analysis, etc, to
+industries of various kinds such as eCommerce Brands, Fashion Houses, Agencies,
+Freelancers, Healthcare Companies, Automobile, Food and Beverages, NGOs, Real Estate,
+Technology, Agriculture, Hospitality, and so on. You name it, we have it.
+
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="relative w-full overflow-hidden animate-on-scroll-child opacity-0">
+      <div
+        id="tabsContainer"
+        class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto snap-x snap-mandatory"
+      >
+        <button class="tab-button active-tab" data-tab="general">Liquidity Management</button>
+        <button class="tab-button" data-tab="payables">Fraud Prevention Expertise</button>
+        <button class="tab-button" data-tab="bank">Payment - Payables and Receivables</button>
+        <button class="tab-button" data-tab="tax">Financial Insights</button>
+       
+       
+      </div>
+    </div>
+
+    <!-- Tab Content (dynamic area) -->
+    <div id="tabContent" class="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 justify-center w-full max-w-screen-lg mx-auto animate-on-scroll-child opacity-0">
+      <!-- Left -->
+      <div class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow">
+        <div class="flex flex-col gap-4 sm:gap-6 items-start">
+          <div id="tabIcon" class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"></div>
+          <h3 id="tabTitle" class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]">Liquidity Management</h3>
+        </div>
+        <p id="tabDescription" class="text-base sm:text-lg font-medium leading-relaxed text-[#797979]">
+          Small businesses might need a few cashflow management
+services, but managing liquidity is definitely one of them. Having enough liquidity
+for daily transactions is included in this subsection of Cashflow Management
+Services.
+        </p>
+        <a href="#" class="text-[#ed7c00] font-semibold text-base sm:text-lg hover:underline">Learn More</a>
+      </div>
+
+      <!-- Right -->
+      <div class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow">
+        <img id="tabImage" src={salesImage.src} alt="General Accounting" class="w-full h-auto max-w-[500px] max-h-[250px]" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Tab button styling */
+  .tab-button {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #797979;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+  .tab-button.active-tab {
+    background: #ed7c00;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up { animation: fade-up 0.8s ease-out forwards; }
+</style>
+
+<script>
+  // Tabs data
+  const tabContentData = {
+    general: {
+      title: "Liquidity Management",
+      description: "Small businesses might need a few cashflow management services, but managing liquidity is definitely one of them. Having enough liquidity for daily transactions is included in this subsection of Cashflow Management Services. ",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      image: "/src/assets/services/book-keeping/sales.png",
+    },
+    payables: {
+      title: "Fraud Prevention Expertise",
+      description: "This is for businesses that deal with daily cash incoming and outgoing, like financial institutions, banks, etc. To prevent fraud from happening, online or offline, it is essential to opt for this service.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      image: "/src/assets/services/book-keeping/sales.png",
+    },
+    bank: {
+      title: "Payment - Payables and Receivables",
+      description: "Some businesses consist of cash payables and receivables, like institutions that lend money on loan. Hence, what amount is to be paid or received needs to be calculated with utmost precision.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      image: "/src/assets/services/book-keeping/sales.png",
+    },
+    tax: {
+      title: "Financial Insights",
+      description: "This is to provide better insight about market conditions, competitors, what has been done up until now, and how the future can be improved. This part of cashflow management includes financial reporting an financial modelling, which requires the skills, experience, and understanding that Finkeepers bring to the table.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      image: "/src/assets/services/book-keeping/sales.png",
+    },
+   
+  };
+
+  // DOM references
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabTitle = document.getElementById("tabTitle");
+  const tabDescription = document.getElementById("tabDescription");
+  const tabIcon = document.getElementById("tabIcon");
+  const tabImage = document.getElementById("tabImage");
+
+  // Switch tab
+  function switchTab(tabKey, button) {
+    // update buttons
+    tabButtons.forEach(btn => btn.classList.remove("active-tab"));
+    button.classList.add("active-tab");
+
+    // update content
+    const content = tabContentData[tabKey];
+    if (content) {
+      tabTitle.textContent = content.title;
+      tabDescription.textContent = content.description;
+      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      tabImage.src = content.image;
+      tabImage.alt = content.title;
+    }
+  }
+
+  // Init
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const key = button.getAttribute("data-tab");
+      if (key) switchTab(key, button);
+    });
+  });
+
+  // Default first tab
+  document.addEventListener("DOMContentLoaded", () => {
+    const first = tabButtons[0];
+    if (first) {
+      const key = first.getAttribute("data-tab");
+      switchTab(key, first);
+    }
+  });
+
+  // Scroll animation observer
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-fade-up");
+        entry.target.classList.remove("opacity-0");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".animate-on-scroll, .animate-on-scroll-child").forEach(el => observer.observe(el));
+</script>
