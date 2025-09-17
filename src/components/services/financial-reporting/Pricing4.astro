@@ -1,0 +1,859 @@
+---
+import check1 from "../../../assets/services/book-keeping/check-circle-1.png";
+---
+
+<div class="main-container bg-white py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+  <div class="max-w-screen-xl mx-auto">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#04092a] mb-8"
+      >
+        Our Pricing
+      </h2>
+
+      <!-- Billing Toggle - Exact Figma Design -->
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center mb-10"
+      >
+        <span
+          id="monthlyLabel"
+          class="text-lg font-semibold text-black/50 transition-colors order-1 sm:order-1"
+        >
+          Billed Monthly
+        </span>
+
+        <!-- Custom Toggle Switch -->
+        <label class="relative inline-flex items-center cursor-pointer order-2">
+          <input type="checkbox" id="billingToggle" class="sr-only peer" />
+          <div
+            class="w-12 h-7 bg-gray-400 peer-focus:outline-none rounded-full peer peer-checked:bg-[#ed7c00] transition-colors duration-300"
+          >
+            <div
+              class="w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 peer-checked:translate-x-5 translate-x-1 mt-1"
+            >
+            </div>
+          </div>
+        </label>
+
+        <span
+          id="yearlyLabel"
+          class="text-lg font-semibold text-[#ed7c00] transition-colors order-3"
+        >
+          Billed Yearly (save 15%)
+        </span>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Container - Responsive -->
+    <div class="relative w-full overflow-hidden">
+      <!-- Mobile: Stack vertically -->
+      <div class="block lg:hidden space-y-8">
+        <!-- Card 1: Monthly Retainers - Mobile -->
+        <div class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8">
+          <div class="flex items-baseline gap-3 mb-6">
+            <span
+              id="basic-price-mobile"
+              class="text-[45px] font-bold leading-[58.911px] text-[#151515]"
+              >$250</span
+            >
+            <span
+              id="basic-period-mobile"
+              class="text-[20px] font-medium leading-[24px] text-[#797979]"
+              >/month</span
+            >
+          </div>
+
+          <div class="mb-8">
+            <h3
+              class="text-[24px] font-medium leading-[29.045px] text-[#151515] mb-2"
+            >
+              Monthly<br />Retainers
+            </h3>
+            <p
+              class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+            >
+              Lorem Ipsum is simply text
+            </p>
+          </div>
+
+          <!-- Features -->
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center">
+              <!-- <div
+                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/899BRukPhk.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
+              >
+              </div> -->
+              <img
+                src={check1.src}
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Amazing feature one</span
+              >
+            </div>
+            <div class="flex items-center">
+              <!-- <div
+                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/8hCtnyPR5C.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
+              >
+              </div> -->
+              <img
+                src={check1.src}
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Wonderful feature two</span
+              >
+            </div>
+            <div class="flex items-center">
+              <!-- <div
+                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/dqBeRUoqAj.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
+              >
+              </div> -->
+              <img
+                src={check1.src}
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Priceless feature three</span
+              >
+            </div>
+          </div>
+
+          <button
+            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00]"
+          >
+            <span
+              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00]"
+              >Call</span
+            >
+          </button>
+        </div>
+
+        <!-- Card 2: Project-Based - Mobile -->
+        <div class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8">
+          <div class="flex items-baseline gap-3 mb-6">
+            <span
+              id="standard-price-mobile"
+              class="text-[45px] font-bold leading-[58.911px] text-[#151515]"
+              >$12</span
+            >
+            <span
+              id="standard-period-mobile"
+              class="text-[20px] font-medium leading-[24px] text-[#797979]"
+              >/month</span
+            >
+          </div>
+
+          <div class="mb-8">
+            <h3
+              class="text-[24px] font-medium leading-[29.045px] text-[#151515] mb-2"
+            >
+              Project-Based Bookkeeping
+            </h3>
+            <p
+              class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+            >
+              Lorem Ipsum is simply text
+            </p>
+          </div>
+
+          <!-- Features -->
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center">
+              <!-- <div
+                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/TdVOc4ytoD.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
+              >
+              </div> -->
+              <img
+                src={check1.src}
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Amazing feature one</span
+              >
+            </div>
+            <div class="flex items-center">
+              <!-- <div
+                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/mL9udkhnM4.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
+              >
+              </div> -->
+              <img
+                src={check1.src}
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Wonderful feature two</span
+              >
+            </div>
+            <div class="flex items-center">
+              <!-- <div
+                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/MtwqwWEb6C.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
+              >
+              </div> -->
+              <img
+                src={check1.src}
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+                >Priceless feature three</span
+              >
+            </div>
+          </div>
+
+          <button
+            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00]"
+          >
+            <span
+              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00]"
+              >Call</span
+            >
+          </button>
+        </div>
+
+        <!-- Card 3: Premium - Mobile -->
+        <div class="w-full bg-[#151515] rounded-[33.298px] p-6 sm:p-8 relative">
+          <!-- Most Popular Badge -->
+          <div
+            class="w-[154.963px] h-[34.578px] bg-[#fdf2e8] rounded-[17.289px] flex justify-center items-center mx-auto mb-6"
+          >
+            <span
+              class="font-['Inter'] text-[14px] font-medium leading-[16.943px] text-[#ed7c00] tracking-[1.07px]"
+            >
+              MOST POPULAR
+            </span>
+          </div>
+
+          <div class="flex items-baseline gap-3 mb-6">
+            <span class="text-[45px] font-bold leading-[58.911px] text-[#fff]"
+              >$</span
+            >
+            <span
+              id="premium-price-mobile"
+              class="text-[45px] font-bold leading-[58.911px] text-[#fff]"
+              >500</span
+            >
+            <span
+              id="premium-period-mobile"
+              class="text-[20px] font-medium leading-[24px] text-[#fff]"
+              >/month</span
+            >
+          </div>
+
+          <div class="mb-8">
+            <h3
+              class="text-[24px] font-medium leading-[29.045px] text-[#fff] mb-2"
+            >
+              Multi-Entity Businesses
+            </h3>
+            <p class="text-[18px] font-medium leading-[21.784px] text-[#fff]">
+              Lorem Ipsum is simply text
+            </p>
+          </div>
+
+          <!-- Features -->
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center">
+              <img
+                src="/img/services/book-keeping/fk-check-2.png"
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#fff]"
+                >Amazing feature one</span
+              >
+            </div>
+            <div class="flex items-center">
+              <img
+                src="/img/services/book-keeping/fk-check-2.png"
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#fff]"
+                >Wonderful feature two</span
+              >
+            </div>
+            <div class="flex items-center">
+              <img
+                src="/img/services/book-keeping/fk-check-2.png"
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#fff]"
+                >Priceless feature three</span
+              >
+            </div>
+            <div class="flex items-center">
+              <img
+                src="/img/services/book-keeping/fk-check-2.png"
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#fff]"
+                >Splended feature four</span
+              >
+            </div>
+            <div class="flex items-center">
+              <img
+                src="/img/services/book-keeping/fk-check-2.png"
+                alt=""
+                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+              />
+              <span
+                class="text-[18px] font-medium leading-[21.784px] text-[#fff]"
+                >Delightful feature five</span
+              >
+            </div>
+          </div>
+
+          <button
+            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-[#ed7c00] rounded-[8px]"
+          >
+            <span
+              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#fff]"
+              >Call</span
+            >
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop: Original Figma Layout -->
+      <div class="hidden lg:block w-[1200px] h-[631.376px] mx-auto relative">
+        <!-- Background -->
+        <div
+          class="w-[1200px] h-[598.079px] bg-[#f5f7fa] rounded-[33.298px] absolute top-[33.297px] left-0 z-10"
+        >
+        </div>
+
+        <!-- Premium Card (Right) -->
+        <div
+          class="w-[373.959px] h-[605.763px] rounded-[33.298px] absolute top-0 left-[768.41px] z-[33]"
+        >
+          <div
+            class="flex w-[373.959px] h-[605.763px] pt-[25.614px] pr-[38.42px] pb-[25.614px] pl-[38.42px] flex-col gap-[25.614px] items-end flex-nowrap bg-[#151515] rounded-[33.298px] relative shadow-[0_53.789px_43.543px_0_rgba(16,98,83,0.2)] z-[34]"
+          >
+            <div
+              class="w-[154.963px] h-[34.578px] shrink-0 relative overflow-hidden z-[35]"
+            >
+              <div
+                class="w-full h-full bg-[#fdf2e8] rounded-[17.289px] absolute top-[0%] left-0 z-[36]"
+              >
+              </div>
+              <span
+                class="flex w-[80.02%] h-[17px] justify-center items-start font-['Inter'] text-[14px] font-medium leading-[16.943px] text-[#ed7c00] tracking-[1.07px] absolute top-[calc(50%-8.32px)] left-[9.35%] text-center whitespace-nowrap z-[37]"
+              >
+                MOST POPULAR
+              </span>
+            </div>
+            <div
+              class="flex w-[297.118px] flex-col gap-[29.456px] items-start shrink-0 flex-nowrap relative z-[38]"
+            >
+              <div
+                class="flex w-[297.118px] flex-col gap-[25.614px] items-start shrink-0 flex-nowrap relative z-[39]"
+              >
+                <div
+                  class="h-[58.911px] shrink-0 relative overflow-hidden z-40"
+                >
+                  <div
+                    class="flex gap-[12px] items-center flex-nowrap relative z-[41]"
+                  >
+                    <span
+                      class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] text-[#fff] relative text-left whitespace-nowrap z-[42]"
+                      >$</span
+                    >
+                    <span
+                      id="premium-price"
+                      class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] text-[#fff] relative text-left whitespace-nowrap z-[42]"
+                      >500</span
+                    >
+                    <span
+                      id="premium-period"
+                      class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[20px] font-medium leading-[24px] text-[#fff] relative text-left whitespace-nowrap z-[43]"
+                      >/month</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="w-[297.118px] h-[112.7px] shrink-0 text-[0px] relative overflow-hidden z-[44]"
+                >
+                  <span
+                    class="flex w-[254px] h-[58px] justify-start items-start font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#fff] relative text-left z-[45] mt-[-0.33px] mr-0 mb-0 ml-[0.17px]"
+                  >
+                    Multi-Entity Businesses
+                  </span>
+                  <span
+                    class="block h-[22px] font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#fff] relative text-left whitespace-nowrap z-[46] mt-[3.804px] mr-0 mb-0 ml-0"
+                  >
+                    Lorem Ipsum is simply text
+                  </span>
+                </div>
+                <div
+                  class="flex w-[265.101px] flex-col gap-[12.807px] items-start shrink-0 flex-nowrap relative z-[47]"
+                >
+                  <div
+                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[48]"
+                  >
+                    <span
+                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#fff] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-50"
+                    >
+                      Amazing feature one
+                    </span>
+                    <div
+                      class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/KNK3Kmvc61.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-0 z-[49]"
+                    >
+                    </div>
+                  </div>
+                  <div
+                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[51]"
+                  >
+                    <span
+                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#fff] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[53]"
+                    >
+                      Wonderful feature two
+                    </span>
+                    <div
+                      class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/YwqT3wZSYf.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-0 z-[52]"
+                    >
+                    </div>
+                  </div>
+                  <div
+                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[54]"
+                  >
+                    <span
+                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#fff] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[56]"
+                    >
+                      Priceless feature three
+                    </span>
+                    <div
+                      class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/QG4NVzwPe5.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-0 z-[55]"
+                    >
+                    </div>
+                  </div>
+                  <div
+                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[57]"
+                  >
+                    <span
+                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#fff] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[59]"
+                    >
+                      Splended feature four
+                    </span>
+                    <div
+                      class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/7CtdXwBAuW.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-0 z-[58]"
+                    >
+                    </div>
+                  </div>
+                  <div
+                    class="w-[265.101px] h-[26.894px] shrink-0 relative overflow-hidden z-[60]"
+                  >
+                    <span
+                      class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#fff] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[62]"
+                    >
+                      Delightful feature five
+                    </span>
+                    <div
+                      class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/HEjFVtNqNJ.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-0 z-[61]"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div
+                  class="flex w-[265.1px] h-[50px] px-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap bg-[#ed7c00] hover:bg-[#d66e00] rounded-[8px] relative z-[63] transition-colors duration-300 cursor-pointer"
+                >
+                  <div
+                    class="flex w-[34px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[64]"
+                  >
+                    <span
+                      class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-white relative text-left whitespace-nowrap z-[65]"
+                    >
+                      Call
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standard Card (Center) -->
+        <div
+          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[427px] z-[81]"
+        >
+          <div
+            class="w-[204.909px] h-[58.911px] relative overflow-hidden z-[82]"
+          >
+            <div
+              class="flex w-[199px] gap-[12px] items-center flex-nowrap relative z-[83]"
+            >
+              <span
+                id="standard-price"
+                class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] text-[#151515] relative text-left whitespace-nowrap z-[84]"
+                >$12</span
+              >
+              <span
+                id="standard-period"
+                class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[20px] font-medium leading-[24px] text-[#797979] relative text-left whitespace-nowrap z-[85]"
+                >/month</span
+              >
+            </div>
+          </div>
+          <div
+            class="flex w-[265px] h-[88px] flex-col gap-[8px] items-start flex-nowrap mt-[56px] z-[66]"
+          >
+            <div class="w-[265px] h-[88px] shrink-0 text-[0px] relative z-[67]">
+              <span
+                class="flex w-[265px] h-[58px] justify-start items-start font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#151515] relative text-left z-[68]"
+              >
+                Project-Based Bookkeeping
+              </span>
+              <span
+                class="block h-[22px] font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] relative text-left whitespace-nowrap z-[69] mt-[8px]"
+              >
+                Lorem Ipsum is simply text
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex w-[265.101px] h-[106.297px] flex-col gap-[12.807px] items-start flex-nowrap mt-[50px] z-[70]"
+          >
+            <div class="w-[265.101px] h-[106.297px] shrink-0 relative z-[71]">
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[72]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[74]"
+                >
+                  Amazing feature one
+                </span>
+                <div
+                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/TdVOc4ytoD.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[73]"
+                >
+                </div>
+              </div>
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[75] mt-[12.807px]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[77]"
+                >
+                  Wonderful feature two
+                </span>
+                <div
+                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/mL9udkhnM4.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-20"
+                >
+                </div>
+              </div>
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[78] mt-[12.807px]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[80]"
+                >
+                  Priceless feature three
+                </span>
+                <div
+                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/MtwqwWEb6C.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[79]"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div
+              class="flex w-[265.1px] h-[50px] px-[24px] flex-col gap-[8px] justify-center items-center flex-nowrap rounded-[8px] border border-[#ed7c00] mt-[80px] z-[86] transition-colors duration-300 hover:bg-[#ed7c00] group"
+            >
+              <div
+                class="flex w-[34px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[87]"
+              >
+                <span
+                  class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] group-hover:text-white relative text-left whitespace-nowrap z-[88]"
+                >
+                  Call
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Basic Card (Left) -->
+        <div
+          class="w-[265.1px] h-[459.136px] absolute top-[84px] left-[87px] z-[81]"
+        >
+          <div
+            class="w-[204.909px] h-[58.911px] relative overflow-hidden z-[82]"
+          >
+            <div
+              class="flex w-[199px] gap-[12px] items-center flex-nowrap relative z-[83]"
+            >
+              <span
+                id="basic-price"
+                class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] text-[#151515] relative text-left whitespace-nowrap z-[84]"
+                >$250</span
+              >
+              <span
+                id="basic-period"
+                class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[20px] font-medium leading-[24px] text-[#797979] relative text-left whitespace-nowrap z-[85]"
+                >/month</span
+              >
+            </div>
+          </div>
+          <div
+            class="flex w-[265px] h-[88px] flex-col gap-[8px] items-start flex-nowrap mt-[56px] z-[66]"
+          >
+            <div class="w-[265px] h-[88px] shrink-0 text-[0px] relative z-[67]">
+              <span
+                class="flex w-[265px] h-[58px] justify-start items-start font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#151515] relative text-left z-[68]"
+              >
+                Monthly<br />Retainers
+              </span>
+              <span
+                class="block h-[22px] font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] relative text-left whitespace-nowrap z-[69] mt-[8px]"
+              >
+                Lorem Ipsum is simply text
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex w-[265.101px] h-[106.297px] flex-col gap-[12.807px] items-start flex-nowrap mt-[50px] z-[70]"
+          >
+            <div class="w-[265.101px] h-[106.297px] shrink-0 relative z-[71]">
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[72]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[74]"
+                >
+                  Amazing feature one
+                </span>
+                <div
+                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/899BRukPhk.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[73]"
+                >
+                </div>
+              </div>
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[75] mt-[12.807px]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[77]"
+                >
+                  Wonderful feature two
+                </span>
+                <div
+                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/8hCtnyPR5C.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[76]"
+                >
+                </div>
+              </div>
+              <div
+                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[78] mt-[12.807px]"
+              >
+                <span
+                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[80]"
+                >
+                  Priceless feature three
+                </span>
+                <div
+                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/dqBeRUoqAj.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[79]"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="tel:+1234567890">
+            <div
+              class="flex w-[265.1px] h-[50px] px-[24px] flex-col gap-[8px] justify-center items-center flex-nowrap rounded-[8px] border border-[#ed7c00] mt-[80px] z-[86] transition-colors duration-300 hover:bg-[#ed7c00] group"
+            >
+              <div
+                class="flex w-[34px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[87]"
+              >
+                <span
+                  class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] group-hover:text-white relative text-left whitespace-nowrap z-[88]"
+                >
+                  Call
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  interface PricingData {
+    basic: {
+      monthly: { price: string; period: string };
+      yearly: { price: string; period: string };
+    };
+    standard: {
+      monthly: { price: string; period: string };
+      yearly: { price: string; period: string };
+    };
+    premium: {
+      monthly: { price: string; period: string };
+      yearly: { price: string; period: string };
+    };
+  }
+
+  // Pricing data for different billing cycles
+  const pricingData: PricingData = {
+    basic: {
+      monthly: { price: "$250", period: "/month" },
+      yearly: { price: "$2550", period: "/year" }, // 15% discount: 250 * 12 * 0.85
+    },
+    standard: {
+      monthly: { price: "$12", period: "/month" },
+      yearly: { price: "$122", period: "/year" }, // 15% discount: 12 * 12 * 0.85
+    },
+    premium: {
+      monthly: { price: "500", period: "/month" },
+      yearly: { price: "5100", period: "/year" }, // 15% discount: 500 * 12 * 0.85
+    },
+  };
+
+  // Get DOM elements
+  const billingToggle = document.getElementById(
+    "billingToggle"
+  ) as HTMLInputElement | null;
+  const monthlyLabel = document.getElementById(
+    "monthlyLabel"
+  ) as HTMLElement | null;
+  const yearlyLabel = document.getElementById(
+    "yearlyLabel"
+  ) as HTMLElement | null;
+
+  // Desktop elements
+  const basicPrice = document.getElementById(
+    "basic-price"
+  ) as HTMLElement | null;
+  const basicPeriod = document.getElementById(
+    "basic-period"
+  ) as HTMLElement | null;
+  const standardPrice = document.getElementById(
+    "standard-price"
+  ) as HTMLElement | null;
+  const standardPeriod = document.getElementById(
+    "standard-period"
+  ) as HTMLElement | null;
+  const premiumPrice = document.getElementById(
+    "premium-price"
+  ) as HTMLElement | null;
+  const premiumPeriod = document.getElementById(
+    "premium-period"
+  ) as HTMLElement | null;
+
+  // Mobile elements
+  const basicPriceMobile = document.getElementById(
+    "basic-price-mobile"
+  ) as HTMLElement | null;
+  const basicPeriodMobile = document.getElementById(
+    "basic-period-mobile"
+  ) as HTMLElement | null;
+  const standardPriceMobile = document.getElementById(
+    "standard-price-mobile"
+  ) as HTMLElement | null;
+  const standardPeriodMobile = document.getElementById(
+    "standard-period-mobile"
+  ) as HTMLElement | null;
+  const premiumPriceMobile = document.getElementById(
+    "premium-price-mobile"
+  ) as HTMLElement | null;
+  const premiumPeriodMobile = document.getElementById(
+    "premium-period-mobile"
+  ) as HTMLElement | null;
+
+  // Function to update pricing display
+  function updatePricing(isYearly: boolean): void {
+    const billingType = isYearly ? "yearly" : "monthly";
+
+    // Update label colors
+    if (monthlyLabel && yearlyLabel) {
+      if (isYearly) {
+        monthlyLabel.classList.remove("text-[#ed7c00]");
+        monthlyLabel.classList.add("text-black/50");
+        yearlyLabel.classList.remove("text-black/50");
+        yearlyLabel.classList.add("text-[#ed7c00]");
+      } else {
+        monthlyLabel.classList.remove("text-black/50");
+        monthlyLabel.classList.add("text-[#ed7c00]");
+        yearlyLabel.classList.remove("text-[#ed7c00]");
+        yearlyLabel.classList.add("text-black/50");
+      }
+    }
+
+    // Update desktop prices
+    if (basicPrice && basicPeriod) {
+      basicPrice.textContent = pricingData.basic[billingType].price;
+      basicPeriod.textContent = pricingData.basic[billingType].period;
+    }
+
+    if (standardPrice && standardPeriod) {
+      standardPrice.textContent = pricingData.standard[billingType].price;
+      standardPeriod.textContent = pricingData.standard[billingType].period;
+    }
+
+    if (premiumPrice && premiumPeriod) {
+      premiumPrice.textContent = pricingData.premium[billingType].price;
+      premiumPeriod.textContent = pricingData.premium[billingType].period;
+    }
+
+    // Update mobile prices
+    if (basicPriceMobile && basicPeriodMobile) {
+      basicPriceMobile.textContent = pricingData.basic[billingType].price;
+      basicPeriodMobile.textContent = pricingData.basic[billingType].period;
+    }
+
+    if (standardPriceMobile && standardPeriodMobile) {
+      standardPriceMobile.textContent = pricingData.standard[billingType].price;
+      standardPeriodMobile.textContent =
+        pricingData.standard[billingType].period;
+    }
+
+    if (premiumPriceMobile && premiumPeriodMobile) {
+      premiumPriceMobile.textContent = pricingData.premium[billingType].price;
+      premiumPeriodMobile.textContent = pricingData.premium[billingType].period;
+    }
+  }
+
+  // Add event listener to toggle
+  if (billingToggle) {
+    billingToggle.addEventListener("change", (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      updatePricing(target.checked);
+    });
+  }
+
+  // Initialize with monthly pricing (toggle unchecked by default)
+  document.addEventListener("DOMContentLoaded", () => {
+    updatePricing(false);
+  });
+</script>
+
+<style>
+  /* Custom toggle switch styling */
+  #billingToggle:checked + div > div {
+    transform: translateX(1.25rem);
+  }
+
+  /* Smooth transition for the toggle switch */
+  #billingToggle + div > div {
+    transition: transform 0.3s ease;
+  }
+</style>
