@@ -2,24 +2,17 @@
   id="main-header"
   class="bg-[#0e2726] w-full px-4 sm:px-6 lg:px-[60px] py-[12px] fixed top-0 left-0 z-[2000] transition-colors duration-300"
 >
-  <div
-    class="flex justify-between items-center max-w-[1440px] mx-auto relative"
-  >
+  <div class="flex justify-between items-center max-w-[1440px] mx-auto relative">
     <!-- Logo -->
     <a href="/">
       <div
         class="w-[121.549px] h-[66.001px] bg-[url(/img/logo/logo.svg)] bg-[length:100%_100%] bg-no-repeat"
-      >
-      </div>
+      ></div>
     </a>
 
     <!-- Hamburger (Mobile) -->
     <div class="lg:hidden">
-      <button
-        id="menu-toggle"
-        class="flex flex-col gap-[4px]"
-        aria-label="Toggle Menu"
-      >
+      <button id="menu-toggle" class="flex flex-col gap-[4px]" aria-label="Toggle Menu">
         <span class="w-6 h-[2px] bg-white block"></span>
         <span class="w-6 h-[2px] bg-white block"></span>
         <span class="w-6 h-[2px] bg-white block"></span>
@@ -27,66 +20,30 @@
     </div>
 
     <!-- Navigation Links (Desktop) -->
-    <nav
-      class="hidden lg:flex gap-[24px] text-white items-center text-[16px] relative"
-    >
+    <nav class="hidden lg:flex gap-[24px] text-white items-center text-[16px] relative">
       <div class="flex items-center gap-[4px]">
-        <a href="/about"><span>About</span></a>
+        <a href="/about" class="hover:text-[#ed7c00] transition"><span>About</span></a>
       </div>
 
       <!-- Services Dropdown -->
       <div class="relative">
         <button
           id="services-toggle"
-          class="flex items-center gap-[4px] cursor-pointer"
+          class="flex items-center gap-[4px] cursor-pointer hover:text-[#ed7c00] transition"
         >
           <span>Services</span>
-          <img
-            class="w-[14px]"
-            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nLqr2JveAt.png"
-          />
+          <img class="w-[14px]" src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nLqr2JveAt.png" />
         </button>
-        <!-- Dropdown Menu -->
         <div
           id="services-menu"
           class="absolute top-full left-0 mt-2 hidden bg-white text-[#0e2726] rounded-md shadow-lg w-[220px] z-[3000]"
         >
           <ul class="flex flex-col">
-            <li>
-              <a
-                href="/book-keeping"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition"
-                >Book Keeping</a
-              >
-            </li>
-            <li>
-              <a
-                href="/financial-reporting"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition"
-                >Financial Reporting</a
-              >
-            </li>
-            <li>
-              <a
-                href="/temporary-cfo"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition"
-                >Temporary CFO</a
-              >
-            </li>
-            <li>
-              <a
-                href="/payroll-assistance"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition"
-                >Payroll Assistance</a
-              >
-            </li>
-            <li>
-              <a
-                href="/cashflow-management"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition"
-                >Cashflow Management</a
-              >
-            </li>
+            <li><a href="/book-keeping" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Book Keeping</a></li>
+            <li><a href="/financial-reporting" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Financial Reporting</a></li>
+            <li><a href="/temporary-cfo" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Temporary CFO</a></li>
+            <li><a href="/payroll-assistance" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Payroll Assistance</a></li>
+            <li><a href="/cashflow-management" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Cashflow Management</a></li>
           </ul>
         </div>
       </div>
@@ -95,139 +52,116 @@
       <div class="relative">
         <button
           id="resources-toggle"
-          class="flex items-center gap-[4px] cursor-pointer"
+          class="flex items-center gap-[4px] cursor-pointer hover:text-[#ed7c00] transition"
         >
           <span>Resources</span>
-          <img
-            class="w-[14px]"
-            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DBwZjXhgMZ.png"
-          />
+          <img class="w-[14px]" src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DBwZjXhgMZ.png" />
         </button>
-        <!-- Dropdown Menu -->
         <div
           id="resources-menu"
           class="absolute top-full left-0 mt-2 hidden bg-white text-[#0e2726] rounded-md shadow-lg w-[180px] z-[3000]"
         >
           <ul class="flex flex-col">
-            <li>
-              <a
-                href="/blogs"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition">Blogs</a
-              >
-            </li>
-            <li>
-              <a
-                href="/case-study"
-                class="block px-4 py-2 hover:bg-[#f5f7fa] transition"
-                >Case Study</a
-              >
-            </li>
+            <li><a href="/blogs" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Blogs</a></li>
+            <li><a href="/case-study" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Case Study</a></li>
           </ul>
         </div>
       </div>
 
       <div class="flex items-center gap-[4px]">
-        <a href="/pricing"><span>Pricing</span></a>
+        <a href="/pricing" class="hover:text-[#ed7c00] transition"><span>Pricing</span></a>
       </div>
-
       <div class="flex items-center gap-[4px]">
-        <a href="/contact"><span>Contact Us</span></a>
+        <a href="/contact" class="hover:text-[#ed7c00] transition"><span>Contact Us</span></a>
       </div>
     </nav>
 
     <!-- Get In Touch Button (Desktop) -->
     <a
-      href="/"
-      class="hidden lg:flex px-4 py-1 border border-white text-white rounded-md text-sm font-semibold cursor-pointer"
+      href="#contact-form"
+      class="hidden lg:flex px-4 py-1 border border-white text-white rounded-md text-sm font-semibold cursor-pointer hover:bg-[#ed7c00] hover:border-[#ed7c00] hover:text-white transition"
     >
       Get In Touch
     </a>
   </div>
 
   <!-- Mobile Dropdown -->
-  <div
-    id="mobile-menu"
-    class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2"
-  >
-    <a href="/about">About</a>
+  <div id="mobile-menu" class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2">
+    <a href="/about" class="hover:text-[#ed7c00] transition">About</a>
 
     <!-- Services -->
     <div>
-      <button
-        id="mobile-services-toggle"
-        class="flex justify-between items-center w-full cursor-pointer"
-      >
+      <button id="mobile-services-toggle" class="flex justify-between items-center w-full cursor-pointer">
         <span>Services</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-4 h-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      <div
-        id="mobile-services-menu"
-        class="pl-4 flex flex-col gap-2 mt-2 hidden"
-      >
-        <a href="/book-keeping">Book Keeping</a>
-        <a href="/financial-reporting">Financial Reporting</a>
-        <a href="/temporary-cfo">Temporary CFO</a>
-        <a href="/payroll-assistance">Payroll Assistance</a>
-        <a href="/cashflow-management">Cashflow Management</a>
+      <div id="mobile-services-menu" class="pl-4 flex flex-col gap-2 mt-2 hidden">
+        <a href="/book-keeping" class="hover:text-[#ed7c00] transition">Book Keeping</a>
+        <a href="/financial-reporting" class="hover:text-[#ed7c00] transition">Financial Reporting</a>
+        <a href="/temporary-cfo" class="hover:text-[#ed7c00] transition">Temporary CFO</a>
+        <a href="/payroll-assistance" class="hover:text-[#ed7c00] transition">Payroll Assistance</a>
+        <a href="/cashflow-management" class="hover:text-[#ed7c00] transition">Cashflow Management</a>
       </div>
     </div>
 
     <!-- Resources -->
     <div>
-      <button
-        id="mobile-resources-toggle"
-        class="flex justify-between items-center w-full cursor-pointer"
-      >
+      <button id="mobile-resources-toggle" class="flex justify-between items-center w-full cursor-pointer">
         <span>Resources</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-4 h-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      <div
-        id="mobile-resources-menu"
-        class="pl-4 flex flex-col gap-2 mt-2 hidden"
-      >
-        <a href="/blogs">Blogs</a>
-        <a href="/case-study">Case Study</a>
+      <div id="mobile-resources-menu" class="pl-4 flex flex-col gap-2 mt-2 hidden">
+        <a href="/blogs" class="hover:text-[#ed7c00] transition">Blogs</a>
+        <a href="/case-study" class="hover:text-[#ed7c00] transition">Case Study</a>
       </div>
     </div>
 
-    <a href="/pricing">Pricing</a>
-    <a href="/contact">Contact Us</a>
+    <a href="/pricing" class="hover:text-[#ed7c00] transition">Pricing</a>
+    <a href="/contact" class="hover:text-[#ed7c00] transition">Contact Us</a>
     <a href="/">
-      <button
-        class="mt-2 px-4 py-2 border border-white text-white rounded-md font-semibold"
-      >
+      <button class="mt-2 px-4 py-2 border border-white text-white rounded-md font-semibold hover:bg-[#ed7c00] hover:border-[#ed7c00] hover:text-white transition">
         Get In Touch
       </button>
     </a>
   </div>
 </header>
 
-<!-- <script>
+<!-- ✅ Active + Dropdown Script -->
+<style>
+  .nav-active {
+    color: #ed7c00 !important;
+    font-weight: 600;
+    position: relative;
+  }
+  .nav-active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ed7c00;
+    border-radius: 2px;
+  }
+</style>
+
+<script>
   document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Active link detection
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll("nav a, #mobile-menu a");
+
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("nav-active");
+      }
+    });
+
+    // ✅ Existing Dropdown + Mobile Toggle (from your code)
     const toggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("mobile-menu");
     const header = document.getElementById("main-header");
@@ -235,6 +169,10 @@
     const servicesToggle = document.getElementById("services-toggle");
     const resourcesMenu = document.getElementById("resources-menu");
     const serviceMenu = document.getElementById("services-menu");
+    const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+    const mobileServicesMenu = document.getElementById("mobile-services-menu");
+    const mobileResourcesToggle = document.getElementById("mobile-resources-toggle");
+    const mobileResourcesMenu = document.getElementById("mobile-resources-menu");
 
     if (toggle && menu) {
       toggle.addEventListener("click", () => {
@@ -258,128 +196,23 @@
     };
 
     if (resourcesToggle && resourcesMenu) {
-      resourcesToggle.addEventListener("click", (e: MouseEvent) => {
-        e.stopPropagation();
-        // Close other dropdown first
-        if (serviceMenu) serviceMenu.classList.add("hidden");
-        resourcesMenu.classList.toggle("hidden");
-      });
-    }
-
-    if (servicesToggle && serviceMenu) {
-      servicesToggle.addEventListener("click", (e: MouseEvent) => {
-        e.stopPropagation();
-        // Close other dropdown first
-        if (resourcesMenu) resourcesMenu.classList.add("hidden");
-        serviceMenu.classList.toggle("hidden");
-      });
-    }
-
-    // Close all dropdowns on outside click
-    document.addEventListener("click", (e: MouseEvent) => {
-      const target = e.target as Node;
-      if (
-        target &&
-        resourcesMenu &&
-        serviceMenu &&
-        !resourcesMenu.contains(target) &&
-        !serviceMenu.contains(target) &&
-        !resourcesToggle?.contains(target) &&
-        !servicesToggle?.contains(target)
-      ) {
-        closeAllDropdowns();
-      }
-    });
-  });
-
-
-//   mobile dropdown script
-
-
-</script> -->
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Desktop elements
-    const toggle = document.getElementById(
-      "menu-toggle"
-    ) as HTMLButtonElement | null;
-    const menu = document.getElementById(
-      "mobile-menu"
-    ) as HTMLDivElement | null;
-    const header = document.getElementById("main-header") as HTMLElement | null;
-    const resourcesToggle = document.getElementById(
-      "resources-toggle"
-    ) as HTMLButtonElement | null;
-    const servicesToggle = document.getElementById(
-      "services-toggle"
-    ) as HTMLButtonElement | null;
-    const resourcesMenu = document.getElementById(
-      "resources-menu"
-    ) as HTMLDivElement | null;
-    const serviceMenu = document.getElementById(
-      "services-menu"
-    ) as HTMLDivElement | null;
-
-    // Mobile elements
-    const mobileServicesToggle = document.getElementById(
-      "mobile-services-toggle"
-    ) as HTMLButtonElement | null;
-    const mobileServicesMenu = document.getElementById(
-      "mobile-services-menu"
-    ) as HTMLDivElement | null;
-    const mobileResourcesToggle = document.getElementById(
-      "mobile-resources-toggle"
-    ) as HTMLButtonElement | null;
-    const mobileResourcesMenu = document.getElementById(
-      "mobile-resources-menu"
-    ) as HTMLDivElement | null;
-
-    // ✅ Mobile menu toggle
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    }
-
-    // ✅ Header background on scroll
-    if (header) {
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.classList.add("bg-[#093634]");
-        } else {
-          header.classList.remove("bg-[#093634]");
-        }
-      });
-    }
-
-    // ✅ Helper: Close all desktop dropdowns
-    const closeAllDropdowns = (): void => {
-      if (resourcesMenu) resourcesMenu.classList.add("hidden");
-      if (serviceMenu) serviceMenu.classList.add("hidden");
-    };
-
-    // ✅ Desktop: Resources toggle
-    if (resourcesToggle && resourcesMenu) {
-      resourcesToggle.addEventListener("click", (e: MouseEvent) => {
+      resourcesToggle.addEventListener("click", (e) => {
         e.stopPropagation();
         if (serviceMenu) serviceMenu.classList.add("hidden");
         resourcesMenu.classList.toggle("hidden");
       });
     }
 
-    // ✅ Desktop: Services toggle
     if (servicesToggle && serviceMenu) {
-      servicesToggle.addEventListener("click", (e: MouseEvent) => {
+      servicesToggle.addEventListener("click", (e) => {
         e.stopPropagation();
         if (resourcesMenu) resourcesMenu.classList.add("hidden");
         serviceMenu.classList.toggle("hidden");
       });
     }
 
-    // ✅ Close dropdowns when clicking outside (desktop)
-    document.addEventListener("click", (e: MouseEvent) => {
-      const target = e.target as Node;
+    document.addEventListener("click", (e) => {
+      const target = e.target;
       if (
         target &&
         resourcesMenu &&
@@ -393,26 +226,18 @@
       }
     });
 
-    // ✅ Mobile: Services toggle
     if (mobileServicesToggle && mobileServicesMenu) {
       mobileServicesToggle.addEventListener("click", () => {
-        if (
-          mobileResourcesMenu &&
-          !mobileResourcesMenu.classList.contains("hidden")
-        ) {
+        if (mobileResourcesMenu && !mobileResourcesMenu.classList.contains("hidden")) {
           mobileResourcesMenu.classList.add("hidden");
         }
         mobileServicesMenu.classList.toggle("hidden");
       });
     }
 
-    // ✅ Mobile: Resources toggle
     if (mobileResourcesToggle && mobileResourcesMenu) {
       mobileResourcesToggle.addEventListener("click", () => {
-        if (
-          mobileServicesMenu &&
-          !mobileServicesMenu.classList.contains("hidden")
-        ) {
+        if (mobileServicesMenu && !mobileServicesMenu.classList.contains("hidden")) {
           mobileServicesMenu.classList.add("hidden");
         }
         mobileResourcesMenu.classList.toggle("hidden");
