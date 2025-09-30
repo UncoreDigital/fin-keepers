@@ -52,12 +52,14 @@ for your business:
             class="flex flex-col gap-[18px] bg-[#106253] rounded-[16px] border border-white shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1 
                       transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
           >
-            <div class="flex w-[50px] h-[50px] justify-center items-center bg-white rounded-full">
-              <span class="text-[#106253] font-semibold text-[24px] leading-[28px]">
-                {index + 1}
+            <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 1).padStart(2, '0')}
               </span>
             </div>
-            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px]">
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
               {card.title}
             </span>
             <span class="text-white font-medium text-[16px] leading-[22px]">
@@ -76,12 +78,14 @@ for your business:
             class="flex flex-col gap-[18px] bg-[#106253] rounded-[16px] border border-white shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1 
                       transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
           >
-            <div class="flex w-[50px] h-[50px] justify-center items-center bg-white rounded-full">
-              <span class="text-[#106253] font-semibold text-[24px] leading-[28px]">
-                {index + 4}
+             <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 4).padStart(2, '0')}
               </span>
             </div>
-            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px]">
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
               {card.title}
             </span>
             <span class="text-white font-medium text-[16px] leading-[22px]">
