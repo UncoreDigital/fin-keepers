@@ -1,5 +1,6 @@
 ---
-import WhyImage from "../../../assets/services/book-keeping/why.png";
+import WhyImage from "../../../assets/services/book-keeping/tempCFO.png";
+import WhyImage_2 from "../../../assets/services/book-keeping/tempCFO_2.png";
 ---
 
 <style>
@@ -37,16 +38,28 @@ import WhyImage from "../../../assets/services/book-keeping/why.png";
           <span
             class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-center sm:text-left opacity-0"
           >
-            Finkeepers serves small businesses in the USA with temporary CFO services, because you
-shouldn’t be left financially high and dry when you are just starting out in the market.
+            Finkeepers serves small businesses in the USA with temporary CFO
+            services, because you shouldn’t be left financially high and dry
+            when you are just starting out in the market.
           </span>
 
           <div
             class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
           >
-            <!-- Image -->
-            <img src={WhyImage.src} class="animate-on-scroll w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-[auto] rounded-[9.174px] opacity-0" />
-
+            <!-- Image Container with Hover Effect -->
+            <div class="relative group w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-auto">
+              <!-- Default Image -->
+              <img
+                src={WhyImage.src}
+                class="animate-on-scroll w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-0 z-[50]"
+              />
+              <!-- Hover Image -->
+              <img
+                src={WhyImage_2.src}
+                alt=""
+                class="absolute inset-0 w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]"
+              />
+            </div>
             <!-- Right Text Content -->
             <div
               class="flex flex-col gap-[32px] lg:gap-[40px] items-start w-full lg:w-[576px]"
@@ -114,7 +127,7 @@ shouldn’t be left financially high and dry when you are just starting out in t
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.2 },
   );
 
   document.querySelectorAll(".animate-on-scroll").forEach((el) => {

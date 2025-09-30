@@ -1,5 +1,6 @@
 ---
 import HeroImage from "../../../assets/services/book-keeping/hero.png";
+import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
 ---
 
 <div class="bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 relative overflow-hidden">
@@ -18,8 +19,8 @@ import HeroImage from "../../../assets/services/book-keeping/hero.png";
       <p
         class="text-[16px] sm:text-[18px] leading-[27px] text-[#797979] max-w-xl"
       >
-        You said and we listened. Bookkeeping for small businesses and Start-ups in the USA?
-FinKeeper at your service.
+        You said and we listened. Bookkeeping for small businesses and Start-ups
+        in the USA? FinKeeper at your service.
       </p>
       <a
         href="#"
@@ -35,13 +36,20 @@ FinKeeper at your service.
 
     {/* Right Image and Overlapping Cards Area */}
     <div
-      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-10 lg:mt-0 order-1 lg:order-2"
+      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-10 lg:mt-0 order-1 lg:order-2 group"
     >
       {/* Main Image */}
       <img
         src={HeroImage.src}
         alt="Business Woman with tablet and growth charts"
-        class="absolute w-full h-full object-contain object-bottom lg:object-cover top-0 left-0 z-[50]"
+        class="absolute w-full h-full object-contain top-0 left-0 z-[50] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+      />
+
+      <!-- Hover Image -->
+      <img
+        src={HeroImage_2.src}
+        alt=""
+        class="absolute w-full h-full object-contain top-0 left-0 z-[60] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
       />
     </div>
   </div>

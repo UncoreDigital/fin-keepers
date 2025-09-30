@@ -1,5 +1,6 @@
 ---
-import WhyImage from "../../../assets/services/book-keeping/why.png";
+import WhyImage from "../../../assets/services/book-keeping/sales.png";
+import WhyImage_2 from "../../../assets/services/book-keeping/sales_2.png";
 ---
 
 <style>
@@ -47,8 +48,19 @@ which could be the best ethical investing strategies in 2025-25 for my firm, to 
           <div
             class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
           >
-            <!-- Image -->
-            <img src={WhyImage.src} class="animate-on-scroll w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-[auto] rounded-[9.174px] opacity-0" />
+            <!-- Image Container with Hover Effect -->
+            <div class="relative group w-full lg:w-[450px] h-[350px] sm:h-[320px] lg:h-auto">
+              <!-- Default Image -->
+              <img 
+                src={WhyImage.src} 
+                class="animate-on-scroll w-full h-full object-contain rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-0 z-[50]" 
+              />
+              <!-- Hover Image -->
+              <img 
+                src={WhyImage_2.src} 
+                class="absolute inset-0 w-full h-full object-contain rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]" 
+              />
+            </div>
 
             <!-- Right Text Content -->
             <div
