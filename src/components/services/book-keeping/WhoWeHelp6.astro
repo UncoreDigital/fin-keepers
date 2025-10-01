@@ -102,6 +102,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
 
           <!-- Hover Image -->
           <img
+            id="tabImage1"
             src={salesImage_2.src}
             alt=""
             class="absolute inset-0 w-full h-auto transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
@@ -156,6 +157,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
         "General Accounting is about recording and organizing daily business transactions including counting of cash and matching income with expenses.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       image: "/src/assets/services/book-keeping/sales.png",
+      imagealt: "/src/assets/services/book-keeping/sales_2.png",
     },
     payables: {
       title: "Account Payables and Receivables",
@@ -163,6 +165,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
         "Managing bills and timely payments to vendors and collection of the receivables from clients and customers.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       image: "/src/assets/services/book-keeping/sales.png",
+      imagealt: "/src/assets/services/book-keeping/sales_2.png",
     },
     bank: {
       title: "Bank Reconciliation",
@@ -170,6 +173,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
         "To match the record of income and expenses with bank and detect fraud or error.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       image: "/src/assets/services/book-keeping/sales.png",
+      imagealt: "/src/assets/services/book-keeping/sales_2.png",
     },
     tax: {
       title: "Tax – Ready Bookkeeping",
@@ -177,6 +181,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
         "Keeping the books ready to audit for CPAs and also simplifying IRS tax preparations.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       image: "/src/assets/services/book-keeping/sales.png",
+      imagealt: "/src/assets/services/book-keeping/sales_2.png",
     },
     reporting: {
       title: "Financial Reporting",
@@ -184,6 +189,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
         "Necessary steps tally balance sheet, profit and loss statement, incomes and expenses, and cash – flow reports to make informed decisions in future.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       image: "/src/assets/services/book-keeping/sales.png",
+      imagealt: "/src/assets/services/book-keeping/sales_2.png",
     },
   };
 
@@ -193,6 +199,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
   const tabDescription = document.getElementById("tabDescription");
   const tabIcon = document.getElementById("tabIcon");
   const tabImage = document.getElementById("tabImage");
+  const tabImage1 = document.getElementById("tabImage1");
 
   // Switch tab
   function switchTab(tabKey, button) {
@@ -208,6 +215,8 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
       tabIcon.style.backgroundImage = `url(${content.icon})`;
       tabImage.src = content.image;
       tabImage.alt = content.title;
+      tabImage1.src = content.imagealt;
+      tabImage1.alt = content.title;
     }
   }
 
