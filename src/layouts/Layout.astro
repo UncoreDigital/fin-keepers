@@ -126,9 +126,7 @@ import "../styles/global.css";
     </style>
     
     <slot name="head" />
-  </head>
-  <body class="!overflow-x-hidden">
-    <!-- Curtain Opening Animation -->
+        <!-- Curtain Opening Animation -->
     <div id="curtainContainer" class="curtain-container active">
       <div class="button-container">
         <button id="giftBtn" class="launch_btn">Launch</button>
@@ -139,7 +137,7 @@ import "../styles/global.css";
       <div class="curtain right" id="rightCurtain"></div>
 
       <!-- Image -->
-      <img src="/img/launch/curtain-open/sefhome.png" alt="" class="curtain-image">
+      <!-- <img src="/img/launch/curtain-open/sefhome.png" alt="" class="curtain-image"> -->
 
       <!-- Countdown -->
       <div id="countdown">10</div>
@@ -153,12 +151,22 @@ import "../styles/global.css";
     <!-- Curtain Animation Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Check if animation has already been shown in this session
+        const hasShownAnimation = sessionStorage.getItem('curtainAnimationShown');
+        const curtainContainer = document.getElementById('curtainContainer');
+        
+        if (hasShownAnimation === 'true') {
+          // Hide the curtain animation immediately if already shown
+          curtainContainer.classList.add('hidden');
+          curtainContainer.classList.remove('active');
+          return; // Exit early, don't set up the animation
+        }
+        
         const btn = document.getElementById('giftBtn');
         const leftCurtain = document.getElementById('leftCurtain');
         const rightCurtain = document.getElementById('rightCurtain');
         const countdownEl = document.getElementById('countdown');
         const canvas = document.getElementById('celebrationCanvas');
-        const curtainContainer = document.getElementById('curtainContainer');
         const ctx = canvas.getContext('2d');
         let particles = [];
 
@@ -202,6 +210,8 @@ import "../styles/global.css";
           setTimeout(() => {
             curtainContainer.classList.add('hidden');
             curtainContainer.classList.remove('active');
+            // Mark animation as shown for this session
+            sessionStorage.setItem('curtainAnimationShown', 'true');
           }, 8000);
         }
 
@@ -302,7 +312,8 @@ import "../styles/global.css";
         }
       });
     </script>
-  </body>
+  </head>
+  <body></body>
 </html>
 
 <style>
