@@ -9,13 +9,14 @@
 
 <header
   id="main-header"
-  class="bg-[#0e2726] w-full px-4 sm:px-6 lg:px-[60px] py-[12px] fixed top-0 left-0 z-[2000] transition-colors duration-300"
+  class="bg-[#0e2726] w-full px-4 sm:px-6 lg:px-[60px] py-[12px] fixed top-0 left-0 z-[2000] transition-all duration-300"
 >
   <div class="flex justify-between items-center max-w-[1440px] mx-auto relative">
     <!-- Logo -->
     <a href="/">
       <div
-        class="w-[121.549px] h-[66.001px] bg-[url(/img/logo/logo.svg)] bg-[length:100%_100%] bg-no-repeat"
+        id="main-logo"
+        class="w-[121.549px] h-[66.001px] bg-[url(/img/logo/logo.svg)] bg-[length:100%_100%] bg-no-repeat transition-all duration-300"
       ></div>
     </a>
 
@@ -252,5 +253,34 @@
         mobileResourcesMenu.classList.toggle("hidden");
       });
     }
+
+    // Header scroll functionality - reduce height by 20px when scrolling
+    let lastScrollTop = 0;
+    const headerElement = document.getElementById("main-header");
+    const logoElement = document.getElementById("main-logo");
+    
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 50) { // Start shrinking after 50px scroll
+        // Reduce header padding from py-[12px] to py-[2px] (reduces height by ~20px)
+        headerElement?.classList.remove("py-[12px]");
+        headerElement?.classList.add("py-[2px]");
+        
+        // Make logo smaller (reduce by ~20px in height, proportionally in width)
+        logoElement?.classList.remove("w-[121.549px]", "h-[66.001px]");
+        logoElement?.classList.add("w-[97px]", "h-[46px]");
+      } else {
+        // Restore original header padding
+        headerElement?.classList.remove("py-[2px]");
+        headerElement?.classList.add("py-[12px]");
+        
+        // Restore original logo size
+        logoElement?.classList.remove("w-[97px]", "h-[46px]");
+        logoElement?.classList.add("w-[121.549px]", "h-[66.001px]");
+      }
+      
+      lastScrollTop = scrollTop;
+    });
   });
 </script>
