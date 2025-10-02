@@ -87,7 +87,7 @@ const tabImages = {
         <button class="tab-button" data-tab="tax"
           >Customized Financial Dashboard</button
         >
-        <button class="tab-button" data-tab="tax">Sustainable Reporting</button>
+        <button class="tab-button" data-tab="reporting">Sustainable Reporting</button>
       </div>
     </div>
 
@@ -136,8 +136,7 @@ const tabImages = {
             id="tabImageDefault"
             src={salesImage.src}
             alt="General Accounting"
-            class="absolute inset-0 w-full h-auto transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
-            class="w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
           />
           <!-- Hover Image -->
           <img
@@ -217,14 +216,14 @@ const tabImages = {
       description:
         "Every firm needs a specialized dashboard curated to its financial needs. With the help of real-time visual financial reporting using tools like Power BI or Tableau, Finkeepers will create dashboards that will provide interactive insights instead of static statements.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: tabImages.finance,
+      images: tabImages.finance,
     },
     reporting: {
       title: "Sustainable Reporting",
       description:
         "This is a little different than other conventional reporting. Sustainable reporting is a non-financial way of reporting that takes into consideration governance metrics, environment, and social aspects as well.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: tabImages.sustain,
+      images: tabImages.sustain,
     },
   };
 
@@ -244,7 +243,7 @@ const tabImages = {
 
     // update content
     const content = tabContentData[tabKey];
-    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
+    if (content && tabTitle) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.style.backgroundImage = `url(${content.icon})`;
