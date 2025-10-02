@@ -1,6 +1,43 @@
 ---
 import salesImage from "../../../assets/services/book-keeping/sales.png";
 import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
+import timerImage from "../../../assets/services/book-keeping/timer.png";
+import timerImage_2 from "../../../assets/services/book-keeping/timer_2.png";
+import cashflowImage from "../../../assets/services/book-keeping/cashflow.png";
+import cashflowImage_2 from "../../../assets/services/book-keeping/cashflow_2.png";
+import moneyImage from "../../../assets/services/book-keeping/money.png";
+import moneyImage_2 from "../../../assets/services/book-keeping/money_2.png";
+import cfoImage from "../../../assets/services/book-keeping/cfo.png";
+import cfoImage_2 from "../../../assets/services/book-keeping/cfo_2.png";
+
+// Define dynamic image data for tabs
+const tabImages = {
+  general: {
+    default: salesImage,
+    hover: salesImage_2,
+    alt: "General Accounting"
+  },
+  payables: {
+    default: timerImage,
+    hover: timerImage_2,
+    alt: "Account Payables and Receivables"
+  },
+  bank: {
+    default: cashflowImage,
+    hover: cashflowImage_2,
+    alt: "Bank Reconciliation"
+  },
+  tax: {
+    default: moneyImage,
+    hover: moneyImage_2,
+    alt: "Tax Ready Bookkeeping"
+  },
+  reporting: {
+    default: cfoImage,
+    hover: cfoImage_2,
+    alt: "Financial Reporting"
+  }
+};
 ---
 
 <div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
@@ -89,21 +126,23 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
       >
-        <div class="relative w-full max-w-[500px]">
+        <div class="relative w-full max-w-[400px] aspect-square overflow-hidden">
           <!-- Default Image -->
-          <img id="tabImage"
+          <img
+            id="tabImageDefault"
             src={salesImage.src}
             alt="General Accounting"
-            class="w-full h-auto transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+            class="w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
           />
 
           <!-- Hover Image -->
-          <img id="tabImageAlt"
+          <img
+            id="tabImageHover"
             src={salesImage_2.src}
             alt=""
-            class="absolute inset-0 w-full h-auto transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
           />
         </div>
       </div>
@@ -146,48 +185,43 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
   }
 </style>
 
-<script>
-  // Tabs data
+<script define:vars={{ tabImages }}>
+  // Tabs data with dynamic images
   const tabContentData = {
     general: {
       title: "General Accounting",
       description:
         "General Accounting is about recording and organizing daily business transactions including counting of cash and matching income with expenses.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "img/home/sales.png",
-      imageAlt: "img/home/sales_2.png",
+      images: tabImages.general,
     },
     payables: {
       title: "Account Payables and Receivables",
       description:
         "Managing bills and timely payments to vendors and collection of the receivables from clients and customers.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "img/home/timer.png",
-      imageAlt: "img/home/timer_2.png",
+      images: tabImages.payables,
     },
     bank: {
       title: "Bank Reconciliation",
       description:
         "To match the record of income and expenses with bank and detect fraud or error.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/sales.png",
-      imageAlt: "/src/assets/services/book-keeping/sales_2.png",
+      images: tabImages.bank,
     },
     tax: {
       title: "Tax – Ready Bookkeeping",
       description:
         "Keeping the books ready to audit for CPAs and also simplifying IRS tax preparations.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/sales.png",
-      imageAlt: "/src/assets/services/book-keeping/sales_2.png",
+      images: tabImages.tax,
     },
     reporting: {
       title: "Financial Reporting",
       description:
         "Necessary steps tally balance sheet, profit and loss statement, incomes and expenses, and cash – flow reports to make informed decisions in future.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/sales.png",
-      imageAlt: "/src/assets/services/book-keeping/sales_2.png",
+      images: tabImages.reporting,
     },
   };
 
@@ -196,8 +230,8 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
   const tabTitle = document.getElementById("tabTitle");
   const tabDescription = document.getElementById("tabDescription");
   const tabIcon = document.getElementById("tabIcon");
-  const tabImage = document.getElementById("tabImage");
-  const tabImageAlt = document.getElementById("tabImageAlt");
+  const tabImageDefault = document.getElementById("tabImageDefault");
+  const tabImageHover = document.getElementById("tabImageHover");
 
   // Switch tab
   function switchTab(tabKey, button) {
@@ -207,14 +241,18 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
 
     // update content
     const content = tabContentData[tabKey];
-    if (content) {
+    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.style.backgroundImage = `url(${content.icon})`;
-      tabImage.src = content.image;
-      tabImage.alt = content.title;
-      tabImageAlt.src = content.imageAlt;
-      tabImageAlt.alt = content.title;
+      
+      // Update dynamic images
+      if (content.images) {
+        tabImageDefault.src = content.images.default.src;
+        tabImageDefault.alt = content.images.alt;
+        tabImageHover.src = content.images.hover.src;
+        tabImageHover.alt = content.images.alt;
+      }
     }
   }
 
@@ -231,7 +269,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
     const first = tabButtons[0];
     if (first) {
       const key = first.getAttribute("data-tab");
-      switchTab(key, first);
+      if (key) switchTab(key, first);
     }
   });
 
