@@ -21,13 +21,12 @@
       </p>
       
     </div>
-    <a href="/about" target="_blank" rel="noopener noreferrer">
-      <button
-        class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white hover:cursor-pointer transition"
-      >
-        Get Expert Guidance
-      </button>
-    </a>
+    <button
+      id="expert-guidance-btn"
+      class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white hover:cursor-pointer transition"
+    >
+      Get Expert Guidance
+    </button>
   </div>
 
   <!-- Right Stats with Counter Animation -->
@@ -122,7 +121,43 @@
     animatables.forEach((el) => observer.observe(el));
   }
 
-  document.addEventListener("DOMContentLoaded", initAnimations);
+  function initScrollToContact() {
+    const expertGuidanceBtn = document.getElementById("expert-guidance-btn");
+    
+    if (expertGuidanceBtn) {
+      expertGuidanceBtn.addEventListener("click", () => {
+        // Try multiple possible selectors for the ContactRepo section
+        const contactSection = 
+          document.getElementById("contact-form") ||
+          document.querySelector("[data-component='ContactRepo']") ||
+          document.querySelector(".contact-repo") ||
+          document.querySelector("section[class*='contact']") ||
+          document.querySelector("div[class*='contact']");
+        
+        if (contactSection) {
+          // Get the section's position and add offset for header
+          const sectionTop = contactSection.offsetTop;
+          const headerOffset = 0; // Scroll 200px above the target section
+          
+          window.scrollTo({
+            top: sectionTop - headerOffset,
+            behavior: "smooth"
+          });
+        } else {
+          // Fallback: scroll to bottom of page if contact section not found
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initAnimations();
+    initScrollToContact();
+  });
 </script>
 
 <style>
