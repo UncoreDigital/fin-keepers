@@ -1,6 +1,35 @@
 ---
-import salesImage from "../../../assets/services/book-keeping/2.png";
-import salesImage_2 from "../../../assets/services/book-keeping/2_2.png";
+import salesImage from "../../../assets/services/book-keeping/sales.png";
+import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
+import whyImage from "../../../assets/services/book-keeping/why.png";
+import whyImage_2 from "../../../assets/services/book-keeping/why_2.png";
+import cashflowImage from "../../../assets/services/book-keeping/cashflow.png";
+import cashflowImage_2 from "../../../assets/services/book-keeping/cashflow_2.png";
+import oneImage from "../../../assets/services/book-keeping/1.png";
+import oneImage_2 from "../../../assets/services/book-keeping/1_2.png";
+
+const tabImages = {
+  general: {
+    default: salesImage,
+    hover: salesImage_2,
+    alt: "General Accounting",
+  },
+  payables: {
+    default: whyImage,
+    hover: whyImage_2,
+    alt: "Account Payables and Receivables",
+  },
+  bank: {
+    default: cashflowImage,
+    hover: cashflowImage_2,
+    alt: "Bank Reconciliation",
+  },
+  tax: {
+    default: oneImage,
+    hover: oneImage_2,
+    alt: "Tax Ready Bookkeeping",
+  }
+};
 ---
 
 <div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
@@ -88,17 +117,21 @@ import salesImage_2 from "../../../assets/services/book-keeping/2_2.png";
       <div
         class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
       >
-        <div class="relative w-full max-w-[500px]">
+        <div
+          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+        >
           <!-- Default Image -->
           <img
+            id="tabImageDefault"
             src={salesImage.src}
             alt="General Accounting"
-            class="w-full h-auto transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
           />
           <img
+            id="tabImageHover"
             src={salesImage_2.src}
             alt="Business Woman with tablet and growth charts - Hover"
-            class="absolute inset-0 w-full h-auto transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
           />
         </div>
       </div>
@@ -141,7 +174,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/2_2.png";
   }
 </style>
 
-<script>
+<script define:vars={{ tabImages }}>
   // Tabs data
   const tabContentData = {
     general: {
@@ -149,28 +182,28 @@ import salesImage_2 from "../../../assets/services/book-keeping/2_2.png";
       description:
         "Small businesses might need a few cashflow management services, but managing liquidity is definitely one of them. Having enough liquidity for daily transactions is included in this subsection of Cashflow Management Services. ",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/2.png",
+      images: tabImages.general,
     },
     payables: {
       title: "Fraud Prevention Expertise",
       description:
         "This is for businesses that deal with daily cash incoming and outgoing, like financial institutions, banks, etc. To prevent fraud from happening, online or offline, it is essential to opt for this service.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/2.png",
+      images: tabImages.payables,
     },
     bank: {
       title: "Payment - Payables and Receivables",
       description:
         "Some businesses consist of cash payables and receivables, like institutions that lend money on loan. Hence, what amount is to be paid or received needs to be calculated with utmost precision.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/2.png",
+      images: tabImages.bank,
     },
     tax: {
       title: "Financial Insights",
       description:
         "This is to provide better insight about market conditions, competitors, what has been done up until now, and how the future can be improved. This part of cashflow management includes financial reporting an financial modelling, which requires the skills, experience, and understanding that Finkeepers bring to the table.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/2.png",
+      images: tabImages.tax,
     },
   };
 
@@ -193,8 +226,14 @@ import salesImage_2 from "../../../assets/services/book-keeping/2_2.png";
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.style.backgroundImage = `url(${content.icon})`;
-      tabImage.src = content.image;
-      tabImage.alt = content.title;
+      
+       // Update dynamic images
+      if (content.images) {
+        tabImageDefault.src = content.images.default.src;
+        tabImageDefault.alt = content.images.alt;
+        tabImageHover.src = content.images.hover.src;
+        tabImageHover.alt = content.images.alt;
+      }
     }
   }
 
