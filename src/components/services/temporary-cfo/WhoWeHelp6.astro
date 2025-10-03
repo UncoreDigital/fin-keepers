@@ -1,6 +1,35 @@
 ---
 import salesImage from "../../../assets/services/book-keeping/hero.png";
 import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
+import budgetImage from "../../../assets/services/book-keeping/budget.png";
+import budgetImage_2 from "../../../assets/services/book-keeping/budget_2.png";
+import propImage from "../../../assets/services/book-keeping/prop.png";
+import propImage_2 from "../../../assets/services/book-keeping/prop_2.png";
+import cashflowImage from "../../../assets/services/book-keeping/cashflow.png";
+import cashflowImage_2 from "../../../assets/services/book-keeping/cashflow_2.png";
+
+const tabImages = {
+  general: {
+    default: salesImage,
+    hover: salesImage_2,
+    alt: "General Accounting",
+  },
+  payables: {
+    default: budgetImage,
+    hover: budgetImage_2,
+    alt: "Account Payables and Receivables",
+  },
+  bank: {
+    default: propImage,
+    hover: propImage_2,
+    alt: "Bank Reconciliation",
+  },
+  tax: {
+    default: cashflowImage,
+    hover: cashflowImage_2,
+    alt: "Tax Ready Bookkeeping",
+  }
+};
 ---
 
 <div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
@@ -86,20 +115,24 @@ import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
       >
-        <div class="relative w-full max-w-[500px]">
+        <div
+          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+        >
           <!-- Default Image -->
           <img
+            id="tabImageDefault"
             src={salesImage.src}
             alt="General Accounting"
-            class="w-full h-auto transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
           />
           <!-- Hover Image -->
           <img
+            id="tabImageHover"
             src={salesImage_2.src}
             alt=""
-            class="absolute inset-0 w-full h-auto transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
           />
         </div>
       </div>
@@ -142,7 +175,7 @@ import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
   }
 </style>
 
-<script>
+<script define:vars={{ tabImages }}>
   // Tabs data
   const tabContentData = {
     general: {
@@ -150,28 +183,28 @@ import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
       description:
         "People working for start-ups or small businesses might not have enough financial knowledge to sustain for a longer period in a cut-throat, competitive market. Hence, it is wise to bring in a financial planning and analysis expert who knows the market inside out and can make accurate financial forecasting.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/hero.png",
+      images: tabImages.general,
     },
     payables: {
       title: "Making a Budget and Tracking the Expenses",
       description:
         "Startups can feel overwhelming, but not planning your expenses can magnify the effect. A temporary CFO for small businesses in the USA will take over the responsibility of tracking transactions and guiding the managers accordingly.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/hero.png",
+      images: tabImages.payables,
     },
     bank: {
       title: "Strategic Decision Support",
       description:
         "Reading data, analyzing it, and then suggesting a strategy is a part of temporary CFO services that small businesses must opt for.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/hero.png",
+      images: tabImages.bank,
     },
     tax: {
       title: "Compliance Management",
       description:
         "Being new in the market does not give any business leeway to step away from government regulations. It is essential that a business understands all the financial risks that come with starting a business in the USA market.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/src/assets/services/book-keeping/hero.png",
+      images: tabImages.tax,
     },
   };
 
@@ -180,7 +213,8 @@ import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
   const tabTitle = document.getElementById("tabTitle");
   const tabDescription = document.getElementById("tabDescription");
   const tabIcon = document.getElementById("tabIcon");
-  const tabImage = document.getElementById("tabImage");
+  const tabImageDefault = document.getElementById("tabImageDefault");
+  const tabImageHover = document.getElementById("tabImageHover");
 
   // Switch tab
   function switchTab(tabKey, button) {
@@ -190,12 +224,18 @@ import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
 
     // update content
     const content = tabContentData[tabKey];
-    if (content) {
+    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.style.backgroundImage = `url(${content.icon})`;
-      tabImage.src = content.image;
-      tabImage.alt = content.title;
+
+       // Update dynamic images
+      if (content.images) {
+        tabImageDefault.src = content.images.default.src;
+        tabImageDefault.alt = content.images.alt;
+        tabImageHover.src = content.images.hover.src;
+        tabImageHover.alt = content.images.alt;
+      }
     }
   }
 
