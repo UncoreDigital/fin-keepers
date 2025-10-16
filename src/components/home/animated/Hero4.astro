@@ -1,3 +1,8 @@
+---
+const modules = import.meta.glob('../../../assets/partners/*.png', { eager: true, as: 'url' });
+const logos = Object.values(modules);
+---
+
 <div class="main-container w-full min-h-[544px] relative mx-auto my-0">
   <div
     class="w-full h-[570px] bg-[#213d3c] absolute top-0 left-0 overflow-hidden mb-0 lg:mb-2"
@@ -292,66 +297,13 @@
 
     <!-- Scrolling container -->
     <div class="relative w-full overflow-hidden z-[82]">
-      <div
-        id="logoSlider"
-        class="flex gap-[40px] sm:gap-[66px] items-center w-max animate-scroll-logos"
-      >
-        <!-- Your existing logos -->
-        <div
-          class="w-[100px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KkCHEb9kWG.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <!-- Add all your other logo divs here -->
-        <div
-          class="w-[100px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/8gnRNwvbbo.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[91px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/esSFsO4xY3.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[45px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/NMAB88jbQV.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[76px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/AqXsuXTuir.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[88px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/y8fiJBKrt3.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[164px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/SGdvqa92BL.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[96px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/wmpt4ReKVY.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[200px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/aDGaHRu7Hm.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[96px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/TSp8XrMAUR.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[123px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/aB4JxYU5e1.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-
-        <!-- Duplicates for loop -->
-        <div
-          class="w-[100px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KkCHEb9kWG.png')] bg-contain bg-no-repeat"
-        >
-        </div>
-        <div
-          class="w-[100px] h-[24px] shrink-0 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/8gnRNwvbbo.png')] bg-contain bg-no-repeat"
-        >
-        </div>
+      <div id="logoSlider" class="flex gap-[40px] sm:gap-[66px] items-center w-max animate-scroll-logos">
+        { logos.map((src, i) => (
+          <img src={src} alt={`partner-${i}`} class="h-[48px] shrink-0 max-w-[180px] object-contain" key={i} />
+        )) }
+        { logos.map((src, i) => (
+          <img src={src} alt={`partner-dup-${i}`} class="h-[48px] shrink-0 max-w-[180px] object-contain" key={'dup-'+i} />
+        )) }
       </div>
     </div>
   </div>
