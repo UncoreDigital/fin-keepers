@@ -28,7 +28,7 @@
       <!-- Description (pushed to right with padding) -->
       <div class="lg:ml-auto lg:pr-6">
         <p
-          class="text-[18px] font-normal leading-[27px] text-white max-w-[559px] text-left"
+          class="text-[18px] font-normal leading-[27px] text-white max-w-[559px] text-left font-['Inter']"
         >
           Finkeepers is an amalgamation of financial experts who have been
           tricking numbers in the favor of their clients for decades with the
@@ -52,7 +52,7 @@
     <!-- Our Services -->
     <div class="space-y-8">
       <h3
-        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white"
+        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white font-['Inter']"
       >
         Our Services
       </h3>
@@ -60,7 +60,7 @@
       <div class="space-y-8 sm:max-w-[250px]">
         <a
           href="/book-keeping"
-          class="block text-[14px] sm:text-[16px] font-normal leading-[16.943px] text-white hover:text-[#ed7c00] transition-colors"
+          class="block text-[14px] sm:text-[16px] font-normal leading-[16.943px] text-white hover:text-[#ed7c00] transition-colors font-['Inter']"
         >
           Bookkeeping
         </a>
@@ -94,14 +94,14 @@
     <!-- Quick Links -->
     <div class="space-y-8">
       <h3
-        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white"
+        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white font-['Inter']"
       >
         Quick Links
       </h3>
       <div class="space-y-8">
         <a
           href="/about"
-          class="block text-[14px] sm:text-[16px] font-normal leading-[16.943px] text-white hover:text-[#ed7c00] transition-colors"
+          class="block text-[14px] sm:text-[16px] font-normal leading-[16.943px] text-white hover:text-[#ed7c00] transition-colors font-['Inter']"
         >
           About Us
         </a>
@@ -141,7 +141,7 @@
     <!-- Contact Us -->
     <div class="space-y-8">
       <h3
-        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white"
+        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white font-['Inter']"
       >
         Contact Us
       </h3>
@@ -155,10 +155,10 @@
             </div>
           </div>
           <a
-            href="mailto:info@Finkeepers.com"
-            class="text-[14px] sm:text-[16px] font-normal leading-[16.943px] text-white hover:text-[#ed7c00] transition-colors"
+            href="mailto:info@finkeepers.com"
+            class="text-[14px] sm:text-[16px] font-normal leading-[16.943px] text-white hover:text-[#ed7c00] transition-colors font-['Inter']"
           >
-            info@Finkeepers.com
+            info@finkeepers.com
           </a>
         </div>
 
@@ -186,13 +186,16 @@
             >
             </div>
           </div>
-          <address
-            class="text-[14px] sm:text-[16px] font-normal leading-[22.943px] text-white not-italic"
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=30+N+Gould+ST+STE+R,+Sheridan,+Wyoming,+82801"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[14px] sm:text-[16px] font-normal leading-[22.943px] text-white not-italic hover:text-[#ed7c00] transition-colors cursor-pointer font-['Inter']"
           >
             30 N Gould ST STE R, Sheridan, Wyoming, 82801
             <br />
             United States of America
-          </address>
+          </a>
         </div>
       </div>
     </div>
@@ -200,23 +203,26 @@
     <!-- Get Updates -->
     <div class="space-y-6">
       <h3
-        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white"
+        class="text-[18px] sm:text-[24px] font-semibold leading-[27px] text-white font-['Inter']"
       >
         Get Updates
       </h3>
       <div class="space-y-6">
         <p
-          class="text-[14px] sm:text-[16px] font-normal leading-[20.943px] text-white"
+          class="text-[14px] sm:text-[16px] font-normal leading-[20.943px] text-white font-['Inter']"
         >
           Sign up for the latest news and articles. We promise to not spam your inbox.
         </p>
 
         <!-- Email Subscription Form -->
-        <div class="relative">
+        <form id="newsletter-form" class="relative">
           <input
             type="email"
+            id="newsletter-email"
+            name="email"
+            required
             placeholder="Email Address"
-            class="w-full h-[52px] px-6 pr-16 rounded-[25px] border border-white bg-transparent text-white placeholder:text-[#d9d8d8] text-[15px] font-normal focus:outline-none focus:ring-2 focus:ring-[#ed7c00]"
+            class="w-full h-[52px] px-6 pr-16 rounded-[25px] border border-white bg-transparent text-white placeholder:text-[#d9d8d8] text-[15px] font-normal font-['Inter'] focus:outline-none focus:ring-2 focus:ring-[#ed7c00]"
           />
           <button
             type="submit"
@@ -227,30 +233,31 @@
             >
             </div>
           </button>
-        </div>
+        </form>
+        <div id="newsletter-message" class="text-white text-sm font-['Inter'] mt-2 hidden"></div>
         <!-- Social Media Icons -->
         <div
           class="flex items-center justify-center sm:justify-start lg:px-4 lg:items-start gap-6"
         >
-          <a href="#" class="hover:opacity-80 transition-opacity">
+          <a href="https://www.facebook.com/finkeepers" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity" aria-label="Facebook">
             <div
               class="w-[9px] h-[19px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-06/MynhGMQt2N.png')] bg-contain bg-center bg-no-repeat"
             >
             </div>
           </a>
-          <a href="#" class="hover:opacity-80 transition-opacity">
+          <a href="https://www.linkedin.com/company/finkeepers" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
             <div
               class="w-[17px] h-[19px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-06/vdtAEbF0kO.png')] bg-contain bg-center bg-no-repeat"
             >
             </div>
           </a>
-          <a href="#" class="hover:opacity-80 transition-opacity">
+          <a href="https://twitter.com/finkeepers" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity" aria-label="Twitter">
             <div
               class="w-[17px] h-[18px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-06/tmTANk4zUp.png')] bg-contain bg-center bg-no-repeat"
             >
             </div>
           </a>
-          <a href="#" class="hover:opacity-80 transition-opacity">
+          <a href="https://www.instagram.com/finkeepers" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity" aria-label="Instagram">
             <div
               class="w-[18px] h-[15px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-06/nGUVoXKokD.png')] bg-contain bg-center bg-no-repeat"
             >
@@ -311,3 +318,70 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Newsletter subscription form
+    const newsletterForm = document.getElementById("newsletter-form");
+    const newsletterMessage = document.getElementById("newsletter-message");
+    
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const emailInput = document.getElementById("newsletter-email");
+        const email = emailInput?.value;
+        
+        if (!email) return;
+
+        // Show loading state
+        const submitButton = newsletterForm.querySelector("button[type='submit']");
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+
+        try {
+          // Using Web3Forms API for newsletter subscription
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual access key
+              subject: "Newsletter Subscription - FinKeepers",
+              email: email,
+              message: "Newsletter subscription request",
+            }),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            newsletterMessage.textContent = "Thank you for subscribing!";
+            newsletterMessage.classList.remove("hidden", "text-red-500");
+            newsletterMessage.classList.add("text-green-400");
+            newsletterForm.reset();
+          } else {
+            throw new Error(result.message || "Failed to subscribe");
+          }
+        } catch (error) {
+          newsletterMessage.textContent = "Sorry, there was an error. Please try again later.";
+          newsletterMessage.classList.remove("hidden", "text-green-400");
+          newsletterMessage.classList.add("text-red-500");
+          console.error("Newsletter subscription error:", error);
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+          
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            newsletterMessage.classList.add("hidden");
+          }, 5000);
+        }
+      });
+    }
+  });
+</script>
