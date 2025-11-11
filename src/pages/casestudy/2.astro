@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header5 from "../../components/Header5.astro";
+import ContactResp from "../../components/home/animated/ContactResp.astro";
+import Footer6 from "../../components/Footer6.astro";
+---
+
+<Layout>
+  <Header5 />
+  <div class="mt-20">
+    <!-- Hero Section -->
+    <section class="relative bg-[#f5f7fa] pt-16 pb-48 px-4 sm:px-8 lg:px-24 overflow-visible">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-[32px] sm:text-[36px] **lg:text-[40px]** font-bold leading-tight text-[#151515]">
+              Transition from C-Corp to S-Corp
+            </h1>
+            <p class="text-[#797979] text-base sm:text-lg mt-2">
+              Tax planning transition from C-corporation to S-corporation status with comprehensive asset and liability transfer.
+            </p>
+          </div>
+        </div>
+        
+        <div class="mt-6 flex flex-wrap gap-4 text-[#797979] text-sm items-center">
+          <span>by Knowcraft Analytics</span>
+          <div class="h-px w-4 bg-[#797979]"></div>
+          <div class="flex items-center gap-2">
+            <span>6 minute read</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-[30] !mt-4 !mb-10">
+        <img
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-30/VeAsFPZjT6.png"
+          class="rounded-2xl w-full shadow-xl h-[220px] sm:h-auto object-cover"
+          alt="C-Corp to S-Corp Transition Case Study"
+        />
+      </div>
+    </section>
+
+    <div class="pb-[50px] sm:pb-[290px] sm:block"></div>
+
+    <!-- Main Content -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-10 lg:px-8">
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">The Company and The Ask</h2>
+      <p class="text-[#444] text-base leading-relaxed mb-6">
+        The Company intended to change its tax status from being a C-corporation ("C-Corp") to an S-corporation ("S-Corp") for tax planning. In general terms, C-Corp and S-Corp are two types of corporations that differ in taxation and ownership. A C-Corp is subject to corporate tax rates and has no restrictions on ownership. An S-Corp is a pass-through entity that reports its profits on the owners' taxes, and ownership is restricted to up to 100 shareholders.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Challenges</h2>
+      <p class="text-[#444] text-base leading-relaxed mb-4">
+        With the election of S-Corp, the Company has limitations such as not being able to issue more than one class of stocks and not having more than 100 shareholders. While transitioning, the difference between assets and liabilities will be considered as owners' distribution and this would have tax implications. We had to perform a cost-benefit analysis to figure out the best possible outcome for the client.
+      </p>
+      <p class="text-[#444] text-base leading-relaxed mb-6">
+        Important step was to accurately transfer all assets and liabilities to new books and make sure all the numbers matched in both the old and new books. Further, any bank transactions during the transition process were recorded in the new books as well. There were accounts receivable ("AR") invoices recorded in old books, which were paid after the transition to the new books. Similarly, there were accounts payable ("AP") bills that were created before the transition and paid after the transition date. We needed to account for these as well.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Solution and Implementation</h2>
+      <p class="text-[#444] text-base leading-relaxed mb-4">
+        We had multiple rounds of discussion with the client to understand their business plans, we understood that it was not a capital-intensive business and the owner did not intend to raise capital. So, the limitation of S-Corp, i.e., not being able to issue more than one class of stock, was eliminated. Hence, we decided to move ahead with the transition.
+      </p>
+      <p class="text-[#444] text-base leading-relaxed mb-4">
+        We had to set up a new entity in QuickBooks ("QB") for S-Corp and transfer all the assets and liabilities from old QuickBooks to new ones.
+      </p>
+      <p class="text-[#444] text-base leading-relaxed mb-4">
+        The process involved importing all the charts of accounts, a list of products/services, vendors, and customers in the latest QBs and linked the company banks and credit cards from the transition date. Then, we began the transition of accounting processes, posting journal entries in both books to transfer the assets and liabilities from the old entity to the new one.
+      </p>
+      <p class="text-[#444] text-base leading-relaxed mb-6">
+        We made sure all the balances in old books on the day before transition matched with the balances in new books on the transition date. We made sure that there were no profit and loss items recorded in old books after the transition date. Similarly, we made sure that there were no Assets or Liabilities in the old books after the transition date.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Advantages of Electing for S Corp Status</h2>
+      <ul class="space-y-3 text-[#444] text-base leading-relaxed mb-6">
+        <li class="flex items-start gap-3">
+          <span class="text-[#ed7c00] font-bold">•</span>
+          <span>An S-Corp does not pay federal taxes at the corporate level. Any business income or loss is passed through to shareholders who report it on their personal income tax returns, hence avoiding double taxation.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#ed7c00] font-bold">•</span>
+          <span>An S-Corp protects the personal assets of its shareholders. Creditors cannot pursue the personal assets of the shareholders to pay business debts.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#ed7c00] font-bold">•</span>
+          <span>The election of S-Corp is expected to provide higher tax savings in the future as the owner intends to continue distributing the profits.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <ContactResp />
+    <div class="relative z-0 -mt-[80px]">
+      <Footer6 />
+    </div>
+  </div>
+</Layout>
