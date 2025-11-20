@@ -5,24 +5,46 @@
   <meta name="generator" content={Astro.generator} />
   <title>Finkeepers</title>
   <slot name="head" />
+<!-- “Google analytics “ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-89BP755ZY9"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-89BP755ZY9");
+  </script>
+  <!-- “Google search console “ -->
+  <meta
+    name="google-site-verification"
+    content="S3elwbwU7Dv0mUMrGp1A2T59rfQOy3sskONyQ81Rfm0"
+  />
 </head>
-
 <header
   id="main-header"
   class="bg-[#0e2726] w-full px-4 sm:px-6 lg:px-[60px] py-[12px] fixed top-0 left-0 z-[2000] transition-all duration-300"
 >
-  <div class="flex justify-between items-center max-w-[1440px] mx-auto relative">
+  <div
+    class="flex justify-between items-center max-w-[1440px] mx-auto relative"
+  >
     <!-- Logo -->
     <a href="/">
       <div
         id="main-logo"
         class="w-[121.549px] h-[66.001px] bg-[url(/img/logo/logo.svg)] bg-[length:100%_100%] bg-no-repeat transition-all duration-300"
-      ></div>
+      >
+      </div>
     </a>
 
     <!-- Hamburger (Mobile) -->
     <div class="lg:hidden">
-      <button id="menu-toggle" class="flex flex-col gap-[4px]" aria-label="Toggle Menu">
+      <button
+        id="menu-toggle"
+        class="flex flex-col gap-[4px]"
+        aria-label="Toggle Menu"
+      >
         <span class="w-6 h-[2px] bg-white block"></span>
         <span class="w-6 h-[2px] bg-white block"></span>
         <span class="w-6 h-[2px] bg-white block"></span>
@@ -30,9 +52,13 @@
     </div>
 
     <!-- Navigation Links (Desktop) -->
-    <nav class="hidden lg:flex gap-[24px] text-white items-center text-[16px] relative">
+    <nav
+      class="hidden lg:flex gap-[24px] text-white items-center text-[16px] relative"
+    >
       <div class="flex items-center gap-[4px]">
-        <a href="/about" class="hover:text-[#ed7c00] transition"><span>About</span></a>
+        <a href="/about" class="hover:text-[#ed7c00] transition"
+          ><span>About</span></a
+        >
       </div>
 
       <!-- Services Dropdown -->
@@ -42,47 +68,93 @@
           class="flex items-center gap-[4px] cursor-pointer hover:text-[#ed7c00] transition"
         >
           <span>Services</span>
-          <img class="w-[14px]" src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nLqr2JveAt.png" />
+          <img
+            class="w-[14px]"
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nLqr2JveAt.png"
+          />
         </button>
         <div
           id="services-menu"
           class="absolute top-full left-0 mt-2 hidden bg-white text-[#0e2726] rounded-md shadow-lg w-[220px] z-[3000]"
         >
           <ul class="flex flex-col">
-            <li><a href="/book-keeping" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"> Bookkeeping</a></li>
-            <li><a href="/financial-reporting" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Financial Reporting</a></li>
-            <li><a href="/temporary-cfo" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Temporary CFO</a></li>
-            <li><a href="/payroll-assistance" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Payroll Assistance</a></li>
-            <li><a href="/cashflow-management" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Cashflow Management</a></li>
+            <li>
+              <a
+                href="/book-keeping"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+              >
+                Bookkeeping</a>
+            </li>
+            <li>
+              <a
+                href="/financial-reporting"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Financial Reporting</a>
+            </li>
+            <li>
+              <a
+                href="/temporary-cfo"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Temporary CFO</a>
+            </li>
+            <li>
+              <a
+                href="/payroll-assistance"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Payroll Assistance</a>
+            </li>
+            <li>
+              <a
+                href="/cashflow-management"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Cashflow Management</a>
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- Resources Dropdown -->
-     <div class="relative">
+      <div class="relative">
         <button
           id="resources-toggle"
           class="flex items-center gap-[4px] cursor-pointer hover:text-[#ed7c00] transition"
         >
           <span>Resources</span>
-          <img class="w-[14px]" src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DBwZjXhgMZ.png" />
+          <img
+            class="w-[14px]"
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DBwZjXhgMZ.png"
+          />
         </button>
         <div
           id="resources-menu"
           class="absolute top-full left-0 mt-2 hidden bg-white text-[#0e2726] rounded-md shadow-lg w-[180px] z-[3000]"
         >
           <ul class="flex flex-col">
-            <li><a href="/blogs" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Blogs</a></li>
-            <li><a href="/casestudy" class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition">Case Study</a></li>
+            <li>
+              <a
+                href="/blogs"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Blogs</a>
+            </li>
+            <li>
+              <a
+                href="/casestudy"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Case Study</a>
+            </li>
           </ul>
         </div>
       </div>
 
       <div class="flex items-center gap-[4px]">
-        <a href="/pricing" class="hover:text-[#ed7c00] transition"><span>Pricing</span></a>
+        <a href="/pricing" class="hover:text-[#ed7c00] transition"
+          ><span>Pricing</span></a
+        >
       </div>
       <div class="flex items-center gap-[4px]">
-        <a href="/contact" class="hover:text-[#ed7c00] transition"><span>Contact us</span></a>
+        <a href="/contact" class="hover:text-[#ed7c00] transition"
+          ><span>Contact us</span></a
+        >
       </div>
     </nav>
 
@@ -96,23 +168,52 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2">
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2"
+  >
     <a href="/about" class="hover:text-[#ed7c00] transition">About</a>
 
     <!-- Services -->
     <div>
-      <button id="mobile-services-toggle" class="flex justify-between items-center w-full cursor-pointer">
+      <button
+        id="mobile-services-toggle"
+        class="flex justify-between items-center w-full cursor-pointer"
+      >
         <span>Services</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      <div id="mobile-services-menu" class="pl-4 flex flex-col gap-2 mt-2 hidden">
-        <a href="/book-keeping" class="hover:text-[#ed7c00] transition">Book Keeping</a>
-        <a href="/financial-reporting" class="hover:text-[#ed7c00] transition">Financial Reporting</a>
-        <a href="/temporary-cfo" class="hover:text-[#ed7c00] transition">Temporary CFO</a>
-        <a href="/payroll-assistance" class="hover:text-[#ed7c00] transition">Payroll Assistance</a>
-        <a href="/cashflow-management" class="hover:text-[#ed7c00] transition">Cashflow Management</a>
+      <div
+        id="mobile-services-menu"
+        class="pl-4 flex flex-col gap-2 mt-2 hidden"
+      >
+        <a href="/book-keeping" class="hover:text-[#ed7c00] transition"
+          >Book Keeping</a
+        >
+        <a href="/financial-reporting" class="hover:text-[#ed7c00] transition"
+          >Financial Reporting</a
+        >
+        <a href="/temporary-cfo" class="hover:text-[#ed7c00] transition"
+          >Temporary CFO</a
+        >
+        <a href="/payroll-assistance" class="hover:text-[#ed7c00] transition"
+          >Payroll Assistance</a
+        >
+        <a href="/cashflow-management" class="hover:text-[#ed7c00] transition"
+          >Cashflow Management</a
+        >
       </div>
     </div>
 
@@ -133,7 +234,9 @@
     <a href="/pricing" class="hover:text-[#ed7c00] transition">Pricing</a>
     <a href="/contact" class="hover:text-[#ed7c00] transition">Contact Us</a>
     <a href="/">
-      <button class="mt-2 px-4 py-2 border border-white text-white rounded-md font-semibold hover:bg-[#ed7c00] hover:border-[#ed7c00] hover:text-white transition">
+      <button
+        class="mt-2 px-4 py-2 border border-white text-white rounded-md font-semibold hover:bg-[#ed7c00] hover:border-[#ed7c00] hover:text-white transition"
+      >
         Get In Touch
       </button>
     </a>
@@ -179,10 +282,16 @@
     const servicesToggle = document.getElementById("services-toggle");
     const resourcesMenu = document.getElementById("resources-menu");
     const serviceMenu = document.getElementById("services-menu");
-    const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+    const mobileServicesToggle = document.getElementById(
+      "mobile-services-toggle",
+    );
     const mobileServicesMenu = document.getElementById("mobile-services-menu");
-    const mobileResourcesToggle = document.getElementById("mobile-resources-toggle");
-    const mobileResourcesMenu = document.getElementById("mobile-resources-menu");
+    const mobileResourcesToggle = document.getElementById(
+      "mobile-resources-toggle",
+    );
+    const mobileResourcesMenu = document.getElementById(
+      "mobile-resources-menu",
+    );
 
     if (toggle && menu) {
       toggle.addEventListener("click", () => {
@@ -238,7 +347,10 @@
 
     if (mobileServicesToggle && mobileServicesMenu) {
       mobileServicesToggle.addEventListener("click", () => {
-        if (mobileResourcesMenu && !mobileResourcesMenu.classList.contains("hidden")) {
+        if (
+          mobileResourcesMenu &&
+          !mobileResourcesMenu.classList.contains("hidden")
+        ) {
           mobileResourcesMenu.classList.add("hidden");
         }
         mobileServicesMenu.classList.toggle("hidden");
@@ -247,7 +359,10 @@
 
     if (mobileResourcesToggle && mobileResourcesMenu) {
       mobileResourcesToggle.addEventListener("click", () => {
-        if (mobileServicesMenu && !mobileServicesMenu.classList.contains("hidden")) {
+        if (
+          mobileServicesMenu &&
+          !mobileServicesMenu.classList.contains("hidden")
+        ) {
           mobileServicesMenu.classList.add("hidden");
         }
         mobileResourcesMenu.classList.toggle("hidden");
@@ -258,15 +373,17 @@
     let lastScrollTop = 0;
     const headerElement = document.getElementById("main-header");
     const logoElement = document.getElementById("main-logo");
-    
+
     window.addEventListener("scroll", () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollTop > 50) { // Start shrinking after 50px scroll
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 50) {
+        // Start shrinking after 50px scroll
         // Reduce header padding from py-[12px] to py-[2px] (reduces height by ~20px)
         headerElement?.classList.remove("py-[12px]");
         headerElement?.classList.add("py-[2px]");
-        
+
         // Make logo smaller (reduce by ~20px in height, proportionally in width)
         logoElement?.classList.remove("w-[121.549px]", "h-[66.001px]");
         logoElement?.classList.add("w-[97px]", "h-[46px]");
@@ -274,12 +391,12 @@
         // Restore original header padding
         headerElement?.classList.remove("py-[2px]");
         headerElement?.classList.add("py-[12px]");
-        
+
         // Restore original logo size
         logoElement?.classList.remove("w-[97px]", "h-[46px]");
         logoElement?.classList.add("w-[121.549px]", "h-[66.001px]");
       }
-      
+
       lastScrollTop = scrollTop;
     });
   });
