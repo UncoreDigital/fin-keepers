@@ -15,12 +15,12 @@ const tabImages = {
   general: {
     default: salesImage,
     hover: salesImage_2,
-    alt: "General Accounting"
+    alt: "Daily Bookkeeping & Reconciliations"
   },
   payables: {
     default: timerImage,
     hover: timerImage_2,
-    alt: "Account Payables and Receivables"
+    alt: "Account Payables and Receivable Management"
   },
   bank: {
     default: cashflowImage,
@@ -69,17 +69,17 @@ const tabImages = {
         class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto snap-x snap-mandatory"
       >
         <button class="tab-button active-tab" data-tab="general"
-          >General Accounting</button
+          >Daily Bookkeeping & Reconciliations</button
         >
         <button class="tab-button" data-tab="payables"
-          >Account Payables and Receivables</button
+          >Account Payables and Receivable Management</button
         >
-        <button class="tab-button" data-tab="bank">Bank Reconciliation</button>
+        <!--<button class="tab-button" data-tab="bank">Bank Reconciliation</button>-->
         <button class="tab-button" data-tab="tax"
           >Tax – Ready Bookkeeping</button
         >
         <button class="tab-button" data-tab="reporting"
-          >Financial Reporting</button
+          >Financial Reporting  & Dashboards</button
         >
       </div>
     </div>
@@ -103,16 +103,16 @@ const tabImages = {
             id="tabTitle"
             class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
           >
-            General Accounting
+            Daily Bookkeeping & Reconciliations
           </h3>
         </div>
         <p
           id="tabDescription"
           class="text-base sm:text-lg font-medium leading-relaxed text-[#797979]"
         >
-          General Accounting is about recording and organizing daily business
-          transactions including counting of cash and matching income with
-          expenses.
+          Recording and organizing daily business
+          transactions, including counting of cash,matching income with
+          expenses, and cash/bank reconciliation.
         </p>
         <!--  <a href="#" class="text-[#ed7c00] font-semibold text-base sm:text-lg hover:underline">Learn More</a>-->
       </div>
@@ -126,7 +126,7 @@ const tabImages = {
           <img
             id="tabImageDefault"
             src={salesImage.src}
-            alt="General Accounting"
+            alt="Daily Bookkeeping & Reconciliations"
             class="w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
           />
 
@@ -182,14 +182,14 @@ const tabImages = {
   // Tabs data with dynamic images
   const tabContentData = {
     general: {
-      title: "General Accounting",
+      title: "Daily Bookkeeping & Reconciliations",
       description:
-        "General Accounting is about recording and organizing daily business transactions including counting of cash and matching income with expenses.",
+        "Recording and organizing daily business transactions, including counting of cash,matching income with expenses, and cash/bank reconciliation.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       images: tabImages.general,
     },
     payables: {
-      title: "Account Payables and Receivables",
+      title: "Account Payables and Receivable Management",
       description:
         "Managing bills and timely payments to vendors and collection of the receivables from clients and customers.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
@@ -210,9 +210,16 @@ const tabImages = {
       images: tabImages.tax,
     },
     reporting: {
-      title: "Financial Reporting",
+      title: "Financial Reporting & Dashboards",
       description:
-        "Necessary steps tally balance sheet, profit and loss statement, incomes and expenses, and cash – flow reports to make informed decisions in future.",
+        "We deliver monthly management reports with financial KPIs, cash forecasts, and margin insights, designed for founders and investors.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.reporting,
+    },
+    reporting: {
+      title: "Multi-Entry & Consolidated Reporting",
+      description:
+        "Perfect for PE/VC portfolios or holding companies, with consolidated balance sheets and intercompany reconciliations.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       images: tabImages.reporting,
     },
