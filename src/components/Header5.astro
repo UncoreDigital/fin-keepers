@@ -5,7 +5,7 @@
   <meta name="generator" content={Astro.generator} />
   <title>Finkeepers</title>
   <slot name="head" />
-<!-- “Google analytics “ -->
+  <!-- “Google analytics “ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-89BP755ZY9"
   ></script>
   <script>
@@ -21,6 +21,130 @@
     name="google-site-verification"
     content="S3elwbwU7Dv0mUMrGp1A2T59rfQOy3sskONyQ81Rfm0"
   />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.finkeepers.us/#organization",
+          "name": "Finkeepers",
+          "url": "https://www.finkeepers.us/",
+          "email": "info@finkeepers.us",
+          "logo": "https://www.finkeepers.us/wp-content/uploads/logo.png",
+          "sameAs": [],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste R",
+            "addressLocality": "Sheridan",
+            "addressRegion": "Wyoming",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "info@finkeepers.us",
+              "areaServed": "US",
+              "availableLanguage": ["English"]
+            }
+          ]
+        },
+
+        {
+          "@type": "WebSite",
+          "@id": "https://www.finkeepers.us/#website",
+          "url": "https://www.finkeepers.us/",
+          "name": "Finkeepers",
+          "publisher": { "@id": "https://www.finkeepers.us/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.finkeepers.us/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.finkeepers.us/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.finkeepers.us/"
+            }
+          ]
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.finkeepers.us/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How can financial consulting help my business/personal finances?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Financial consulting helps you make smarter money decisions. For businesses, it improves cash flow, reduces taxes, and boosts profits. For personal finances, it helps with budgeting, investments, and long-term planning like saving for a home or retirement."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What qualifications and certifications do your advisors have?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our advisors hold top industry certifications such as CPA, CFA, and CFP, ensuring qualified financial expertise."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the process for working with your firm?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The process starts with consultation, followed by a tailored plan, onboarding, and continuous financial support."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you charge for your services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer flexible pricing based on project scope and duration. Fixed rates or hourly—whatever suits your needs."
+              }
+            }
+          ]
+        },
+
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.finkeepers.us/#service",
+          "name": "Finkeepers Accounting Services",
+          "url": "https://www.finkeepers.us/services",
+          "description": "Bookkeeping, Payroll Management, Cash Flow Management, Temporary CFO Services, Financial Reporting for SMBs in the U.S.",
+          "provider": { "@id": "https://www.finkeepers.us/#organization" },
+          "serviceType": [
+            "Bookkeeping",
+            "Payroll Management",
+            "Cash Flow Management",
+            "Temporary CFO Services",
+            "Financial Reporting"
+          ],
+          "areaServed": "US",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste R",
+            "addressLocality": "Sheridan",
+            "addressRegion": "Wyoming",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <header
   id="main-header"
@@ -83,31 +207,36 @@
                 href="/book-keeping"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
               >
-                Bookkeeping</a>
+                Bookkeeping</a
+              >
             </li>
             <li>
               <a
                 href="/financial-reporting"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
-                >Financial Reporting</a>
+                >Financial Reporting</a
+              >
             </li>
             <li>
               <a
                 href="/temporary-cfo"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
-                >Temporary CFO</a>
+                >Temporary CFO</a
+              >
             </li>
             <li>
               <a
                 href="/payroll-assistance"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
-                >Payroll Assistance</a>
+                >Payroll Assistance</a
+              >
             </li>
             <li>
               <a
                 href="/cashflow-management"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
-                >Cashflow Management</a>
+                >Cashflow Management</a
+              >
             </li>
           </ul>
         </div>
@@ -134,13 +263,15 @@
               <a
                 href="/blogs"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
-                >Blogs</a>
+                >Blogs</a
+              >
             </li>
             <li>
               <a
                 href="/casestudy"
                 class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
-                >Case Study</a>
+                >Case Study</a
+              >
             </li>
           </ul>
         </div>
