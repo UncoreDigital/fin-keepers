@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header3 from "../components/Header3.astro";
+import Footer4Resp from "../components/Footer4Resp.astro";
+
+import HeroAbout2 from "../components/about/HeroAbout2.astro";
+import HeroResp from "../components/about/HeroResp.astro";
+
+import Vision from "../components/about/Vision.astro";
+
+import Vision2 from "../components/about/Vision2.astro";
+
+import Vision3 from "../components/about/Vision3.astro";
+
+import Vision4 from "../components/about/Vision4.astro";
+
+import Vision5 from "../components/about/Vision5.astro";
+
+import CoreValues from "../components/about/CoreValues.astro";
+import CoreResp from "../components/about/CoreResp.astro";
+
+import TeamResp from "../components/about/TeamResp.astro";
+import Cta from "../components/about/Cta.astro";
+
+import Blogs from "../components/about/Blogs.astro";
+import Header5 from "../components/Header5.astro";
+---
+
+<Layout>
+  <Header5 />
+  <div class="bg-[#213d3c] w-full">
+    <!-- Desktop version only (visible from lg and up) -->
+    <div class="hidden lg:block">
+      <HeroAbout2 />
+    </div>
+
+    <!-- Mobile/Tablet version only (visible below lg) -->
+    <div class="block lg:hidden">
+      <HeroResp />
+    </div>
+  </div>
+  <div class="p-10">
+    <!-- <Vision /> -->
+    <!-- <Vision2 /> -->
+    <!-- <Vision3 /> -->
+
+    <!-- <Vision4 /> -->
+    <Vision5 />
+  </div>
+
+  <!-- <div class="bg-[#106253] w-full">
+    <CoreValues />
+    <CoreResp />
+  </div> -->
+  <TeamResp />
+  <Blogs />
+
+  <div class="mt-10">
+    <!-- <Contact /> -->
+    <Cta />
+    <div class="relative z-0 -mt-[80px]">
+      <!-- <Footer /> -->
+      <!-- <FooterResp /> -->
+      <!-- <FooterResp2 /> -->
+      <!-- <FooterResp3 /> -->
+      <Footer4Resp />
+    </div>
+  </div>
+</Layout>

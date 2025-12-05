@@ -1,0 +1,162 @@
+---
+// BlogListResp.astro
+interface Props {
+  allPosts: Array<{
+    id: number;
+    imageUrl: string;
+    title: string;
+    description: string;
+    link: string; // Add a link property if needed for "Read More"
+  }>;
+}
+
+const { allPosts } = Astro.props;
+---
+
+<div class="bg-white py-10 px-4 sm:px-6 lg:px-[120px]">
+  <div class="max-w-screen-xl mx-auto flex flex-col gap-8">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+      <h2
+        class="text-[28px] sm:text-[32px] md:text-[36px] font-bold text-[#28241f]"
+      >
+        Recent Blogs
+      </h2>
+      <div class="bg-white border border-[#d0d5dd] rounded-md px-6 py-2">
+        <div class="flex items-center gap-2">
+          <span class="text-[14px] text-[#28241f]">Accounting</span> [cite: 2]
+          <div
+            class="w-4 h-4 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-31/8DAXnzs8mU.png')] bg-cover bg-no-repeat"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="blog-cards-container"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {/* Blog cards will be rendered here by JavaScript */}
+    </div>
+
+    <div class="flex justify-center items-center gap-3 mt-10 mb-10">
+      <div
+        id="prev-page"
+        class="w-9 h-9 flex justify-center items-center rounded-full cursor-pointer"
+      >
+        [cite: 6]
+        <div
+          class="w-4 h-4 bg-[url('/img/blog/left-arrow.png')] bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+      <div
+        id="pagination-numbers"
+        class="flex justify-center items-center gap-3"
+      >
+        {/* Pagination numbers will be rendered here by JavaScript */}
+      </div>
+      <div
+        id="next-page"
+        class="w-9 h-9 flex justify-center items-center rounded-full cursor-pointer"
+      >
+        [cite: 8]
+        <div
+          class="w-4 h-4 bg-[url('/img/blog/right-arrow.png')] bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="blog-data" style="display: none;">
+  {JSON.stringify(allPosts)}
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Retrieve the blog data from the hidden element
+    const allBlogs = JSON.parse(
+      document.getElementById("blog-data").textContent
+    );
+
+    const cardsPerPage = 6;
+    let currentPage = 1;
+
+    const blogCardsContainer = document.getElementById("blog-cards-container");
+    const paginationNumbersContainer =
+      document.getElementById("pagination-numbers");
+    const prevPageButton = document.getElementById("prev-page");
+    const nextPageButton = document.getElementById("next-page");
+
+    function renderBlogCards() {
+      blogCardsContainer.innerHTML = ""; // Clear existing cards
+
+      const startIndex = (currentPage - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+      const blogsToDisplay = allBlogs.slice(startIndex, endIndex);
+
+      blogsToDisplay.forEach((blog) => {
+        const card = document.createElement("div");
+        card.className =
+          "bg-white border border-[#d0d5dd] rounded-[16px] p-6 flex flex-col gap-4";
+        card.innerHTML = `
+          <div class="h-[200px] bg-[url('${blog.imageUrl}')] bg-cover bg-no-repeat rounded-md"></div>
+          <h3 class="text-[18px] font-semibold text-[#151515] leading-snug">${blog.title}</h3>
+          <p class="text-[15px] text-[#797979] leading-relaxed">${blog.description}</p> [cite: 4]
+          <a href="${blog.link}" class="text-[#ed7c00] font-semibold text-[16px] hover:underline">Read More</a> [cite: 5]
+        `;
+        blogCardsContainer.appendChild(card);
+      });
+    }
+
+    function renderPaginationNumbers() {
+      paginationNumbersContainer.innerHTML = ""; // Clear existing numbers
+
+      const totalPages = Math.ceil(allBlogs.length / cardsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageNumberDiv = document.createElement("div");
+        pageNumberDiv.className = `w-9 h-9 flex justify-center items-center rounded-full border cursor-pointer ${
+          i === currentPage ? "bg-[#ed7c00] text-white" : "text-[#151515]"
+        }`;
+        pageNumberDiv.textContent = i;
+        pageNumberDiv.addEventListener("click", () => {
+          currentPage = i;
+          renderBlogCards();
+          renderPaginationNumbers(); // Re-render to update active style
+        });
+        paginationNumbersContainer.appendChild(pageNumberDiv);
+      }
+
+      // Disable/enable navigation buttons
+      prevPageButton.style.opacity = currentPage === 1 ? "0.5" : "1";
+      prevPageButton.style.pointerEvents = currentPage === 1 ? "none" : "auto";
+      nextPageButton.style.opacity = currentPage === totalPages ? "0.5" : "1";
+      nextPageButton.style.pointerEvents =
+        currentPage === totalPages ? "none" : "auto";
+    }
+
+    prevPageButton.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderBlogCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    nextPageButton.addEventListener("click", () => {
+      const totalPages = Math.ceil(allBlogs.length / cardsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderBlogCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    // Initial render
+    renderBlogCards();
+    renderPaginationNumbers();
+  });
+</script>

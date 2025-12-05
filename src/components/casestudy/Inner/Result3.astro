@@ -1,0 +1,53 @@
+<div
+  class="main-container flex w-full pt-[60px] sm:pt-[80px] px-4 sm:px-6 lg:px-[120px] pb-[60px] sm:pb-[80px] flex-col gap-[32px] justify-center items-center bg-[#fff] mx-auto"
+>
+  <div
+    class="flex flex-col lg:flex-row w-full max-w-[1200px] gap-[32px] lg:gap-[48px] items-start"
+  >
+    <!-- Left Column -->
+    <div
+      class="flex w-full lg:w-[505px] flex-col gap-[20px] lg:gap-[40px] items-start"
+    >
+      <span
+        class="w-full lg:w-[505px] font-['Inter'] text-[24px] sm:text-[28px] lg:text-[36px] font-bold leading-[1.3] text-[#04092a] text-left"
+      >
+        Results & Impact Lorem Ipsum Section Title
+      </span>
+    </div>
+
+    <!-- Right Column -->
+    <div
+      class="flex flex-col gap-[16px] sm:gap-[20px] lg:gap-[24px] items-start flex-1"
+    >
+      <span
+        class="w-full font-['Inter'] text-[16px] sm:text-[17px] lg:text-[18px] font-normal leading-[1.6] text-[#5c667a] text-left"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in
+      </span>
+
+      <!-- Points -->
+      {
+        [
+          "30% reduction in overall accounting costs",
+          "30% reduction in overall accounting costs",
+          "Real-time financial visibility helping drive better business decisions",
+          "Improved forecasting and budgeting accuracy",
+        ].map((point) => (
+          <div class="flex gap-[16px] sm:gap-[20px] items-start w-full">
+            <img
+              src="/img/services/book-keeping/true.svg"
+              alt="check"
+              class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] lg:w-[32px] lg:h-[32px]"
+            />
+            <span class="font-['Inter'] text-[16px] sm:text-[17px] lg:text-[18px] font-semibold leading-[1.5] text-[#151515] text-left capitalize">
+              {point}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

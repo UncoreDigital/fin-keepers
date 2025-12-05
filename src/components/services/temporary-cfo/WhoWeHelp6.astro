@@ -1,0 +1,273 @@
+---
+import salesImage from "../../../assets/services/book-keeping/hero.png";
+import salesImage_2 from "../../../assets/services/book-keeping/hero_2.png";
+import budgetImage from "../../../assets/services/book-keeping/budget.png";
+import budgetImage_2 from "../../../assets/services/book-keeping/budget_2.png";
+import propImage from "../../../assets/services/book-keeping/prop.png";
+import propImage_2 from "../../../assets/services/book-keeping/prop_2.png";
+import cashflowImage from "../../../assets/services/book-keeping/cashflow.png";
+import cashflowImage_2 from "../../../assets/services/book-keeping/cashflow_2.png";
+
+const tabImages = {
+  general: {
+    default: salesImage,
+    hover: salesImage_2,
+    alt: "General Accounting",
+  },
+  payables: {
+    default: budgetImage,
+    hover: budgetImage_2,
+    alt: "Account Payables and Receivables",
+  },
+  bank: {
+    default: propImage,
+    hover: propImage_2,
+    alt: "Bank Reconciliation",
+  },
+  tax: {
+    default: cashflowImage,
+    hover: cashflowImage_2,
+    alt: "Tax Ready Bookkeeping",
+  }
+};
+---
+
+<div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+  <div
+    class="max-w-screen-xl mx-auto flex flex-col gap-12 sm:gap-16 lg:gap-12 items-center animate-on-scroll opacity-0"
+  >
+    <!-- Heading -->
+    <div
+      class="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-start text-left w-full animate-on-scroll-child opacity-0"
+    >
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-[#04092a] font-['Inter']"
+      >
+        How Do We Help?
+      </h2>
+      <p
+        class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
+        style="max-width: calc(768px + 670px);"
+      >
+        We provide temporary CFO services to businesses that need expert financial leadership but cannot yet afford a permanent CFO. We serve various industries including eCommerce, Fashion, Agencies, Freelancers, Healthcare, Automobile, Food and Beverages, NGOs, Real Estate, Technology, Agriculture, Hospitality, and more.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div
+      class="relative w-full overflow-hidden animate-on-scroll-child opacity-0"
+    >
+      <div
+        id="tabsContainer"
+        class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto snap-x snap-mandatory"
+      >
+        <button class="tab-button active-tab" data-tab="general"
+          >Accurate Financial Prognostication</button
+        >
+        <button class="tab-button" data-tab="payables"
+          >Making a Budget and Tracking the Expenses</button
+        >
+        <button class="tab-button" data-tab="bank"
+          >Strategic Decision Support</button
+        >
+        <button class="tab-button" data-tab="tax">Compliance Management</button>
+      </div>
+    </div>
+
+    <!-- Tab Content (dynamic area) -->
+    <div
+      id="tabContent"
+      class="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 justify-center w-full max-w-screen-lg mx-auto animate-on-scroll-child opacity-0"
+    >
+      <!-- Left -->
+      <div
+        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
+        style="width: calc(50% - 40px);"
+      >
+        <div class="flex flex-col gap-4 sm:gap-6 items-start">
+          <div
+            id="tabIcon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
+          >
+          </div>
+          <h3
+            id="tabTitle"
+            class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
+          >
+            General Accounting
+          </h3>
+        </div>
+        <p
+          id="tabDescription"
+          class="text-base sm:text-lg font-medium leading-relaxed text-[#797979]"
+        >
+          People working for start-ups or small businesses might not have enough
+          financial knowledge to sustain for a longer period in a cut-throat,
+          competitive market. Hence, it is wise to bring in a financial planning
+          and analysis expert who knows the market inside out and can make
+          accurate financial forecasting.
+        </p>
+      </div>
+
+      <!-- Right -->
+      <div
+        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        style="margin-top: -20px;"
+      >
+        <div
+          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+        >
+          <!-- Default Image -->
+          <img
+            id="tabImageDefault"
+            src={salesImage.src}
+            alt="General Accounting"
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+          />
+          <!-- Hover Image -->
+          <img
+            id="tabImageHover"
+            src={salesImage_2.src}
+            alt=""
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Tab button styling */
+  .tab-button {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #797979;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+  .tab-button.active-tab {
+    background: #ed7c00;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+</style>
+
+<script define:vars={{ tabImages }}>
+  // Tabs data
+  const tabContentData = {
+    general: {
+      title: "Financial Planning & Forecasting",
+      description:
+        "People working for start-ups or small businesses might not have enough financial knowledge to sustain for a longer period in a cut-throat, competitive market. Hence, it is wise to bring in a financial planning and analysis expert who knows the market inside out and can make accurate financial forecasting.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.general,
+    },
+    payables: {
+      title: "Budgeting & Expense Control",
+      description:
+        "Startups can feel overwhelming, but not planning your expenses can magnify the effect. A temporary CFO for small businesses in the USA will take over the responsibility of tracking transactions and guiding the managers accordingly.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.payables,
+    },
+    bank: {
+      title: "Strategic Decision Support",
+      description:
+        "Reading data, analyzing it, and then suggesting a strategy is a part of temporary CFO services that small businesses must opt for.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.bank,
+    },
+    tax: {
+      title: "Compliance Management",
+      description:
+        "Being new in the market does not give any business leeway to step away from government regulations. It is essential that a business understands all the financial risks that come with starting a business in the USA market.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.tax,
+    },
+  };
+
+  // DOM references
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabTitle = document.getElementById("tabTitle");
+  const tabDescription = document.getElementById("tabDescription");
+  const tabIcon = document.getElementById("tabIcon");
+  const tabImageDefault = document.getElementById("tabImageDefault");
+  const tabImageHover = document.getElementById("tabImageHover");
+
+  // Switch tab
+  function switchTab(tabKey, button) {
+    // update buttons
+    tabButtons.forEach((btn) => btn.classList.remove("active-tab"));
+    button.classList.add("active-tab");
+
+    // update content
+    const content = tabContentData[tabKey];
+    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
+      tabTitle.textContent = content.title;
+      tabDescription.textContent = content.description;
+      tabIcon.style.backgroundImage = `url(${content.icon})`;
+
+       // Update dynamic images
+      if (content.images) {
+        tabImageDefault.src = content.images.default.src;
+        tabImageDefault.alt = content.images.alt;
+        tabImageHover.src = content.images.hover.src;
+        tabImageHover.alt = content.images.alt;
+      }
+    }
+  }
+
+  // Init
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.getAttribute("data-tab");
+      if (key) switchTab(key, button);
+    });
+  });
+
+  // Default first tab
+  document.addEventListener("DOMContentLoaded", () => {
+    const first = tabButtons[0];
+    if (first) {
+      const key = first.getAttribute("data-tab");
+      switchTab(key, first);
+    }
+  });
+
+  // Scroll animation observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document
+    .querySelectorAll(".animate-on-scroll, .animate-on-scroll-child")
+    .forEach((el) => observer.observe(el));
+</script>

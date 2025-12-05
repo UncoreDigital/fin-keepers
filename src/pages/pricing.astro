@@ -1,0 +1,29 @@
+---
+import Header5 from "../components/Header5.astro";
+import Layout from "../layouts/Layout.astro";
+import ContactResp from "../components/home/animated/ContactResp.astro";
+import Accordian from "../components/pricing/Accordian.astro";
+import Testimonial3 from "../components/blog/inner/Testimonial3.astro";
+import Hero from "../components/pricing/Hero.astro";
+import PricingComp from "../components/pricing/Pricing4.astro";
+import HeroResp from "../components/pricing/HeroResp.astro";
+import Footer6 from "../components/Footer6.astro";
+import CustomModel from "../components/pricing/CustomModel.astro";
+---
+
+<Layout>
+  <Header5 />
+  <div class="mb-20 mt-20"></div>
+  <!-- <Hero /> -->
+  <PricingComp />
+  <HeroResp />
+  <CustomModel />
+  <Accordian />
+  <Testimonial3 />
+  <div class="mt-10">
+    <ContactResp />
+    <div class="relative z-0 -mt-[80px]">
+      <Footer6 />
+    </div>
+  </div>
+</Layout>

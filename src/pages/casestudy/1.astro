@@ -1,0 +1,115 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header5 from "../../components/Header5.astro";
+import ContactResp from "../../components/home/animated/ContactResp.astro";
+import Footer6 from "../../components/Footer6.astro";
+---
+
+<Layout>
+  <Header5 />
+  <div class="mt-20">
+    <!-- Hero Section -->
+    <section class="relative bg-[#f5f7fa] pt-16 pb-48 px-4 sm:px-8 lg:px-24 overflow-visible">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-[32px] sm:text-[36px] **lg:text-[40px]** font-bold leading-tight text-[#151515]">
+              Accounting Case Study - Forecast Financials
+            </h1>
+            <p class="text-[#797979] text-base sm:text-lg mt-2">
+              Financial due diligence and EBITDA forecasting for a healthcare sector client with 14 affiliate entities.
+            </p>
+          </div>
+        </div>
+        
+        <div class="mt-6 flex flex-wrap gap-4 text-[#797979] text-sm items-center">
+          <span>by Knowcraft Analytics</span>
+          <div class="h-px w-4 bg-[#797979]"></div>
+          <div class="flex items-center gap-2">
+            <span>4 minute read</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-[30] !mt-4 !mb-10">
+        <img
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-30/VeAsFPZjT6.png"
+          class="rounded-2xl w-full shadow-xl h-[220px] sm:h-auto object-cover"
+          alt="Forecast Financials Case Study"
+        />
+      </div>
+    </section>
+
+    <div class="pb-[50px] sm:pb-[290px] sm:block"></div>
+
+    <!-- Main Content -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-10 lg:px-8">
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Client Background</h2>
+      <p class="text-[#444] text-base leading-relaxed mb-6">
+        Our client is in the healthcare sector, it provides healthcare-related management services through its affiliates. Being a representative of the client's transaction advisory team, we performed financial due diligence on historical data while also evaluating and forecasting the expected EBITDA.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Challenge</h2>
+      <p class="text-[#444] text-base leading-relaxed mb-6">
+        The challenge was to forecast the earnings for all the affiliate (14) entities including the entities that were newly acquired. With the limited information available we had to devise a systematic approach to set parameters to forecast the expected values, the critical activity was to stay consistent while also taking into consideration individual adjustments for each entity to ensure the reliability of due diligence adjustments.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Proposed Approach</h2>
+      <div class="space-y-4 mb-6">
+        <div>
+          <h3 class="text-lg font-semibold text-[#151515] mb-2">1. Standalone financial statements (FS) created</h3>
+          <p class="text-[#444] text-base leading-relaxed">
+            We created entity-level FS by leveraging the audited financials of the past two periods as the basis to forecast and calculate the day's sales outstanding (DSO) for each entity. The individual entity values were then carefully consolidated at the holding entity level for further analysis.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-[#151515] mb-2">2. Forecast adjustments</h3>
+          <p class="text-[#444] text-base leading-relaxed">
+            As per the discussions with the management, we leveraged the patient encounter information to calculate the forecasted adjustments for each entity. "Revenue Projections," and "Outpatient/ inpatient days/beds" were considered as the base to calculate the change in the revenue and operating expenses.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-[#151515] mb-2">3. Reconciliation of previous period net income (NI) to forecasted EBITDA</h3>
+          <p class="text-[#444] text-base leading-relaxed">
+            To understand the potential income to be generated in the future period, we have eliminated the revenue portion from entities that were discontinued in calculating the EBITDA. It was ensured that the NI of newly acquired entities was pro-rated based on the acquisition period. Further, we considered a 2.5% increase each year to account for inflation to reflect the future run-rate of costs and income.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-[#151515] mb-2">4. Other procedures</h3>
+          <p class="text-[#444] text-base leading-relaxed">
+            We forecasted accounts receivable (AR), and accounts payable (AP) schedules, along with the list of top five vendors for each period. The reconciliation of the cost of goods sold, operating expenses, and NI was subsequently performed.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-[#151515] mb-2">5. Effective communication</h3>
+          <p class="text-[#444] text-base leading-relaxed">
+            Throughout the transition process, we maintained daily communication with the client, providing regular updates on progress, addressing concerns promptly, and soliciting feedback to ensure alignment with their objectives of the transaction.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold text-[#151515] mb-4">Results</h2>
+      <ul class="space-y-3 text-[#444] text-base leading-relaxed mb-6">
+        <li class="flex items-start gap-3">
+          <span class="text-[#ed7c00] font-bold">•</span>
+          <span>The forecasted values estimated from the in-depth analysis were in line with the management's expectations.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#ed7c00] font-bold">•</span>
+          <span>The use of data automation techniques ensured efficient flow between all the tabs, thereby significantly reducing the margin for any error.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#ed7c00] font-bold">•</span>
+          <span>Effective communication with the client led to addressing minute attention to detail and quick turnaround.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <ContactResp />
+    <div class="relative z-0 -mt-[80px]">
+      <Footer6 />
+    </div>
+  </div>
+</Layout>

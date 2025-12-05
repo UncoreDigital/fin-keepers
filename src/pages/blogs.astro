@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header3 from "../components/Header3.astro";
+import HeroBlog from "../components/blog/HeroBlog.astro";
+import BlogList from "../components/blog/BlogList.astro";
+import BlogListResp from "../components/blog/BlogListResp.astro";
+
+import BlogListResp2 from "../components/blog/BlogListResp2.astro";
+
+import BlogListResp3 from "../components/blog/BlogListResp3.astro";
+import BlogCta from "../components/blog/BlogCta.astro";
+import BlogCtaResp from "../components/home/animated/ContactResp.astro";
+import Footer6 from "../components/Footer6.astro";
+import Header5 from "../components/Header5.astro";
+
+// src/pages/index.astro
+// ... (other imports and frontmatter)
+
+const commonImageUrl =
+  "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-31/rDwDbsSNsu.png"; // The URL you provided
+
+const myBlogPosts = [
+  {
+    id: 1,
+    imageUrl: commonImageUrl,
+    title: "Mastering Personal Finance: A Beginner's Guide",
+    description:
+      "Learn the basics of managing your money, from budgeting to saving and investing for your future.",
+    link: "/blog/post-1",
+  },
+  {
+    id: 2,
+    imageUrl: commonImageUrl,
+    title: "The Future of AI in Accounting",
+    description:
+      "Explore how artificial intelligence is transforming the accounting industry and what to expect next.",
+    link: "/blog/post-2",
+  },
+  {
+    id: 3,
+    imageUrl: commonImageUrl,
+    title: "Tax Season Tips: Maximizing Your Refund",
+    description:
+      "Essential tips and tricks to help you prepare for tax season and ensure you get the maximum refund possible.",
+    link: "/blog/post-3",
+  },
+  {
+    id: 4,
+    imageUrl: commonImageUrl,
+    title: "Investing for Retirement: A Comprehensive Guide",
+    description:
+      "Understand different investment vehicles and strategies to build a robust retirement portfolio.",
+    link: "/blog/post-4",
+  },
+  {
+    id: 5,
+    imageUrl: commonImageUrl,
+    title: "Budgeting 101: Creating a Sustainable Financial Plan",
+    description:
+      "Step-by-step guide to creating and sticking to a budget that works for your lifestyle.",
+    link: "/blog/post-5",
+  },
+  {
+    id: 6,
+    imageUrl: commonImageUrl,
+    title: "Understanding Crypto: A Beginner's Introduction",
+    description:
+      "Demystifying cryptocurrency and blockchain technology for those new to the digital asset world.",
+    link: "/blog/post-6",
+  },
+  {
+    id: 7,
+    imageUrl: commonImageUrl,
+    title: "Debt Management Strategies: Pay Off Debt Faster",
+    description:
+      "Effective strategies to tackle your debt, improve your credit score, and achieve financial freedom.",
+    link: "/blog/post-7",
+  },
+  {
+    id: 8,
+    imageUrl: commonImageUrl,
+    title: "Small Business Accounting Essentials",
+    description:
+      "Key accounting principles every small business owner should know for financial success.",
+    link: "/blog/post-8",
+  },
+  {
+    id: 9,
+    imageUrl: commonImageUrl,
+    title: "The Power of Compound Interest Explained",
+    description:
+      "Discover how compound interest can significantly grow your wealth over time.",
+    link: "/blog/post-9",
+  },
+  {
+    id: 10,
+    imageUrl: commonImageUrl,
+    title: "Choosing the Right Bank Account for You",
+    description:
+      "A guide to selecting the best checking and savings accounts to meet your financial needs.",
+    link: "/blog/post-10",
+  },
+  {
+    id: 11,
+    imageUrl: commonImageUrl,
+    title: "Financial Planning for Young Professionals",
+    description:
+      "Strategies for career starters to build a strong financial foundation early on.",
+    link: "/blog/post-11",
+  },
+  {
+    id: 12,
+    imageUrl: commonImageUrl,
+    title: "Credit Score Basics: What You Need to Know",
+    description:
+      "Learn how your credit score is calculated and simple ways to improve it for better financial opportunities.",
+    link: "/blog/post-12",
+  },
+  {
+    id: 13,
+    imageUrl: commonImageUrl,
+    title: "Emergency Fund: Why You Need One and How to Build It",
+    description:
+      "Understand the importance of an emergency fund and practical steps to create your own financial safety net.",
+    link: "/blog/post-13",
+  },
+  {
+    id: 14,
+    imageUrl: commonImageUrl,
+    title: "Navigating Student Loans: Repayment Strategies",
+    description:
+      "Tips and strategies for managing and paying off your student loans effectively.",
+    link: "/blog/post-14",
+  },
+];
+---
+
+<Layout>
+  <Header5 />
+  <div class="mt-20">
+    <HeroBlog />
+  </div>
+
+  <BlogListResp2 />
+
+  <div class="mt-10">
+    <!-- <BlogCta /> -->
+    <BlogCtaResp />
+    <div class="relative z-0 -mt-[80px]">
+      <Footer6 />
+    </div>
+  </div>
+</Layout>

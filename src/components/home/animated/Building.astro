@@ -1,0 +1,162 @@
+<div
+  class="build-section-mobile flex flex-col lg:flex-row w-full px-4 sm:px-8 lg:px-[120px] pt-[40px] pb-[40px] gap-10 items-start bg-[#106253] relative z-[31]"
+>
+  <!-- Left Column -->
+  <div class="flex flex-col gap-8 lg:w-[570px] w-full z-[33]">
+    <span
+      class="build-title-mobile text-white font-['Inter'] text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-[1.4]"
+    >
+      Your Finance Partner — From Pre-Revenue to Series B and Beyond<br />
+    </span>
+    <span
+  class="build-title-mobile text-white font-['Inter'] text-[16px] sm:text-[30px] lg:text-[36px]"
+>
+  Whether you are pre-revenue or post-Series B, our team has walked your path, understands your investor expectations, and knows how to keep your finances audit-ready.<br> We partner with:
+</span>
+    <!-- Cards -->
+    <div class="flex flex-col gap-7">
+      <!-- Card 1 -->
+      <div
+        class="build-card-1-mobile relative border border-[#eaeaea] rounded-full p-6 flex items-start gap-4"
+      >
+        <div
+          class="mt-6 w-[100px] h-12 bg-[#ed7c00] rounded-full flex items-center justify-center"
+        >
+          <img
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/o3wBK4j2pv.png"
+            class="w-6 h-6"
+          />
+        </div>
+        <div class="text-white">
+          <h3 class="text-[20px] font-semibold">Startups</h3>
+          <p class="text-[14px] leading-6">
+            Helping early-stage teams build strong financial foundations that scale with growth.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="build-card-1-mobile relative border border-[#eaeaea] rounded-full p-6 flex items-start gap-4"
+      >
+        <div
+          class="mt-12 w-[170px] h-12 bg-[#ed7c00] rounded-full flex items-center justify-center"
+        >
+          <img
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/rFsJfGuGEL.png"
+            class="w-6 h-6"
+          />
+        </div>
+        <div class="text-white">
+          <h3 class="text-[20px] font-semibold">PE/VC-Backed Companies</h3>
+          <p class="text-[14px] leading-6">
+Supporting fast-growing teams with scalable finance operations, sharper reporting, and investor-grade visibility at every stage of growth.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="build-card-3-mobile relative border border-[#eaeaea] rounded-full p-6 flex items-start gap-4"
+      >
+        <div
+          class="mt-16 w-[170px] h-12 bg-[#ed7c00] rounded-full flex items-center justify-center"
+        >
+          <img
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/t81ZYCJ4VX.png"
+            class="w-6 h-6"
+          />
+        </div>
+        <div class="text-white">
+          <h3 class="text-[20px] font-semibold">Small & Mid-Sized Businesses</h3>
+          <p class="text-[14px] leading-6">
+Providing dependable, affordable financial expertise that strengthens decision-making and keeps your business financially confident and compliant.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="build-vector-mobile w-full lg:w-[569px] mt-10 lg:mt-0 relative group overflow-hidden rounded-lg">
+    <img
+      src="/img/home/build-img.png"
+      alt="Sales Chart"
+      class="w-full h-full object-contain shadow-lg transition-opacity duration-700 ease-in-out group-hover:opacity-0"
+    />
+
+    <!-- On hover -->
+    <img
+      src="/img/home/build-img_2.png"
+      alt="Sales Chart Hover"
+      class="absolute inset-0 w-full h-full object-contain shadow-lg z-20 opacity-0 transition-all duration-700 ease-in-out group-hover:opacity-100"
+    />
+  </div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.querySelector(".build-section-mobile");
+    const titleEl = document.querySelector(".build-title-mobile");
+    const card1 = document.querySelector(".build-card-1-mobile");
+    const card2 = document.querySelector(".build-card-2-mobile");
+    const card3 = document.querySelector(".build-card-3-mobile");
+    const vector = document.querySelector(".build-vector-mobile");
+
+    if (!wrapper) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapper,
+        start: "top 80%",
+        once: true,
+      },
+    });
+
+    if (titleEl) {
+      tl.from(titleEl, {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    }
+
+    if (card1) {
+      tl.from(
+        card1,
+        { x: -80, opacity: 0, duration: 0.8, ease: "power2.out" },
+        "+=0.1",
+      );
+    }
+
+    if (card2) {
+      tl.from(
+        card2,
+        { x: 80, opacity: 0, duration: 0.8, ease: "power2.out" },
+        "-=0.5",
+      );
+    }
+
+    if (card3) {
+      tl.from(
+        card3,
+        { x: -80, opacity: 0, duration: 0.8, ease: "power2.out" },
+        "-=0.5",
+      );
+    }
+
+    if (vector) {
+      tl.from(
+        vector,
+        { x: 100, opacity: 0, duration: 0.9, ease: "power2.out" },
+        "-=0.3",
+      );
+    }
+  });
+</script>

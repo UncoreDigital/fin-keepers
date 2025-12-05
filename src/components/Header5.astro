@@ -1,0 +1,534 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Finkeepers</title>
+  <slot name="head" />
+  <!-- “Google analytics “ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-89BP755ZY9"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-89BP755ZY9");
+  </script>
+  <!-- “Google search console “ -->
+  <meta
+    name="google-site-verification"
+    content="S3elwbwU7Dv0mUMrGp1A2T59rfQOy3sskONyQ81Rfm0"
+  />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.finkeepers.us/#organization",
+          "name": "Finkeepers",
+          "url": "https://www.finkeepers.us/",
+          "email": "info@finkeepers.us",
+          "logo": "https://www.finkeepers.us/wp-content/uploads/logo.png",
+          "sameAs": [],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste R",
+            "addressLocality": "Sheridan",
+            "addressRegion": "Wyoming",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "info@finkeepers.us",
+              "areaServed": "US",
+              "availableLanguage": ["English"]
+            }
+          ]
+        },
+
+        {
+          "@type": "WebSite",
+          "@id": "https://www.finkeepers.us/#website",
+          "url": "https://www.finkeepers.us/",
+          "name": "Finkeepers",
+          "publisher": { "@id": "https://www.finkeepers.us/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.finkeepers.us/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.finkeepers.us/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.finkeepers.us/"
+            }
+          ]
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.finkeepers.us/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How can financial consulting help my business/personal finances?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Financial consulting helps you make smarter money decisions. For businesses, it improves cash flow, reduces taxes, and boosts profits. For personal finances, it helps with budgeting, investments, and long-term planning like saving for a home or retirement."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What qualifications and certifications do your advisors have?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our advisors hold top industry certifications such as CPA, CFA, and CFP, ensuring qualified financial expertise."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the process for working with your firm?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The process starts with consultation, followed by a tailored plan, onboarding, and continuous financial support."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you charge for your services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer flexible pricing based on project scope and duration. Fixed rates or hourly—whatever suits your needs."
+              }
+            }
+          ]
+        },
+
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.finkeepers.us/#service",
+          "name": "Finkeepers Accounting Services",
+          "url": "https://www.finkeepers.us/services",
+          "description": "Bookkeeping, Payroll Management, Cash Flow Management, Temporary CFO Services, Financial Reporting for SMBs in the U.S.",
+          "provider": { "@id": "https://www.finkeepers.us/#organization" },
+          "serviceType": [
+            "Bookkeeping",
+            "Payroll Management",
+            "Cash Flow Management",
+            "Temporary CFO Services",
+            "Financial Reporting"
+          ],
+          "areaServed": "US",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste R",
+            "addressLocality": "Sheridan",
+            "addressRegion": "Wyoming",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          }
+        }
+      ]
+    }
+  </script>
+</head>
+<header
+  id="main-header"
+  class="bg-[#0e2726] w-full px-4 sm:px-6 lg:px-[60px] py-[12px] fixed top-0 left-0 z-[2000] transition-all duration-300"
+>
+  <div
+    class="flex justify-between items-center max-w-[1440px] mx-auto relative"
+  >
+    <!-- Logo -->
+    <a href="/">
+      <div
+        id="main-logo"
+        class="w-[121.549px] h-[66.001px] bg-[url(/img/logo/logo.svg)] bg-[length:100%_100%] bg-no-repeat transition-all duration-300"
+      >
+      </div>
+    </a>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="lg:hidden">
+      <button
+        id="menu-toggle"
+        class="flex flex-col gap-[4px]"
+        aria-label="Toggle Menu"
+      >
+        <span class="w-6 h-[2px] bg-white block"></span>
+        <span class="w-6 h-[2px] bg-white block"></span>
+        <span class="w-6 h-[2px] bg-white block"></span>
+      </button>
+    </div>
+
+    <!-- Navigation Links (Desktop) -->
+    <nav
+      class="hidden lg:flex gap-[24px] text-white items-center text-[16px] relative"
+    >
+      <div class="flex items-center gap-[4px]">
+        <a href="/about" class="hover:text-[#ed7c00] transition"
+          ><span>About</span></a
+        >
+      </div>
+
+      <!-- Services Dropdown -->
+      <div class="relative">
+        <button
+          id="services-toggle"
+          class="flex items-center gap-[4px] cursor-pointer hover:text-[#ed7c00] transition"
+        >
+          <span>Services</span>
+          <img
+            class="w-[14px]"
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nLqr2JveAt.png"
+          />
+        </button>
+        <div
+          id="services-menu"
+          class="absolute top-full left-0 mt-2 hidden bg-white text-[#0e2726] rounded-md shadow-lg w-[220px] z-[3000]"
+        >
+          <ul class="flex flex-col">
+            <li>
+              <a
+                href="/book-keeping"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+              >
+                Bookkeeping</a
+              >
+            </li>
+            <li>
+              <a
+                href="/financial-reporting"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Financial Reporting</a
+              >
+            </li>
+            <li>
+              <a
+                href="/temporary-cfo"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Temporary CFO</a
+              >
+            </li>
+            <li>
+              <a
+                href="/payroll-assistance"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Payroll Assistance</a
+              >
+            </li>
+            <li>
+              <a
+                href="/cashflow-management"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Cashflow Management</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Resources Dropdown -->
+      <div class="relative">
+        <button
+          id="resources-toggle"
+          class="flex items-center gap-[4px] cursor-pointer hover:text-[#ed7c00] transition"
+        >
+          <span>Resources</span>
+          <img
+            class="w-[14px]"
+            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DBwZjXhgMZ.png"
+          />
+        </button>
+        <div
+          id="resources-menu"
+          class="absolute top-full left-0 mt-2 hidden bg-white text-[#0e2726] rounded-md shadow-lg w-[180px] z-[3000]"
+        >
+          <ul class="flex flex-col">
+            <li>
+              <a
+                href="/blogs"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Blogs</a
+              >
+            </li>
+            <li>
+              <a
+                href="/casestudy"
+                class="block px-4 py-2 hover:bg-[#f5f7fa] hover:text-[#ed7c00] transition"
+                >Case Study</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-[4px]">
+        <a href="/pricing" class="hover:text-[#ed7c00] transition"
+          ><span>Pricing</span></a
+        >
+      </div>
+      <div class="flex items-center gap-[4px]">
+        <a href="/contact" class="hover:text-[#ed7c00] transition"
+          ><span>Contact us</span></a
+        >
+      </div>
+    </nav>
+
+    <!-- Get In Touch Button (Desktop) -->
+    <a
+      href="#contact-form"
+      class="hidden lg:flex px-4 py-1 border border-white text-white rounded-md text-sm font-semibold cursor-pointer hover:bg-[#ed7c00] hover:border-[#ed7c00] hover:text-white transition"
+    >
+      Get In Touch
+    </a>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2"
+  >
+    <a href="/about" class="hover:text-[#ed7c00] transition">About</a>
+
+    <!-- Services -->
+    <div>
+      <button
+        id="mobile-services-toggle"
+        class="flex justify-between items-center w-full cursor-pointer"
+      >
+        <span>Services</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div
+        id="mobile-services-menu"
+        class="pl-4 flex flex-col gap-2 mt-2 hidden"
+      >
+        <a href="/book-keeping" class="hover:text-[#ed7c00] transition"
+          >Book Keeping</a
+        >
+        <a href="/financial-reporting" class="hover:text-[#ed7c00] transition"
+          >Financial Reporting</a
+        >
+        <a href="/temporary-cfo" class="hover:text-[#ed7c00] transition"
+          >Temporary CFO</a
+        >
+        <a href="/payroll-assistance" class="hover:text-[#ed7c00] transition"
+          >Payroll Assistance</a
+        >
+        <a href="/cashflow-management" class="hover:text-[#ed7c00] transition"
+          >Cashflow Management</a
+        >
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <!-- <div>
+      <button id="mobile-resources-toggle" class="flex justify-between items-center w-full cursor-pointer">
+        <span>Resources</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="mobile-resources-menu" class="pl-4 flex flex-col gap-2 mt-2 hidden">
+        <a href="/blogs" class="hover:text-[#ed7c00] transition">Blogs</a>
+        <a href="/casestudy" class="hover:text-[#ed7c00] transition">Case Study</a>
+      </div>
+    </div> -->
+
+    <a href="/pricing" class="hover:text-[#ed7c00] transition">Pricing</a>
+    <a href="/contact" class="hover:text-[#ed7c00] transition">Contact Us</a>
+    <a href="/">
+      <button
+        class="mt-2 px-4 py-2 border border-white text-white rounded-md font-semibold hover:bg-[#ed7c00] hover:border-[#ed7c00] hover:text-white transition"
+      >
+        Get In Touch
+      </button>
+    </a>
+  </div>
+</header>
+
+<!-- ✅ Active + Dropdown Script -->
+<style>
+  .nav-active {
+    color: #ed7c00 !important;
+    font-weight: 600;
+    position: relative;
+  }
+  .nav-active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ed7c00;
+    border-radius: 2px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Active link detection
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll("nav a, #mobile-menu a");
+
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("nav-active");
+      }
+    });
+
+    // ✅ Existing Dropdown + Mobile Toggle (from your code)
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const header = document.getElementById("main-header");
+    const resourcesToggle = document.getElementById("resources-toggle");
+    const servicesToggle = document.getElementById("services-toggle");
+    const resourcesMenu = document.getElementById("resources-menu");
+    const serviceMenu = document.getElementById("services-menu");
+    const mobileServicesToggle = document.getElementById(
+      "mobile-services-toggle",
+    );
+    const mobileServicesMenu = document.getElementById("mobile-services-menu");
+    const mobileResourcesToggle = document.getElementById(
+      "mobile-resources-toggle",
+    );
+    const mobileResourcesMenu = document.getElementById(
+      "mobile-resources-menu",
+    );
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    if (header) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("bg-[#093634]");
+        } else {
+          header.classList.remove("bg-[#093634]");
+        }
+      });
+    }
+
+    const closeAllDropdowns = () => {
+      if (resourcesMenu) resourcesMenu.classList.add("hidden");
+      if (serviceMenu) serviceMenu.classList.add("hidden");
+    };
+
+    if (resourcesToggle && resourcesMenu) {
+      resourcesToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (serviceMenu) serviceMenu.classList.add("hidden");
+        resourcesMenu.classList.toggle("hidden");
+      });
+    }
+
+    if (servicesToggle && serviceMenu) {
+      servicesToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (resourcesMenu) resourcesMenu.classList.add("hidden");
+        serviceMenu.classList.toggle("hidden");
+      });
+    }
+
+    document.addEventListener("click", (e) => {
+      const target = e.target;
+      if (
+        target &&
+        resourcesMenu &&
+        serviceMenu &&
+        !resourcesMenu.contains(target) &&
+        !serviceMenu.contains(target) &&
+        !resourcesToggle?.contains(target) &&
+        !servicesToggle?.contains(target)
+      ) {
+        closeAllDropdowns();
+      }
+    });
+
+    if (mobileServicesToggle && mobileServicesMenu) {
+      mobileServicesToggle.addEventListener("click", () => {
+        if (
+          mobileResourcesMenu &&
+          !mobileResourcesMenu.classList.contains("hidden")
+        ) {
+          mobileResourcesMenu.classList.add("hidden");
+        }
+        mobileServicesMenu.classList.toggle("hidden");
+      });
+    }
+
+    if (mobileResourcesToggle && mobileResourcesMenu) {
+      mobileResourcesToggle.addEventListener("click", () => {
+        if (
+          mobileServicesMenu &&
+          !mobileServicesMenu.classList.contains("hidden")
+        ) {
+          mobileServicesMenu.classList.add("hidden");
+        }
+        mobileResourcesMenu.classList.toggle("hidden");
+      });
+    }
+
+    // Header scroll functionality - reduce height by 20px when scrolling
+    let lastScrollTop = 0;
+    const headerElement = document.getElementById("main-header");
+    const logoElement = document.getElementById("main-logo");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 50) {
+        // Start shrinking after 50px scroll
+        // Reduce header padding from py-[12px] to py-[2px] (reduces height by ~20px)
+        headerElement?.classList.remove("py-[12px]");
+        headerElement?.classList.add("py-[2px]");
+
+        // Make logo smaller (reduce by ~20px in height, proportionally in width)
+        logoElement?.classList.remove("w-[121.549px]", "h-[66.001px]");
+        logoElement?.classList.add("w-[97px]", "h-[46px]");
+      } else {
+        // Restore original header padding
+        headerElement?.classList.remove("py-[2px]");
+        headerElement?.classList.add("py-[12px]");
+
+        // Restore original logo size
+        logoElement?.classList.remove("w-[97px]", "h-[46px]");
+        logoElement?.classList.add("w-[121.549px]", "h-[66.001px]");
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  });
+</script>

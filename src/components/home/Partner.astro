@@ -1,0 +1,187 @@
+---
+ // Component script (runs on server)
+---
+
+<div
+  class="flex flex-col lg:flex-row w-full max-w-[1440px] px-6 lg:px-[120px] pt-[150px] pb-[70px] gap-6 justify-center items-start relative mx-auto overflow-hidden"
+>
+  <!-- Left Content -->
+  <div class="flex flex-col gap-8 items-start w-full lg:w-1/2 relative z-[2] scroll-animate slide-left">
+    <div class="flex flex-col gap-3 items-start w-full relative z-[3]">
+      <h2
+        class="text-[25px] sm:text-[32px] lg:text-[36px] font-bold leading-[1.3] text-[#04092a]"
+      >
+        A Finance Team Your Firm Deserves
+      </h2>
+      <p
+        class="text-[16px] sm:text-[17px] lg:text-[18px] leading-[27px] text-[#5c667a]"
+      >
+  Finkeepers is one of the trusted accounting solution firms, designed specifically for SMBs in the U.S. We help your business keep books clean, manage your payroll, and make financial reporting simple and scalable. When you allow us to associate with you, you are not just getting financial advisors/consultants in us, we are your financial partners. Backed by Knowcraft Analytics, our tech-enabled solutions aim to make your business efficient and audit-ready. 
+ 
+      </p>
+      
+    </div>
+    <button
+      id="expert-guidance-btn"
+      class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white hover:cursor-pointer transition"
+    >
+      Get Expert Guidance
+    </button>
+  </div>
+
+  <!-- Right Stats with Counter Animation -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-1/2 relative z-[3] sm:pt-30 scroll-animate slide-right"
+    id="stats-container"
+  >
+    <div class="border-l-2 border-[#007164] pl-4">
+      <div class="text-[32px] font-bold text-[#04092a]">
+        <span class="counter" data-target="60">0</span><span
+          class="text-[#ed7c00]">+</span
+        >
+      </div>
+      <p class="text-[16px] text-[#5c667a]">Accounting Firms</p>
+    </div>
+    <div class="border-l-2 border-[#007164] pl-4">
+      <div class="text-[32px] font-bold text-[#04092a]">
+        <span class="counter" data-target="40">0</span>%<span
+          class="text-[#ed7c00]"></span
+        >
+      </div>
+      <p class="text-[16px] text-[#5c667a]">Reduction in Turnaround Time</p>
+    </div>
+    <div class="border-l-2 border-[#007164] pl-4">
+      <div class="text-[32px] font-bold text-[#04092a]">
+        <span class="counter" data-target="95">0</span>%<span
+          class="text-[#ed7c00]"></span
+        >
+      </div>
+      <p class="text-[16px] text-[#5c667a]">Client Retention</p>
+    </div>
+    <div class="border-l-2 border-[#007164] pl-4 flex items-center">
+  <img src="/img/home/ISO.png" alt="ISO 27001:2022 Certified" class="w-20 h-auto" />
+</div>
+  </div>
+</div>
+
+<script>
+  // Counter animation function
+  function animateCounter(element) {
+    const target = parseInt(element.getAttribute("data-target") || "0");
+    const duration = 2000; 
+    const start = performance.now();
+    const startValue = 0;
+
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentValue = Math.floor(
+        startValue + (target - startValue) * easeOutQuart
+      );
+      element.textContent = currentValue.toString();
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toString();
+      }
+    }
+    requestAnimationFrame(updateCounter);
+  }
+
+  function initAnimations() {
+    const counters = document.querySelectorAll(".counter");
+    const animatables = document.querySelectorAll(".scroll-animate");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Trigger counter
+            if (entry.target.classList.contains("counter") && !entry.target.classList.contains("animated")) {
+              entry.target.classList.add("animated");
+              animateCounter(entry.target);
+            }
+
+            // Trigger slide-in
+            if (entry.target.classList.contains("scroll-animate")) {
+              entry.target.classList.add("in-view");
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+    animatables.forEach((el) => observer.observe(el));
+  }
+
+  function initScrollToContact() {
+    const expertGuidanceBtn = document.getElementById("expert-guidance-btn");
+    
+    if (expertGuidanceBtn) {
+      expertGuidanceBtn.addEventListener("click", () => {
+        // Try multiple possible selectors for the ContactRepo section
+        const contactSection = 
+          document.getElementById("contact-form") ||
+          document.querySelector("[data-component='ContactRepo']") ||
+          document.querySelector(".contact-repo") ||
+          document.querySelector("section[class*='contact']") ||
+          document.querySelector("div[class*='contact']");
+        
+        if (contactSection) {
+          // Get the section's position and add offset for header
+          const sectionTop = contactSection.offsetTop;
+          const headerOffset = 0; // Scroll 200px above the target section
+          
+          window.scrollTo({
+            top: sectionTop - headerOffset,
+            behavior: "smooth"
+          });
+        } else {
+          // Fallback: scroll to bottom of page if contact section not found
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initAnimations();
+    initScrollToContact();
+  });
+</script>
+
+<style>
+  .counter {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Initial states */
+  .slide-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 0.8s ease-out;
+  }
+  .slide-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 0.8s ease-out;
+  }
+
+  /* When in view */
+  .slide-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .slide-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>

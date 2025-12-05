@@ -1,0 +1,139 @@
+---
+import WhyImage from "../../../assets/services/book-keeping/hero.png";
+import WhyImage_2 from "../../../assets/services/book-keeping/hero_2.png";
+---
+
+<style>
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+</style>
+
+<div
+  class="main-container flex flex-col lg:flex-row w-full max-w-[1440px] px-4 sm:px-6 lg:px-[120px] pt-[80px] pb-[80px] gap-[24px] justify-center items-start mx-auto relative"
+>
+  <div
+    class="flex flex-col lg:flex-row gap-[48px] items-center grow shrink-0 basis-0"
+  >
+    <div class="flex flex-col gap-[32px] items-center grow shrink-0 basis-0">
+      <div class="flex flex-col gap-[12px] justify-center items-center w-full">
+        <span
+          class="animate-on-scroll w-full text-[28px] sm:text-[36px] font-bold leading-[1.2] text-[#04092a] text-center sm:text-left opacity-0"
+        >
+          Payroll Help for Small Businesses - Finkeepers At Your Service
+
+        </span>
+
+        <div class="flex flex-col gap-[40px] sm:gap-[80px] items-center w-full">
+          <span
+            class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-center sm:text-left opacity-0"
+          >
+            Start-ups and SMEs require payroll tax assistance, financial record keeping, as well as accounts
+receivable and payment management services, and there is no two minds about it because
+there are thousands of things to take care of, and Finkeepers makes sure that financials aren’t
+one of those. So, here are a few reasons as to why you should outsource payroll services:
+
+          </span>
+
+          <div
+            class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
+          >
+            <!-- Image Container with Hover Effect -->
+            <div class="relative group w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-auto">
+              <!-- Default Image -->
+              <img 
+                src={WhyImage.src} 
+                class="animate-on-scroll w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-0 z-[50]" 
+              />
+              <!-- Hover Image -->
+              <img 
+                src={WhyImage_2.src} 
+                class="absolute inset-0 w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]" 
+              />
+            </div>
+
+            <!-- Right Text Content -->
+            <div
+              class="flex flex-col gap-[32px] lg:gap-[40px] items-start w-full lg:w-[576px]"
+            >
+              {
+                [
+                  {
+                    icon: "/img/services/book-keeping/true.svg",
+                    title: "Cost Saving",
+                    desc: "Having an in-house payroll assistance team could be expensive, and at this level, more than an investment, it could be an avoidable expense. Thus, getting Finkeepers on board will eliminate extra staff costs and software expenses.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/SpH44HYd49.png",
+                    title: "Time Saving",
+                    desc: "Payroll processing is repetitive and time-consuming. By outsourcing, business owners and managers can free up hours every week and redirect their energy toward core activities like sales, customer service, and growth strategies.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/mk48MSUTRM.png",
+                    title: "Accuracy Maintained",
+                    desc: "Inexperienced financial consultants might not be able to maintain accuracy as professional financial consultants for small businesses do. Payroll management includes complex activities such as calculating salaries, overtime, deductions, leaves, and benefits. A tiny mistake could leave employees frustrated or lead to costly penalties. Hence, outsourcing payroll will ensure a smooth and error-free payroll process.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/9eSJxKc0ee.png",
+                    title: "Regulatory Compliance",
+                    desc: "Tax laws, labor regulations, and filing requirements change frequently. Outsourced payroll providers stay updated with federal, state, and local laws, ensuring your business remains compliant and avoids costly fines or legal complications.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/rep7JV7fMz.png",
+                    title: "Scalability",
+                    desc: "As the business grows, hiring more employees becomes inevitable. And the process of payroll management becomes even more complex and monotonous, distracting the team from other important tasks. Hence, having financial help could be a blessing in disguise.",
+                  },
+                ].map((item, i) => (
+                  <div
+                    class="animate-on-scroll flex gap-[16px] items-start w-full opacity-0"
+                    style={`transition-delay: ${i * 150}ms`}
+                  >
+                    <img src={item.icon} class="w-[32px] h-[32px] shrink-0" />
+                    <div class="flex flex-col gap-[8px]">
+                      <span class="text-[18px] font-semibold text-[#151515]">
+                        {item.title}
+                      </span>
+                      <p class="text-[16px] font-medium text-[#797979]">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+    observer.observe(el);
+  });
+</script>

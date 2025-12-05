@@ -1,0 +1,74 @@
+<div class="bg-white py-10 px-4 sm:px-6 lg:px-[120px]">
+  <div class="max-w-screen-xl mx-auto flex flex-col gap-8">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+      <h2
+        class="text-[28px] sm:text-[32px] md:text-[36px] font-bold text-[#28241f]"
+      >
+        Recent Blogs
+      </h2>
+      <div class="bg-white border border-[#d0d5dd] rounded-md px-6 py-2">
+        <div class="flex items-center gap-2">
+          <span class="text-[14px] text-[#28241f]">Accounting</span>
+          <div
+            class="w-4 h-4 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-31/8DAXnzs8mU.png')] bg-cover bg-no-repeat"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Single Card -->
+      {
+        [1, 2, 3, 4, 5, 6].map((i) => (
+          <div class="bg-white border border-[#d0d5dd] rounded-[16px] p-6 flex flex-col gap-4">
+            <div class="h-[200px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-31/rDwDbsSNsu.png')] bg-cover bg-no-repeat rounded-md" />
+            <h3 class="text-[18px] font-semibold text-[#151515] leading-snug">
+              Finance Budgeting Success Step-by-Step Guide
+            </h3>
+            <p class="text-[15px] text-[#797979] leading-relaxed">
+              Learn how to create a clear, effective budget to manage expenses
+              and ...
+            </p>
+            <a
+              href="#"
+              class="text-[#ed7c00] font-semibold text-[16px] hover:underline"
+            >
+              Read More
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Pagination -->
+    <!-- <div class="flex justify-center items-center gap-3 mt-10 mb-10">
+      <div class="w-9 h-9 flex justify-center items-center rounded-full">
+        <div
+          class="w-4 h-4 bg-[url('/img/blog/left-arrow.png')] bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+      {
+        [1, 2, 3, 4, 5].map((n, idx) => (
+          <div
+            class={`w-9 h-9 flex justify-center items-center rounded-full border ${n === 1 ? "bg-[#ed7c00] text-white" : "text-[#151515]"}`}
+          >
+            {n}
+          </div>
+        ))
+      }
+      <div class="w-9 h-9 flex justify-center items-center rounded-full">
+        <!-- <div
+          class="w-4 h-4 bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-31/JjvLL4M9qL.png')] bg-cover bg-no-repeat"
+        > -->
+        <div
+          class="w-4 h-4 bg-[url('/img/blog/right-arrow.png')] bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

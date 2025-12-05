@@ -1,0 +1,107 @@
+---
+const cards = [
+  {
+    title: " Accurate Financials, Every Time",
+    desc: "We record, reconcile, and review every transaction using QuickBooks, Xero, or NetSuite, ensuring complete accuracy and transparency.",
+  },
+  {
+    title: "U.S. GAAP-Compliant Books",
+    desc: "Our controller-led bookkeeping teams maintain clean, audit-ready books aligned with U.S. accounting standards, ready for tax filings or investor review.",
+  },
+  {
+    title: "Built for Funded and Scaling Companies",
+    desc: "Whether you are managing $500K or $20M+ in revenue, we deliver scalable bookkeeping support with CFO-level oversight.",
+  },
+  {
+    title: "Investor-Grade Reporting",
+    desc: "Get board-ready financial reports like Profit & Loss, Balance Sheet, and Cash Flow, plus monthly KPI dashboards tailored to your business model.",
+  },
+  {
+    title: "Secure, Cloud-Based Collaboration",
+    desc: "ISO 27001-certified data systems ensure every record is stored securely and accessible to your internal team and advisors.",
+  },
+  {
+    title: "Focus on Important Things",
+    desc: "Free up your time and energy to concentrate on operations, sales, and innovation. While you build your business, our experts handle all the financial details professionally.",
+  },
+];
+---
+
+<div
+  class="main-container w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] lg:pr-[120px] lg:pl-[120px] flex flex-col gap-[32px] justify-start items-start bg-[#106253] relative mx-auto"
+>
+  <!-- Heading -->
+  <div class="w-full max-w-[1200px] flex justify-start items-start">
+    <span
+      class="font-['Inter'] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-white"
+    >
+      Why Choose Finkeepers?
+    </span>
+
+  </div>
+  <div class="w-full max-w-[1200px]">
+  <p class="text-base sm:text-lg leading-relaxed text-[#ffffff] text-left" style="max-width: calc(48rem + 420px);">
+        Finkeepers, being the team of bookkeeping experts in the USA, will help you take all the
+financial load off of you, which will allow you to focus on things of dire importance and urgency.
+      </p>
+  </div>
+
+  <!-- Cards Container -->
+  <div class="w-full max-w-[1200px] flex flex-col gap-[25px]">
+    <!-- Row 1 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]">
+      {
+        cards.slice(0, 3).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+            <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 1).padStart(2)}
+              </span>
+            </div>
+            
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]" style="margin-top: 10px;">
+      {
+        cards.slice(3).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+            <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 4).padStart(2)}
+              </span>
+            </div>
+            
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

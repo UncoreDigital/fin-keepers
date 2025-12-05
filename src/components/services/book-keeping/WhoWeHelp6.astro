@@ -1,0 +1,296 @@
+---
+import salesImage from "../../../assets/services/book-keeping/sales.png";
+import salesImage_2 from "../../../assets/services/book-keeping/sales_2.png";
+import timerImage from "../../../assets/services/book-keeping/timer.png";
+import timerImage_2 from "../../../assets/services/book-keeping/timer_2.png";
+import cashflowImage from "../../../assets/services/book-keeping/cashflow.png";
+import cashflowImage_2 from "../../../assets/services/book-keeping/cashflow_2.png";
+import moneyImage from "../../../assets/services/book-keeping/money.png";
+import moneyImage_2 from "../../../assets/services/book-keeping/money_2.png";
+import cfoImage from "../../../assets/services/book-keeping/cfo.png";
+import cfoImage_2 from "../../../assets/services/book-keeping/cfo_2.png";
+
+// Define dynamic image data for tabs
+const tabImages = {
+  general: {
+    default: salesImage,
+    hover: salesImage_2,
+    alt: "Daily Bookkeeping & Reconciliations"
+  },
+  payables: {
+    default: timerImage,
+    hover: timerImage_2,
+    alt: "Account Payables and Receivable Management"
+  },
+  bank: {
+    default: cashflowImage,
+    hover: cashflowImage_2,
+    alt: "Bank Reconciliation"
+  },
+  tax: {
+    default: moneyImage,
+    hover: moneyImage_2,
+    alt: "Tax Ready Bookkeeping"
+  },
+  reporting: {
+    default: cfoImage,
+    hover: cfoImage_2,
+    alt: "Financial Reporting"
+  }
+};
+---
+
+<div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+  <div
+    class="max-w-screen-xl mx-auto flex flex-col gap-12 sm:gap-16 lg:gap-12 items-start animate-on-scroll opacity-0"
+  >
+    <!-- Heading -->
+    <div
+      class="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-start text-left w-full animate-on-scroll-child opacity-0"
+    >
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-[#04092a] font-['Inter']"
+      >
+        How Do We Help?
+      </h2>
+      <p
+        class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
+        style="max-width: calc(48rem + 500px);"
+      >
+        We provide expert bookkeeping services to small businesses across the USA, including eCommerce Brands, Fashion Houses, Agencies, Freelancers, Healthcare Companies, Automobile, Food and Beverages, NGOs, Real Estate, Technology, Agriculture, Hospitality, and more.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div
+      class="relative w-full overflow-hidden animate-on-scroll-child opacity-0"
+    >
+      <div
+        id="tabsContainer"
+        class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto snap-x snap-mandatory"
+      >
+        <button class="tab-button active-tab" data-tab="general"
+          >Daily Bookkeeping & Reconciliations</button
+        >
+        <button class="tab-button" data-tab="payables"
+          >Account Payables and Receivable Management</button
+        >
+        <!--<button class="tab-button" data-tab="bank">Bank Reconciliation</button>-->
+        <button class="tab-button" data-tab="tax"
+          >Tax – Ready Bookkeeping</button
+        >
+        <button class="tab-button" data-tab="reporting"
+          >Financial Reporting  & Dashboards</button
+        >
+      </div>
+    </div>
+
+    <!-- Tab Content (dynamic area) -->
+    <div
+      id="tabContent"
+      class="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 justify-center w-full max-w-screen-lg mx-auto animate-on-scroll-child opacity-0"
+    >
+      <!-- Left -->
+      <div
+        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full flex-grow"
+        style="max-width: calc(50% - 80px);"
+      >
+        <div class="flex flex-col gap-4 sm:gap-6 items-start">
+          <div
+            id="tabIcon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
+          >
+          </div>
+          <h3
+            id="tabTitle"
+            class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
+          >
+            Daily Bookkeeping & Reconciliations
+          </h3>
+        </div>
+        <p
+          id="tabDescription"
+          class="text-base sm:text-lg font-medium leading-relaxed text-[#797979]"
+        >
+          Recording and organizing daily business
+          transactions, including counting of cash,matching income with
+          expenses, and cash/bank reconciliation.
+        </p>
+        <!--  <a href="#" class="text-[#ed7c00] font-semibold text-base sm:text-lg hover:underline">Learn More</a>-->
+      </div>
+
+      <!-- Right -->
+      <div
+        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        style="margin-top: -20px;"
+      >
+        <div class="relative w-full max-w-[400px] aspect-square overflow-hidden">
+          <!-- Default Image -->
+          <img
+            id="tabImageDefault"
+            src={salesImage.src}
+            alt="Daily Bookkeeping & Reconciliations"
+            class="w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+          />
+
+          <!-- Hover Image -->
+          <img
+            id="tabImageHover"
+            src={salesImage_2.src}
+            alt=""
+            class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Tab button styling */
+  .tab-button {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #797979;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+  .tab-button.active-tab {
+    background: #ed7c00;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+</style>
+
+<script define:vars={{ tabImages }}>
+  // Tabs data with dynamic images
+  const tabContentData = {
+    general: {
+      title: "Daily Bookkeeping & Reconciliations",
+      description:
+        "Recording and organizing daily business transactions, including counting of cash,matching income with expenses, and cash/bank reconciliation.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.general,
+    },
+    payables: {
+      title: "Account Payables and Receivable Management",
+      description:
+        "Managing bills and timely payments to vendors and collection of the receivables from clients and customers.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.payables,
+    },
+    bank: {
+      title: "Bank Reconciliation",
+      description:
+        "To match the record of income and expenses with bank and detect fraud or error.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.bank,
+    },
+    tax: {
+      title: "Tax – Ready Bookkeeping",
+      description:
+        "Keeping the books ready to audit for CPAs and also simplifying IRS tax preparations.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.tax,
+    },
+    reporting: {
+      title: "Financial Reporting & Dashboards",
+      description:
+        "We deliver monthly management reports with financial KPIs, cash forecasts, and margin insights, designed for founders and investors.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.reporting,
+    },
+    reporting: {
+      title: "Multi-Entry & Consolidated Reporting",
+      description:
+        "Perfect for PE/VC portfolios or holding companies, with consolidated balance sheets and intercompany reconciliations.",
+      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      images: tabImages.reporting,
+    },
+  };
+
+  // DOM references
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabTitle = document.getElementById("tabTitle");
+  const tabDescription = document.getElementById("tabDescription");
+  const tabIcon = document.getElementById("tabIcon");
+  const tabImageDefault = document.getElementById("tabImageDefault");
+  const tabImageHover = document.getElementById("tabImageHover");
+
+  // Switch tab
+  function switchTab(tabKey, button) {
+    // update buttons
+    tabButtons.forEach((btn) => btn.classList.remove("active-tab"));
+    button.classList.add("active-tab");
+
+    // update content
+    const content = tabContentData[tabKey];
+    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
+      tabTitle.textContent = content.title;
+      tabDescription.textContent = content.description;
+      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      
+      // Update dynamic images
+      if (content.images) {
+        tabImageDefault.src = content.images.default.src;
+        tabImageDefault.alt = content.images.alt;
+        tabImageHover.src = content.images.hover.src;
+        tabImageHover.alt = content.images.alt;
+      }
+    }
+  }
+
+  // Init
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.getAttribute("data-tab");
+      if (key) switchTab(key, button);
+    });
+  });
+
+  // Default first tab
+  document.addEventListener("DOMContentLoaded", () => {
+    const first = tabButtons[0];
+    if (first) {
+      const key = first.getAttribute("data-tab");
+      if (key) switchTab(key, first);
+    }
+  });
+
+  // Scroll animation observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document
+    .querySelectorAll(".animate-on-scroll, .animate-on-scroll-child")
+    .forEach((el) => observer.observe(el));
+</script>

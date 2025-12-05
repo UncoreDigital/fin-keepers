@@ -1,0 +1,137 @@
+---
+import WhyImage from "../../../assets/services/book-keeping/why.png";
+import WhyImage_2 from "../../../assets/services/book-keeping/why_2.png";
+---
+
+<style>
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+</style>
+
+<div
+  class="main-container flex flex-col lg:flex-row w-full max-w-[1440px] px-4 sm:px-6 lg:px-[120px] pt-[80px] pb-[80px] gap-[24px] justify-center items-start mx-auto relative"
+>
+  <div
+    class="flex flex-col lg:flex-row gap-[48px] items-center grow shrink-0 basis-0"
+  >
+    <div class="flex flex-col gap-[32px] items-center grow shrink-0 basis-0">
+      <div class="flex flex-col gap-[12px] justify-center items-center w-full">
+        <span
+          class="animate-on-scroll w-full text-[28px] sm:text-[36px] font-bold leading-[1.2] text-[#04092a] text-center sm:text-left opacity-0"
+        >
+          Bookkeeping – Much Needed for SMBs and start-ups.
+        </span>
+
+        <div class="flex flex-col gap-[20px] sm:gap-[60px] items-center w-full">
+          <span
+            class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-center sm:text-left opacity-0"
+          >
+            Finkeepers offer budgeted bookkeeping services for start-ups, small to mid-sized firms, and PE/VC-backed companies.
+            We deliver GAAP-compliant, audit-ready books and real-time financial dashboards, so your leadership team can make confident, data-driven decisions.
+
+            care of your finances.
+          </span>
+
+          <div
+            class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
+          >
+            <!-- Image Container with Hover Effect -->
+            <div class="relative group w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-auto">
+              <!-- Default Image -->
+              <img
+                src={WhyImage.src}
+                class="animate-on-scroll w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-[50]"
+              />
+              <!-- Hover Image -->
+              <img
+                src={WhyImage_2.src}
+                alt=""
+                class="absolute inset-0 w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]"
+              />
+            </div>
+            <!-- Right Text Content -->
+            <div
+              class="flex flex-col gap-[32px] lg:gap-[40px] items-start w-full lg:w-[576px]"
+            >
+              {
+                [
+                  {
+                    icon: "/img/services/book-keeping/true.svg",
+                    title: "Financial Coherence",
+                    desc: "When bookkeeping is done correctly, business owners and partners can make financial sense as to what is the current situation with cash flow, and how bright the future looks.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/SpH44HYd49.png",
+                    title: "Informed Decision Making",
+                    desc: "When companies have accurate records about budgeting, investments, cost-cutting, and scaling operations, investing in affordable bookkeeping services helps make the correct decision without incurring a huge loss",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/mk48MSUTRM.png",
+                    title: "Tax Done Correctly",
+                    desc: "The biggest headache of the business is having clean tax books. Finkeepers ensure that taxes are filed correctly and on time, helping avoid penalties, fines, or legal issues.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/9eSJxKc0ee.png",
+                    title: "Confidence of Investors",
+                    desc: "Say whatever you like but investors are attracted by numbers, and God forbid if they are messy; there will be no investing in your firm. Hence, startups and SMBs seeking funding or loans need transparent financial statements and business bookkeeping builds trust with investors and banks.",
+                  },
+                  {
+                    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/rep7JV7fMz.png",
+                    title: "Long–term success and stability",
+                    desc: "Business Growth relies heavily on long-term success and stability that comes with clean books. Finkeepers are small business bookkeeping experts who will help you achieve exactly that on the earliest basis. ",
+                  },
+                ].map((item, i) => (
+                  <div
+                    class="animate-on-scroll flex gap-[16px] items-start w-full opacity-0"
+                    style={`transition-delay: ${i * 150}ms`}
+                  >
+                    <img src={item.icon} class="w-[32px] h-[32px] shrink-0" />
+                    <div class="flex flex-col gap-[8px]">
+                      <span class="text-[18px] font-semibold text-[#151515]">
+                        {item.title}
+                      </span>
+                      <p class="text-[16px] font-medium text-[#797979]">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+    observer.observe(el);
+  });
+</script>

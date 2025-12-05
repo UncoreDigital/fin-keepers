@@ -1,0 +1,113 @@
+---
+import CoreCard3 from "../CoreCard3.astro";
+---
+
+<div
+  class="flex w-full pt-[40px] sm:pt-[80px] pr-[20px] pb-[80px] pl-[20px] flex-col gap-[32px] items-center flex-nowrap bg-[#fff] relative mt-0 mr-0 mb-0 ml-0"
+>
+  <!-- Title -->
+  <div
+    class="flex w-full max-w-[1200px] flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative"
+  >
+    <span
+      class="text-[28px] sm:text-[36px] font-bold leading-[42px] text-[#28241f]"
+    >
+      Comprehensive Suite of Services
+    </span>
+  </div>
+
+  <!-- Cards Grid -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[25px] w-full max-w-[1200px]"
+  >
+    <!-- Bookkeeping -->
+    <a href="/book-keeping" class="block h-full">
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/Rrb4n8qbbe.png"
+        title="Bookkeeping"
+        description="We keep your books clear and transparent, helping small businesses in the U.S. make smarter financial decisions."
+        class="core-card h-full"
+      />
+    </a>
+
+    <!-- Payroll Management -->
+    <a href="/payroll-assistance" class="block h-full">
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/h2o3xiyb1w.png"
+        title="Payroll Management"
+        description="Our payroll services ensure accurate, timely, and compliant salary management to boost employee trust and retention."
+        class="core-card h-full"
+      />
+    </a>
+
+    <!-- Cash Flow Management -->
+    <a href="/cashflow-management" class="block h-full">
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/b5TprYOVpR.png"
+        title="Cash Flow Management"
+        description="We streamline daily inflows and outflows, helping small businesses stay regularized, debt-free, and financially healthy."
+        class="core-card h-full"
+      />
+    </a>
+
+    <!-- Temporary CFO Services -->
+    <a href="/temporary-cfo" class="block h-full">
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5GY0tAVakX.png"
+        title="Temporary CFO Services"
+        description="Our expert CFO support provides accurate forecasting and market insights, guiding startups and SMBs toward growth."
+        class="core-card h-full"
+      />
+    </a>
+
+    <!-- Financial Reporting -->
+    <a href="/financial-reporting" class="block h-full">
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KaMAebN9Gy.png"
+        title="Financial Reporting"
+        description="From tax strategies to ethical investing, we deliver reports and insights that strengthen financial health for SMBs."
+        class="core-card h-full"
+      />
+    </a>
+
+    <a href="/contact">
+      <div class="flex justify-center w-full mt-4 sm:mt-[80px]">
+  <div
+    class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center border border-[#ed7c00] bg-white text-[#ed7c00] rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white cursor-pointer transition mt-10"
+  >
+    <span
+      class="text-[14px] sm:text-[16px] font-semibold leading-[24px] whitespace-nowrap"
+    >
+      Schedule a Free Consultation
+    </span>
+  </div>
+</div>
+    </a>
+  </div>
+
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".core-card");
+
+    if (!cards.length) return;
+
+    // Fade-in animation on scroll
+    gsap.from(cards, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: cards[0].closest("section") || cards[0],
+        start: "top 85%",
+        once: true,
+      },
+    });
+  });
+</script>

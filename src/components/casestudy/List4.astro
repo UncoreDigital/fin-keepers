@@ -1,0 +1,271 @@
+<div
+  class="main-container flex w-full max-w-[1220px] px-4 sm:px-6 lg:px-[10px] py-[10px] flex-col gap-[10px] items-start flex-nowrap relative mx-auto my-0 mt-[-100px]"
+>
+  <div
+    class="flex flex-col gap-4 sm:gap-6 lg:gap-[32px] items-start self-stretch shrink-0 flex-nowrap relative"
+  >
+    <div
+      class="flex flex-col sm:flex-row gap-4 sm:gap-[6px] items-start sm:items-center self-stretch shrink-0 flex-nowrap relative z-[1]"
+    >
+      <div
+        class="flex flex-1 flex-col gap-[36px] items-start sm:items-center shrink-0 flex-nowrap relative z-[2]"
+      >
+        <div class="w-full relative z-[3]">
+          <span
+            class="flex justify-start sm:justify-start items-start font-['Inter'] text-[24px] sm:text-[32px] lg:text-[36px] font-bold leading-[28px] sm:leading-[36px] lg:leading-[42px] text-[#28241f] relative text-left sm:text-center whitespace-nowrap z-[4]"
+          >
+            All Case Studies
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex w-full sm:w-[151px] h-[40px] pt-0 pr-[24px] pb-0 pl-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[6px] border-solid border border-[#d0d5dd] relative z-[5]"
+      >
+        <div
+          class="flex w-[103px] h-[32px] gap-[12px] justify-center items-center shrink-0 flex-nowrap relative z-[6]"
+        >
+          <span
+            class="h-[22px] shrink-0 basis-auto font-['Inter'] text-[14px] font-normal leading-[22px] text-[#28241f] relative text-left whitespace-nowrap z-[7]"
+          >
+            Accounting
+          </span>
+          <div
+            class="w-[16px] h-[16px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/8NRHhfPFPs.png)] bg-cover bg-no-repeat relative overflow-hidden z-[8]"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="case-studies-container"
+      class="flex flex-col gap-4 sm:gap-6 lg:gap-[25px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[9]"
+    >
+      </div>
+
+    <div
+      class="flex flex-col gap-[20px] sm:gap-[30px] lg:gap-[40px] items-center self-stretch shrink-0 flex-nowrap relative z-[52]"
+    >
+      <div
+        class="flex w-full max-w-[316px] gap-[8px] sm:gap-[10px] items-center justify-center shrink-0 flex-nowrap relative z-[74]"
+      >
+        <div
+          id="prev-page"
+          class="flex w-[32px] h-[32px] sm:w-[36.571px] sm:h-[36.571px] pt-0 pr-[6px] sm:pr-[7.5px] pb-0 pl-[6px] sm:pl-[7.5px] flex-col gap-[10px] sm:gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6px] sm:rounded-[6.857px] relative z-[75] cursor-pointer hover:bg-gray-50 transition-colors"
+        >
+          <div
+            class="w-[14px] h-[14px] sm:w-[17.5px] sm:h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/40S8FAC868.png)] bg-cover bg-no-repeat relative overflow-hidden z-[76]"
+          >
+          </div>
+        </div>
+
+        <div
+          id="pagination-numbers"
+          class="flex gap-[6px] sm:gap-[8px] lg:gap-[10px] items-center shrink-0 flex-nowrap relative"
+        >
+          </div>
+
+        <div
+          id="next-page"
+          class="flex w-[32px] h-[32px] sm:w-[36.571px] sm:h-[36.571px] pt-0 pr-[6px] sm:pr-[7.5px] pb-0 pl-[6px] sm:pl-[7.5px] flex-col gap-[10px] sm:gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6px] sm:rounded-[6.857px] relative z-[87] cursor-pointer hover:bg-gray-50 transition-colors"
+        >
+          <div
+            class="w-[14px] h-[14px] sm:w-[17.5px] sm:h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/S4VQU7COgB.png)] bg-cover bg-no-repeat relative overflow-hidden z-[88]"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const allCaseStudies = [];
+
+    // Sample case study data - replace with your actual data
+    allCaseStudies.push({
+      id: 1,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/35pqbRLDY5.png",
+      title:
+        "Accounting Case Study - Forecast Financials",
+      description:
+        "Financial due diligence and EBITDA forecasting for a healthcare sector client with 14 affiliate entities.",
+      author: "Knowcraft Analytics",
+      date: "Monday, 11 Aug 2025",
+      readTime: "4 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/MvQtVFnwBh.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/HGCdPhBbTf.png",
+      link: "/casestudy/1",
+    });
+
+    allCaseStudies.push({
+      id: 2,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/35pqbRLDY5.png",
+      title: "Transition from C-Corp to S-Corp",
+      description:
+        "Tax planning transition from C-corporation to S-corporation status with comprehensive asset and liability transfer.",
+      author: "Knowcraft Analytics",
+      date: "Friday, 9 Aug 2025",
+      readTime: "6 minute read",
+      clockIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/iPqWohQeHg.png",
+      arrowIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/3FEzD7WQnV.png",
+      link: "/casestudy/2",
+    });
+
+    const cardsPerPage = 3; // Show 3 cards vertically per page
+    let currentPage = 1;
+
+    const caseStudiesContainer = document.getElementById(
+      "case-studies-container"
+    );
+    const paginationNumbersContainer =
+      document.getElementById("pagination-numbers");
+    const prevPageButton = document.getElementById("prev-page");
+    const nextPageButton = document.getElementById("next-page");
+
+    function renderCaseStudyCards() {
+      caseStudiesContainer.innerHTML = ""; // Clear existing cards
+
+      const startIndex = (currentPage - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+      const caseStudiesToDisplay = allCaseStudies.slice(startIndex, endIndex);
+
+      caseStudiesToDisplay.forEach((caseStudy, index) => {
+        const card = document.createElement("div");
+        card.className =
+          "min-h-[250px] sm:min-h-[280px] lg:h-[305px] self-stretch shrink-0 bg-[#fff] rounded-[12px] sm:rounded-[16px] border-solid border border-[#d0d5dd] relative overflow-hidden";
+        //
+        card.innerHTML = `
+  <div class="flex w-full flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-[32px] items-start relative p-4 sm:p-6 lg:p-[24px]">
+    <!-- Left Image -->
+    <div class="w-full lg:w-[257px] h-[200px] sm:h-[220px] lg:h-[257px] shrink-0 bg-[url(${caseStudy.imageUrl})] bg-cover bg-no-repeat bg-center rounded-[8px] lg:rounded-[5.002px] relative overflow-hidden">
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex flex-col lg:flex-row justify-between items-start grow shrink-0 basis-0 relative w-full gap-4 lg:gap-0">
+      <!-- Text Column -->
+      <div class="flex w-full lg:w-[585px] flex-col justify-between h-full gap-3 sm:gap-4 lg:gap-[12px] items-start relative">
+        
+        <!-- Title -->
+        <h3 class="flex justify-start items-start self-stretch font-['Inter'] text-[18px] sm:text-[20px] lg:text-[24px] font-semibold leading-[22px] sm:leading-[24px] lg:leading-[28px] text-[#151515] text-left">
+          ${caseStudy.title}
+        </h3>
+
+        <!-- Description -->
+        <p class="flex justify-start items-start self-stretch font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] font-medium leading-[20px] sm:leading-[21px] lg:leading-[22px] text-[#797979] text-left">
+          ${caseStudy.description}
+        </p>
+
+        <!-- Meta Info at Bottom -->
+        <div class="mt-auto sm:mt-[50px] w-full pt-5 sm:text-nowrap relative">
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-[10px] items-start sm:items-center flex-wrap">
+            
+            <!-- Author -->
+            <div class="flex gap-[3px] items-center">
+              <span class="font-['Inter'] text-[16px] sm:text-[18px] lg:text-[20px] text-[#797979] whitespace-nowrap">
+                by ${caseStudy.author}
+              </span>
+            </div>
+
+            <!-- Divider -->
+            <div class="hidden sm:block w-[20px] h-px bg-[#797979]"></div>
+
+            <!-- Date -->
+            <div class="flex gap-[4px] items-center">
+              <span class="font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] text-[#797979] whitespace-nowrap">
+                ${caseStudy.date}
+              </span>
+            </div>
+
+            <!-- Divider -->
+            <div class="hidden sm:block w-[20px] h-px bg-[#797979]"></div>
+
+            <!-- Read Time -->
+            <div class="flex gap-[4px] items-center">
+              <div class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] shrink-0 bg-[url(${caseStudy.clockIcon})] bg-cover bg-no-repeat"></div>
+              <span class="font-['Inter'] text-[14px] sm:text-[15px] lg:text-[16px] text-[#797979] whitespace-nowrap">
+                ${caseStudy.readTime}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Button -->
+      <div
+        class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] lg:w-[65px] lg:h-[65.671px] shrink-0 bg-[#ed7c00] rounded-full cursor-pointer hover:bg-[#d16a00] transition-colors flex items-center justify-center"
+        onclick="window.location.href='${caseStudy.link}'"
+      >
+        <div class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] lg:w-[28.77px] lg:h-[28.77px] bg-[url(${caseStudy.arrowIcon})] bg-cover bg-no-repeat"></div>
+      </div>
+    </div>
+  </div>
+`;
+
+        caseStudiesContainer.appendChild(card);
+      });
+    }
+
+    function renderPaginationNumbers() {
+      paginationNumbersContainer.innerHTML = ""; // Clear existing numbers
+
+      const totalPages = Math.ceil(allCaseStudies.length / cardsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageNumberDiv = document.createElement("div");
+        pageNumberDiv.className = `flex w-[32px] h-[32px] sm:w-[36.571px] sm:h-[36.571px] pt-0 pr-[6px] sm:pr-[7.5px] pb-0 pl-[6px] sm:pl-[7.5px] flex-col gap-[10px] sm:gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6px] sm:rounded-[6.857px] relative cursor-pointer transition-all hover:bg-gray-50 ${
+          i === currentPage ? "bg-[#ed7c00] sm:rounded-[36.86px]" : ""
+        }`;
+
+        const span = document.createElement("span");
+        span.className = `shrink-0 basis-auto font-['Inter'] text-[14px] sm:text-[16px] font-normal leading-[20px] sm:leading-[28px] relative text-center whitespace-nowrap ${
+          i === currentPage ? "text-[#fff]" : "text-[#151515]"
+        }`;
+        span.textContent = i;
+
+        pageNumberDiv.appendChild(span);
+        pageNumberDiv.addEventListener("click", () => {
+          currentPage = i;
+          renderCaseStudyCards();
+          renderPaginationNumbers(); // Re-render to update active style
+        });
+        paginationNumbersContainer.appendChild(pageNumberDiv);
+      }
+
+      // Disable/enable navigation buttons
+      prevPageButton.style.opacity = currentPage === 1 ? "0.5" : "1";
+      prevPageButton.style.pointerEvents = currentPage === 1 ? "none" : "auto";
+      nextPageButton.style.opacity = currentPage === totalPages ? "0.5" : "1";
+      nextPageButton.style.pointerEvents =
+        currentPage === totalPages ? "none" : "auto";
+    }
+
+    prevPageButton.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderCaseStudyCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    nextPageButton.addEventListener("click", () => {
+      const totalPages = Math.ceil(allCaseStudies.length / cardsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderCaseStudyCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    // Initial render
+    renderCaseStudyCards();
+    renderPaginationNumbers();
+  });
+</script>

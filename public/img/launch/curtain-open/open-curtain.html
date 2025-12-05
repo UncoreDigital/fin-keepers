@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Social Eye Foundation | Creating a Better Future Through Education &amp; Support</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .button-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+
+    .launch_btn {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.5s ease-in;
+      width: 200px !important;
+      height: 200px !important;
+      background: url(ribn.png) center center no-repeat;
+      border: 0;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .curtain {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 2;
+      transition: all 6s ease-in-out;
+      background: url(curtain-img.jpg) right top no-repeat;
+      background-size: cover;
+    }
+
+    .curtain.left {
+      left: 0;
+    }
+
+    .curtain.right {
+      right: 0;
+    }
+
+    .curtain.open-left {
+      transform: translateX(-100%);
+    }
+
+    .curtain.open-right {
+      transform: translateX(100%);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Button to trigger curtain -->
+    <div class="button-container">
+      <button id="giftBtn" onclick="openCurtain()" class="launch_btn"><span>Launch</span></button>
+    </div>
+     
+
+
+    <!-- Curtains -->
+    <div class="curtain left" id="leftCurtain"></div>
+    <div class="curtain right" id="rightCurtain"></div>
+
+    <!-- <img src="sefhome.png" alt="" style="max-width: 100%; width: 100%;"> -->
+  </div>
+
+  <script>
+    function openCurtain() {
+      document.getElementById('leftCurtain').classList.add('open-left');
+      document.getElementById('rightCurtain').classList.add('open-right');
+      document.querySelector('.button-container').style.display = 'none';
+
+      // Show the content after curtains slide
+      setTimeout(() => {
+        document.getElementById('content').classList.add('show-content');
+      }, 2500);
+    }
+
+  </script>
+</body>
+</html>

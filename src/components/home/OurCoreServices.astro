@@ -1,0 +1,87 @@
+---
+import CoreCard2 from "./CoreCard2.astro";
+import CoreCard3 from "./CoreCard3.astro";
+---
+
+<div
+  class="flex w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] flex-col gap-[32px] items-center flex-nowrap bg-[#fff] relative mt-0 mr-0 mb-0 ml-0"
+>
+  <!-- Title -->
+  <div
+    class="flex w-full max-w-[1200px] flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative"
+  >
+    <span
+      class="text-[28px] sm:text-[36px] font-bold leading-[42px] text-[#28241f]"
+    >
+      Our Core Financial Services
+    </span>
+  </div>
+
+  <!-- Cards Grid -->
+  <div
+    class="flex w-full max-w-[1200px] flex-col gap-[25px] items-start relative"
+  >
+    <!-- Row 1 -->
+    <div class="flex flex-col lg:flex-row gap-[25px] w-full">
+      <!-- Bookkeeping -->
+      <CoreCard2 class="core-card" />
+
+      <!-- Financial Modeling -->
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/h2o3xiyb1w.png"
+        title="Financial Modeling"
+        description="Tailored models that forecast growth, costs, and investment scenarios for smarter long-term planning."
+        class="core-card"
+      />
+
+      <!-- Historical Cleanup -->
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/b5TprYOVpR.png"
+        title="Historical Cleanup"
+        description="Fix past financial records for a clean, compliant foundation."
+        class="core-card"
+      />
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col lg:flex-row gap-[25px] w-full">
+      <!-- Accounts Reconciliation -->
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5GY0tAVakX.png"
+        title="Accounts Reconciliation"
+        description="Identify and correct inconsistencies in bank and ledger entries to safeguard financial integrity."
+        class="core-card"
+      />
+
+      <!-- Payroll Assistance -->
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/KaMAebN9Gy.png"
+        title="Payroll Assistance"
+        description="Full-service payroll management that ensures timely tax filings and employee satisfaction."
+        class="core-card"
+      />
+
+      <!-- Audit Support -->
+      <CoreCard3
+        iconUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/5jzhu7e1ie.png"
+        title="Audit Support"
+        description="Proactive support during audits with accurate documentation and expert handling."
+        class="core-card"
+      />
+    </div>
+  </div>
+
+  <div class="flex justify-center w-full mt-[40px]">
+    <a href="#">
+      <div
+        class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center border border-[#ed7c00] bg-white text-[#ed7c00] rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white cursor-pointer transition"
+      >
+        <span
+          class="text-[14px] sm:text-[16px] font-semibold leading-[24px] whitespace-nowrap"
+        >
+          Schedule a Free Consultation
+        </span>
+      </div>
+    </a>
+  </div>
+</div>

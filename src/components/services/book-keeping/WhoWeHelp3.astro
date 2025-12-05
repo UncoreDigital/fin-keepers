@@ -1,0 +1,124 @@
+---
+import salesImage from "../../../assets/services/book-keeping/sales.png";
+---
+
+<div class="main-container bg-[#f5f7fa] py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+  <div
+    class="max-w-screen-xl mx-auto flex flex-col gap-12 sm:gap-16 lg:gap-24 items-center"
+  >
+    <div
+      class="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center text-center w-full"
+    >
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-[#04092a]"
+      >
+        Who We Help
+      </h2>
+      <p
+        class="text-base sm:text-lg leading-relaxed text-[#5c667a] max-w-3xl mx-auto"
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unkok.
+      </p>
+    </div>
+
+    <div class="relative w-full overflow-hidden">
+      <div
+        id="tabsContainer"
+        class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white sm:justify-center"
+      >
+        <button
+          class="flex-shrink-0 px-4 py-2 bg-[#ed7c00] text-white rounded-md text-sm font-semibold whitespace-nowrap"
+        >
+          Startups & Solopreneurs
+        </button>
+        <button
+          class="flex-shrink-0 px-4 py-2 text-[#797979] border border-[#ccc] rounded-md text-sm font-medium whitespace-nowrap"
+        >
+          eCommerce Brands
+        </button>
+        <button
+          class="flex-shrink-0 px-4 py-2 text-[#797979] border border-[#ccc] rounded-md text-sm font-medium whitespace-nowrap"
+        >
+          Agencies & Freelancers
+        </button>
+        <button
+          class="flex-shrink-0 px-4 py-2 text-[#797979] border border-[#ccc] rounded-md text-sm font-medium whitespace-nowrap"
+        >
+          Service-Based SMBs
+        </button>
+        <button
+          class="flex-shrink-0 px-4 py-2 text-[#797979] border border-[#ccc] rounded-md text-sm font-medium whitespace-nowrap"
+        >
+          Healthcare Providers
+        </button>
+        <button
+          class="flex-shrink-0 px-4 py-2 text-[#797979] border border-[#ccc] rounded-md text-sm font-medium whitespace-nowrap"
+        >
+          Property Managers
+        </button>
+      </div>
+    </div>
+
+    {/* Content Area Below Tabs */}
+    <div
+      class="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 justify-center w-full max-w-screen-lg mx-auto"
+    >
+      {/* Left Content Block */}
+      <div
+        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
+      >
+        <div class="flex flex-col gap-4 sm:gap-6 items-start">
+          <div
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
+          >
+          </div>
+
+          <h3
+            class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
+          >
+            Startups & Solopreneurs
+          </h3>
+        </div>
+        <p
+          class="text-base sm:text-lg font-medium leading-relaxed text-[#797979]"
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unkok.
+        </p>
+        <a
+          href="#"
+          class="text-[#ed7c00] font-semibold text-base sm:text-lg hover:underline"
+        >
+          Learn More
+        </a>
+      </div>
+
+      {/* Right Image Block (Sales Funnel) */}
+      <div
+        class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow"
+      >
+        <img
+          src={salesImage.src}
+          alt=""
+          class="w-full h-auto max-w-[500px] max-h-[250px]"
+          style="aspect-ratio: 504.455 / 224;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tabsContainer = document.getElementById("tabsContainer");
+  // Enable touch scroll behavior
+  if (tabsContainer) {
+    tabsContainer.addEventListener("wheel", (e) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      tabsContainer.scrollLeft += e.deltaY;
+    });
+  }
+</script>

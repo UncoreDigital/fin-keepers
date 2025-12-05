@@ -1,0 +1,94 @@
+---
+const cards = [
+  {
+    title: "From Soup to Dessert",
+    desc: "We take care of the complete process from start to end - employee onboarding, processing wages, calculating deductions, taxes, to full-n-final. Our motto is to provide payroll help to small businesses so they can focus on other things.",
+  },
+  {
+    title: "Payroll Tax Assistance",
+    desc: "With us associating with your firm, it is our duty to take care of payroll tax filing, submit year-end forms, and mitigate the risk of IRS penalties. We make sure that your business stays in compliance with federal and state law.",
+  },
+  {
+    title: "Tailored for Startups",
+    desc: "Often, small companies underestimate the power of clean financial books and happy staff members. We take care of both at the same time. Each of our calculations is error-free, and our financial reports are precise and accurate.",
+  },
+  {
+    title: "Data Safety",
+    desc: "With unethical data hacking, it has become normal for companies’ online safety to be breached. By leveraging powerful and safe AI financial tools, Finkeepers make sure that the payroll data of employees remains confidential and does not get leaked anywhere.",
+  },
+  
+];
+---
+
+<div
+  class="main-container w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] lg:pr-[120px] lg:pl-[120px] flex flex-col gap-[32px] justify-start items-start bg-[#106253] relative mx-auto"
+>
+  <!-- Heading -->
+  <div class="w-full max-w-[1200px] flex justify-start items-center">
+    <span
+      class="font-['Inter'] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-white"
+    >
+      Why Choose Finkeepers?
+    </span>
+  </div>
+<div class="w-full max-w-[1200px]">
+  <p class="text-base sm:text-lg leading-relaxed text-[#ffffff] text-left">
+        Finkeepers, being the team of bookkeeping experts in the USA, will help you take all the
+financial load off of you, which will allow you to focus on things of dire importance and urgency.
+      </p>
+  </div>
+  <!-- Cards Container -->
+  <div class="w-full max-w-[1200px] flex flex-col gap-[25px]">
+    <!-- Row 1 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]">
+      {
+        cards.slice(0, 2).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+            <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 1).padStart(2)}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]" style="margin-top: 10px;">
+      {
+        cards.slice(2, 4).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+             <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 3).padStart(2)}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

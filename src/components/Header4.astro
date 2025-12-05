@@ -1,0 +1,123 @@
+<header
+  id="main-header"
+  class="bg-[#0e2726] w-full px-4 sm:px-6 lg:px-[60px] py-[12px] fixed top-0 left-0 z-[2000] transition-colors duration-300"
+>
+  <div
+    class="flex justify-between items-center max-w-[1440px] mx-auto !overflow-x-hidden"
+  >
+    <!-- Logo -->
+    <a href="/"
+      ><div
+        class="w-[121.549px] h-[66.001px] bg-[url(/img/logo/logo.svg)] bg-[length:100%_100%] bg-no-repeat"
+      >
+      </div></a
+    >
+
+    <!-- Hamburger (Mobile) -->
+    <div class="lg:hidden">
+      <button
+        id="menu-toggle"
+        class="flex flex-col gap-[4px]"
+        aria-label="Toggle Menu"
+      >
+        <span class="w-6 h-[2px] bg-white block"></span>
+        <span class="w-6 h-[2px] bg-white block"></span>
+        <span class="w-6 h-[2px] bg-white block"></span>
+      </button>
+    </div>
+
+    <!-- Navigation Links (Desktop) -->
+    <nav class="hidden lg:flex gap-[24px] text-white items-center text-[16px]">
+      <!-- <a href="/"
+        ><div class="flex items-center gap-[4px]"><span>Home</span></div></a
+      > -->
+      <div class="flex items-center gap-[4px]">
+        <a href="/about"><span>About</span></a>
+        <!-- <img
+          class="w-[14px]"
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/Wo0kFsX8Ci.png"
+        /> -->
+      </div>
+      <div class="flex items-center gap-[4px]">
+        <span>Services</span>
+        <img
+          class="w-[14px]"
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/nLqr2JveAt.png"
+        />
+      </div>
+      <div class="flex items-center gap-[4px]">
+        <span>Resources</span>
+        <img
+          class="w-[14px]"
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DBwZjXhgMZ.png"
+        />
+      </div>
+      <div class="flex items-center gap-[4px]">
+        <a href="/pricing"><span>Pricing</span></a>
+        <!-- <img
+          class="w-[14px]"
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/Yd8dQyZ8U3.png"
+        /> -->
+      </div>
+      <div class="flex items-center gap-[4px]">
+        <a href="/contact"><span>Contact Us</span></a>
+        <img
+          class="hidden w-[14px]"
+          src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/wRRa4wCHsG.png"
+        />
+      </div>
+    </nav>
+
+    <!-- Get In Touch Button (Desktop) -->
+    <a
+      href="/"
+      class="hidden lg:flex px-4 py-1 border border-white text-white rounded-md text-sm font-semibold cursor-pointer"
+    >
+      Get In Touch
+    </a>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2"
+  >
+    <!-- <a href="/">Home</a> -->
+    <a href="/about">About</a>
+    <a href="#">Services</a>
+    <a href="#">Resources</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/contact">Contact Us</a>
+    <a href="/">
+      <button
+        class="mt-2 px-4 py-2 border border-white text-white rounded-md font-semibold"
+      >
+        Get In Touch
+      </button></a
+    >
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const header = document.getElementById("main-header");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    if (header) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("bg-[#093634]");
+        } else {
+          header.classList.remove("bg-[#093634]");
+        }
+      });
+    }
+  });
+</script>

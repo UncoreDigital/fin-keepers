@@ -1,0 +1,99 @@
+---
+const cards = [
+  {
+    title: "Forecasting of the CashFlow",
+    desc: "Our goal as a firm that provides cashflow management services to small businesses in the USA is to make sure that you are never caught off-guard with sudden, unplanned expenses. We bring in skills and experience that are needed to keep the inflow and outflow of cash smooth and transparent.",
+  },
+  {
+    title: "Balancing the Receivables and Payables",
+    desc: "Since you trust us with your cashflow management, we will curate strategies for you to improve the liquidity and help you allocate and utilize your resources wisely. This, in return, will repair/improve your credibility in the market, bridge the funding gap, and give you a strong financial story.",
+  },
+  {
+    title: "Expenses Tracking",
+    desc: "It is important to track the movement on the basis of financial reporting and cut back on unnecessary expense practices. The proactive approach of tracking expenses allows firms to reduce financial strain, go debt-free in the first few years of commencement, and every dollar saved can become an investment for business development.",
+  },
+  {
+    title: "Risk and Contingency Planning",
+    desc: "Financial uncertainty hits all businesses at least once, and that is how businesses learn to figure out the solutions, but the hit that you take doesn’t have to be destructive. We help you create contingency reserves, debt repayment schedules, and risk-mitigation strategies so your business stays resilient.",
+  },
+  {
+    title: "One Size Fits All = Myth",
+    desc: "One size fits all is an old concept, even with ordering pizza. Thus, Finkeepers understand that businesses that have just stepped into the market need tailored cashflow management services, because every challenge they face is unique in its own way.",
+  },
+  
+];
+---
+
+<div
+  class="main-container w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] lg:pr-[120px] lg:pl-[120px] flex flex-col gap-[32px] justify-start items-start bg-[#106253] relative mx-auto"
+>
+  <!-- Heading -->
+  <div class="w-full max-w-[1200px] flex justify-start items-center">
+    <span
+      class="font-['Inter'] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-white"
+    >
+      Why Choose Finkeepers?
+    </span>
+  </div>
+<div class="w-full max-w-[1200px]">
+  <p class="text-base sm:text-lg leading-relaxed text-[#ffffff] text-left">
+     Finkeepers know that Start-ups and SMEs' cash flow management can make or break them,
+and later is not an option. Hence, here is why you should opt for cashflow management services
+for your business:
+      </p>
+  </div>
+  <!-- Cards Container -->
+  <div class="w-full max-w-[1200px] flex flex-col gap-[25px]">
+    <!-- Row 1 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]">
+      {
+        cards.slice(0, 3).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C]  p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+            <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[48px] h-[48px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[22px]">
+                {String(index + 1).padStart(2)}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]" style="margin-top: 10px;">
+      {
+        cards.slice(3).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C]  p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+             <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[48px] h-[48px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[22px]">
+                {String(index + 4).padStart(2)}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

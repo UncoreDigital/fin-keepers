@@ -1,0 +1,99 @@
+---
+const cards = [
+  {
+    title: "U.S.-Based CFO Experts",
+    desc: "Finkeepers bring in the deep knowledge of the U.S. markets - their tax laws and regulations, and compliance and shifts. Hence, having a temporary CFO for your firm from Finkeepers will be a helpful hand and will easily ease into the routine of the firm. ",
+  },
+  {
+    title: "Curated Strategies",
+    desc: "Leveraging the expertise, the temporary CFO services of Finkeepers will be curated according to the needs of the firm, rather than applying generic and basic strategies. We understand that when it comes to making financial decisions, one size fits all is never an option.",
+  },
+  {
+    title: "Actionable Solutions",
+    desc: "The solutions provided by Finkeepers will not be fictional. Those will all be in regulation with market shifts, suggested after doing competitor analysis, and will deliver results instead of incurring losses, which small businesses cannot afford. ",
+  },
+  {
+    title: "Support During Crisis",
+    desc: "We do not abandon our own during times of need. Finkeepers will support small businesses of the U.S. during the time of crisis and help resurface them and make correct financial decisions. ",
+  },
+  {
+    title: "Proven Track Record",
+    desc: "Finkeepers have been helping small businesses in the U.S. survive the market and make profits with the help of temporary CFO services. WE streamline finances and establish systems that run long after the subscription period is over.",
+  },
+  
+];
+---
+
+<div
+  class="main-container w-full pt-[80px] pr-[20px] pb-[80px] pl-[20px] lg:pr-[120px] lg:pl-[120px] flex flex-col gap-[32px] justify-start items-start bg-[#106253] relative mx-auto"
+>
+  <!-- Heading -->
+  <div class="w-full max-w-[1200px] flex justify-start items-center">
+    <span
+      class="font-['Inter'] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-white"
+    >
+     Why Choose Finkeepers as your Temporary CFOs?
+
+    </span>
+  </div>
+ <div class="w-full max-w-[1200px]">
+  <p class="text-base sm:text-lg leading-relaxed text-[#ffffff] text-left">
+        Finkeepers, being the team of bookkeeping experts in the U.S., will help you take all the
+financial load off of you, which will allow you to focus on things of dire importance and urgency.
+      </p>
+  </div>
+  <!-- Cards Container -->
+  <div class="w-full max-w-[1200px] flex flex-col gap-[25px]">
+    <!-- Row 1 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]">
+      {
+        cards.slice(0, 3).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+             <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 1).padStart(2)}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col lg:flex-row gap-[25px]" style="margin-top: 10px;">
+      {
+        cards.slice(3).map((card, index) => (
+          <div
+            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
+                      transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
+          >
+            <!-- Number in top-left corner -->
+            <div class="absolute -top-[20px] -left-[20px] flex w-[40px] h-[40px] justify-center items-center bg-white rounded-full border-2 border-[#106253]"
+            style="left: 15px">
+              <span class="text-[#106253] font-bold text-[18px]">
+                {String(index + 4).padStart(2)}
+              </span>
+            </div>
+            <span class="text-white font-semibold text-[20px] sm:text-[22px] leading-[28px] mt-4">
+              {card.title}
+            </span>
+            <span class="text-white text-[16px] leading-[22px] font-['Inter']" style="letter-spacing: 0.3px;">
+              {card.desc}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

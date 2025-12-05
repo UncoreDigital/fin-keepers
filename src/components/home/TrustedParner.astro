@@ -1,0 +1,28 @@
+---
+// ...existing code...
+const modules = import.meta.globEager('../../assets/partners/*.png');
+const logos = Object.keys(modules).map((k) => ({ src: modules[k].default, name: k.split('/').pop() }));
+// Optional: provide explicit order by filename (uncomment & edit if you want a specific order)
+// const order = ['Zoho.png','QuickBooks.png','Xero.png', /* ... */];
+// const finalLogos = order.map(n => logos.find(l => l.name === n)).filter(Boolean);
+// const items = finalLogos.length ? finalLogos : logos;
+const items = logos;
+// ...existing code...
+---
+<div class="main-container flex w-[1320px] pt-[40px] pr-[40px] pb-[40px] pl-[40px] flex-col gap-[36px] items-center flex-nowrap bg-[#fff] rounded-[16px] relative overflow-hidden shadow-[0_4px_4px_0_rgba(237,124,0,0.14)] mx-auto my-0">
+  <span class="h-[23px] self-stretch shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[23px] text-[#51506e] relative text-center whitespace-nowrap">
+    Trusted by 850+ Accounting Firms
+  </span>
+  <div class="flex w-[1234.545px] h-[64px] gap-[66px] items-center shrink-0 flex-nowrap relative overflow-hidden z-[1]">
+    {
+      items.map((l, i) => (
+        <img
+          src={l.src}
+          alt={l.name || `partner-${i}`}
+          class="h-[48px] shrink-0 max-w-[180px] object-contain"
+          key={i}
+        />
+      ))
+    }
+  </div>
+</div>

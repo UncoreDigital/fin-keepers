@@ -1,0 +1,260 @@
+---
+
+---
+
+<div
+  class="main-container w-full py-16 px-4 sm:px-6 lg:px-[120px] bg-white mx-auto"
+>
+  <div
+    class="main-container w-full max-w-[1200px] relative mx-auto my-0 h-auto"
+  >
+    <div
+      class="flex flex-col lg:flex-row w-full gap-8 lg:gap-[48px] items-center lg:items-start flex-nowrap relative mt-0 mr-0 mb-0 ml-0"
+    >
+      <div
+        class="flex w-full lg:w-[505px] flex-col gap-[40px] items-start shrink-0 flex-nowrap relative z-[1]"
+      >
+        <span
+          class="flex w-full lg:w-[505px] h-auto justify-start items-start shrink-0 font-['Inter'] text-[32px] sm:text-[36px] font-bold leading-[38px] sm:leading-[42px] text-[#04092a] relative text-left z-[2]"
+        >
+          Meet the Experts Behind Your Success
+        </span>
+        <div
+          class="flex w-[141px] h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[8px] border-solid border border-[#ed7c00] relative z-[3]"
+        >
+          <div
+            class="flex w-[93px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[4]"
+          >
+            <span
+              class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] relative text-left whitespace-nowrap z-[5]"
+            >
+              View More
+            </span>
+          </div>
+        </div>
+      </div>
+      <span
+        class="flex w-full lg:w-[647px] h-auto justify-start items-start grow shrink-0 basis-0 font-['Inter'] text-base sm:text-[18px] font-normal leading-[24px] sm:leading-[27px] text-[#5c667a] relative text-left z-[6]"
+      >
+        Our staff members are the alchemists with a unique blend of knowledge and flexibility when it
+comes to handling all kinds of financial activities. They are the USA market-trained CPAs, well
+versed with Bookkeeping, Tax filing, associating as an interim CFO, expert in payroll
+management, know financial reporting and financial modelling inside out, and forecast trends
+and understand financial market shifts too. They will stand with you - guiding you, challenging
+you, strategizing with you, and authoring your success story for you.
+      </span>
+    </div>
+
+    <!-- Team cards container -->
+    <div
+      id="team-cards-container"
+      class="flex flex-wrap justify-center w-full gap-4 sm:gap-8 md:gap-4 lg:gap-[16px] items-center flex-nowrap relative z-[7] mt-[40px] mr-0 mb-0 ml-0"
+    >
+      {/* Team cards will be rendered here by JavaScript */}
+    </div>
+
+    <!-- Pagination controls -->
+    <div
+      class="flex w-full justify-center gap-[10px] items-center flex-nowrap relative z-[36] mt-[40px]"
+    >
+      <div
+        id="prev-page"
+        class="flex w-[36.571px] h-[36.571px] pt-0 pr-[7.5px] pb-0 pl-[7.5px] flex-col gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6.857px] relative z-[37] cursor-pointer"
+      >
+        <div
+          class="w-[17.5px] h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/iRRTdFc42D.png)] bg-cover bg-no-repeat relative overflow-hidden z-[38]"
+        >
+        </div>
+      </div>
+
+      <div
+        id="pagination-numbers"
+        class="flex justify-center items-center gap-[10px]"
+      >
+        {/* Pagination numbers will be rendered here by JavaScript */}
+      </div>
+
+      <div
+        id="next-page"
+        class="flex w-[36.571px] h-[36.571px] pt-0 pr-[7.5px] pb-0 pl-[7.5px] flex-col gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6.857px] relative z-[45] cursor-pointer"
+      >
+        <div
+          class="w-[17.5px] h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/974nCEAKu2.png)] bg-cover bg-no-repeat relative overflow-hidden z-[46]"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const allTeamMembers = [];
+
+    // Sample team data - replace with your actual team data
+    allTeamMembers.push({
+      id: 1,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/nKt7NfVjcJ.png",
+      name: "John Smith",
+      position: "Vice President",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/T1tWZWk9kc.png",
+    });
+    allTeamMembers.push({
+      id: 2,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/p6OpqN8d2V.png",
+      name: "Sarah Johnson",
+      position: "Senior Manager",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/uQZjuEYDRx.png",
+    });
+    allTeamMembers.push({
+      id: 3,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/8PzC004ciu.png",
+      name: "Michael Brown",
+      position: "CPA Specialist",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/fFqKkaLacH.png",
+    });
+    allTeamMembers.push({
+      id: 4,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/APNUWNc4UJ.png",
+      name: "Emily Davis",
+      position: "Tax Advisor",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/yfyvSE1gxT.png",
+    });
+    allTeamMembers.push({
+      id: 5,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/nKt7NfVjcJ.png",
+      name: "Robert Wilson",
+      position: "Financial Analyst",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/T1tWZWk9kc.png",
+    });
+    allTeamMembers.push({
+      id: 6,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/p6OpqN8d2V.png",
+      name: "Lisa Anderson",
+      position: "Bookkeeper",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/uQZjuEYDRx.png",
+    });
+    allTeamMembers.push({
+      id: 7,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/8PzC004ciu.png",
+      name: "David Miller",
+      position: "Investment Advisor",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/fFqKkaLacH.png",
+    });
+    allTeamMembers.push({
+      id: 8,
+      imageUrl:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/APNUWNc4UJ.png",
+      name: "Jennifer Taylor",
+      position: "Operations Manager",
+      socialIcon:
+        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-12/yfyvSE1gxT.png",
+    });
+
+    const cardsPerPage = 4;
+    let currentPage = 1;
+
+    const teamCardsContainer = document.getElementById("team-cards-container");
+    const paginationNumbersContainer =
+      document.getElementById("pagination-numbers");
+    const prevPageButton = document.getElementById("prev-page");
+    const nextPageButton = document.getElementById("next-page");
+
+    function renderTeamCards() {
+      teamCardsContainer.innerHTML = ""; // Clear existing cards
+
+      const startIndex = (currentPage - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+      const membersToDisplay = allTeamMembers.slice(startIndex, endIndex);
+
+      membersToDisplay.forEach((member) => {
+        const card = document.createElement("div");
+        card.className = "w-[288px] h-[389px] shrink-0 relative flex-grow-0";
+        card.innerHTML = `
+          <div class="w-[240px] h-[35px] relative overflow-hidden z-[11] mt-[330px] mr-0 mb-0 ml-[24px]">
+            <div class="w-full h-full bg-[rgba(40,36,31,0.7)] rounded-[17.289px] absolute top-0 left-[0%] z-[12]"></div>
+            <span class="flex h-[15px] justify-start items-start font-['Inter'] text-[12px] font-medium leading-[14.523px] text-[#fff] absolute top-[calc(50%-7.5px)] left-[5%] text-left capitalize whitespace-nowrap z-[13]">
+              ${member.position}
+            </span>
+          </div>
+          <div class="w-[288px] h-[389px] bg-[url(${member.imageUrl})] bg-cover bg-no-repeat rounded-[16px] absolute top-0 left-0 z-[9]"></div>
+          <span class="flex h-[24px] justify-start items-start font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#fff] absolute top-[294px] left-[24px] text-left whitespace-nowrap z-10">
+            ${member.name}
+          </span>
+          <div class="w-[24px] h-[24px] bg-[url(${member.socialIcon})] bg-cover bg-no-repeat absolute top-[294px] left-[240px] overflow-hidden z-[14]"></div>
+        `;
+        teamCardsContainer.appendChild(card);
+      });
+    }
+
+    function renderPaginationNumbers() {
+      paginationNumbersContainer.innerHTML = ""; // Clear existing numbers
+
+      const totalPages = Math.ceil(allTeamMembers.length / cardsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageNumberDiv = document.createElement("div");
+        pageNumberDiv.className = `flex w-[36.571px] h-[36.571px] pt-0 pr-[7.5px] pb-0 pl-[7.5px] flex-col gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6.857px] cursor-pointer relative ${
+          i === currentPage ? "bg-[#ed7c00] rounded-[36.86px]" : ""
+        }`;
+
+        const pageSpan = document.createElement("span");
+        pageSpan.className = `h-[28px] self-stretch shrink-0 basis-auto font-['Inter'] text-[16px] font-normal leading-[28px] relative text-center whitespace-nowrap ${
+          i === currentPage ? "text-[#fff]" : "text-[#151515]"
+        }`;
+        pageSpan.textContent = i;
+
+        pageNumberDiv.appendChild(pageSpan);
+        pageNumberDiv.addEventListener("click", () => {
+          currentPage = i;
+          renderTeamCards();
+          renderPaginationNumbers(); // Re-render to update active style
+        });
+
+        paginationNumbersContainer.appendChild(pageNumberDiv);
+      }
+
+      // Disable/enable navigation buttons
+      prevPageButton.style.opacity = currentPage === 1 ? "0.5" : "1";
+      prevPageButton.style.pointerEvents = currentPage === 1 ? "none" : "auto";
+      nextPageButton.style.opacity = currentPage === totalPages ? "0.5" : "1";
+      nextPageButton.style.pointerEvents =
+        currentPage === totalPages ? "none" : "auto";
+    }
+
+    prevPageButton.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTeamCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    nextPageButton.addEventListener("click", () => {
+      const totalPages = Math.ceil(allTeamMembers.length / cardsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderTeamCards();
+        renderPaginationNumbers();
+      }
+    });
+
+    // Initial render
+    renderTeamCards();
+    renderPaginationNumbers();
+  });
+</script>
