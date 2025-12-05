@@ -23,96 +23,36 @@
     >
       {/* Blog cards will be rendered here by JavaScript */}
     </div>
-
-    <div class="flex justify-center items-center gap-3 mt-10 mb-10">
-      <div
-        id="prev-page"
-        class="w-9 h-9 flex justify-center items-center rounded-full cursor-pointer"
-      >
-        <div
-          class="w-4 h-4 bg-[url('/img/blog/left-arrow.png')] bg-cover bg-no-repeat"
-        >
-        </div>
-      </div>
-      <div
-        id="pagination-numbers"
-        class="flex justify-center items-center gap-3"
-      >
-        {/* Pagination numbers will be rendered here by JavaScript */}
-      </div>
-      <div
-        id="next-page"
-        class="w-9 h-9 flex justify-center items-center rounded-full cursor-pointer"
-      >
-        <div
-          class="w-4 h-4 bg-[url('/img/blog/right-arrow.png')] bg-cover bg-no-repeat"
-        >
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const allBlogs = [];
-    const commonImageUrl =
-      "/img/about/about1.jpg";
-    // Populate allBlogs with your actual blog data.
-    // For demonstration, we'll create dummy blog data.
-
-    // Example: 25 blog posts
-    //   allBlogs.push({
-    //     id: i,
-    //     imageUrl:
-    //       "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-31/rDwDbsSNsu.png",
-    //     title: `Finance Budgeting Success Step-by-Step Guide ${i}`,
-    //     description: `Learn how to create a clear, effective budget to manage expenses and improve financial health. Blog post ${i}.`,
-    //   });
-
-    allBlogs.push({
-      id: 1,
-      imageUrl: commonImageUrl,
-      title: "Fluctuation (Flux) Analysis in Accounting: A Comprehensive Guide",
-      description:
-        "Master Fluctuation (Flux) Analysis in accounting. Analyze financial variations, improve forecasting, and make informed decisions.",
-      link: "/blog/post-1",
-    });
-    allBlogs.push({
-      id: 2,
-      imageUrl: "/img/about/about2.jpg",
-      title: "Understanding Generally Accepted Accounting Principles (GAAP): A Complete Guide",
-      description:
-        "Learn everything you need to know about generally accepted accounting principles (GAAP) with this complete guide.",
-      link: "/blog/post-2",
-    });
-    // Remaining blogs are commented out to show only first 2
-    // allBlogs.push({
-    //   id: 3,
-    //   imageUrl: commonImageUrl,
-    //   title: "Tax Season Tips: Maximizing Your Refund",
-    //   description:
-    //     "Essential tips and tricks to help you prepare for tax season and ensure you get the maximum refund possible.",
-    //   link: "/blog/post-3",
-    // });
-
-    const cardsPerPage = 6;
-    let currentPage = 1;
+    const allBlogs = [
+      {
+        id: 1,
+        imageUrl: "/img/about/about1.jpg",
+        title: "Fluctuation (Flux) Analysis in Accounting: A Comprehensive Guide",
+        description:
+          "Master Fluctuation (Flux) Analysis in accounting. Analyze financial variations, improve forecasting, and make informed decisions.",
+        link: "/blog/post-1",
+      },
+      {
+        id: 2,
+        imageUrl: "/img/about/about2.jpg",
+        title: "Understanding Generally Accepted Accounting Principles (GAAP): A Complete Guide",
+        description:
+          "Learn everything you need to know about generally accepted accounting principles (GAAP) with this complete guide.",
+        link: "/blog/post-2",
+      }
+    ];
 
     const blogCardsContainer = document.getElementById("blog-cards-container");
-    const paginationNumbersContainer =
-      document.getElementById("pagination-numbers");
-    const prevPageButton = document.getElementById("prev-page");
-    const nextPageButton = document.getElementById("next-page");
 
     function renderBlogCards() {
       blogCardsContainer.innerHTML = ""; // Clear existing cards
 
-      const startIndex = (currentPage - 1) * cardsPerPage;
-      const endIndex = startIndex + cardsPerPage;
-      const blogsToDisplay = allBlogs.slice(startIndex, endIndex);
-
-      blogsToDisplay.forEach((blog) => {
+      allBlogs.forEach((blog) => {
         const card = document.createElement("div");
         card.className =
           "bg-white border border-[#d0d5dd] rounded-[16px] p-6 flex flex-col gap-4";
@@ -126,53 +66,7 @@
       });
     }
 
-    // increase page number from here
-    function renderPaginationNumbers() {
-      paginationNumbersContainer.innerHTML = ""; // Clear existing numbers
-
-      const totalPages = Math.ceil(allBlogs.length / cardsPerPage);
-
-      for (let i = 1; i <= totalPages; i++) {
-        const pageNumberDiv = document.createElement("div");
-        pageNumberDiv.className = `w-9 h-9 flex justify-center items-center rounded-full border cursor-pointer ${
-          i === currentPage ? "bg-[#ed7c00] text-white" : "text-[#151515]"
-        }`;
-        pageNumberDiv.textContent = i;
-        pageNumberDiv.addEventListener("click", () => {
-          currentPage = i;
-          renderBlogCards();
-          renderPaginationNumbers(); // Re-render to update active style
-        });
-        paginationNumbersContainer.appendChild(pageNumberDiv);
-      }
-
-      // Disable/enable navigation buttons
-      prevPageButton.style.opacity = currentPage === 1 ? "0.5" : "1";
-      prevPageButton.style.pointerEvents = currentPage === 1 ? "none" : "auto";
-      nextPageButton.style.opacity = currentPage === totalPages ? "0.5" : "1";
-      nextPageButton.style.pointerEvents =
-        currentPage === totalPages ? "none" : "auto";
-    }
-
-    prevPageButton.addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderBlogCards();
-        renderPaginationNumbers();
-      }
-    });
-
-    nextPageButton.addEventListener("click", () => {
-      const totalPages = Math.ceil(allBlogs.length / cardsPerPage);
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderBlogCards();
-        renderPaginationNumbers();
-      }
-    });
-
     // Initial render
     renderBlogCards();
-    renderPaginationNumbers();
   });
 </script>
