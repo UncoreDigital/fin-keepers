@@ -43,39 +43,7 @@
     >
       </div>
 
-    <div
-      class="flex flex-col gap-[20px] sm:gap-[30px] lg:gap-[40px] items-center self-stretch shrink-0 flex-nowrap relative z-[52]"
-    >
-      <div
-        class="flex w-full max-w-[316px] gap-[8px] sm:gap-[10px] items-center justify-center shrink-0 flex-nowrap relative z-[74]"
-      >
-        <div
-          id="prev-page"
-          class="flex w-[32px] h-[32px] sm:w-[36.571px] sm:h-[36.571px] pt-0 pr-[6px] sm:pr-[7.5px] pb-0 pl-[6px] sm:pl-[7.5px] flex-col gap-[10px] sm:gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6px] sm:rounded-[6.857px] relative z-[75] cursor-pointer hover:bg-gray-50 transition-colors"
-        >
-          <div
-            class="w-[14px] h-[14px] sm:w-[17.5px] sm:h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/40S8FAC868.png)] bg-cover bg-no-repeat relative overflow-hidden z-[76]"
-          >
-          </div>
-        </div>
 
-        <div
-          id="pagination-numbers"
-          class="flex gap-[6px] sm:gap-[8px] lg:gap-[10px] items-center shrink-0 flex-nowrap relative"
-        >
-          </div>
-
-        <div
-          id="next-page"
-          class="flex w-[32px] h-[32px] sm:w-[36.571px] sm:h-[36.571px] pt-0 pr-[6px] sm:pr-[7.5px] pb-0 pl-[6px] sm:pl-[7.5px] flex-col gap-[10px] sm:gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6px] sm:rounded-[6.857px] relative z-[87] cursor-pointer hover:bg-gray-50 transition-colors"
-        >
-          <div
-            class="w-[14px] h-[14px] sm:w-[17.5px] sm:h-[17.5px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/S4VQU7COgB.png)] bg-cover bg-no-repeat relative overflow-hidden z-[88]"
-          >
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -87,7 +55,7 @@
     allCaseStudies.push({
       id: 1,
       imageUrl:
-        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/35pqbRLDY5.png",
+        "/img/about/case2.jpg",
       title:
         "Accounting Case Study - Forecast Financials",
       description:
@@ -105,7 +73,7 @@
     allCaseStudies.push({
       id: 2,
       imageUrl:
-        "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-13/35pqbRLDY5.png",
+        "/img/about/case3.jpg",
       title: "Transition from C-Corp to S-Corp",
       description:
         "Tax planning transition from C-corporation to S-corporation status with comprehensive asset and liability transfer.",
@@ -119,23 +87,14 @@
       link: "/casestudy/2",
     });
 
-    const cardsPerPage = 3; // Show 3 cards vertically per page
-    let currentPage = 1;
-
     const caseStudiesContainer = document.getElementById(
       "case-studies-container"
     );
-    const paginationNumbersContainer =
-      document.getElementById("pagination-numbers");
-    const prevPageButton = document.getElementById("prev-page");
-    const nextPageButton = document.getElementById("next-page");
 
     function renderCaseStudyCards() {
       caseStudiesContainer.innerHTML = ""; // Clear existing cards
 
-      const startIndex = (currentPage - 1) * cardsPerPage;
-      const endIndex = startIndex + cardsPerPage;
-      const caseStudiesToDisplay = allCaseStudies.slice(startIndex, endIndex);
+      const caseStudiesToDisplay = allCaseStudies;
 
       caseStudiesToDisplay.forEach((caseStudy, index) => {
         const card = document.createElement("div");
@@ -145,8 +104,10 @@
         card.innerHTML = `
   <div class="flex w-full flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-[32px] items-start relative p-4 sm:p-6 lg:p-[24px]">
     <!-- Left Image -->
-    <div class="w-full lg:w-[257px] h-[200px] sm:h-[220px] lg:h-[257px] shrink-0 bg-[url(${caseStudy.imageUrl})] bg-cover bg-no-repeat bg-center rounded-[8px] lg:rounded-[5.002px] relative overflow-hidden">
-    </div>
+<div 
+  class="w-full lg:w-[257px] h-[200px] sm:h-[220px] lg:h-[257px] shrink-0 bg-contain bg-center bg-no-repeat rounded-[8px] lg:rounded-[5.002px] relative overflow-hidden"
+  style="background-image: url('${caseStudy.imageUrl}')">
+</div>
 
     <!-- Right Content -->
     <div class="flex flex-col lg:flex-row justify-between items-start grow shrink-0 basis-0 relative w-full gap-4 lg:gap-0">
@@ -213,59 +174,7 @@
       });
     }
 
-    function renderPaginationNumbers() {
-      paginationNumbersContainer.innerHTML = ""; // Clear existing numbers
-
-      const totalPages = Math.ceil(allCaseStudies.length / cardsPerPage);
-
-      for (let i = 1; i <= totalPages; i++) {
-        const pageNumberDiv = document.createElement("div");
-        pageNumberDiv.className = `flex w-[32px] h-[32px] sm:w-[36.571px] sm:h-[36.571px] pt-0 pr-[6px] sm:pr-[7.5px] pb-0 pl-[6px] sm:pl-[7.5px] flex-col gap-[10px] sm:gap-[12.5px] justify-center items-center shrink-0 flex-nowrap rounded-[6px] sm:rounded-[6.857px] relative cursor-pointer transition-all hover:bg-gray-50 ${
-          i === currentPage ? "bg-[#ed7c00] sm:rounded-[36.86px]" : ""
-        }`;
-
-        const span = document.createElement("span");
-        span.className = `shrink-0 basis-auto font-['Inter'] text-[14px] sm:text-[16px] font-normal leading-[20px] sm:leading-[28px] relative text-center whitespace-nowrap ${
-          i === currentPage ? "text-[#fff]" : "text-[#151515]"
-        }`;
-        span.textContent = i;
-
-        pageNumberDiv.appendChild(span);
-        pageNumberDiv.addEventListener("click", () => {
-          currentPage = i;
-          renderCaseStudyCards();
-          renderPaginationNumbers(); // Re-render to update active style
-        });
-        paginationNumbersContainer.appendChild(pageNumberDiv);
-      }
-
-      // Disable/enable navigation buttons
-      prevPageButton.style.opacity = currentPage === 1 ? "0.5" : "1";
-      prevPageButton.style.pointerEvents = currentPage === 1 ? "none" : "auto";
-      nextPageButton.style.opacity = currentPage === totalPages ? "0.5" : "1";
-      nextPageButton.style.pointerEvents =
-        currentPage === totalPages ? "none" : "auto";
-    }
-
-    prevPageButton.addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderCaseStudyCards();
-        renderPaginationNumbers();
-      }
-    });
-
-    nextPageButton.addEventListener("click", () => {
-      const totalPages = Math.ceil(allCaseStudies.length / cardsPerPage);
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderCaseStudyCards();
-        renderPaginationNumbers();
-      }
-    });
-
     // Initial render
     renderCaseStudyCards();
-    renderPaginationNumbers();
   });
 </script>
