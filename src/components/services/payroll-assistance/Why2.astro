@@ -29,15 +29,15 @@ import WhyImage_2 from "../../../assets/services/book-keeping/hero_2.png";
     <div class="flex flex-col gap-[32px] items-center grow shrink-0 basis-0">
       <div class="flex flex-col gap-[12px] justify-center items-center w-full">
         <span
-          class="animate-on-scroll w-full text-[28px] sm:text-[36px] font-bold leading-[1.2] text-[#04092a] text-center sm:text-left opacity-0"
+          class="animate-on-scroll w-full text-[28px] sm:text-[36px] font-bold leading-[1.2] text-[#04092a] text-left opacity-0"
         >
           Payroll Help for Small Businesses - Finkeepers At Your Service
 
         </span>
 
-        <div class="flex flex-col gap-[40px] sm:gap-[80px] items-center w-full">
+        <div class="flex flex-col gap-[40px] sm:gap-[80px] items-start w-full">
           <span
-            class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-center sm:text-left opacity-0"
+            class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-left opacity-0"
           >
             startups and SMEs require payroll tax assistance, financial record keeping, as well as accounts
 receivable and payment management services, and there is no two minds about it because
@@ -50,16 +50,16 @@ one of those. So, here are a few reasons as to why you should outsource payroll 
             class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
           >
             <!-- Image Container with Hover Effect -->
-            <div class="relative group w-full lg:w-[576px] h-[450px] sm:h-[400px] lg:h-auto">
+            <div class="relative group w-full lg:w-[576px] h-auto max-h-[350px] sm:max-h-[400px] lg:max-h-none">
               <!-- Default Image -->
               <img 
                 src={WhyImage.src} 
-                class="animate-on-scroll w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-0 z-[50]" 
+                class="animate-on-scroll w-full h-full object-contain rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-[50]" 
               />
               <!-- Hover Image -->
               <img 
                 src={WhyImage_2.src} 
-                class="absolute inset-0 w-full h-full object-cover rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]" 
+                class="absolute inset-0 w-full h-full object-contain rounded-[9.174px] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]" 
               />
             </div>
 
