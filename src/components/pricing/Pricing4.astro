@@ -2,16 +2,16 @@
 import check1 from "../../assets/services/book-keeping/check-circle-1.png";
 ---
 
-<div class="main-container bg-white py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+<div class="main-container bg-white py-8 sm:py-16 px-4 sm:px-6 lg:px-20 mx-auto">
   <div class="max-w-screen-xl mx-auto">
     <!-- Header Section -->
-    <div class="mb-12 ml-[60px]">
+    <div class="mb-8 sm:mb-12 ml-0 sm:ml-[30px] lg:ml-[60px]">
       <h2
-        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#04092a] mb-8"
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#04092a] mb-4 sm:mb-8"
       >
         Our Pricing
       </h2>
-      <span class="text-[18px] font-medium leading-[21.784px] text-[#797979]"
+      <span class="text-[16px] sm:text-[18px] leading-[20px] sm:leading-[21.784px] text-[#797979]"
         >From essential bookkeeping to advanced tax and accounting support, our
         packages are built to scale with your business so you can focus on
         growth while we handle the numbers.</span
@@ -49,192 +49,169 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
     </div>
 
     <!-- Pricing Cards Container - Responsive -->
-    <div class="relative w-full overflow-hidden">
+    <div class="relative w-full">
       <!-- Mobile: Stack vertically -->
-      <div class="block lg:hidden space-y-8">
+      <div class="block md:hidden space-y-6 px-4">
         <!-- Card 1: Monthly Retainers - Mobile -->
-        <div class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-500 hover:bg-[#151515] hover:shadow-[0_25px_50px_0_rgba(237,124,0,0.4)] hover:scale-[1.05] group">
+        <div class="w-full max-w-sm mx-auto bg-[#f5f7fa] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 transition-all duration-300 hover:bg-[#151515] hover:shadow-lg group relative z-10">
           <div class="flex items-baseline gap-3 mb-6">
             <span
               id="basic-price-mobile"
-              class="text-[45px] font-bold leading-[58.911px] text-[#151515] group-hover:text-[#fff] group-hover:font-extrabold transition-all duration-300"
+              class="text-[36px] sm:text-[42px] font-bold text-[#151515] group-hover:text-[#fff] transition-all duration-300"
               >$ 999</span
             >
             <span
               id="basic-period-mobile"
-              class="text-[18px] font-medium leading-[24px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+              class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
               >/month</span
             >
           </div>
 
-          <div class="mb-8">
+          <div class="mb-6">
             <h3
-              class="text-[24px] font-medium leading-[29.045px] text-[#151515] mb-2 group-hover:text-[#fff] group-hover:font-bold transition-all duration-300"
+              class="text-[22px] sm:text-[24px] font-semibold text-[#151515] mb-2 group-hover:text-[#fff] transition-all duration-300"
             >
               Basic
             </h3>
             <p
-              class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+              class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
             >
-              Ideal for Start-ups<br />or Solopreneurs
+              Ideal for startups<br />or Solopreneurs
             </p>
           </div>
 
           <!-- Features -->
           <div class="space-y-3 mb-8">
             <div class="flex items-center">
-              <!-- <div
-                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/899BRukPhk.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
-              >
-              </div> -->
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Amazing feature one</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Bookkeeping</span
               >
             </div>
             <div class="flex items-center">
-              <!-- <div
-                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/8hCtnyPR5C.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
-              >
-              </div> -->
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Wonderful feature two</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Payroll</span
               >
             </div>
             <div class="flex items-center">
-              <!-- <div
-                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/dqBeRUoqAj.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
-              >
-              </div> -->
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-              >Priceless feature three</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+              >Monthly Financial Reporting</span
             >
             </div>
           </div>
 
           <button
-            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00]"
+            class="w-full h-[44px] sm:h-[50px] pt-0 pr-[20px] sm:pr-[24px] pb-0 pl-[20px] sm:pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00] group-hover:bg-[#ed7c00] transition-all duration-300"
             onclick="window.location.href='/contact'"
           >
             <span
-              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00]"
+              class="font-['Inter'] text-[16px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-[#ed7c00] group-hover:text-[#fff] transition-all duration-300"
               >Call</span
             >
           </button>
         </div>
 
         <!-- Card 2: Project-Based - Mobile -->
-        <div class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 transition-all duration-500 hover:bg-[#151515] hover:shadow-[0_25px_50px_0_rgba(237,124,0,0.4)] hover:scale-[1.05] group">
+        <div class="w-full max-w-sm mx-auto bg-[#f5f7fa] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 transition-all duration-300 hover:bg-[#151515] hover:shadow-lg group relative z-10">
           <div class="flex items-baseline gap-3 mb-6">
             <span
               id="standard-price-mobile"
-              class="text-[45px] font-bold leading-[58.911px] text-[#151515] group-hover:text-[#fff] group-hover:font-extrabold transition-all duration-300"
-              >$ 1999</span
+              class="text-[36px] sm:text-[42px] font-bold text-[#151515] group-hover:text-[#fff] transition-all duration-300"
+              >$ 1,999</span
             >
             <span
               id="standard-period-mobile"
-              class="text-[18px] font-medium leading-[24px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+              class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
               >/month</span
             >
           </div>
 
-          <div class="mb-8">
+          <div class="mb-6">
             <h3
-              class="text-[24px] font-medium leading-[29.045px] text-[#151515] mb-2 group-hover:text-[#fff] group-hover:font-bold transition-all duration-300"
+              class="text-[22px] sm:text-[24px] font-semibold text-[#151515] mb-2 group-hover:text-[#fff] transition-all duration-300"
             >
               Standard
             </h3>
             <p
-              class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+              class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
             >
-              Growing Start-ups and <br />Mid-sized firms
+              Growing startups and <br />Mid-sized firms
             </p>
           </div>
 
           <!-- Features -->
           <div class="space-y-3 mb-8">
             <div class="flex items-center">
-              <!-- <div
-                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/TdVOc4ytoD.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
-              >
-              </div> -->
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Amazing feature one</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Basic +</span
               >
             </div>
             <div class="flex items-center">
-              <!-- <div
-                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/mL9udkhnM4.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
-              >
-              </div> -->
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Wonderful feature two</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Cash Flow Management</span
               >
             </div>
             <div class="flex items-center">
-              <!-- <div
-                class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/MtwqwWEb6C.png)] bg-[length:100%_100%] bg-no-repeat w-6 h-6 mr-4"
-              >
-              </div> -->
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Priceless feature three</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Tax Filing Assistance</span
               >
             </div>
           </div>
 
           <button
-            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00]"
+            class="w-full h-[44px] sm:h-[50px] pt-0 pr-[20px] sm:pr-[24px] pb-0 pl-[20px] sm:pl-[24px] flex justify-center items-center bg-transparent rounded-[8px] border-solid border border-[#ed7c00] group-hover:bg-[#ed7c00] transition-all duration-300"
+            onclick="window.location.href='/contact'"
           >
             <span
-              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00]"
+              class="font-['Inter'] text-[16px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-[#ed7c00] group-hover:text-[#fff] transition-all duration-300"
               >Call</span
             >
           </button>
         </div>
 
         <!-- Card 3: Premium - Mobile -->
-        <div class="w-full bg-[#f5f7fa] rounded-[33.298px] p-6 sm:p-8 relative transition-all duration-500 hover:bg-[#151515] hover:shadow-[0_25px_50px_0_rgba(237,124,0,0.4)] hover:scale-[1.05] group">
+        <div class="w-full max-w-sm mx-auto bg-[#f5f7fa] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 relative transition-all duration-300 hover:bg-[#151515] hover:shadow-lg group z-10">
           <!-- Most Popular Badge -->
           <div
-            class="w-[154.963px] h-[34.578px] bg-[#fdf2e8] rounded-[17.289px] flex justify-center items-center mx-auto mb-6 group-hover:bg-[#ed7c00] transition-all duration-300"
+            class="w-[120px] sm:w-[140px] h-[32px] sm:h-[36px] bg-[#fdf2e8] rounded-[16px] flex justify-center items-center mx-auto mb-4 sm:mb-6 group-hover:bg-[#ed7c00] transition-all duration-300"
           >
             <span
-              class="font-['Inter'] text-[14px] font-medium leading-[16.943px] text-[#ed7c00] tracking-[1.07px] group-hover:text-[#fff] transition-all duration-300"
+              class="font-['Inter'] text-[12px] sm:text-[14px] font-medium leading-[14px] sm:leading-[16.943px] text-[#ed7c00] tracking-[0.8px] sm:tracking-[1.07px] group-hover:text-[#fff] transition-all duration-300"
             >
               MOST POPULAR
             </span>
@@ -243,23 +220,23 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
           <div class="flex items-baseline gap-3 mb-6">
             <span
               id="premium-price-mobile"
-              class="text-[45px] font-bold leading-[58.911px] text-[#151515] group-hover:text-[#fff] group-hover:font-extrabold transition-all duration-300"
-              >Outsourced CFO</span
+              class="text-[28px] sm:text-[36px] font-bold text-[#151515] group-hover:text-[#fff] transition-all duration-300"
+              >Custom</span
             >
             <span
               id="premium-period-mobile"
-              class="text-[18px] font-medium leading-[24px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-              >/month</span
+              class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+              ></span
             >
           </div>
 
-          <div class="mb-8">
+          <div class="mb-6">
             <h3
-              class="text-[24px] font-medium leading-[29.045px] text-[#151515] mb-6 group-hover:text-[#fff] group-hover:font-bold transition-all duration-300"
+              class="text-[22px] sm:text-[24px] font-semibold text-[#151515] mb-2 group-hover:text-[#fff] transition-all duration-300"
             >
               Premium
             </h3>
-            <p class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300">
+            <p class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300">
               Funded or $1M+ Revenue Companies
             </p>
           </div>
@@ -270,65 +247,54 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Amazing feature one</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Standard +</span
               >
             </div>
             <div class="flex items-center">
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Wonderful feature two</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Dashboards, KPI tracking</span
               >
             </div>
             <div class="flex items-center">
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Priceless feature three</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >CFO-level Advisory</span
               >
             </div>
             <div class="flex items-center">
               <img
                 src={check1.src}
                 alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
+                class="w-5 h-5 mr-4 flex-shrink-0"
               />
               <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Splended feature four</span
-              >
-            </div>
-            <div class="flex items-center">
-              <img
-                src={check1.src}
-                alt=""
-                class="w-[9.66%] h-[95.24%] w-6 h-6 mr-4"
-              />
-              <span
-                class="text-[18px] font-medium leading-[21.784px] text-[#797979] group-hover:text-[#fff] transition-all duration-300"
-                >Delightful feature five</span
+                class="text-[16px] sm:text-[18px] font-medium text-[#797979] group-hover:text-[#fff] transition-all duration-300"
+                >Investor Support</span
               >
             </div>
           </div>
 
           <button
-            class="w-full h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex justify-center items-center bg-transparent border border-[#ed7c00] rounded-[8px] group-hover:bg-[#ed7c00] transition-all duration-300"
+            class="w-full h-[44px] sm:h-[50px] pt-0 pr-[20px] sm:pr-[24px] pb-0 pl-[20px] sm:pl-[24px] flex justify-center items-center bg-transparent border border-[#ed7c00] rounded-[8px] group-hover:bg-[#ed7c00] transition-all duration-300"
             onclick="window.location.href='/contact'"
           >
             <span
-              class="font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] group-hover:text-[#fff] transition-all duration-300"
+              class="font-['Inter'] text-[16px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-[#ed7c00] group-hover:text-[#fff] transition-all duration-300"
               >Call</span
             >
           </button>
@@ -336,7 +302,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
       </div>
 
       <!-- Desktop: Original Figma Layout -->
-      <div class="hidden lg:block w-[1320px] h-[570px] mx-auto relative overflow-visible">
+      <div class="hidden md:block w-[1320px] h-[570px] mx-auto relative overflow-visible">
         <!-- Background -->
         <div
           class="w-[1200px] h-[527.791px] bg-[#f5f7fa] rounded-[33.298px] absolute top-[24px] left-[60px] z-10"
@@ -345,7 +311,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
 
         <!-- Premium Card (Right) -->
         <div
-          class="w-[416px] h-[527.506px] rounded-[33.298px] absolute top-[24px] left-[799.26px] z-[25] transition-all duration-500 hover:scale-[1.05] hover:z-[50] group overflow-hidden"
+          class="hidden md:block w-[416px] h-[527.506px] rounded-[33.298px] absolute top-[24px] left-[799.26px] z-[25] transition-all duration-500 hover:scale-[1.05] hover:z-[50] group overflow-hidden"
         >
           <div
             class="w-full h-full bg-[#f5f7fa] rounded-[33.298px] p-6 group-hover:bg-[#151515] group-hover:shadow-[0_25px_50px_0_rgba(237,124,0,0.4)] transition-all duration-500 overflow-hidden"
@@ -459,7 +425,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
 
         <!-- Standard Card (Center) -->
         <div
-          class="w-[344.63px] h-[527.506px] absolute top-[24px] left-[449.63px] z-[25] rounded-[33.298px] transition-all duration-500 hover:scale-[1.05] hover:z-[50] group overflow-hidden"
+          class="hidden md:block w-[344.63px] h-[527.506px] absolute top-[24px] left-[449.63px] z-[25] rounded-[33.298px] transition-all duration-500 hover:scale-[1.05] hover:z-[50] group overflow-hidden"
         >
           <div class="w-full h-full bg-[#f5f7fa] rounded-[33.298px] p-6 group-hover:bg-[#151515] group-hover:shadow-[0_25px_50px_0_rgba(237,124,0,0.4)] transition-all duration-500 overflow-hidden">
           <div
@@ -471,7 +437,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
               <span
                 id="standard-price"
                 class="h-[59px] shrink-0 basis-auto font-['Inter'] text-[45px] font-bold leading-[58.911px] text-[#151515] relative text-left whitespace-nowrap z-[84] group-hover:text-[#fff] group-hover:font-extrabold transition-all duration-300"
-                >$ 1999</span
+                >$ 1,999</span
               >
               <span
                 id="standard-period"
@@ -492,7 +458,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
               <span
                 class="block h-[22px] font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] relative text-left whitespace-nowrap z-[69] mt-[8px] group-hover:text-[#fff] transition-all duration-300"
               >
-                Growing Start-ups and <br />Mid-sized firms
+                Growing startups and <br />Mid-sized firms
               </span>
             </div>
           </div>
@@ -573,7 +539,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
 
         <!-- Basic Card (Left) -->
         <div
-          class="w-[344.63px] h-[527.506px] absolute top-[24px] left-[100px] z-[25] rounded-[33.298px] transition-all duration-500 hover:scale-[1.05] hover:z-[50] group overflow-hidden"
+          class="hidden md:block w-[344.63px] h-[527.506px] absolute top-[24px] left-[100px] z-[25] rounded-[33.298px] transition-all duration-500 hover:scale-[1.05] hover:z-[50] group overflow-hidden"
         >
           <div class="w-full h-full bg-[#f5f7fa] rounded-[33.298px] p-6 group-hover:bg-[#151515] group-hover:shadow-[0_25px_50px_0_rgba(237,124,0,0.4)] transition-all duration-500 overflow-hidden">
           <div
@@ -606,7 +572,7 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
               <span
                 class="block h-[44px] font-['Inter'] text-[18px] font-medium leading-[21.784px] text-[#797979] relative text-left z-[69] mt-[8px] group-hover:text-[#fff] transition-all duration-300"
               >
-                Ideal for Start-ups or <br />Solopreneurs
+                Ideal for startups or <br />Solopreneurs
               </span>
             </div>
           </div>
@@ -647,19 +613,6 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
                   class="flex h-[22px] justify-start items-start font-['Inter'] text-[16px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[80] group-hover:text-[#fff] transition-all duration-300"
                 >
                   Monthly Financial Reporting
-                </span>
-                <div
-                  class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/dqBeRUoqAj.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[79]"
-                >
-                </div>
-              </div>
-              <div
-                class="w-[265.101px] h-[26.894px] relative overflow-hidden z-[78] mt-[12.807px]"
-              >
-                <span
-                  class="flex h-[22px] justify-start items-start font-['Inter'] text-[16px] font-medium leading-[21.784px] text-[#797979] absolute top-[calc(50%-13.45px)] left-[14.49%] text-left whitespace-nowrap z-[80] group-hover:text-[#fff] transition-all duration-300"
-                >
-                  Compliance Support
                 </span>
                 <div
                   class="w-[9.66%] h-[95.24%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/dqBeRUoqAj.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[4.76%] left-[0%] z-[79]"
@@ -712,8 +665,8 @@ import check1 from "../../assets/services/book-keeping/check-circle-1.png";
       yearly: { price: "$ 999", period: "/month" }, // 15% discount: 250 * 12 * 0.85
     },
     standard: {
-      monthly: { price: "$ 1999", period: "/month" },
-      yearly: { price: "$ 1999", period: "/month" }, // 15% discount: 12 * 12 * 0.85
+      monthly: { price: "$ 1,999", period: "/month" },
+      yearly: { price: "$ 1,999", period: "/month" }, // 15% discount: 12 * 12 * 0.85
     },
     premium: {
       monthly: { price: "Custom", period: "" },

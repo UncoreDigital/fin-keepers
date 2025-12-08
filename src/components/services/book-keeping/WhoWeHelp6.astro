@@ -36,6 +36,11 @@ const tabImages = {
     default: cfoImage,
     hover: cfoImage_2,
     alt: "Financial Reporting"
+  },
+  new: {
+    default: cfoImage,
+    hover: cfoImage_2,
+    alt: "Multi-Entry & Consolidated Reporting"
   }
 };
 ---
@@ -57,7 +62,7 @@ const tabImages = {
         class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
         style="max-width: calc(48rem + 500px);"
       >
-        We provide expert bookkeeping services to small businesses across the USA, including eCommerce Brands, Fashion Houses, Agencies, Freelancers, Healthcare Companies, Automobile, Food and Beverages, NGOs, Real Estate, Technology, Agriculture, Hospitality, and more.
+        We provide expert bookkeeping services to small businesses across the U.S., including eCommerce Brands, Fashion Houses, Agencies, Freelancers, Healthcare Companies, Automobile, Food and Beverages, NGOs, Real Estate, Technology, Agriculture, Hospitality, and more.
       </p>
     </div>
 
@@ -70,7 +75,7 @@ const tabImages = {
         class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto snap-x snap-mandatory"
       >
         <button class="tab-button active-tab" data-tab="general"
-          >Daily Bookkeeping & Reconciliations</button
+          >Daily Bookkeeping</button
         >
         <button class="tab-button" data-tab="payables"
           >Account Payables and Receivable Management</button
@@ -80,7 +85,10 @@ const tabImages = {
           >Tax – Ready Bookkeeping</button
         >
         <button class="tab-button" data-tab="reporting"
-          >Financial Reporting  & Dashboards</button
+          >Financial Reporting</button
+        >
+        <button class="tab-button" data-tab="new"
+          >Multi-Entry & Consolidated Reporting</button
         >
       </div>
     </div>
@@ -88,11 +96,11 @@ const tabImages = {
     <!-- Tab Content (dynamic area) -->
     <div
       id="tabContent"
-      class="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 justify-center w-full max-w-screen-lg mx-auto animate-on-scroll-child opacity-0"
+      class="flex flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-0 justify-center w-full max-w-screen-lg mx-auto animate-on-scroll-child opacity-0"
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full flex-grow"
+        class="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full flex-grow"
         style="max-width: calc(50% - 80px);"
       >
         <div class="flex flex-col gap-4 sm:gap-6 items-start">
@@ -219,7 +227,7 @@ const tabImages = {
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
       images: tabImages.reporting,
     },
-    reporting: {
+    new: {
       title: "Multi-Entry & Consolidated Reporting",
       description:
         "Perfect for PE/VC portfolios or holding companies, with consolidated balance sheets and intercompany reconciliations.",

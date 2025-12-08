@@ -3,13 +3,13 @@ import HeroImage from "../../../assets/services/book-keeping/hero.png";
 import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
 ---
 
-<div class="bg-[#f5f7fa] py-6 px-4 sm:px-6 lg:px-20 relative overflow-hidden">
+<div class="bg-[#f5f7fa] pb-6 px-4 sm:px-6 lg:px-20 relative overflow-hidden">
   <div
     class="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24 relative"
   >
     {/* Left Content Area */}
     <div
-      class="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:gap-8 max-w-2xl lg:w-1/2 order-2 lg:order-1"
+      class="flex flex-col items-start text-left gap-6 lg:gap-8 max-w-2xl lg:w-1/2 order-2 lg:order-1"
       style="margin-left: 40px;"
     >
       <h1
@@ -25,7 +25,7 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
       </p>
       <a
         href="/contact"
-        class="flex w-[200px] sm:w-[206px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300"
+        class="flex w-[200px] sm:w-[206px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300 self-start"
       >
         <span
           class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px]"
@@ -37,22 +37,22 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
 
     {/* Right Image and Overlapping Cards Area */}
     <div
-      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-10 lg:mt-0 order-1 lg:order-2 group"
+      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-20 lg:mt-0 mb-[-40px] lg:mb-0 order-1 lg:order-2 group"
     >
       {/* Main Image */}
       <img
         src={HeroImage.src}
         alt="Business Woman with tablet and growth charts"
-        class="absolute w-[90%] h-[90%] object-contain top-[10%] z-[50] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
-        style="transform: rotate(-10deg); left: calc(10% - 40px);"
+        class="absolute w-[70%] lg:w-[90%] h-[70%] lg:h-[90%] object-contain top-[10%] z-[50] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+        style="transform: rotate(-10deg); left: 50%; margin-left: -35%; @media (min-width: 1024px) { left: calc(10% - 40px); margin-left: 0; }"
       />
 
       <!-- Hover Image -->
       <img
         src={HeroImage_2.src}
         alt=""
-        class="absolute w-[90%] h-[90%] object-contain top-[10%] z-[60] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
-        style="transform: rotate(-10deg); left: calc(10% - 40px);"
+        class="absolute w-[70%] lg:w-[90%] h-[70%] lg:h-[90%] object-contain top-[10%] z-[60] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+        style="transform: rotate(-10deg); left: 50%; margin-left: -35%; @media (min-width: 1024px) { left: calc(10% - 40px); margin-left: 0; }"
       />
     </div>
   </div>
