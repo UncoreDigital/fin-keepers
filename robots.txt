@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+
+# Block admin and development directories
+Disallow: /admin/
+Disallow: /.astro/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /.vscode/
+
+# Block sensitive files
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /*.config.*$
+
+# Allow important pages
+Allow: /book-keeping
+Allow: /financial-reporting
+Allow: /payroll-assistance
+Allow: /cashflow-management
+Allow: /temporary-cfo
+Allow: /pricing
+Allow: /about
+Allow: /contact
+Allow: /blogs
+Allow: /casestudy
+Allow: /account-reconciliation
+
+# Allow CSS, JS, and images for proper rendering
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /fonts/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Crawl delay (optional - remove if causing issues)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://finkeepers.us/sitemap.xml

@@ -81,14 +81,15 @@ const tabImages = {
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
+        class="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
       >
-        <div class="flex flex-col gap-4 sm:gap-6 items-start">
-          <div
+        <div class="flex flex-col gap-3 sm:gap-4 items-start">
+          <img
             id="tabIcon"
-            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
-          >
-          </div>
+            src="/img/services/SVG/c1.svg"
+            alt="Tab Icon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0"
+          />
           <h3
             id="tabTitle"
             class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
@@ -109,10 +110,10 @@ const tabImages = {
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
       >
         <div
-          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+          class="relative w-full max-w-[280px] aspect-square overflow-hidden"
         >
           <!-- Default Image -->
           <img
@@ -175,28 +176,28 @@ const tabImages = {
       title: "Liquidity Management",
       description:
         "Small businesses might need a few cashflow management services, but managing liquidity is definitely one of them. Having enough liquidity for daily transactions is included in this subsection of Cashflow Management Services. ",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/c1.svg",
       images: tabImages.general,
     },
     payables: {
       title: "Fraud Prevention Expertise",
       description:
         "This is for businesses that deal with daily cash incoming and outgoing, like financial institutions, banks, etc. To prevent fraud from happening, online or offline, it is essential to opt for this service.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/c2.svg",
       images: tabImages.payables,
     },
     bank: {
       title: "Payment - Payables and Receivables",
       description:
         "Some businesses consist of cash payables and receivables, like institutions that lend money on loan. Hence, what amount is to be paid or received needs to be calculated with utmost precision.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/c3.svg",
       images: tabImages.bank,
     },
     tax: {
       title: "Financial Insights",
       description:
         "This is to provide better insight about market conditions, competitors, what has been done up until now, and how the future can be improved. This part of cashflow management includes financial reporting an financial modelling, which requires the skills, experience, and understanding that Finkeepers bring to the table.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/c4.svg",
       images: tabImages.tax,
     },
   };
@@ -219,7 +220,7 @@ const tabImages = {
     if (content) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
-      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      tabIcon.src = content.icon;
       
        // Update dynamic images
       if (content.images) {

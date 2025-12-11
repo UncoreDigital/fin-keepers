@@ -100,14 +100,15 @@ const tabImages = {
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:max-w-[calc(50%-80px)] flex-grow"
+        class="flex flex-col gap-2 sm:gap-3 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:max-w-[calc(50%-80px)] flex-grow"
       >
-        <div class="flex flex-col gap-4 sm:gap-6 items-start">
-          <div
+        <div class="flex flex-col gap-3 sm:gap-4 items-start">
+          <img
             id="tabIcon"
-            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
-          >
-          </div>
+            src="/img/services/SVG/b1.svg"
+            alt="Tab Icon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0"
+          />
           <h3
             id="tabTitle"
             class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
@@ -128,10 +129,10 @@ const tabImages = {
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
         style="margin-top: -20px;"
       >
-        <div class="relative w-full max-w-[400px] aspect-square overflow-hidden">
+        <div class="relative w-full max-w-[280px] aspect-square overflow-hidden">
           <!-- Default Image -->
           <img
             id="tabImageDefault"
@@ -195,14 +196,14 @@ const tabImages = {
       title: "Daily Bookkeeping & Reconciliations",
       description:
         "Recording and organizing daily business transactions, including counting of cash,matching income with expenses, and cash/bank reconciliation.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/b1.svg",
       images: tabImages.general,
     },
     payables: {
       title: "Account Payables and Receivable Management",
       description:
         "Managing bills and timely payments to vendors and collection of the receivables from clients and customers.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/b2.svg",
       images: tabImages.payables,
     },
     bank: {
@@ -216,21 +217,21 @@ const tabImages = {
       title: "Tax – Ready Bookkeeping",
       description:
         "Keeping the books ready to audit for CPAs and also simplifying IRS tax preparations.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/b3.svg",
       images: tabImages.tax,
     },
     reporting: {
       title: "Financial Reporting & Dashboards",
       description:
         "We deliver monthly management reports with financial KPIs, cash forecasts, and margin insights, designed for founders and investors.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/b4.svg",
       images: tabImages.reporting,
     },
     new: {
       title: "Multi-Entry & Consolidated Reporting",
       description:
         "Perfect for PE/VC portfolios or holding companies, with consolidated balance sheets and intercompany reconciliations.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/b5.svg",
       images: tabImages.reporting,
     },
   };
@@ -254,7 +255,7 @@ const tabImages = {
     if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
-      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      tabIcon.src = content.icon;
       
       // Update dynamic images
       if (content.images) {

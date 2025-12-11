@@ -1,0 +1,101 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  schemaType?: 'WebPage' | 'Service' | 'Article' | 'Organization';
+  serviceName?: string;
+  serviceDescription?: string;
+}
+
+const { 
+  title = "Professional Bookkeeping Services | Small Business Finance | Finkeepers",
+  description = "Expert bookkeeping, financial reporting & payroll services for small businesses. Streamline your finances with Finkeepers' professional accounting solutions.",
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage = "/img/og-image.jpg",
+  schemaType = 'WebPage',
+  serviceName,
+  serviceDescription
+} = Astro.props;
+
+const currentUrl = new URL(Astro.request.url);
+const canonicalUrl = canonical || currentUrl.href;
+
+// Generate schema based on type
+let schema = {};
+
+if (schemaType === 'Service' && serviceName) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": serviceName,
+    "description": serviceDescription || description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Finkeepers",
+      "url": "https://finkeepers.us"
+    },
+    "areaServed": "United States",
+    "serviceType": "Financial Services"
+  };
+} else if (schemaType === 'Article') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "author": {
+      "@type": "Organization",
+      "name": "Finkeepers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Finkeepers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://finkeepers.us/img/logo/logo.png"
+      }
+    }
+  };
+} else {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": canonicalUrl,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Finkeepers",
+      "url": "https://finkeepers.us"
+    }
+  };
+}
+---
+
+<!-- SEO Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={ogTitle || title} />
+<meta property="og:description" content={ogDescription || description} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={ogTitle || title} />
+<meta property="twitter:description" content={ogDescription || description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>

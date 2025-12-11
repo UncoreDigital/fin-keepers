@@ -1,4 +1,21 @@
 User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
-Sitemap: https://www.finkeepers.us/sitemap.xml
+Allow: /
+Disallow: /admin/
+Disallow: /.astro/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/
+
+# Allow important pages
+Allow: /book-keeping
+Allow: /financial-reporting
+Allow: /payroll-assistance
+Allow: /cashflow-management
+Allow: /temporary-cfo
+Allow: /pricing
+Allow: /about
+Allow: /contact
+Allow: /blogs
+Allow: /casestudy
+
+Sitemap: https://finkeepers.us/sitemap.xml

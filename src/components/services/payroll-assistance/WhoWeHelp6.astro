@@ -91,14 +91,15 @@ const tabImages = {
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
+        class="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
       >
-        <div class="flex flex-col gap-4 sm:gap-6 items-start">
-          <div
+        <div class="flex flex-col gap-3 sm:gap-4 items-start">
+          <img
             id="tabIcon"
-            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
-          >
-          </div>
+            src="/img/services/SVG/p1.svg"
+            alt="Tab Icon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0"
+          />
           <h3
             id="tabTitle"
             class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
@@ -120,10 +121,10 @@ const tabImages = {
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-4 sm:p-5 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
       >
         <div
-          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+          class="relative w-full max-w-[280px] aspect-square overflow-hidden"
         >
           <!-- Default Image -->
           <img
@@ -187,35 +188,35 @@ const tabImages = {
       title: "Employee Set Up",
       description:
         "Even though HR is the one who takes care of the onboarding process, the financial onboarding process (opening a bank account for interns, asking for tax slips from previous organizations, salary slip scrutiny, etc.) is done by Payroll Management. Finkeeper does that with precision, and that too within your budget.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/p1.svg",
       images: tabImages.employee,
     },
     payables: {
       title: "Tax Withholding & Filing",
       description:
         "Managing federal, state, and local tax deductions. Filing payroll taxes with the IRS and state authorities. Preparing year-end forms like W-2s and 1099s.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/p2.svg",
       images: tabImages.commerce,
     },
     bank: {
       title: "Salary processing",
       description:
         "Salary processing isn’t just about depositing salaries in the accounts of employees. One has to take care of overtime, deductions, tax filing, manage health insurance, retirement plans (401k), and other benefit-related payroll activities, which need legal understanding that might not be the cup of tea for startups and SMEs yet.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/p3.svg",
       images: tabImages.salary,
     },
     tax: {
       title: "Multi-State Payroll Support",
       description:
         "Handling payroll for businesses operating across multiple states with varying tax and compliance requirements.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/p4.svg",
       images: tabImages.state,
     },
     reporting: {
       title: "Scalable Payroll Solutions",
       description:
         "The Startups and SMEs will not stay limited to 5 employees; they are going to scale and hopefully upscale. During that time, if the payroll services are outsourced to Finkeepers, the higher-ups do not need to worry about how they will manage the staff. It will all be taken care of as we specialize in providing payroll help for small businesses.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/p5.svg",
       images: tabImages.payroll,
     },
   };
@@ -238,7 +239,7 @@ const tabImages = {
     if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
-      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      tabIcon.src = content.icon;
       
        // Update dynamic images
       if (content.images) {

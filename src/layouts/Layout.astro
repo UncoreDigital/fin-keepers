@@ -1,13 +1,104 @@
 ---
 import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+}
+
+const { 
+  title = "Professional Bookkeeping Services | Small Business Finance | Finkeepers",
+  description = "Expert bookkeeping, financial reporting & payroll services for small businesses. Streamline your finances with Finkeepers' professional accounting solutions.",
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage = "/img/og-image.jpg"
+} = Astro.props;
+
+const currentUrl = new URL(Astro.request.url);
+const canonicalUrl = canonical || currentUrl.href;
 ---
 
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
-<title>Finkeepers</title>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={ogTitle || title} />
+<meta property="og:description" content={ogDescription || description} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={ogTitle || title} />
+<meta property="twitter:description" content={ogDescription || description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://codia-f2c.s3.us-west-1.amazonaws.com">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Finkeepers",
+  "description": "Professional bookkeeping and financial services for small businesses",
+  "url": "https://finkeepers.us",
+  "logo": "https://finkeepers.us/img/logo/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "serviceType": ["Bookkeeping Services", "Financial Reporting", "Payroll Services", "Cash Flow Management", "Temporary CFO Services"],
+  "areaServed": "United States",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Financial Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bookkeeping Services",
+          "description": "Professional bookkeeping services for small businesses"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Financial Reporting",
+          "description": "Comprehensive financial reporting and business analytics"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Payroll Services",
+          "description": "Streamlined payroll processing and employee payment solutions"
+        }
+      }
+    ]
+  }
+}
+</script>
 <html lang="en">
   <!-- <head> -->
 

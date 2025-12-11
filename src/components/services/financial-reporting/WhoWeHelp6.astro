@@ -90,14 +90,15 @@ There is no one type of financial reporting, and the needs of every start-up and
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
+        class="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
       >
-        <div class="flex flex-col gap-4 sm:gap-6 items-start">
-          <div
+        <div class="flex flex-col gap-3 sm:gap-4 items-start">
+          <img
             id="tabIcon"
-            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
-          >
-          </div>
+            src="/img/services/SVG/f1.svg"
+            alt="Tab Icon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0"
+          />
           <h3
             id="tabTitle"
             class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
@@ -118,10 +119,10 @@ There is no one type of financial reporting, and the needs of every start-up and
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
       >
         <div
-          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+          class="relative w-full max-w-[280px] aspect-square overflow-hidden"
         >
           <!-- Default Image -->
           <img
@@ -186,35 +187,35 @@ There is no one type of financial reporting, and the needs of every start-up and
       title: "Regulatory/Legal Reporting",
       description:
         "Preparing financial statements in compliance with GAAP, IFRS, or SEC regulations. Whether it is fundraising or pitching to investors, regulatory reporting proves that your numbers aren’t some fantasy; they are realistic and credible. ",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/f1.svg",
       images: tabImages.legal,
     },
     payables: {
       title: "Management Reporting",
       description:
         "This kind of reporting is for internal members in the higher-ups, such as executives and managers, to ensure correct and transparent cash flow. It includes budget vs. actual financial analysis, KPIs, and performance dashboards. ",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/f2.svg",
       images: tabImages.report,
     },
     bank: {
       title: "Departmental Reporting",
       description:
         "It is micro reporting wherein profit and loss incurred by every unit is tracked to understand the product market and which product is the epicentre of profit, and where cost leakages are happening.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/f3.svg",
       images: tabImages.department,
     },
     tax: {
       title: "Customized Financial Dashboard",
       description:
         "Every firm needs a specialized dashboard curated to its financial needs. With the help of real-time visual financial reporting using tools like Power BI or Tableau, Finkeepers will create dashboards that will provide interactive insights instead of static statements.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/f4.svg",
       images: tabImages.finance,
     },
     reporting: {
       title: "Sustainable Reporting",
       description:
         "This is a little different than other conventional reporting. Sustainable reporting is a non-financial way of reporting that takes into consideration governance metrics, environment, and social aspects as well.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/f5.svg",
       images: tabImages.sustain,
     },
   };
@@ -238,7 +239,7 @@ There is no one type of financial reporting, and the needs of every start-up and
     if (content && tabTitle) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
-      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      tabIcon.src = content.icon;
       
       // Update dynamic images
       if (content.images) {

@@ -43,7 +43,7 @@ const tabImages = {
       <h2
         class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-[#04092a] font-['Inter']"
       >
-        How Do We Help?
+        Whom Do We Help?
       </h2>
       <p
         class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
@@ -62,10 +62,10 @@ const tabImages = {
         class="flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto snap-x snap-mandatory"
       >
         <button class="tab-button active-tab" data-tab="general"
-          >Accurate Financial Prognostication</button
+          >Financial Planning & Forecasting</button
         >
         <button class="tab-button" data-tab="payables"
-          >Making a Budget and Tracking the Expenses</button
+          >Budgeting & Expense Control</button
         >
         <button class="tab-button" data-tab="bank"
           >Strategic Decision Support</button
@@ -81,15 +81,16 @@ const tabImages = {
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-6 sm:gap-8 p-4 sm:p-5 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
+        class="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
         style="width: calc(50% - 40px);"
       >
-        <div class="flex flex-col gap-4 sm:gap-6 items-start">
-          <div
+        <div class="flex flex-col gap-3 sm:gap-4 items-start">
+          <img
             id="tabIcon"
-            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png)] bg-cover bg-no-repeat overflow-hidden"
-          >
-          </div>
+            src="/img/services/SVG/t1.svg"
+            alt="Tab Icon"
+            class="w-9 h-9 sm:w-10 sm:h-10 shrink-0"
+          />
           <h3
             id="tabTitle"
             class="text-xl sm:text-2xl font-semibold leading-tight text-[#151515]"
@@ -111,10 +112,10 @@ const tabImages = {
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-6 sm:p-8 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group mt-0 lg:-mt-5"
+        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group mt-0 lg:-mt-5"
       >
         <div
-          class="relative w-full max-w-[400px] aspect-square overflow-hidden"
+          class="relative w-full max-w-[280px] aspect-square overflow-hidden"
         >
           <!-- Default Image -->
           <img
@@ -178,28 +179,28 @@ const tabImages = {
       title: "Financial Planning & Forecasting",
       description:
         "People working for startups or small businesses might not have enough financial knowledge to sustain for a longer period in a cut-throat, competitive market. Hence, it is wise to bring in a financial planning and analysis expert who knows the market inside out and can make accurate financial forecasting.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/t1.svg",
       images: tabImages.general,
     },
     payables: {
       title: "Budgeting & Expense Control",
       description:
         "Startups can feel overwhelming, but not planning your expenses can magnify the effect. A temporary CFO for small businesses in the U.S. will take over the responsibility of tracking transactions and guiding the managers accordingly.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/t2.svg",
       images: tabImages.payables,
     },
     bank: {
       title: "Strategic Decision Support",
       description:
         "Reading data, analyzing it, and then suggesting a strategy is a part of temporary CFO services that small businesses must opt for.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/t3.svg",
       images: tabImages.bank,
     },
     tax: {
       title: "Compliance Management",
       description:
         "Being new in the market does not give any business leeway to step away from government regulations. It is essential that a business understands all the financial risks that come with starting a business in the U.S. market.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+      icon: "/img/services/SVG/t4.svg",
       images: tabImages.tax,
     },
   };
@@ -223,7 +224,7 @@ const tabImages = {
     if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
-      tabIcon.style.backgroundImage = `url(${content.icon})`;
+      tabIcon.src = content.icon;
 
        // Update dynamic images
       if (content.images) {
