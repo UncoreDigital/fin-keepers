@@ -445,22 +445,35 @@
       if (serviceMenu) serviceMenu.classList.add("hidden");
     };
 
-    if (resourcesToggle && resourcesMenu) {
-      resourcesToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (serviceMenu) serviceMenu.classList.add("hidden");
-        resourcesMenu.classList.toggle("hidden");
-      });
-    }
-
+    // Desktop hover functionality for Services dropdown
     if (servicesToggle && serviceMenu) {
-      servicesToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
+      const servicesContainer = servicesToggle.parentElement;
+      
+      servicesContainer.addEventListener("mouseenter", () => {
         if (resourcesMenu) resourcesMenu.classList.add("hidden");
-        serviceMenu.classList.toggle("hidden");
+        serviceMenu.classList.remove("hidden");
+      });
+      
+      servicesContainer.addEventListener("mouseleave", () => {
+        serviceMenu.classList.add("hidden");
       });
     }
 
+    // Desktop hover functionality for Resources dropdown
+    if (resourcesToggle && resourcesMenu) {
+      const resourcesContainer = resourcesToggle.parentElement;
+      
+      resourcesContainer.addEventListener("mouseenter", () => {
+        if (serviceMenu) serviceMenu.classList.add("hidden");
+        resourcesMenu.classList.remove("hidden");
+      });
+      
+      resourcesContainer.addEventListener("mouseleave", () => {
+        resourcesMenu.classList.add("hidden");
+      });
+    }
+
+    // Close dropdowns when clicking elsewhere (fallback)
     document.addEventListener("click", (e) => {
       const target = e.target;
       if (
