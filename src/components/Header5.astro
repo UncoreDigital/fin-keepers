@@ -448,29 +448,55 @@
     // Desktop hover functionality for Services dropdown
     if (servicesToggle && serviceMenu) {
       const servicesContainer = servicesToggle.parentElement;
+      let servicesTimeout;
       
-      servicesContainer.addEventListener("mouseenter", () => {
+      const showServicesMenu = () => {
+        clearTimeout(servicesTimeout);
         if (resourcesMenu) resourcesMenu.classList.add("hidden");
         serviceMenu.classList.remove("hidden");
-      });
+      };
       
-      servicesContainer.addEventListener("mouseleave", () => {
-        serviceMenu.classList.add("hidden");
+      const hideServicesMenu = () => {
+        servicesTimeout = setTimeout(() => {
+          serviceMenu.classList.add("hidden");
+        }, 100); // 100ms delay
+      };
+      
+      servicesContainer.addEventListener("mouseenter", showServicesMenu);
+      servicesContainer.addEventListener("mouseleave", hideServicesMenu);
+      
+      // Keep menu visible when hovering over the dropdown itself
+      serviceMenu.addEventListener("mouseenter", () => {
+        clearTimeout(servicesTimeout);
       });
+      serviceMenu.addEventListener("mouseleave", hideServicesMenu);
     }
 
     // Desktop hover functionality for Resources dropdown
     if (resourcesToggle && resourcesMenu) {
       const resourcesContainer = resourcesToggle.parentElement;
+      let resourcesTimeout;
       
-      resourcesContainer.addEventListener("mouseenter", () => {
+      const showResourcesMenu = () => {
+        clearTimeout(resourcesTimeout);
         if (serviceMenu) serviceMenu.classList.add("hidden");
         resourcesMenu.classList.remove("hidden");
-      });
+      };
       
-      resourcesContainer.addEventListener("mouseleave", () => {
-        resourcesMenu.classList.add("hidden");
+      const hideResourcesMenu = () => {
+        resourcesTimeout = setTimeout(() => {
+          resourcesMenu.classList.add("hidden");
+        }, 100); // 100ms delay
+      };
+      
+      resourcesContainer.addEventListener("mouseenter", showResourcesMenu);
+      resourcesContainer.addEventListener("mouseleave", hideResourcesMenu);
+      
+      // Keep menu visible when hovering over the dropdown itself
+      resourcesMenu.addEventListener("mouseenter", () => {
+        clearTimeout(resourcesTimeout);
       });
+      resourcesMenu.addEventListener("mouseleave", hideResourcesMenu);
     }
 
     // Close dropdowns when clicking elsewhere (fallback)
