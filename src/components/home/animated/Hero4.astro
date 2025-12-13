@@ -240,16 +240,16 @@ const logos = Object.values(modules);
 
           <!-- CTA Button -->
           <div class="mt-2 sm:mt-3 lg:mt-4">
-            <a
-              href="#contact-section"
-              class="flex w-[180px] sm:w-[220px] h-[52px] sm:h-[58px] px-[20px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-white transition duration-300"
-            >
-              <span
-                class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] text-white"
-              >
-                Book a Consultation
-              </span>
-            </a>
+            <button
+        id="contact-scroll-btn"
+        class="flex w-[200px] sm:w-[280px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300"
+      >
+        <span
+          class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px]"
+        >
+          Book a Free Consultation
+        </span>
+      </button>
           </div>
         </div>
 
@@ -353,3 +353,38 @@ const logos = Object.values(modules);
     delay: 0.3,
   });
 </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.getElementById('contact-scroll-btn');
+    
+    if (contactBtn) {
+      contactBtn.addEventListener('click', function() {
+        // First try to find contact-section
+        let contactSection = document.getElementById('contact-section');
+        
+        // If not found, try alternative selectors
+        if (!contactSection) {
+          contactSection = document.querySelector('[id*="contact"]');
+        }
+        if (!contactSection) {
+          contactSection = document.querySelector('.contact-section');
+        }
+        if (!contactSection) {
+          contactSection = document.querySelector('footer');
+        }
+        
+        if (contactSection) {
+          const yOffset = -40; // 40px offset from the top
+          const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          // Fallback: scroll to bottom of page
+          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
+        }
+      });
+    }
+  });
+</script>
+
