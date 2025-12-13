@@ -97,3 +97,71 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.getElementById('contact-scroll-btn');
+    
+    if (contactBtn) {
+      contactBtn.addEventListener('click', function() {
+        // First try to find contact-section
+        let contactSection = document.getElementById('contact-section');
+        
+        // If not found, try alternative selectors
+        if (!contactSection) {
+          contactSection = document.querySelector('[id*="contact"]');
+        }
+        if (!contactSection) {
+          contactSection = document.querySelector('.contact-section');
+        }
+        if (!contactSection) {
+          contactSection = document.querySelector('footer');
+        }
+        
+        if (contactSection) {
+          const yOffset = -40; // 40px offset from the top
+          const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          // Fallback: scroll to bottom of page
+          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
+        }
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.getElementById('contact-scroll-btn');
+    
+    if (contactBtn) {
+      contactBtn.addEventListener('click', function() {
+        // First try to find contact-section
+        let contactSection = document.getElementById('contact-section');
+        
+        // If not found, try alternative selectors
+        if (!contactSection) {
+          contactSection = document.querySelector('[id*="contact"]');
+        }
+        if (!contactSection) {
+          contactSection = document.querySelector('.contact-section');
+        }
+        if (!contactSection) {
+          contactSection = document.querySelector('footer');
+        }
+        
+        if (contactSection) {
+          const yOffset = -80; // 40px offset from the top
+          const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          // Fallback: scroll to bottom of page
+          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
+        }
+      });
+    }
+  });
+</script>
