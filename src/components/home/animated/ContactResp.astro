@@ -78,6 +78,33 @@ Ready for stress-free bookkeeping and smarter financial decisions? Connect with 
           </button>
           <div id="form-message" class="text-white text-sm font-['Inter'] hidden"></div>
         </form>
+
+        <!-- Thank You Message -->
+        <div
+          id="thank-you-message"
+          class="hidden w-full lg:w-[470px] flex-col gap-[24px] lg:gap-[32px] items-center justify-center text-center"
+        >
+          <div class="flex items-center justify-center mb-4">
+            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-[12px] items-center">
+            <span class="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-bold leading-tight tracking-tight text-[#fff] font-['Inter']">
+              Thank you!
+            </span>
+            <span class="text-[16px] font-normal leading-tight tracking-tight text-[#fff] font-['Inter'] max-w-[400px]">
+              Your form has been successfully submitted.<br>
+              Our team will get back to you shortly.
+            </span>
+          </div>
+          <button
+            id="submit-another"
+            class="bg-[#ed7c00] text-white font-semibold text-[18px] font-['Inter'] rounded-[8px] py-[12px] px-[30px] border border-transparent hover:bg-transparent hover:border-white hover:text-white hover:cursor-pointer transition duration-300"
+          >
+            Submit Another Message
+          </button>
+        </div>
       </div>
 
       <!-- Right Side Box -->
@@ -121,8 +148,10 @@ Ready for stress-free bookkeeping and smarter financial decisions? Connect with 
     // Contact form submission
     const form = document.getElementById("contact-form-submit");
     const formMessage = document.getElementById("form-message");
+    const thankYouMessage = document.getElementById("thank-you-message");
+    const submitAnotherButton = document.getElementById("submit-another");
     
-    if (form) {
+    if (form && thankYouMessage) {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         
@@ -133,6 +162,17 @@ Ready for stress-free bookkeeping and smarter financial decisions? Connect with 
           message: formData.get("message"),
         };
 
+        // Basic validation
+        if (!data.name || !data.email || !data.message) {
+          formMessage.textContent = "Please fill in all required fields.";
+          formMessage.classList.remove("hidden", "text-green-400");
+          formMessage.classList.add("text-red-500");
+          setTimeout(() => {
+            formMessage.classList.add("hidden");
+          }, 3000);
+          return;
+        }
+
         // Show loading state
         const submitButton = form.querySelector("button[type='submit']");
         const originalText = submitButton?.textContent;
@@ -141,8 +181,31 @@ Ready for stress-free bookkeeping and smarter financial decisions? Connect with 
           submitButton.textContent = "Sending...";
         }
 
+        // Simulate successful submission (replace with actual API call)
+        setTimeout(() => {
+          // Hide form elements
+          const formHeader = form.parentElement.querySelector('.flex.flex-col.gap-\\[12px\\].items-start');
+          const formElement = form;
+          
+          if (formHeader) {
+            formHeader.style.display = 'none';
+          }
+          formElement.style.display = 'none';
+          
+          // Show thank you message
+          thankYouMessage.classList.remove('hidden');
+          thankYouMessage.classList.add('flex');
+          
+          // Reset button state
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText || "Talk to our Experts";
+          }
+        }, 1000);
+
+        /* 
+        // Uncomment this section for actual API integration
         try {
-          // Using Web3Forms API as a reliable backend solution
           const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
@@ -150,7 +213,7 @@ Ready for stress-free bookkeeping and smarter financial decisions? Connect with 
               Accept: "application/json",
             },
             body: JSON.stringify({
-              access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual access key from web3forms.com
+              access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual access key
               subject: "New Contact Form Submission - FinKeepers",
               from_name: data.name,
               email: data.email,
@@ -161,30 +224,49 @@ Ready for stress-free bookkeeping and smarter financial decisions? Connect with 
           const result = await response.json();
 
           if (result.success) {
-            formMessage.textContent = "Thank you! Your message has been sent successfully.";
-            formMessage.classList.remove("hidden", "text-red-500");
-            formMessage.classList.add("text-green-400");
-            form.reset();
+            // Hide form and show thank you message
+            const formHeader = form.parentElement.querySelector('.flex.flex-col.gap-\\[12px\\].items-start');
+            if (formHeader) formHeader.style.display = 'none';
+            form.style.display = 'none';
+            thankYouMessage.classList.remove('hidden');
+            thankYouMessage.classList.add('flex');
           } else {
             throw new Error(result.message || "Failed to send message");
           }
         } catch (error) {
-          formMessage.textContent = "Sorry, there was an error sending your message. Please try again or contact us directly at info@finkeepers.us";
+          formMessage.textContent = "Sorry, there was an error sending your message. Please try again.";
           formMessage.classList.remove("hidden", "text-green-400");
           formMessage.classList.add("text-red-500");
-          console.error("Form submission error:", error);
+          setTimeout(() => {
+            formMessage.classList.add("hidden");
+          }, 5000);
         } finally {
           if (submitButton) {
             submitButton.disabled = false;
             submitButton.textContent = originalText || "Talk to our Experts";
           }
-          
-          // Hide message after 5 seconds
-          setTimeout(() => {
-            formMessage.classList.add("hidden");
-          }, 5000);
         }
+        */
       });
+
+      // Handle "Submit Another Message" button
+      if (submitAnotherButton) {
+        submitAnotherButton.addEventListener("click", () => {
+          // Reset form
+          form.reset();
+          
+          // Show form elements again
+          const formHeader = form.parentElement.querySelector('.flex.flex-col.gap-\\[12px\\].items-start');
+          if (formHeader) {
+            formHeader.style.display = '';
+          }
+          form.style.display = '';
+          
+          // Hide thank you message
+          thankYouMessage.classList.add('hidden');
+          thankYouMessage.classList.remove('flex');
+        });
+      }
     }
   });
 </script>
