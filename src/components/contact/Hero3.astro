@@ -114,10 +114,117 @@ Ready to take your business to the next level? Let Finkeepers handle your bookke
 
       <button
         type="submit"
-        class="h-[50px] bg-[#ed7c00] rounded-[8px] flex items-center justify-center px-6 text-[#fff] font-['Inter'] text-[18px] font-semibold leading-[24px]"
+        class="h-[50px] bg-[#ed7c00] rounded-[8px] flex items-center justify-center px-6 text-[#fff] font-['Inter'] text-[18px] font-semibold leading-[24px] hover:bg-[#d66a00] transition-colors duration-300"
       >
         Submit
       </button>
+
+      <!-- Thank You Message -->
+      <div
+        id="thank-you-message"
+        class="hidden flex-col gap-4 p-6 bg-[#106253] rounded-[16px] border border-[#106253] shadow-[0_1px_11.1px_0_rgba(16,98,83,0.16)] text-center"
+      >
+        <div class="flex items-center justify-center mb-2">
+          <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <span class="font-['Inter'] text-[24px] font-semibold leading-[30px] text-white">
+          Thank you!
+        </span>
+        <span class="font-['Inter'] text-[16px] font-normal leading-[22px] text-white">
+          Your form has been successfully submitted.<br>
+          Our team will get back to you shortly.
+        </span>
+      </div>
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const thankYouMessage = document.getElementById('thank-you-message');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    if (form && thankYouMessage && submitButton) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form inputs
+        const fullName = form.querySelector('#fullname').value.trim();
+        const email = form.querySelector('#email').value.trim();
+        const message = form.querySelector('#message').value.trim();
+        
+        // Basic validation
+        if (!fullName || !email || !message) {
+          alert('Please fill in all fields.');
+          return;
+        }
+        
+        // Show loading state
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+        
+        // Simulate form submission (replace with actual form submission logic)
+        setTimeout(() => {
+          // Hide form inputs
+          const formInputs = form.querySelectorAll('input, textarea, button');
+          formInputs.forEach(input => {
+            if (input !== submitButton) {
+              input.style.display = 'none';
+            }
+          });
+          
+          // Hide the title and description
+          const formHeader = form.querySelector('.flex.flex-col.gap-3');
+          if (formHeader) {
+            formHeader.style.display = 'none';
+          }
+          
+          // Hide the input container
+          const inputContainer = form.querySelector('.flex.flex-col.gap-4');
+          if (inputContainer) {
+            inputContainer.style.display = 'none';
+          }
+          
+          // Hide submit button
+          submitButton.style.display = 'none';
+          
+          // Show thank you message
+          thankYouMessage.classList.remove('hidden');
+          thankYouMessage.classList.add('flex');
+          
+          // Reset form after 5 seconds (optional)
+          setTimeout(() => {
+            // Reset form
+            form.reset();
+            
+            // Show form elements again
+            formInputs.forEach(input => {
+              input.style.display = '';
+            });
+            
+            if (formHeader) {
+              formHeader.style.display = '';
+            }
+            
+            if (inputContainer) {
+              inputContainer.style.display = '';
+            }
+            
+            submitButton.style.display = '';
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            
+            // Hide thank you message
+            thankYouMessage.classList.add('hidden');
+            thankYouMessage.classList.remove('flex');
+          }, 5000);
+          
+        }, 1000); // Simulate 1 second processing time
+      });
+    }
+  });
+</script>
