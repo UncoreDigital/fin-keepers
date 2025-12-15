@@ -70,7 +70,7 @@ import CoreCard3 from "../CoreCard3.astro";
       />
     </a>
 
-    <a href="/contact">
+    <a href="#contact-section">
       <div class="flex justify-center w-full mt-4 sm:mt-[80px]">
   <div
     class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center border border-[#ed7c00] bg-white text-[#ed7c00] rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white cursor-pointer transition mt-10"
@@ -109,5 +109,24 @@ import CoreCard3 from "../CoreCard3.astro";
         once: true,
       },
     });
+
+    // Handle smooth scroll with offset for consultation button
+    const consultationButton = document.querySelector('a[href="#contact-section"]');
+    if (consultationButton) {
+      consultationButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetElement = document.getElementById('contact-section');
+        if (targetElement) {
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - 80; // 40px offset
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
   });
 </script>
