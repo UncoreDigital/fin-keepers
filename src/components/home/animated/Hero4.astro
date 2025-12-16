@@ -356,13 +356,14 @@ const logos = Object.values(modules);
     delay: 0.3,
   });
 
-  // Add scroll-based image animation for mobile
+  // Add scroll-based image animation for MOBILE ONLY
   document.addEventListener('DOMContentLoaded', function() {
     const heroContainer = document.getElementById('hero-image-container');
     const defaultImg = document.getElementById('hero-default-img');
     const hoverImg = document.getElementById('hero-hover-img');
     
-    if (heroContainer && defaultImg && hoverImg) {
+    // Only apply scroll animation on mobile devices (touch devices)
+    if (heroContainer && defaultImg && hoverImg && 'ontouchstart' in window) {
       // Create intersection observer for scroll-based animation
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
