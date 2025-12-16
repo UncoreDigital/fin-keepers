@@ -21,12 +21,13 @@
       </p>
       
     </div>
-    <button
+    <a
+      href="#contact-section"
       id="expert-guidance-btn"
-      class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white hover:cursor-pointer transition"
+      class="bg-white border border-[#ed7c00] text-[#ed7c00] text-[16px] font-semibold px-4 py-2 rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white hover:cursor-pointer transition inline-block text-center"
     >
       Get Expert Guidance
-    </button>
+    </a>
   </div>
 
   <!-- Right Stats with Counter Animation -->
@@ -122,9 +123,12 @@
     const expertGuidanceBtn = document.getElementById("expert-guidance-btn");
     
     if (expertGuidanceBtn) {
-      expertGuidanceBtn.addEventListener("click", () => {
-        // Try multiple possible selectors for the ContactRepo section
+      expertGuidanceBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        // Try multiple possible selectors for the contact section
         const contactSection = 
+          document.getElementById("contact-section") ||
           document.getElementById("contact-form") ||
           document.querySelector("[data-component='ContactRepo']") ||
           document.querySelector(".contact-repo") ||
@@ -134,7 +138,7 @@
         if (contactSection) {
           // Get the section's position and add offset for header
           const sectionTop = contactSection.offsetTop;
-          const headerOffset = 0; // Scroll 200px above the target section
+          const headerOffset = 80; // Scroll with 80px offset for header
           
           window.scrollTo({
             top: sectionTop - headerOffset,
@@ -185,3 +189,50 @@
     transform: translateX(0);
   }
 </style>
+
+
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".core-card");
+
+    if (!cards.length) return;
+
+    // Fade-in animation on scroll
+    gsap.from(cards, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: cards[0].closest("section") || cards[0],
+        start: "top 85%",
+        once: true,
+      },
+    });
+
+    // Handle smooth scroll with offset for consultation button
+    const consultationButton = document.querySelector('a[href="#contact-section"]');
+    if (consultationButton) {
+      consultationButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetElement = document.getElementById('contact-section');
+        if (targetElement) {
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - 80; // 40px offset
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
+  });
+</script>
