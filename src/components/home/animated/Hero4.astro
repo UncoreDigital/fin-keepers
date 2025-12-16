@@ -242,10 +242,10 @@ const logos = Object.values(modules);
           <div class="mt-2 sm:mt-3 lg:mt-4">
             <button
         id="contact-scroll-btn"
-        class="flex w-[200px] sm:w-[280px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300"
+        class="flex w-[220px] sm:w-[280px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300"
       >
         <span
-          class="text-[14px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px]"
+          class="text-[13px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] whitespace-nowrap"
         >
           Book a Free Consultation
         </span>
@@ -262,17 +262,20 @@ const logos = Object.values(modules);
           />
         </div> -->
         <div
-          class="lg:flex-1 flex justify-center lg:justify-end items-center group relative w-[420px] sm:w-[680px] md:w-[780px] lg:w-[1250px] aspect-[640/420] -mt-[36px] sm:-mt-[31px] lg:-mt-[30px]"
+          id="hero-image-container"
+          class="lg:flex-1 flex justify-center lg:justify-end items-center group relative w-[420px] sm:w-[680px] md:w-[780px] lg:w-[1250px] aspect-[640/420] -mt-[36px] sm:-mt-[31px] lg:-mt-[30px] cursor-pointer"
         >
           <!-- Image 1 (Default) -->
           <img
+            id="hero-default-img"
             src="/img/home/hero/1.png"
             alt="Hero Default"
             class="hero-vector-img opacity-0 absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-10 rotate-[5deg]"
           />
 
-          <!-- Image 2 (On Hover) -->
+          <!-- Image 2 (On Hover/Touch) -->
           <img
+            id="hero-hover-img"
             src="/img/home/hero/1_2.png"
             alt="Hero Hover"
             class="absolute inset-0 w-full h-full object-contain z-20 
@@ -352,6 +355,43 @@ const logos = Object.values(modules);
     ease: "power2.out",
     delay: 0.3,
   });
+
+  // Add touch support for mobile hero image interaction
+  document.addEventListener('DOMContentLoaded', function() {
+    const heroContainer = document.getElementById('hero-image-container');
+    const defaultImg = document.getElementById('hero-default-img');
+    const hoverImg = document.getElementById('hero-hover-img');
+    
+    if (heroContainer && defaultImg && hoverImg) {
+      let isToggled = false;
+      
+      // Touch/click handler for mobile
+      heroContainer.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        toggleImages();
+      });
+      
+      heroContainer.addEventListener('click', function(e) {
+        // Only handle click on touch devices
+        if ('ontouchstart' in window) {
+          e.preventDefault();
+          toggleImages();
+        }
+      });
+      
+      function toggleImages() {
+        if (!isToggled) {
+          defaultImg.style.opacity = '0';
+          hoverImg.style.opacity = '1';
+          isToggled = true;
+        } else {
+          defaultImg.style.opacity = '1';
+          hoverImg.style.opacity = '0';
+          isToggled = false;
+        }
+      }
+    }
+  });
 </script>
 
 
@@ -387,4 +427,5 @@ const logos = Object.values(modules);
     }
   });
 </script>
+
 
