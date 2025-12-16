@@ -179,34 +179,56 @@
 </div>
 
 <script>
-  // Accordion toggle
+  // Accordion toggle - works for both desktop hover and mobile touch
   document.querySelectorAll("[data-accordion-toggle]").forEach((btn) => {
+    // Desktop hover behavior
     btn.addEventListener("mouseenter", () => {
-      const card = btn.closest(".accordion-card");
-      if (!(card instanceof HTMLElement)) return;
-
-      const content = card.querySelector("[data-accordion-content]");
-      if (!(content instanceof HTMLElement)) return;
-
-      const isOpen = !content.classList.contains("hidden");
-
-      document.querySelectorAll("[data-accordion-content]").forEach((el) => {
-        if (el instanceof HTMLElement) el.classList.add("hidden");
-      });
-      document.querySelectorAll("[data-accordion-toggle]").forEach((el) => {
-        if (el instanceof HTMLElement) {
-          el.classList.remove("!bg-[#ed7c00]", "text-white");
-          el.textContent = "+";
-        }
-      });
-
-      if (!isOpen) {
-        content.classList.remove("hidden");
-        btn.classList.add("!bg-[#ed7c00]", "text-white");
-        btn.textContent = "–";
+      if (!('ontouchstart' in window)) { // Only on non-touch devices
+        toggleAccordion(btn);
       }
     });
+    
+    // Mobile touch/click behavior
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleAccordion(btn);
+    });
+    
+    btn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleAccordion(btn);
+    });
   });
+
+  function toggleAccordion(btn) {
+    const card = btn.closest(".accordion-card");
+    if (!(card instanceof HTMLElement)) return;
+
+    const content = card.querySelector("[data-accordion-content]");
+    if (!(content instanceof HTMLElement)) return;
+
+    const isOpen = !content.classList.contains("hidden");
+
+    // Close all accordions
+    document.querySelectorAll("[data-accordion-content]").forEach((el) => {
+      if (el instanceof HTMLElement) el.classList.add("hidden");
+    });
+    document.querySelectorAll("[data-accordion-toggle]").forEach((el) => {
+      if (el instanceof HTMLElement) {
+        el.classList.remove("!bg-[#ed7c00]", "text-white");
+        el.textContent = "+";
+      }
+    });
+
+    // Open current accordion if it was closed
+    if (!isOpen) {
+      content.classList.remove("hidden");
+      btn.classList.add("!bg-[#ed7c00]", "text-white");
+      btn.textContent = "–";
+    }
+  }
 
   // Scroll animation
   const observer = new IntersectionObserver(
