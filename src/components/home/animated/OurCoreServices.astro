@@ -70,19 +70,20 @@ import CoreCard3 from "../CoreCard3.astro";
       />
     </a>
 
-    <a href="#contact-section">
-      <div class="flex justify-center w-full mt-4 sm:mt-[80px]">
-  <div
-    class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center border border-[#ed7c00] bg-white text-[#ed7c00] rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white cursor-pointer transition mt-10"
-  >
-    <span
-      class="text-[14px] sm:text-[16px] font-semibold leading-[24px] whitespace-nowrap"
-    >
-      Schedule a Free Consultation
-    </span>
-  </div>
-</div>
-    </a>
+    <!-- Consultation Button - As 6th grid item -->
+    <div class="flex items-center justify-center h-full">
+      <a href="#contact-section">
+        <div
+          class="flex w-[220px] sm:w-[286px] h-[50px] px-[10px] sm:px-[15px] justify-center items-center border border-[#ed7c00] bg-white text-[#ed7c00] rounded-[8px] shadow-sm hover:bg-[#ed7c00] hover:text-white cursor-pointer transition"
+        >
+          <span
+            class="text-[14px] sm:text-[16px] font-semibold leading-[24px] whitespace-nowrap"
+          >
+            Schedule a Free Consultation
+          </span>
+        </div>
+      </a>
+    </div>
   </div>
 
 
@@ -94,21 +95,33 @@ import CoreCard3 from "../CoreCard3.astro";
   window.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".core-card");
 
-    if (!cards.length) return;
+    if (!cards.length) {
+      console.log("No cards found with .core-card class");
+      return;
+    }
+
+    // Ensure cards are visible by default
+    gsap.set(cards, { opacity: 1, y: 0 });
 
     // Fade-in animation on scroll
-    gsap.from(cards, {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: "power2.out",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: cards[0].closest("section") || cards[0],
-        start: "top 85%",
-        once: true,
+    gsap.fromTo(cards, 
+      {
+        opacity: 0,
+        y: 30
       },
-    });
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: cards[0].closest("div") || cards[0],
+          start: "top 85%",
+          once: true,
+        },
+      }
+    );
 
     // Handle smooth scroll with offset for consultation button
     const consultationButton = document.querySelector('a[href="#contact-section"]');
