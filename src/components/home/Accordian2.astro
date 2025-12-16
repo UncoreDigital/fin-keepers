@@ -179,8 +179,8 @@
 </div>
 
 <script>
-  // Accordion toggle - works for both desktop hover and mobile touch
-  document.querySelectorAll("[data-accordion-toggle]").forEach((btn) => {
+  // Accordion toggle - works for both desktop hover and scroll-based mobile
+  document.querySelectorAll("[data-accordion-toggle]").forEach((btn, index) => {
     // Desktop hover behavior
     btn.addEventListener("mouseenter", () => {
       if (!('ontouchstart' in window)) { // Only on non-touch devices
@@ -188,18 +188,39 @@
       }
     });
     
-    // Mobile touch/click behavior
+    // Click behavior for all devices
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
       toggleAccordion(btn);
     });
     
-    btn.addEventListener("touchstart", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleAccordion(btn);
-    });
+    // Scroll-based animation for mobile
+    if ('ontouchstart' in window) {
+      const card = btn.closest('.accordion-card');
+      if (card) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Auto-open accordion when it comes into view on mobile
+              setTimeout(() => {
+                toggleAccordion(btn);
+                
+                // Auto-close after 3 seconds
+                setTimeout(() => {
+                  closeAccordion(btn);
+                }, 3000);
+              }, index * 500); // Stagger by 500ms
+            }
+          });
+        }, {
+          threshold: 0.6,
+          rootMargin: '0px 0px -30% 0px'
+        });
+        
+        observer.observe(card);
+      }
+    }
   });
 
   function toggleAccordion(btn) {
@@ -228,6 +249,18 @@
       btn.classList.add("!bg-[#ed7c00]", "text-white");
       btn.textContent = "–";
     }
+  }
+
+  function closeAccordion(btn) {
+    const card = btn.closest(".accordion-card");
+    if (!(card instanceof HTMLElement)) return;
+
+    const content = card.querySelector("[data-accordion-content]");
+    if (!(content instanceof HTMLElement)) return;
+
+    content.classList.add("hidden");
+    btn.classList.remove("!bg-[#ed7c00]", "text-white");
+    btn.textContent = "+";
   }
 
   // Scroll animation
