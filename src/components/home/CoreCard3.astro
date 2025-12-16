@@ -74,32 +74,35 @@ const { iconUrl, title, description, class: extraClass } = Astro.props;
   document.addEventListener('DOMContentLoaded', function() {
     const scrollCards = document.querySelectorAll('.scroll-card');
     
-    // Create intersection observer for scroll-based animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Add staggered animation delay
-          setTimeout(() => {
-            entry.target.classList.add('scroll-active');
-            entry.target.classList.remove('bg-white');
-            entry.target.classList.add('bg-[#ed7c00]');
-            
-            // Reset after 2 seconds
+    // Only apply scroll animation on mobile devices (touch devices)
+    if ('ontouchstart' in window) {
+      // Create intersection observer for scroll-based animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Add staggered animation delay
             setTimeout(() => {
-              entry.target.classList.remove('scroll-active');
-              entry.target.classList.remove('bg-[#ed7c00]');
-              entry.target.classList.add('bg-white');
-            }, 2000);
-          }, index * 200); // Stagger by 200ms
-        }
+              entry.target.classList.add('scroll-active');
+              entry.target.classList.remove('bg-white');
+              entry.target.classList.add('bg-[#ed7c00]');
+              
+              // Reset after 2 seconds
+              setTimeout(() => {
+                entry.target.classList.remove('scroll-active');
+                entry.target.classList.remove('bg-[#ed7c00]');
+                entry.target.classList.add('bg-white');
+              }, 2000);
+            }, index * 200); // Stagger by 200ms
+          }
+        });
+      }, {
+        threshold: 0.3,
+        rootMargin: '0px 0px -10% 0px'
       });
-    }, {
-      threshold: 0.3,
-      rootMargin: '0px 0px -10% 0px'
-    });
-    
-    scrollCards.forEach(card => {
-      observer.observe(card);
-    });
+      
+      scrollCards.forEach(card => {
+        observer.observe(card);
+      });
+    }
   });
 </script>
