@@ -18,7 +18,7 @@
       </div> -->
 
       <div
-        class="w-full h-[300px] rounded-[21px] bg-[rgba(0,0,0,0.12)] bg-[url('/img/home/ThanitAugust_58.jpg')] bg-cover bg-no-repeat relative z-0"
+        class="w-full h-[230px] rounded-[21px] bg-[rgba(0,0,0,0.12)] bg-[url('/img/home/ThanitAugust_58.jpg')] bg-contain bg-center bg-no-repeat relative z-0"
       >
       </div>
     </div>
@@ -60,34 +60,38 @@
     const headingEl = document.querySelector(".why-heading");
     const paraEl = document.querySelector(".why-para");
 
-    if (!headingEl || !paraEl) return;
+    if (!paraEl) return;
 
-    const headingText = headingEl.textContent || "";
-    headingEl.textContent = "";
-
-    gsap
-      .timeline({
+    // Simple fade-in animation for mobile compatibility
+    gsap.fromTo(paraEl, 
+      {
+        opacity: 0,
+        y: 30
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: headingEl.closest("section") || headingEl,
-          start: "top 75%", // adjust when animation starts
+          trigger: paraEl.closest("section") || paraEl,
+          start: "top 80%",
           once: true,
         },
-        delay: 0.3,
-      })
-      .to(headingEl, {
-        text: headingText,
-        duration: 2,
-        ease: "none",
-      })
-      .from(
-        paraEl,
-        {
-          opacity: 0,
-          y: 20,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "+=0.3"
-      );
+      }
+    );
+
+    // Add touch interaction for the image section
+    const imageSection = document.querySelector('.bg-\\[url\\(\\\'/img/home/ThanitAugust_58\\.jpg\\\'\\)\\]');
+    if (imageSection) {
+      imageSection.addEventListener('touchstart', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.transition = 'transform 0.3s ease';
+      });
+      
+      imageSection.addEventListener('touchend', function() {
+        this.style.transform = 'scale(1)';
+      });
+    }
   });
 </script>
