@@ -356,40 +356,36 @@ const logos = Object.values(modules);
     delay: 0.3,
   });
 
-  // Add touch support for mobile hero image interaction
+  // Add scroll-based image animation for mobile
   document.addEventListener('DOMContentLoaded', function() {
     const heroContainer = document.getElementById('hero-image-container');
     const defaultImg = document.getElementById('hero-default-img');
     const hoverImg = document.getElementById('hero-hover-img');
     
     if (heroContainer && defaultImg && hoverImg) {
-      let isToggled = false;
-      
-      // Touch/click handler for mobile
-      heroContainer.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        toggleImages();
+      // Create intersection observer for scroll-based animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Animate image swap when hero comes into view
+            setTimeout(() => {
+              defaultImg.style.opacity = '0';
+              hoverImg.style.opacity = '1';
+              
+              // Switch back after 2 seconds
+              setTimeout(() => {
+                defaultImg.style.opacity = '1';
+                hoverImg.style.opacity = '0';
+              }, 2000);
+            }, 1000); // Delay to let initial animations complete
+          }
+        });
+      }, {
+        threshold: 0.5,
+        rootMargin: '0px 0px -20% 0px'
       });
       
-      heroContainer.addEventListener('click', function(e) {
-        // Only handle click on touch devices
-        if ('ontouchstart' in window) {
-          e.preventDefault();
-          toggleImages();
-        }
-      });
-      
-      function toggleImages() {
-        if (!isToggled) {
-          defaultImg.style.opacity = '0';
-          hoverImg.style.opacity = '1';
-          isToggled = true;
-        } else {
-          defaultImg.style.opacity = '1';
-          hoverImg.style.opacity = '0';
-          isToggled = false;
-        }
-      }
+      observer.observe(heroContainer);
     }
   });
 </script>
