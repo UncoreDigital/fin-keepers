@@ -57,21 +57,19 @@
       </div>
 
       <!-- RIGHT IMAGE BOX -->
-      <div class="bg-[#f5f7fa] rounded-[16px] p-4 flex-1 flex justify-center items-center group">
-        <div class="relative w-full max-w-[400px] h-[250px]">
-          <!-- Default Image -->
+      <div class="bg-[#f5f7fa] rounded-[16px] p-4 flex-1 flex justify-center items-center">
+        <div class="relative group flex items-center justify-center w-full h-full">
           <img
             id="image"
-            src="/img/home/hero/1.png"
-            alt=""
-            class="w-full h-full object-contain rounded-md transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+            src="/img/about/m4.png"
+            alt="Our Vision"
+            class="w-[208px] h-auto transition-opacity duration-300 ease-in-out group-hover:opacity-0"
           />
-          <!-- Hover Image -->
           <img
             id="hover-image"
-            src="/img/home/hero/1_2.png"
-            alt="Hover Image"
-            class="absolute inset-0 w-full h-full object-contain rounded-md transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+            src="/img/about/m3.png"
+            alt="Our Vision Hover"
+            class="absolute inset-0 m-auto w-[208px] h-auto opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
           />
         </div>
       </div>
@@ -89,16 +87,16 @@
       description:
         "At Finkeepers, our motto is to safeguard every Start-up and SME’s financial health because having a strong backbone in finance empowers businesses to thrive, scale, and succeed. We aspire to redefine financial consulting in the U.S. by making expert guidance accessible, transparent, and future-ready.",
       icon: "/img/about/vision.svg",
-      image: "/img/home/hero/1.png",
-      hoverImage: "/img/home/hero/1_2.png",
+      image: "/img/about/m4.png",
+      hoverImage: "/img/about/m3.png",
     },
     mission: {
       title: "Our Mission",
       description:
         "The mission of Finkeepers is to simplify and strengthen the finances of small businesses and startups in the U.S. Our services are curated to the financial needs of a small business, such as bookkeeping, tax management, payroll assistance, temporary CFO services, financial reporting and modelling, and much more.",
       icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/img/home/hero/1.png",
-      hoverImage: "/img/home/hero/1_2.png",
+      image: "/img/about/m2.png",
+      hoverImage: "/img/about/m1.png",
     },
   };
 
@@ -123,7 +121,7 @@
 
       const t = data[tab];
 
-      gsap.to([title, description, icon, image, hoverImage], {
+      gsap.to([title, description, icon], {
         opacity: 0,
         duration: 0.3,
         onComplete: () => {
@@ -133,7 +131,7 @@
           image.src = t.image;
           hoverImage.src = t.hoverImage;
 
-          gsap.to([title, description, icon, image, hoverImage], {
+          gsap.to([title, description, icon], {
             opacity: 1,
             duration: 0.4,
           });
