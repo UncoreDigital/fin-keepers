@@ -180,6 +180,22 @@ Services evolve with your business through feedback, new integrations, and scala
    
    
 
+    function cycleFill() {
+      // Reset all steps
+      steps.forEach((step) => {
+        step.classList.remove("bg-[#ed7c00]", "text-[#f5f7fa]");
+        step.classList.add("bg-[#f5f7fa]", "text-[#ed7c00]");
+      });
+
+      // Activate current step
+      const current = steps[index];
+      current.classList.add("bg-[#ed7c00]", "text-[#f5f7fa]");
+      current.classList.remove("bg-[#f5f7fa]", "text-[#ed7c00]");
+
+      // Move to next step
+      index = (index + 1) % steps.length;
+    }
+
     ScrollTrigger.create({
       trigger: steps[0].closest("section") || steps[0],
       start: "top 75%",
