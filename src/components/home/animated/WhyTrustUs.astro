@@ -81,17 +81,28 @@
       }
     );
 
-    // Add touch interaction for the image section
+    // Add scroll-based interaction for the image section
     const imageSection = document.querySelector('.bg-\\[url\\(\\\'/img/home/ThanitAugust_58\\.jpg\\\'\\)\\]');
     if (imageSection) {
-      imageSection.addEventListener('touchstart', function() {
-        this.style.transform = 'scale(1.02)';
-        this.style.transition = 'transform 0.3s ease';
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Scale up animation when in view
+            entry.target.style.transform = 'scale(1.05)';
+            entry.target.style.transition = 'transform 0.8s ease-out';
+            
+            // Scale back down after 1.5 seconds
+            setTimeout(() => {
+              entry.target.style.transform = 'scale(1)';
+            }, 1500);
+          }
+        });
+      }, {
+        threshold: 0.5,
+        rootMargin: '0px 0px -20% 0px'
       });
       
-      imageSection.addEventListener('touchend', function() {
-        this.style.transform = 'scale(1)';
-      });
+      imageObserver.observe(imageSection);
     }
   });
 </script>
