@@ -550,20 +550,20 @@
 
       if (scrollTop > 50) {
         // Start shrinking after 50px scroll
-        // Reduce header padding from py-[12px] to py-[2px] (reduces height by ~20px)
+        // Reduce header padding from py-[12px] to py-[8px] (more subtle reduction)
         headerElement?.classList.remove("py-[12px]");
-        headerElement?.classList.add("py-[2px]");
+        headerElement?.classList.add("py-[8px]");
 
-        // Make logo smaller (reduce by ~20px in height, proportionally in width)
+        // Make logo slightly smaller (more proportional reduction)
         logoElement?.classList.remove("w-[121.549px]", "h-[66.001px]");
-        logoElement?.classList.add("w-[97px]", "h-[46px]");
+        logoElement?.classList.add("w-[109px]", "h-[56px]");
       } else {
         // Restore original header padding
-        headerElement?.classList.remove("py-[2px]");
+        headerElement?.classList.remove("py-[8px]");
         headerElement?.classList.add("py-[12px]");
 
         // Restore original logo size
-        logoElement?.classList.remove("w-[97px]", "h-[46px]");
+        logoElement?.classList.remove("w-[109px]", "h-[56px]");
         logoElement?.classList.add("w-[121.549px]", "h-[66.001px]");
       }
 
