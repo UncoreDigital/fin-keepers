@@ -103,7 +103,7 @@ import CoreCard3 from "../CoreCard3.astro";
     // Ensure cards are visible by default
     gsap.set(cards, { opacity: 1, y: 0 });
 
-    // Fade-in animation on scroll
+    // Fade-in animation on scroll (for all devices)
     gsap.fromTo(cards, 
       {
         opacity: 0,
@@ -122,6 +122,37 @@ import CoreCard3 from "../CoreCard3.astro";
         },
       }
     );
+
+    // Mobile-only scroll animations
+    if ('ontouchstart' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              // Scale up the card slightly
+              entry.target.style.transform = 'scale(1.05)';
+              entry.target.style.transition = 'transform 0.5s ease-out';
+              
+              // Add class to trigger arrow animation
+              entry.target.classList.add('mobile-scroll-active');
+              
+              // Reset after 2 seconds
+              setTimeout(() => {
+                entry.target.style.transform = 'scale(1)';
+                entry.target.classList.remove('mobile-scroll-active');
+              }, 2000);
+            }, index * 200); // Stagger by 200ms
+          }
+        });
+      }, {
+        threshold: 0.3,
+        rootMargin: '0px 0px -10% 0px'
+      });
+      
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    }
 
     // Handle smooth scroll with offset for consultation button
     const consultationButton = document.querySelector('a[href="#contact-section"]');
