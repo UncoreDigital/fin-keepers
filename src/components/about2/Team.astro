@@ -298,5 +298,31 @@ Backed by Knowcraft Analytics’ global delivery strength, we offer the perfect 
         closeModalFunction();
       }
     });
+
+    // Mobile-only scroll animation for team cards
+    if ('ontouchstart' in window) {
+      const teamCards = document.querySelectorAll('.team-member-card');
+      
+      if (teamCards.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              const card = entry.target;
+              // Stagger the animation with 200ms delay between cards
+              setTimeout(() => {
+                card.style.transform = 'scale(1.05)';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                  card.style.transform = 'scale(1)';
+                }, 2000);
+              }, index * 200);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        teamCards.forEach(card => observer.observe(card));
+      }
+    }
   });
 </script>
