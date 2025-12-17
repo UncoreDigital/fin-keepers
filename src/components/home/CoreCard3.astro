@@ -33,11 +33,11 @@ const { iconUrl, title, description, class: extraClass } = Astro.props;
   /* Mobile-specific arrow styles */
   @media (max-width: 1023px) {
     .card-hover .arrow-icon {
-      transform: rotate(0deg); /* Start pointing right on mobile */
+      transform: rotate(45deg); /* Start pointing diagonal up-right on mobile */
     }
     
     .card-hover.mobile-scroll-active .arrow-icon {
-      transform: rotate(-90deg); /* Point up when scrolled into view */
+      transform: rotate(-45deg); /* Point up when scrolled into view */
     }
     
     /* Completely disable orange background on mobile - keep white */
