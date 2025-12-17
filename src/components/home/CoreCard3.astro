@@ -29,6 +29,54 @@ const { iconUrl, title, description, class: extraClass } = Astro.props;
       hue-rotate(359deg) brightness(100%) contrast(102%);
     /* turns to #ed7c00 */
   }
+
+  /* Mobile-specific arrow styles */
+  @media (max-width: 1023px) {
+    .card-hover .arrow-icon {
+      transform: rotate(0deg); /* Start pointing right on mobile */
+    }
+    
+    .card-hover.mobile-scroll-active .arrow-icon {
+      transform: rotate(-90deg); /* Point up when scrolled into view */
+    }
+    
+    /* Completely disable orange background on mobile - keep white */
+    .card-hover,
+    .card-hover:hover,
+    .card-hover:active,
+    .card-hover:focus {
+      background-color: white !important;
+    }
+    
+    /* Keep text colors original on mobile */
+    .card-hover span,
+    .card-hover:hover span {
+      color: inherit !important;
+    }
+    
+    .card-hover .text-\\[\\#151515\\],
+    .card-hover:hover .text-\\[\\#151515\\] {
+      color: #151515 !important;
+    }
+    
+    .card-hover .text-\\[\\#797979\\],
+    .card-hover:hover .text-\\[\\#797979\\] {
+      color: #797979 !important;
+    }
+    
+    /* Keep icon colors original on mobile */
+    .card-hover:hover .group-hover\\:filter,
+    .card-hover:hover .group-hover\\:brightness-0,
+    .card-hover:hover .group-hover\\:invert {
+      filter: none !important;
+    }
+    
+    /* Keep arrow circle orange on mobile */
+    .card-hover .group-hover\\:bg-white,
+    .card-hover:hover .group-hover\\:bg-white {
+      background-color: #ed7c00 !important;
+    }
+  }
 </style>
 
 <div
@@ -70,39 +118,3 @@ const { iconUrl, title, description, class: extraClass } = Astro.props;
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const scrollCards = document.querySelectorAll('.scroll-card');
-    
-    // Only apply scroll animation on mobile devices (touch devices)
-    if ('ontouchstart' in window) {
-      // Create intersection observer for scroll-based animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            // Add staggered animation delay
-            setTimeout(() => {
-              entry.target.classList.add('scroll-active');
-              entry.target.classList.remove('bg-white');
-              entry.target.classList.add('bg-[#ed7c00]');
-              
-              // Reset after 2 seconds
-              setTimeout(() => {
-                entry.target.classList.remove('scroll-active');
-                entry.target.classList.remove('bg-[#ed7c00]');
-                entry.target.classList.add('bg-white');
-              }, 2000);
-            }, index * 200); // Stagger by 200ms
-          }
-        });
-      }, {
-        threshold: 0.3,
-        rootMargin: '0px 0px -10% 0px'
-      });
-      
-      scrollCards.forEach(card => {
-        observer.observe(card);
-      });
-    }
-  });
-</script>
