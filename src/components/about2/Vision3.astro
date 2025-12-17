@@ -58,18 +58,18 @@
 
       <!-- RIGHT IMAGE BOX -->
       <div class="bg-[#f5f7fa] rounded-[16px] p-4 flex-1 flex justify-center items-center">
-        <div class="relative group flex items-center justify-center w-full h-full">
+        <div class="relative group flex items-center justify-center w-full h-full vision-image-container">
           <img
             id="image"
             src="/img/about/m4.png"
             alt="Our Vision"
-            class="w-[208px] h-auto transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+            class="w-[208px] h-auto transition-opacity duration-300 ease-in-out group-hover:opacity-0 vision-main-image"
           />
           <img
             id="hover-image"
             src="/img/about/m3.png"
             alt="Our Vision Hover"
-            class="absolute inset-0 m-auto w-[208px] h-auto opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+            class="absolute inset-0 m-auto w-[208px] h-auto opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 vision-hover-image"
           />
         </div>
       </div>
@@ -139,4 +139,33 @@
       });
     });
   });
+
+  // Mobile-only scroll animation for vision image
+  if ('ontouchstart' in window) {
+    const visionContainer = document.querySelector('.vision-image-container');
+    const mainImage = document.querySelector('.vision-main-image');
+    const hoverImage = document.querySelector('.vision-hover-image');
+
+    if (visionContainer && mainImage && hoverImage) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Swap images after 1 second
+            setTimeout(() => {
+              mainImage.style.opacity = '0';
+              hoverImage.style.opacity = '1';
+              
+              // Swap back after 2 seconds
+              setTimeout(() => {
+                mainImage.style.opacity = '1';
+                hoverImage.style.opacity = '0';
+              }, 2000);
+            }, 1000);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(visionContainer);
+    }
+  }
 </script>
