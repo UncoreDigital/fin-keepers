@@ -36,13 +36,13 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
 
     {/* Right Image and Overlapping Cards Area */}
     <div
-      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-20 lg:mt-0 mb-[-40px] lg:mb-0 order-1 lg:order-2 group"
+      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-20 lg:mt-0 mb-[-40px] lg:mb-0 order-1 lg:order-2 group hero-image-container"
     >
       {/* Main Image */}
       <img
         src={HeroImage.src}
         alt="Business Woman with tablet and growth charts"
-        class="absolute w-[70%] lg:w-[90%] h-[70%] lg:h-[90%] object-contain top-[10%] z-[50] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+        class="absolute w-[70%] lg:w-[90%] h-[70%] lg:h-[90%] object-contain top-[10%] z-[50] transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 hero-main-image"
         style="transform: rotate(-10deg); left: 50%; margin-left: -35%; @media (min-width: 1024px) { left: calc(10% - 40px); margin-left: 0; }"
       />
 
@@ -50,7 +50,7 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
       <img
         src={HeroImage_2.src}
         alt=""
-        class="absolute w-[70%] lg:w-[90%] h-[70%] lg:h-[90%] object-contain top-[10%] z-[60] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+        class="absolute w-[70%] lg:w-[90%] h-[70%] lg:h-[90%] object-contain top-[10%] z-[60] transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 hero-hover-image"
         style="transform: rotate(-10deg); left: 50%; margin-left: -35%; @media (min-width: 1024px) { left: calc(10% - 40px); margin-left: 0; }"
       />
     </div>
@@ -87,6 +87,35 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
           window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
         }
       });
+    }
+
+    // Mobile-only scroll animation for hero image
+    if ('ontouchstart' in window) {
+      const heroContainer = document.querySelector('.hero-image-container');
+      const mainImage = document.querySelector('.hero-main-image');
+      const hoverImage = document.querySelector('.hero-hover-image');
+
+      if (heroContainer && mainImage && hoverImage) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Swap images after 1 second
+              setTimeout(() => {
+                mainImage.style.opacity = '0';
+                hoverImage.style.opacity = '1';
+                
+                // Swap back after 2 seconds
+                setTimeout(() => {
+                  mainImage.style.opacity = '1';
+                  hoverImage.style.opacity = '0';
+                }, 2000);
+              }, 1000);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        observer.observe(heroContainer);
+      }
     }
   });
 </script>
