@@ -81,8 +81,7 @@ const tabImages = {
     >
       <!-- Left -->
       <div
-        class="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow"
-        style="width: calc(50% - 40px);"
+        class="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 bg-white rounded-lg lg:rounded-r-none w-full lg:w-1/2 flex-grow mobile-content-box"
       >
         <div class="flex flex-col gap-3 sm:gap-4 items-start">
           <img
@@ -155,6 +154,21 @@ const tabImages = {
     color: #fff;
     font-weight: 600;
     border: none;
+  }
+
+  /* Mobile-specific width fix */
+  @media (max-width: 1023px) {
+    .mobile-content-box {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+  
+  /* Desktop width */
+  @media (min-width: 1024px) {
+    .mobile-content-box {
+      width: calc(50% - 40px);
+    }
   }
 
   @keyframes fade-up {
