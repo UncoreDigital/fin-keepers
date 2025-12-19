@@ -53,7 +53,7 @@ financial load off of you, which will allow you to focus on things of dire impor
       {
         cards.slice(0, 3).map((card, index) => (
           <div
-            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
+            class="why-choose-card flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0px 3px 10px 1px #0000001C] p-[20px] flex-1 
                       transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
           >
             <!-- Number in top-left corner -->
@@ -81,7 +81,7 @@ financial load off of you, which will allow you to focus on things of dire impor
       {
         cards.slice(3).map((card, index) => (
           <div
-            class="flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1 
+            class="why-choose-card flex flex-col gap-[18px] bg-[#0F5448] rounded-[16px] border border-[#0F5448] shadow-[0_1px_11.1px_0_rgba(237,124,0,0.16)] p-[20px] flex-1 
                       transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:z-10 relative"
           >
             <!-- Number in top-left corner -->
@@ -105,3 +105,33 @@ financial load off of you, which will allow you to focus on things of dire impor
     </div>
   </div>
 </div>
+
+<script>
+  // Mobile-only scroll animation for why choose cards
+  if ('ontouchstart' in window) {
+    const whyChooseCards = document.querySelectorAll('.why-choose-card');
+    
+    if (whyChooseCards.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            // Stagger the animation with 200ms delay between cards
+            setTimeout(() => {
+              card.style.transform = 'scale(1.05)';
+              card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+              
+              // Reset after 2 seconds
+              setTimeout(() => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = '0px 3px 10px 1px #0000001C';
+              }, 2000);
+            }, index * 200);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      whyChooseCards.forEach(card => observer.observe(card));
+    }
+  }
+</script>
