@@ -131,7 +131,7 @@ const tabImages = {
 
       <!-- Right -->
       <div
-        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group"
+        class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group tab-image-container"
         style="margin-top: -20px;"
       >
         <div class="relative w-full max-w-[280px] aspect-square overflow-hidden">
@@ -303,4 +303,33 @@ const tabImages = {
   document
     .querySelectorAll(".animate-on-scroll, .animate-on-scroll-child")
     .forEach((el) => observer.observe(el));
+
+  // Mobile-only scroll animation for tab image
+  if ('ontouchstart' in window) {
+    const tabContainer = document.querySelector('.tab-image-container');
+    const mainImage = document.getElementById('tabImageDefault');
+    const hoverImage = document.getElementById('tabImageHover');
+
+    if (tabContainer && mainImage && hoverImage) {
+      const tabObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Swap images after 1 second
+            setTimeout(() => {
+              mainImage.style.opacity = '0';
+              hoverImage.style.opacity = '1';
+              
+              // Swap back after 2 seconds
+              setTimeout(() => {
+                mainImage.style.opacity = '1';
+                hoverImage.style.opacity = '0';
+              }, 2000);
+            }, 1000);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      tabObserver.observe(tabContainer);
+    }
+  }
 </script>
