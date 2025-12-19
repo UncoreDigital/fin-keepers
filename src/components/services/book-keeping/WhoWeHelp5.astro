@@ -59,6 +59,15 @@ import salesImage from "../../../assets/services/book-keeping/sales.png";
           Property Managers
         </button>
       </div>
+      
+      <!-- Scroll Indicator Dots -->
+      <div id="scrollIndicator" class="flex justify-center gap-2 mt-4 sm:hidden">
+        <div class="scroll-dot active w-2 h-2 rounded-full bg-[#ed7c00]"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-gray-300"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-gray-300"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-gray-300"></div>
+        <div class="scroll-dot w-2 h-2 rounded-full bg-gray-300"></div>
+      </div>
     </div>
 
     {/* Content Area Below Tabs */}
@@ -110,3 +119,58 @@ import salesImage from "../../../assets/services/book-keeping/sales.png";
     </div>
   </div>
 </div>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-dot {
+    transition: background-color 0.3s ease;
+  }
+
+  .scroll-dot.active {
+    background-color: #ed7c00;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabsContainer = document.getElementById('tabsContainer');
+    const scrollDots = document.querySelectorAll('.scroll-dot');
+    
+    if (tabsContainer && scrollDots.length > 0) {
+      function updateScrollIndicator() {
+        const scrollLeft = tabsContainer.scrollLeft;
+        const scrollWidth = tabsContainer.scrollWidth;
+        const clientWidth = tabsContainer.clientWidth;
+        
+        // Calculate which section we're in (0-4 for 5 dots)
+        const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
+        const activeIndex = Math.round(scrollPercentage * (scrollDots.length - 1));
+        
+        // Update dots
+        scrollDots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('active');
+            dot.style.backgroundColor = '#ed7c00';
+          } else {
+            dot.classList.remove('active');
+            dot.style.backgroundColor = '#d1d5db';
+          }
+        });
+      }
+      
+      // Update on scroll
+      tabsContainer.addEventListener('scroll', updateScrollIndicator);
+      
+      // Initial update
+      updateScrollIndicator();
+    }
+  });
+</script>
