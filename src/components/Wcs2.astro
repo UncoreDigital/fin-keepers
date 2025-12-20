@@ -20,14 +20,13 @@
       <div class="overflow-hidden w-full">
         <!-- Mobile View: Horizontal Scrollable Cards -->
         <div class="block sm:hidden relative">
-          <div class="overflow-x-auto scrollbar-hide">
-            <div class="flex gap-4 pb-4" id="mobile-cards" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-left: calc(50vw - 80px); padding-right: calc(50vw - 140px);">
+          <div 
+            id="mobile-cards"
+            class="flex gap-4 overflow-x-auto scrollbar-hide pb-6"
+            style="scroll-snap-type: x mandatory; padding: 0 calc(50vw - 140px);"
+          >
             <!-- Card 1 -->
-            <div
-              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
-              data-delay="0"
-              style="scroll-snap-align: center;"
-            >
+            <div class="mobile-card w-[280px] flex-shrink-0 relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between mt-7" style="scroll-snap-align: center;">
               <div
                 class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
               >
@@ -76,11 +75,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div
-              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
-              data-delay="200"
-              style="scroll-snap-align: center;"
-            >
+            <div class="mobile-card w-[280px] flex-shrink-0 relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between mt-7" style="scroll-snap-align: center;">
               <div
                 class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
               >
@@ -131,11 +126,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div
-              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
-              data-delay="400"
-              style="scroll-snap-align: center;"
-            >
+            <div class="mobile-card w-[280px] flex-shrink-0 relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between mt-7" style="scroll-snap-align: center;">
               <div
                 class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
               >
@@ -184,11 +175,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div
-              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
-              data-delay="600"
-              style="scroll-snap-align: center;"
-            >
+            <div class="mobile-card w-[280px] flex-shrink-0 relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between mt-7" style="scroll-snap-align: center;">
               <div
                 class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
               >
@@ -237,11 +224,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div
-              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
-              data-delay="800"
-              style="scroll-snap-align: center;"
-            >
+            <div class="mobile-card w-[280px] flex-shrink-0 relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between mt-7" style="scroll-snap-align: center;">
               <div
                 class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
               >
@@ -290,11 +273,7 @@
             </div>
 
             <!-- Card 6 -->
-            <div
-              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
-              data-delay="1000"
-              style="scroll-snap-align: center;"
-            >
+            <div class="mobile-card w-[280px] flex-shrink-0 relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between mt-7" style="scroll-snap-align: center;">
               <div
                 class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
               >
@@ -346,13 +325,13 @@
 
         <!-- Mobile Indicators - Completely Separate Container -->
         <div class="block sm:hidden">
-          <div class="flex justify-center gap-2 mt-8" id="mobile-indicators">
-            <div class="w-2 h-2 rounded-full bg-white opacity-100 transition-opacity duration-300"></div>
-            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
-            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
-            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
-            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
-            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
+          <div id="mobile-indicators" class="flex justify-center gap-2 mt-4">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
           </div>
         </div>
 
@@ -814,59 +793,65 @@
 </div>
 
 <!-- Carousel Script -->
-<style>
-  /* Hide scrollbar for mobile horizontal scroll */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+<style>/* ===================== HIDE SCROLLBAR ===================== */
+.scrollbar-hide {
+  -ms-overflow-style: none;     /* IE / Edge */
+  scrollbar-width: none;        /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari */
+}
+
+/* ===================== MOBILE ONLY ===================== */
+@media (max-width: 639px) {
+
+  /* -------- Mobile Cards -------- */
+  .mobile-card {
+    scroll-snap-align: center;
   }
 
-  /* Mobile card animation styles */
-  @media (max-width: 639px) {
-    .mobile-card {
-      transition: all 0.6s ease-out;
-      min-height: 200px; /* Ensure consistent card height */
-    }
-    
-    .mobile-card.animate-in {
-      opacity: 1 !important;
-      transform: translateX(0) !important;
-    }
-
-    /* Ensure proper horizontal scrolling */
-    #mobile-cards {
-      touch-action: pan-x;
-      overscroll-behavior-x: contain;
-    }
-
-    /* Mobile indicators styling */
-    #mobile-indicators div {
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    #mobile-indicators div:hover {
-      transform: scale(1.2);
-    }
-    
-    #mobile-indicators div.opacity-100 {
-      background-color: #ed7c00 !important;
-    }
+  /* -------- Horizontal Scroll Container -------- */
+  #mobile-cards {
+    display: flex;
+    gap: 16px;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
+
+  /* -------- Indicator Dots -------- */
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.4;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    opacity: 1;
+    background: #ed7c00;
+  }
+
+  .dot:hover {
+    transform: scale(1.1);
+  }
+}
+
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Desktop carousel logic (unchanged)
     const slides = document.getElementById("testimonial-slides");
     const dots = document.querySelectorAll("#testimonial-dots button");
     let currentSlide = 0;
     const totalSlides = dots.length;
 
-    // Function to update carousel (desktop only)
     function updateCarousel(slideIndex: number): void {
       if (slides) {
         slides.style.transform = `translateX(-${slideIndex * 100}%)`;
@@ -878,23 +863,19 @@
       currentSlide = slideIndex;
     }
 
-    // Add click event listeners to dots (desktop only)
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
         updateCarousel(index);
       });
     });
 
-    // Auto-play functionality (desktop only)
     function autoPlay(): void {
       const nextSlide = (currentSlide + 1) % totalSlides;
       updateCarousel(nextSlide);
     }
 
-    // Start auto-play (every 3 seconds) for desktop
     let autoPlayInterval = setInterval(autoPlay, 3000);
 
-    // Pause auto-play on hover (desktop only)
     const carouselContainer = slides?.parentElement;
     if (carouselContainer) {
       carouselContainer.addEventListener("mouseenter", () => {
@@ -906,143 +887,55 @@
       });
     }
 
-    // Initialize desktop carousel
     updateCarousel(0);
 
-    // Mobile horizontal scroll logic
+    // Mobile carousel logic (clean implementation)
     const isMobile = () => window.innerWidth < 640;
     
     if (isMobile()) {
-      const mobileCards = document.querySelectorAll('.mobile-card');
-      const mobileIndicators = document.querySelectorAll('#mobile-indicators div');
-      const mobileContainer = document.querySelector('#mobile-cards') as HTMLElement;
-      let currentActiveIndex = 0;
+      const container = document.getElementById("mobile-cards");
+      const cards = Array.from(document.querySelectorAll(".mobile-card"));
+      const mobileDots = Array.from(document.querySelectorAll("#mobile-indicators .dot"));
 
-      // Auto-animate cards on load with staggered timing
-      setTimeout(() => {
-        mobileCards.forEach((card, index) => {
-          const delay = index * 200;
-          setTimeout(() => {
-            (card as HTMLElement).classList.add('animate-in');
-          }, delay);
+      function setActiveDot(index: number) {
+        mobileDots.forEach((d, i) => {
+          d.classList.toggle("active", i === index);
         });
-      }, 500);
+      }
 
-      // Function to update dot indicators
-      function updateDotIndicators(activeIndex: number) {
-        mobileIndicators.forEach((dot, i) => {
-          if (i === activeIndex) {
-            dot.classList.remove('opacity-40');
-            dot.classList.add('opacity-100');
-          } else {
-            dot.classList.remove('opacity-100');
-            dot.classList.add('opacity-40');
+      // IntersectionObserver for reliable card detection
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = cards.indexOf(entry.target as HTMLElement);
+            if (index !== -1) setActiveDot(index);
           }
         });
-        currentActiveIndex = activeIndex;
-      }
+      }, {
+        root: container,
+        threshold: 0.6,
+      });
 
-      // Function to detect which card is most centered in viewport
-      function detectActiveCard() {
-        if (!mobileContainer) return;
+      // Observe all cards
+      cards.forEach(card => observer.observe(card));
 
-        const containerRect = mobileContainer.getBoundingClientRect();
-        const viewportCenter = containerRect.left + (containerRect.width / 2);
-        
-        let closestCardIndex = 0;
-        let smallestDistance = Infinity;
-
-        mobileCards.forEach((card, index) => {
-          const cardElement = card as HTMLElement;
-          const cardRect = cardElement.getBoundingClientRect();
-          const cardCenter = cardRect.left + (cardRect.width / 2);
-          
-          // Calculate distance from card center to viewport center
-          const distance = Math.abs(cardCenter - viewportCenter);
-          
-          if (distance < smallestDistance) {
-            smallestDistance = distance;
-            closestCardIndex = index;
-          }
-        });
-
-        // Update indicators if active card changed
-        if (closestCardIndex !== currentActiveIndex) {
-          updateDotIndicators(closestCardIndex);
-        }
-      }
-
-      // Function to scroll to specific card (for dot clicks)
-      function scrollToCard(cardIndex: number) {
-        if (!mobileContainer || cardIndex < 0 || cardIndex >= mobileCards.length) return;
-        
-        const targetCard = mobileCards[cardIndex] as HTMLElement;
-        const containerRect = mobileContainer.getBoundingClientRect();
-        const cardRect = targetCard.getBoundingClientRect();
-        
-        // Calculate scroll position to center the card
-        const cardCenter = cardRect.left + (cardRect.width / 2);
-        const viewportCenter = containerRect.left + (containerRect.width / 2);
-        const scrollOffset = cardCenter - viewportCenter;
-        
-        mobileContainer.scrollBy({
-          left: scrollOffset,
-          behavior: 'smooth'
-        });
-      }
-
-      // Handle scroll events with throttling
-      if (mobileContainer) {
-        let scrollTimeout: NodeJS.Timeout;
-        let isScrolling = false;
-        
-        mobileContainer.addEventListener('scroll', () => {
-          // Immediate detection for responsive feel
-          if (!isScrolling) {
-            isScrolling = true;
-            requestAnimationFrame(() => {
-              detectActiveCard();
-              isScrolling = false;
+      // Dot click handlers
+      mobileDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          const targetCard = cards[index] as HTMLElement;
+          if (targetCard) {
+            targetCard.scrollIntoView({
+              behavior: "smooth",
+              inline: "center"
             });
+            setActiveDot(index);
           }
-          
-          // Delayed detection for final position
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            detectActiveCard();
-          }, 100);
         });
-
-        // Handle scroll end for snap-to-card behavior
-        mobileContainer.addEventListener('scrollend', () => {
-          detectActiveCard();
-        });
-      }
-
-      // Make dot indicators clickable
-      mobileIndicators.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          scrollToCard(index);
-          // Update immediately for responsive feedback
-          updateDotIndicators(index);
-        });
-        dot.style.cursor = 'pointer';
       });
 
-      // Initialize with first card active
-      setTimeout(() => {
-        updateDotIndicators(0);
-        detectActiveCard();
-      }, 600);
-
-      // Handle window resize to recalculate positions
-      window.addEventListener('resize', () => {
-        if (isMobile()) {
-          setTimeout(() => {
-            detectActiveCard();
-          }, 100);
-        }
-      });
+      // Initialize first dot as active
+      setActiveDot(0);
     }
   });
 </script>
+
