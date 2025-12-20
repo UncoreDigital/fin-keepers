@@ -916,40 +916,22 @@
       const mobileCards = document.querySelectorAll('.mobile-card');
       const mobileIndicators = document.querySelectorAll('#mobile-indicators div');
       const mobileContainer = document.querySelector('#mobile-cards') as HTMLElement;
+      let currentCardIndex = 0;
 
       // Auto-animate cards on load with staggered timing
       setTimeout(() => {
         mobileCards.forEach((card, index) => {
-          const delay = index * 200; // 200ms delay between each card
+          const delay = index * 200;
           setTimeout(() => {
             (card as HTMLElement).classList.add('animate-in');
           }, delay);
         });
-      }, 500); // Start after 500ms
+      }, 500);
 
-      // Function to update indicators based on scroll position
-      function updateMobileIndicators() {
-        if (!mobileContainer) return;
-        
-        const scrollLeft = mobileContainer.scrollLeft;
-        const containerWidth = mobileContainer.clientWidth;
-        const cardWidth = 280; // Card width
-        const gap = 16; // Gap between cards
-        const totalCardWidth = cardWidth + gap;
-        
-        // Calculate padding offset from the CSS calc(50vw - 80px)
-        const viewportWidth = window.innerWidth;
-        const paddingLeft = (viewportWidth / 2) - 80;
-        
-        // Calculate which card is most centered in the viewport
-        const viewportCenter = scrollLeft + (containerWidth / 2);
-        const adjustedPosition = viewportCenter - paddingLeft;
-        const cardIndex = Math.round(adjustedPosition / totalCardWidth);
-        const clampedIndex = Math.max(0, Math.min(cardIndex, mobileCards.length - 1));
-        
-        // Update indicators
+      // Simple function to update indicators
+      function updateIndicators(activeIndex: number) {
         mobileIndicators.forEach((indicator, i) => {
-          if (i === clampedIndex) {
+          if (i === activeIndex) {
             indicator.classList.remove('opacity-40');
             indicator.classList.add('opacity-100');
           } else {
@@ -957,94 +939,64 @@
             indicator.classList.add('opacity-40');
           }
         });
+        currentCardIndex = activeIndex;
       }
 
-      // Handle scroll-based indicator updates with throttling
+      // Function to scroll to specific card
+      function scrollToCard(cardIndex: number) {
+        if (!mobileContainer || cardIndex < 0 || cardIndex >= mobileCards.length) return;
+        
+        const cardWidth = 280;
+        const gap = 16;
+        const viewportWidth = window.innerWidth;
+        const paddingLeft = (viewportWidth / 2) - 80;
+        
+        // Calculate scroll position to center the card
+        const targetPosition = paddingLeft + (cardIndex * (cardWidth + gap)) - (mobileContainer.clientWidth / 2) + (cardWidth / 2);
+        
+        mobileContainer.scrollTo({
+          left: Math.max(0, targetPosition),
+          behavior: 'smooth'
+        });
+        
+        updateIndicators(cardIndex);
+      }
+
+      // Handle scroll events - detect which card is most visible
       if (mobileContainer) {
         let scrollTimeout: NodeJS.Timeout;
-        let isScrolling = false;
         
         mobileContainer.addEventListener('scroll', () => {
-          if (!isScrolling) {
-            isScrolling = true;
-            requestAnimationFrame(() => {
-              updateMobileIndicators();
-              isScrolling = false;
-            });
-          }
-          
           clearTimeout(scrollTimeout);
           scrollTimeout = setTimeout(() => {
-            updateMobileIndicators();
-          }, 100);
-        });
-
-        // Initial indicator update
-        setTimeout(() => {
-          updateMobileIndicators();
-        }, 100);
-      }
-
-      // Intersection Observer for more accurate detection
-      const mobileObserver = new IntersectionObserver((entries) => {
-        let mostVisibleCard = null;
-        let maxVisibility = 0;
-
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxVisibility) {
-            maxVisibility = entry.intersectionRatio;
-            mostVisibleCard = entry.target;
-          }
-        });
-
-        if (mostVisibleCard) {
-          const cardIndex = Array.from(mobileCards).indexOf(mostVisibleCard);
-          
-          // Update indicators based on most visible card
-          mobileIndicators.forEach((indicator, i) => {
-            if (i === cardIndex) {
-              indicator.classList.remove('opacity-40');
-              indicator.classList.add('opacity-100');
-            } else {
-              indicator.classList.remove('opacity-100');
-              indicator.classList.add('opacity-40');
-            }
-          });
-        }
-      }, { 
-        threshold: [0.1, 0.3, 0.5, 0.7, 0.9],
-        root: mobileContainer,
-        rootMargin: '-10% 0px -10% 0px'
-      });
-
-      // Observe all mobile cards
-      mobileCards.forEach(card => {
-        mobileObserver.observe(card);
-      });
-
-      // Make indicators clickable to scroll to specific cards
-      mobileIndicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          if (mobileContainer) {
+            const scrollLeft = mobileContainer.scrollLeft;
             const cardWidth = 280;
             const gap = 16;
             const viewportWidth = window.innerWidth;
             const paddingLeft = (viewportWidth / 2) - 80;
             
-            // Calculate scroll position to center the selected card
-            const targetCardPosition = paddingLeft + (index * (cardWidth + gap));
-            const scrollPosition = targetCardPosition - (mobileContainer.clientWidth / 2) + (cardWidth / 2);
+            // Calculate which card should be active based on scroll position
+            const adjustedScroll = scrollLeft + (mobileContainer.clientWidth / 2) - paddingLeft;
+            const cardIndex = Math.round(adjustedScroll / (cardWidth + gap));
+            const clampedIndex = Math.max(0, Math.min(cardIndex, mobileCards.length - 1));
             
-            mobileContainer.scrollTo({
-              left: Math.max(0, scrollPosition),
-              behavior: 'smooth'
-            });
-          }
+            if (clampedIndex !== currentCardIndex) {
+              updateIndicators(clampedIndex);
+            }
+          }, 150);
         });
-        
-        // Add cursor pointer for better UX
+      }
+
+      // Make indicators clickable
+      mobileIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          scrollToCard(index);
+        });
         indicator.style.cursor = 'pointer';
       });
+
+      // Initialize with first card
+      updateIndicators(0);
     }
   });
 </script>
