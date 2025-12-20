@@ -10,7 +10,7 @@
     <div class="flex flex-col gap-0 items-center w-full">
       <div class="flex px-0 sm:px-10 justify-center items-center w-full">
         <span
-          class="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-snug text-white w-full max-w-[1200px] text-center sm:text-left px-6"
+          class="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-snug text-white w-full max-w-[1200px] text-center sm:text-left px-6 whitespace-nowrap sm:whitespace-normal"
         >
          Trusted by Businesses
         </span>
@@ -18,9 +18,348 @@
 
       <!-- Carousel Container with padding for quote icons -->
       <div class="overflow-hidden w-full">
+        <!-- Mobile View: Horizontal Scrollable Cards -->
+        <div class="block sm:hidden relative">
+          <div class="overflow-x-auto scrollbar-hide">
+            <div class="flex gap-4 pb-4" id="mobile-cards" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-left: calc(50vw - 80px); padding-right: calc(50vw - 140px);">
+            <!-- Card 1 -->
+            <div
+              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
+              data-delay="0"
+              style="scroll-snap-align: center;"
+            >
+              <div
+                class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
+              >
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[16px] font-bold text-black"
+                    >Outstanding financial guidance!</span
+                  >
+                  <div class="flex gap-1">
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/zoF6yoeuyV.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DtcLdShOAd.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/O7TNJ9vJUT.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/onOKwaqXvi.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/7hkqwyy1x1.png"
+                      class="w-4 h-4"
+                    />
+                  </div>
+                </div>
+                <p class="text-[15px] text-[#75757d] leading-6">
+                  "The bookkeeping services transformed our business.
+                  Professional, accurate, and always on time with reports."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div>
+                  <div class="font-extrabold text-[#0f0e29] text-sm">
+                    Sarah Johnson
+                  </div>
+                  <div class="text-xs text-[#75757d]">CEO, TechStart Inc</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
+              data-delay="200"
+              style="scroll-snap-align: center;"
+            >
+              <div
+                class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
+              >
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[16px] font-bold text-black"
+                    >Exceptional service quality!</span
+                  >
+                  <div class="flex gap-1">
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/zoF6yoeuyV.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DtcLdShOAd.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/O7TNJ9vJUT.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/onOKwaqXvi.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/7hkqwyy1x1.png"
+                      class="w-4 h-4"
+                    />
+                  </div>
+                </div>
+                <p class="text-[15px] text-[#75757d] leading-6">
+                  "Their team handles our financial records with incredible
+                  attention to detail. Highly recommend!"
+                </p>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div>
+                  <div class="font-extrabold text-[#0f0e29] text-sm">
+                    Michael Chen
+                  </div>
+                  <div class="text-xs text-[#75757d]">
+                    Founder, GreenLeaf Co
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
+              data-delay="400"
+              style="scroll-snap-align: center;"
+            >
+              <div
+                class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
+              >
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[16px] font-bold text-black"
+                    >Professional and reliable!</span
+                  >
+                  <div class="flex gap-1">
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/zoF6yoeuyV.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DtcLdShOAd.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/O7TNJ9vJUT.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/onOKwaqXvi.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/7hkqwyy1x1.png"
+                      class="w-4 h-4"
+                    />
+                  </div>
+                </div>
+                <p class="text-[15px] text-[#75757d] leading-6">
+                  "Best decision we made for our business. They handle
+                  everything seamlessly and professionally."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div>
+                  <div class="font-extrabold text-[#0f0e29] text-sm">
+                    Emma Rodriguez
+                  </div>
+                  <div class="text-xs text-[#75757d]">CFO, InnovateNow</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
+              data-delay="600"
+              style="scroll-snap-align: center;"
+            >
+              <div
+                class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
+              >
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[16px] font-bold text-black"
+                    >Streamlined our finances!</span
+                  >
+                  <div class="flex gap-1">
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/zoF6yoeuyV.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DtcLdShOAd.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/O7TNJ9vJUT.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/onOKwaqXvi.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/7hkqwyy1x1.png"
+                      class="w-4 h-4"
+                    />
+                  </div>
+                </div>
+                <p class="text-[15px] text-[#75757d] leading-6">
+                  "They completely transformed how we manage our books. Clear,
+                  organized, and always available for questions."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div>
+                  <div class="font-extrabold text-[#0f0e29] text-sm">
+                    David Wilson
+                  </div>
+                  <div class="text-xs text-[#75757d]">Owner, Wilson & Co</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
+              data-delay="800"
+              style="scroll-snap-align: center;"
+            >
+              <div
+                class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
+              >
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[16px] font-bold text-black"
+                    >Amazing support team!</span
+                  >
+                  <div class="flex gap-1">
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/zoF6yoeuyV.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DtcLdShOAd.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/O7TNJ9vJUT.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/onOKwaqXvi.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/7hkqwyy1x1.png"
+                      class="w-4 h-4"
+                    />
+                  </div>
+                </div>
+                <p class="text-[15px] text-[#75757d] leading-6">
+                  "The team is incredibly responsive and knowledgeable. They
+                  make complex financial processes simple."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div>
+                  <div class="font-extrabold text-[#0f0e29] text-sm">
+                    Lisa Anderson
+                  </div>
+                  <div class="text-xs text-[#75757d]">Director, CraftCorp</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div
+              class="relative bg-white rounded-[16px] p-6 pt-10 flex flex-col justify-between w-[280px] flex-shrink-0 mt-7 mobile-card opacity-0 transform translate-x-[-100px]"
+              data-delay="1000"
+              style="scroll-snap-align: center;"
+            >
+              <div
+                class="w-[56px] h-[56px] bg-[url('/img/orange-quote.svg')] bg-no-repeat bg-contain absolute -top-7 left-4 z-[203]"
+              >
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[16px] font-bold text-black"
+                    >Highly recommended service!</span
+                  >
+                  <div class="flex gap-1">
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/zoF6yoeuyV.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/DtcLdShOAd.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/O7TNJ9vJUT.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/onOKwaqXvi.png"
+                      class="w-4 h-4"
+                    />
+                    <img
+                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/7hkqwyy1x1.png"
+                      class="w-4 h-4"
+                    />
+                  </div>
+                </div>
+                <p class="text-[15px] text-[#75757d] leading-6">
+                  "Their expertise has saved us countless hours and helped us
+                  make better financial decisions."
+                </p>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div>
+                  <div class="font-extrabold text-[#0f0e29] text-sm">
+                    James Thompson
+                  </div>
+                  <div class="text-xs text-[#75757d]">VP Finance, NextGen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Indicators - Completely Separate Container -->
+        <div class="block sm:hidden">
+          <div class="flex justify-center gap-2 mt-8" id="mobile-indicators">
+            <div class="w-2 h-2 rounded-full bg-white opacity-100 transition-opacity duration-300"></div>
+            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
+            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
+            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
+            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
+            <div class="w-2 h-2 rounded-full bg-white opacity-40 transition-opacity duration-300"></div>
+          </div>
+        </div>
+
+        <!-- Desktop View: Original Carousel -->
         <div
           id="testimonial-slides"
-          class="flex transition-transform duration-500 ease-in-out w-full"
+          class="hidden sm:flex transition-transform duration-500 ease-in-out w-full"
         >
           <!-- Slide 1 -->
           <div
@@ -390,8 +729,8 @@
         </div>
       </div>
 
-      <!-- Carousel Dots -->
-      <div class="flex justify-center gap-2 mt-6" id="testimonial-dots">
+      <!-- Desktop Carousel Dots -->
+      <div class="hidden sm:flex justify-center gap-2 mt-6" id="testimonial-dots">
         <button
           class="w-3 h-3 rounded-full bg-white opacity-100 transition-opacity duration-300 cursor-pointer"
           data-index="0"></button>
@@ -475,6 +814,51 @@
 </div>
 
 <!-- Carousel Script -->
+<style>
+  /* Hide scrollbar for mobile horizontal scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mobile card animation styles */
+  @media (max-width: 639px) {
+    .mobile-card {
+      transition: all 0.6s ease-out;
+      min-height: 200px; /* Ensure consistent card height */
+    }
+    
+    .mobile-card.animate-in {
+      opacity: 1 !important;
+      transform: translateX(0) !important;
+    }
+
+    /* Ensure proper horizontal scrolling */
+    #mobile-cards {
+      touch-action: pan-x;
+      overscroll-behavior-x: contain;
+    }
+
+    /* Mobile indicators styling */
+    #mobile-indicators div {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    #mobile-indicators div:hover {
+      transform: scale(1.2);
+    }
+    
+    #mobile-indicators div.opacity-100 {
+      background-color: #ed7c00 !important;
+    }
+  }
+</style>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const slides = document.getElementById("testimonial-slides");
@@ -482,7 +866,7 @@
     let currentSlide = 0;
     const totalSlides = dots.length;
 
-    // Function to update carousel
+    // Function to update carousel (desktop only)
     function updateCarousel(slideIndex: number): void {
       if (slides) {
         slides.style.transform = `translateX(-${slideIndex * 100}%)`;
@@ -494,23 +878,23 @@
       currentSlide = slideIndex;
     }
 
-    // Add click event listeners to dots
+    // Add click event listeners to dots (desktop only)
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
         updateCarousel(index);
       });
     });
 
-    // Auto-play functionality
+    // Auto-play functionality (desktop only)
     function autoPlay(): void {
       const nextSlide = (currentSlide + 1) % totalSlides;
       updateCarousel(nextSlide);
     }
 
-    // Start auto-play (every 5 seconds)
+    // Start auto-play (every 3 seconds) for desktop
     let autoPlayInterval = setInterval(autoPlay, 3000);
 
-    // Pause auto-play on hover
+    // Pause auto-play on hover (desktop only)
     const carouselContainer = slides?.parentElement;
     if (carouselContainer) {
       carouselContainer.addEventListener("mouseenter", () => {
@@ -522,7 +906,145 @@
       });
     }
 
-    // Initialize
+    // Initialize desktop carousel
     updateCarousel(0);
+
+    // Mobile horizontal scroll logic
+    const isMobile = () => window.innerWidth < 640;
+    
+    if (isMobile()) {
+      const mobileCards = document.querySelectorAll('.mobile-card');
+      const mobileIndicators = document.querySelectorAll('#mobile-indicators div');
+      const mobileContainer = document.querySelector('#mobile-cards') as HTMLElement;
+
+      // Auto-animate cards on load with staggered timing
+      setTimeout(() => {
+        mobileCards.forEach((card, index) => {
+          const delay = index * 200; // 200ms delay between each card
+          setTimeout(() => {
+            (card as HTMLElement).classList.add('animate-in');
+          }, delay);
+        });
+      }, 500); // Start after 500ms
+
+      // Function to update indicators based on scroll position
+      function updateMobileIndicators() {
+        if (!mobileContainer) return;
+        
+        const scrollLeft = mobileContainer.scrollLeft;
+        const containerWidth = mobileContainer.clientWidth;
+        const cardWidth = 280; // Card width
+        const gap = 16; // Gap between cards
+        const totalCardWidth = cardWidth + gap;
+        
+        // Calculate padding offset from the CSS calc(50vw - 80px)
+        const viewportWidth = window.innerWidth;
+        const paddingLeft = (viewportWidth / 2) - 80;
+        
+        // Calculate which card is most centered in the viewport
+        const viewportCenter = scrollLeft + (containerWidth / 2);
+        const adjustedPosition = viewportCenter - paddingLeft;
+        const cardIndex = Math.round(adjustedPosition / totalCardWidth);
+        const clampedIndex = Math.max(0, Math.min(cardIndex, mobileCards.length - 1));
+        
+        // Update indicators
+        mobileIndicators.forEach((indicator, i) => {
+          if (i === clampedIndex) {
+            indicator.classList.remove('opacity-40');
+            indicator.classList.add('opacity-100');
+          } else {
+            indicator.classList.remove('opacity-100');
+            indicator.classList.add('opacity-40');
+          }
+        });
+      }
+
+      // Handle scroll-based indicator updates with throttling
+      if (mobileContainer) {
+        let scrollTimeout: NodeJS.Timeout;
+        let isScrolling = false;
+        
+        mobileContainer.addEventListener('scroll', () => {
+          if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+              updateMobileIndicators();
+              isScrolling = false;
+            });
+          }
+          
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            updateMobileIndicators();
+          }, 100);
+        });
+
+        // Initial indicator update
+        setTimeout(() => {
+          updateMobileIndicators();
+        }, 100);
+      }
+
+      // Intersection Observer for more accurate detection
+      const mobileObserver = new IntersectionObserver((entries) => {
+        let mostVisibleCard = null;
+        let maxVisibility = 0;
+
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > maxVisibility) {
+            maxVisibility = entry.intersectionRatio;
+            mostVisibleCard = entry.target;
+          }
+        });
+
+        if (mostVisibleCard) {
+          const cardIndex = Array.from(mobileCards).indexOf(mostVisibleCard);
+          
+          // Update indicators based on most visible card
+          mobileIndicators.forEach((indicator, i) => {
+            if (i === cardIndex) {
+              indicator.classList.remove('opacity-40');
+              indicator.classList.add('opacity-100');
+            } else {
+              indicator.classList.remove('opacity-100');
+              indicator.classList.add('opacity-40');
+            }
+          });
+        }
+      }, { 
+        threshold: [0.1, 0.3, 0.5, 0.7, 0.9],
+        root: mobileContainer,
+        rootMargin: '-10% 0px -10% 0px'
+      });
+
+      // Observe all mobile cards
+      mobileCards.forEach(card => {
+        mobileObserver.observe(card);
+      });
+
+      // Make indicators clickable to scroll to specific cards
+      mobileIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          if (mobileContainer) {
+            const cardWidth = 280;
+            const gap = 16;
+            const viewportWidth = window.innerWidth;
+            const paddingLeft = (viewportWidth / 2) - 80;
+            
+            // Calculate scroll position to center the selected card
+            const targetCardPosition = paddingLeft + (index * (cardWidth + gap));
+            const scrollPosition = targetCardPosition - (mobileContainer.clientWidth / 2) + (cardWidth / 2);
+            
+            mobileContainer.scrollTo({
+              left: Math.max(0, scrollPosition),
+              behavior: 'smooth'
+            });
+          }
+        });
+        
+        // Add cursor pointer for better UX
+        indicator.style.cursor = 'pointer';
+      });
+    }
   });
 </script>
