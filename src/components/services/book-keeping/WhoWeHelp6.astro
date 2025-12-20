@@ -97,11 +97,11 @@ const tabImages = {
       <!-- Mobile swipe tabs ONLY -->
 <div class="tabs-viewport sm:hidden">
   <div class="tabs-list" id="mobileTabs">
-    <button class="tab-button active-tab" data-tab="general">Daily Bookkeeping</button>
-    <button class="tab-button" data-tab="payables">Account Payables & Receivables</button>
-    <button class="tab-button" data-tab="tax">Tax – Ready Bookkeeping</button>
-    <button class="tab-button" data-tab="reporting">Financial Reporting</button>
-    <button class="tab-button" data-tab="new">Multi-Entry & Consolidated Reporting</button>
+    <button class="tab-button active-tab mobile-tab-scroll" data-tab="general">Daily Bookkeeping</button>
+    <button class="tab-button mobile-tab-scroll" data-tab="payables">Account Payables & Receivables</button>
+    <button class="tab-button mobile-tab-scroll" data-tab="tax">Tax – Ready Bookkeeping</button>
+    <button class="tab-button mobile-tab-scroll" data-tab="reporting">Financial Reporting</button>
+    <button class="tab-button mobile-tab-scroll" data-tab="new">Multi-Entry & Consolidated Reporting</button>
   </div>
 
   <ul class="tabs-indicators" aria-hidden>
@@ -401,6 +401,40 @@ const tabImages = {
       }, { threshold: 0.5 });
 
       tabObserver.observe(tabContainer);
+    }
+
+    // Mobile scroll-based tab switching (keep original design)
+    const isMobile = () => window.innerWidth < 640;
+    
+    if (isMobile()) {
+      const mobileTabButtons = document.querySelectorAll('.mobile-tab-scroll');
+      
+      mobileTabButtons.forEach((button, index) => {
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Auto-switch to this tab when it comes into view
+              setTimeout(() => {
+                const tabKey = button.getAttribute('data-tab');
+                if (tabKey) {
+                  switchTab(tabKey, button);
+                  
+                  // Update mobile indicators
+                  const indicators = document.querySelectorAll('.tabs-indicators .indicator');
+                  indicators.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                  });
+                }
+              }, 300); // Small delay for smooth transition
+            }
+          });
+        }, { 
+          threshold: 0.7,
+          rootMargin: '-20% 0px -20% 0px'
+        });
+
+        scrollObserver.observe(button);
+      });
     }
   }
   const allTabButtons = document.querySelectorAll(".tab-button");
