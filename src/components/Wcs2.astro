@@ -916,7 +916,7 @@
       const mobileCards = document.querySelectorAll('.mobile-card');
       const mobileIndicators = document.querySelectorAll('#mobile-indicators div');
       const mobileContainer = document.querySelector('#mobile-cards') as HTMLElement;
-      let currentCardIndex = 0;
+      let currentActiveIndex = 0;
 
       // Auto-animate cards on load with staggered timing
       setTimeout(() => {
@@ -928,75 +928,121 @@
         });
       }, 500);
 
-      // Simple function to update indicators
-      function updateIndicators(activeIndex: number) {
-        mobileIndicators.forEach((indicator, i) => {
+      // Function to update dot indicators
+      function updateDotIndicators(activeIndex: number) {
+        mobileIndicators.forEach((dot, i) => {
           if (i === activeIndex) {
-            indicator.classList.remove('opacity-40');
-            indicator.classList.add('opacity-100');
+            dot.classList.remove('opacity-40');
+            dot.classList.add('opacity-100');
           } else {
-            indicator.classList.remove('opacity-100');
-            indicator.classList.add('opacity-40');
+            dot.classList.remove('opacity-100');
+            dot.classList.add('opacity-40');
           }
         });
-        currentCardIndex = activeIndex;
+        currentActiveIndex = activeIndex;
       }
 
-      // Function to scroll to specific card
+      // Function to detect which card is most centered in viewport
+      function detectActiveCard() {
+        if (!mobileContainer) return;
+
+        const containerRect = mobileContainer.getBoundingClientRect();
+        const viewportCenter = containerRect.left + (containerRect.width / 2);
+        
+        let closestCardIndex = 0;
+        let smallestDistance = Infinity;
+
+        mobileCards.forEach((card, index) => {
+          const cardElement = card as HTMLElement;
+          const cardRect = cardElement.getBoundingClientRect();
+          const cardCenter = cardRect.left + (cardRect.width / 2);
+          
+          // Calculate distance from card center to viewport center
+          const distance = Math.abs(cardCenter - viewportCenter);
+          
+          if (distance < smallestDistance) {
+            smallestDistance = distance;
+            closestCardIndex = index;
+          }
+        });
+
+        // Update indicators if active card changed
+        if (closestCardIndex !== currentActiveIndex) {
+          updateDotIndicators(closestCardIndex);
+        }
+      }
+
+      // Function to scroll to specific card (for dot clicks)
       function scrollToCard(cardIndex: number) {
         if (!mobileContainer || cardIndex < 0 || cardIndex >= mobileCards.length) return;
         
-        const cardWidth = 280;
-        const gap = 16;
-        const viewportWidth = window.innerWidth;
-        const paddingLeft = (viewportWidth / 2) - 80;
+        const targetCard = mobileCards[cardIndex] as HTMLElement;
+        const containerRect = mobileContainer.getBoundingClientRect();
+        const cardRect = targetCard.getBoundingClientRect();
         
         // Calculate scroll position to center the card
-        const targetPosition = paddingLeft + (cardIndex * (cardWidth + gap)) - (mobileContainer.clientWidth / 2) + (cardWidth / 2);
+        const cardCenter = cardRect.left + (cardRect.width / 2);
+        const viewportCenter = containerRect.left + (containerRect.width / 2);
+        const scrollOffset = cardCenter - viewportCenter;
         
-        mobileContainer.scrollTo({
-          left: Math.max(0, targetPosition),
+        mobileContainer.scrollBy({
+          left: scrollOffset,
           behavior: 'smooth'
         });
-        
-        updateIndicators(cardIndex);
       }
 
-      // Handle scroll events - detect which card is most visible
+      // Handle scroll events with throttling
       if (mobileContainer) {
         let scrollTimeout: NodeJS.Timeout;
+        let isScrolling = false;
         
         mobileContainer.addEventListener('scroll', () => {
+          // Immediate detection for responsive feel
+          if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+              detectActiveCard();
+              isScrolling = false;
+            });
+          }
+          
+          // Delayed detection for final position
           clearTimeout(scrollTimeout);
           scrollTimeout = setTimeout(() => {
-            const scrollLeft = mobileContainer.scrollLeft;
-            const cardWidth = 280;
-            const gap = 16;
-            const viewportWidth = window.innerWidth;
-            const paddingLeft = (viewportWidth / 2) - 80;
-            
-            // Calculate which card should be active based on scroll position
-            const adjustedScroll = scrollLeft + (mobileContainer.clientWidth / 2) - paddingLeft;
-            const cardIndex = Math.round(adjustedScroll / (cardWidth + gap));
-            const clampedIndex = Math.max(0, Math.min(cardIndex, mobileCards.length - 1));
-            
-            if (clampedIndex !== currentCardIndex) {
-              updateIndicators(clampedIndex);
-            }
-          }, 150);
+            detectActiveCard();
+          }, 100);
+        });
+
+        // Handle scroll end for snap-to-card behavior
+        mobileContainer.addEventListener('scrollend', () => {
+          detectActiveCard();
         });
       }
 
-      // Make indicators clickable
-      mobileIndicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
+      // Make dot indicators clickable
+      mobileIndicators.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
           scrollToCard(index);
+          // Update immediately for responsive feedback
+          updateDotIndicators(index);
         });
-        indicator.style.cursor = 'pointer';
+        dot.style.cursor = 'pointer';
       });
 
-      // Initialize with first card
-      updateIndicators(0);
+      // Initialize with first card active
+      setTimeout(() => {
+        updateDotIndicators(0);
+        detectActiveCard();
+      }, 600);
+
+      // Handle window resize to recalculate positions
+      window.addEventListener('resize', () => {
+        if (isMobile()) {
+          setTimeout(() => {
+            detectActiveCard();
+          }, 100);
+        }
+      });
     }
   });
 </script>
