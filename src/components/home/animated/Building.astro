@@ -17,19 +17,22 @@
     <div class="flex flex-col gap-7">
       <!-- Card 1 -->
       <div
-        class="build-card-1-mobile relative border border-[#eaeaea] rounded-full p-6 flex items-start gap-4"
+        class="build-card-1-mobile relative border border-[#eaeaea] rounded-full p-6 flex flex-col gap-4 overflow-hidden"
       >
-        <div
-          class="mt-6 w-[100px] h-12 bg-[#ed7c00] rounded-full flex items-center justify-center"
-        >
-          <img
-            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/o3wBK4j2pv.png"
-            class="w-6 h-6"
-          />
+        <div class="flex items-center gap-3 flex-wrap">
+          <div
+            class="w-[29px] h-6 bg-[#ed7c00] rounded-full flex items-center justify-center flex-shrink-0"
+          >
+            <img
+              src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/o3wBK4j2pv.png"
+              class="w-3 h-3"
+              alt="Startups icon"
+            />
+          </div>
+          <h3 class="card-title text-[20px] font-semibold text-white flex-1">Startups</h3>
         </div>
-        <div class="text-white">
-          <h3 class="text-[20px] font-semibold">Startups</h3>
-          <p class="text-[14px] leading-6">
+        <div class="text-white px-5 ml-[30px] lg:ml-0">
+          <p class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden">
             Helping early-stage teams build strong financial foundations that scale with growth.
           </p>
         </div>
@@ -37,40 +40,46 @@
 
       <!-- Card 2 -->
       <div
-        class="build-card-1-mobile relative border border-[#eaeaea] rounded-full p-6 flex items-start gap-4"
+        class="build-card-2-mobile relative border border-[#eaeaea] rounded-full p-6 flex flex-col gap-4 overflow-hidden"
       >
-        <div
-          class="mt-12 w-[170px] h-12 bg-[#ed7c00] rounded-full flex items-center justify-center"
-        >
-          <img
-            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/rFsJfGuGEL.png"
-            class="w-6 h-6"
-          />
+        <div class="flex items-center gap-3 flex-wrap">
+          <div
+            class="w-[29px] h-6 bg-[#ed7c00] rounded-full flex items-center justify-center flex-shrink-0"
+          >
+            <img
+              src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/rFsJfGuGEL.png"
+              class="w-3 h-3"
+              alt="PE/VC-Backed Companies icon"
+            />
+          </div>
+          <h3 class="card-title text-[20px] font-semibold text-white flex-1">PE/VC-Backed Companies</h3>
         </div>
-        <div class="text-white">
-          <h3 class="text-[20px] font-semibold">PE/VC-Backed Companies</h3>
-          <p class="text-[14px] leading-6">
-Supporting fast-growing teams with scalable finance operations, sharper reporting, and investor-grade visibility at every stage of growth.
+        <div class="text-white px-5 ml-[30px] lg:ml-0">
+          <p class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden">
+            Supporting fast-growing teams with scalable finance operations, sharper reporting, and investor-grade visibility at every stage of growth.
           </p>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div
-        class="build-card-3-mobile relative border border-[#eaeaea] rounded-full p-6 flex items-start gap-4"
+        class="build-card-3-mobile relative border border-[#eaeaea] rounded-full p-6 flex flex-col gap-4 overflow-hidden"
       >
-        <div
-          class="mt-16 w-[170px] h-12 bg-[#ed7c00] rounded-full flex items-center justify-center"
-        >
-          <img
-            src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/t81ZYCJ4VX.png"
-            class="w-6 h-6"
-          />
+        <div class="flex items-center gap-3 flex-wrap">
+          <div
+            class="w-[29px] h-6 bg-[#ed7c00] rounded-full flex items-center justify-center flex-shrink-0"
+          >
+            <img
+              src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-07-26/t81ZYCJ4VX.png"
+              class="w-3 h-3"
+              alt="Small & Mid-Sized Businesses icon"
+            />
+          </div>
+          <h3 class="card-title text-[20px] font-semibold text-white flex-1">Small & Mid-Sized Businesses</h3>
         </div>
-        <div class="text-white">
-          <h3 class="text-[20px] font-semibold">Small & Mid-Sized Businesses</h3>
-          <p class="text-[14px] leading-6">
-Providing dependable, affordable financial expertise that strengthens decision-making and keeps your business financially confident and compliant.
+        <div class="text-white px-5 ml-[30px] lg:ml-0">
+          <p class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden">
+            Providing dependable, affordable financial expertise that strengthens decision-making and keeps your business financially confident and compliant.
           </p>
         </div>
       </div>
@@ -109,6 +118,9 @@ Providing dependable, affordable financial expertise that strengthens decision-m
     const vector = document.querySelector(".build-vector-mobile");
 
     if (!wrapper) return;
+
+    // Check if it's mobile view - improved detection
+    const isMobile = () => window.innerWidth < 1024;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -158,5 +170,85 @@ Providing dependable, affordable financial expertise that strengthens decision-m
         "-=0.3",
       );
     }
+
+    // Mobile-specific scroll animations for card content reveal
+    const setupMobileAnimations = () => {
+      const cards = [card1, card2, card3];
+      
+      cards.forEach((card, index) => {
+        if (card) {
+          const cardContent = card.querySelector('.card-content');
+          
+          if (cardContent) {
+            // Clear any existing ScrollTriggers for this element
+            ScrollTrigger.getAll().forEach(trigger => {
+              if (trigger.trigger === card) {
+                trigger.kill();
+              }
+            });
+
+            // Only create mobile animations if on mobile
+            if (isMobile()) {
+              ScrollTrigger.create({
+                trigger: card,
+                start: "top 75%",
+                end: "bottom 25%",
+                onEnter: () => {
+                  gsap.to(cardContent, {
+                    opacity: 1,
+                    maxHeight: "200px",
+                    duration: 0.6,
+                    ease: "power2.out"
+                  });
+                },
+                onLeave: () => {
+                  gsap.to(cardContent, {
+                    opacity: 0,
+                    maxHeight: "0px",
+                    duration: 0.4,
+                    ease: "power2.in"
+                  });
+                },
+                onEnterBack: () => {
+                  gsap.to(cardContent, {
+                    opacity: 1,
+                    maxHeight: "200px",
+                    duration: 0.6,
+                    ease: "power2.out"
+                  });
+                },
+                onLeaveBack: () => {
+                  gsap.to(cardContent, {
+                    opacity: 0,
+                    maxHeight: "0px",
+                    duration: 0.4,
+                    ease: "power2.in"
+                  });
+                }
+              });
+            } else {
+              // On desktop, ensure content is always visible
+              gsap.set(cardContent, {
+                opacity: 1,
+                maxHeight: "none"
+              });
+            }
+          }
+        }
+      });
+    };
+
+    // Initial setup
+    setupMobileAnimations();
+
+    // Handle window resize to refresh ScrollTrigger and re-setup animations
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+        setupMobileAnimations();
+      }, 100);
+    });
   });
 </script>
