@@ -58,249 +58,280 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       <!-- Mobile: Stack vertically -->
       <div class="block md:hidden space-y-6">
         <!-- Card 1: Basic Plan - Mobile -->
-        <div class="w-full max-w-sm mx-auto bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-          <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#151515] mb-2">Basic Plan</h3>
-            <p class="text-sm text-[#797979]">Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.</p>
+        <div class="pricing-card w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+          <!-- Orange Header -->
+          <div class="bg-[#ed7c00] px-6 py-8 text-center text-white">
+            <div class="flex justify-center mb-4">
+              <img src={basicIcon.src} alt="Basic Plan Icon" class="w-12 h-12" />
+            </div>
+            <h3 class="text-lg font-bold uppercase tracking-wide">BASIC PLAN</h3>
           </div>
+          
+          <!-- Card Content -->
+          <div class="px-6 py-8">
+            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
+              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
+            </p>
 
-          <div class="flex items-baseline gap-2 mb-6">
-            <span
-              id="basic-price-mobile"
-              class="text-3xl font-bold text-[#151515]"
-            >$800-$1,200</span>
-            <span
-              id="basic-period-mobile"
-              class="text-base text-[#797979]"
-            >/month</span>
-          </div>
+            <div class="text-center mb-8">
+              <div class="flex items-baseline justify-center gap-1 mb-2">
+                <span
+                  id="basic-price-mobile"
+                  class="text-4xl font-bold text-[#151515]"
+                >$800-$1,200</span>
+                <span
+                  id="basic-period-mobile"
+                  class="text-lg text-[#797979]"
+                > / month</span>
+              </div>
+            </div>
 
-          <div class="mb-6">
-            <p class="text-sm text-[#797979] mb-4">Best for:</p>
-            <ul class="space-y-2 text-sm text-[#797979]">
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Pre-revenue to $500k revenue
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Solo founders, consultants, early startups
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Businesses needing clean books + monthly reporting
-              </li>
-            </ul>
-          </div>
+            <div class="mb-8">
+              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
+              <ul class="space-y-3 text-sm text-[#797979]">
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Pre-revenue to $500k revenue</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Solo founders, consultants, early startups</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Businesses needing clean books + monthly reporting</span>
+                </li>
+              </ul>
+            </div>
 
-          <div class="mb-8">
-            <button 
-              class="text-[#ed7c00] text-sm font-medium mb-4 flex items-center cursor-pointer w-full justify-between"
-              onclick="toggleExpansion('basic-mobile')"
-            >
-              <span>What's included</span>
-              <span id="basic-mobile-arrow" class="transition-transform duration-300">▼</span>
-            </button>
-            
-            <!-- Expandable Content -->
-            <div id="basic-mobile-content" class="hidden overflow-hidden transition-all duration-300">
-              <div class="space-y-3 pt-4 border-t border-gray-100">
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">Monthly Bookkeeping</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">Monthly Financials</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">Payroll Processing</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">Basic Financial Reporting</span>
+            <div class="mb-8">
+              <button 
+                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
+                onclick="toggleExpansion('basic-mobile')"
+              >
+                <span>What's included</span>
+                <img src={downArrowIcon.src} alt="Expand" id="basic-mobile-arrow" class="w-4 h-4 transition-transform duration-300" />
+              </button>
+              
+              <!-- Expandable Content -->
+              <div id="basic-mobile-content" class="hidden overflow-hidden transition-all duration-300">
+                <div class="space-y-3 pt-4 border-t border-gray-200">
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Monthly Bookkeeping</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Monthly Financials</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Payroll Processing</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Basic Financial Reporting</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <button
-            class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] rounded-lg font-medium hover:bg-[#ed7c00] hover:text-white transition-colors"
-            onclick="window.location.href='/contact'"
-          >
-            Connect
-          </button>
+            <button
+              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
+              onclick="window.location.href='/contact'"
+            >
+              Connect
+            </button>
+          </div>
         </div>
 
         <!-- Card 2: Standard Plan (Most Popular) - Mobile -->
-        <div class="w-full max-w-sm mx-auto bg-white rounded-2xl border-2 border-[#ed7c00] p-6 shadow-lg relative">
-          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-            <span class="bg-[#ed7c00] text-white px-4 py-1 rounded-full text-xs font-medium">
-              Most Popular
-            </span>
+        <div class="pricing-card w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg relative overflow-hidden">
+          
+          <!-- Orange Header -->
+          <div class="bg-[#ed7c00] px-6 py-8 pt-10 text-center text-white">
+            <div class="flex justify-center mb-4">
+              <img src={standardIcon.src} alt="Standard Plan Icon" class="w-12 h-12" />
+            </div>
+            <h3 class="text-base font-bold uppercase tracking-wide whitespace-nowrap">STANDARD PLAN (Most Popular)</h3>
           </div>
           
-          <div class="mb-6 pt-2">
-            <h3 class="text-xl font-semibold text-[#151515] mb-2">Standard Plan</h3>
-            <p class="text-sm text-[#797979]">Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.</p>
-          </div>
+          <!-- Card Content -->
+          <div class="px-6 py-8">
+            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
+              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
+            </p>
 
-          <div class="flex items-baseline gap-2 mb-6">
-            <span
-              id="standard-price-mobile"
-              class="text-3xl font-bold text-[#151515]"
-            >$1,500-$2,500</span>
-            <span
-              id="standard-period-mobile"
-              class="text-base text-[#797979]"
-            >/month</span>
-          </div>
+            <div class="text-center mb-8">
+              <div class="flex items-baseline justify-center gap-1 mb-2">
+                <span
+                  id="standard-price-mobile"
+                  class="text-4xl font-bold text-[#151515]"
+                >$1,500-$2,500</span>
+                <span
+                  id="standard-period-mobile"
+                  class="text-lg text-[#797979]"
+                > / month</span>
+              </div>
+            </div>
 
-          <div class="mb-6">
-            <p class="text-sm text-[#797979] mb-4">Best for:</p>
-            <ul class="space-y-2 text-sm text-[#797979]">
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                $500k-$5M in revenue
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Founder-led companies scaling operations
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Companies with AP/AR volume and recurring reporting needs
-              </li>
-            </ul>
-          </div>
+            <div class="mb-8">
+              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
+              <ul class="space-y-3 text-sm text-[#797979]">
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>$500k-$5M in revenue</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Founder-led companies scaling operations</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Companies with AP/AR volume and recurring reporting needs</span>
+                </li>
+              </ul>
+            </div>
 
-          <div class="mb-8">
-            <button 
-              class="text-[#ed7c00] text-sm font-medium mb-4 flex items-center cursor-pointer w-full justify-between"
-              onclick="toggleExpansion('standard-mobile')"
-            >
-              <span>Everything BASIC Plan Plus</span>
-              <span id="standard-mobile-arrow" class="transition-transform duration-300">▼</span>
-            </button>
-            
-            <!-- Expandable Content -->
-            <div id="standard-mobile-content" class="hidden overflow-hidden transition-all duration-300">
-              <div class="space-y-3 pt-4 border-t border-gray-100">
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">Cash Flow Tracking</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">AP / AR Management</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">KPI Dashboards</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">Dedicated U.S. Manager</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-[#797979]">CFO Guidance</span>
+            <div class="mb-8">
+              <button 
+                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
+                onclick="toggleExpansion('standard-mobile')"
+              >
+                <span>Everything BASIC Plan Plus</span>
+                <img src={downArrowIcon.src} alt="Expand" id="standard-mobile-arrow" class="w-4 h-4 transition-transform duration-300" />
+              </button>
+              
+              <!-- Expandable Content -->
+              <div id="standard-mobile-content" class="hidden overflow-hidden transition-all duration-300">
+                <div class="space-y-3 pt-4 border-t border-gray-200">
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Cash Flow Tracking</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">AP / AR Management</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">KPI Dashboards</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Dedicated U.S. Manager</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">CFO Guidance</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <button
-            class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-lg font-medium hover:bg-[#d66a00] transition-colors"
-            onclick="window.location.href='/contact'"
-          >
-            Connect
-          </button>
+            <button
+              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
+              onclick="window.location.href='/contact'"
+            >
+              Connect
+            </button>
+          </div>
         </div>
 
         <!-- Card 3: Premium CFO Plan - Mobile -->
-        <div class="w-full max-w-sm mx-auto bg-[#2d2d2d] rounded-2xl p-6 shadow-lg text-white">
-          <div class="mb-6">
-            <h3 class="text-xl font-semibold text-white mb-2">Premium CFO Plan</h3>
-            <p class="text-sm text-gray-300">Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.</p>
+        <div class="pricing-card w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+          <!-- Orange Header -->
+          <div class="bg-[#ed7c00] px-6 py-8 text-center text-white">
+            <div class="flex justify-center mb-4">
+              <img src={premiumIcon.src} alt="Premium CFO Plan Icon" class="w-12 h-12" />
+            </div>
+            <h3 class="text-lg font-bold uppercase tracking-wide">PREMIUM CFO PLAN</h3>
           </div>
+          
+          <!-- Card Content -->
+          <div class="px-6 py-8">
+            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
+              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
+            </p>
 
-          <div class="flex items-baseline gap-2 mb-6">
-            <span
-              id="premium-price-mobile"
-              class="text-3xl font-bold text-white"
-            >$3,000-$4,500</span>
-            <span
-              id="premium-period-mobile"
-              class="text-base text-gray-300"
-            >/month</span>
-          </div>
+            <div class="text-center mb-8">
+              <div class="flex items-baseline justify-center gap-1 mb-2">
+                <span
+                  id="premium-price-mobile"
+                  class="text-4xl font-bold text-[#151515]"
+                >$3,000-$4,500</span>
+                <span
+                  id="premium-period-mobile"
+                  class="text-lg text-[#797979]"
+                > / month</span>
+              </div>
+            </div>
 
-          <div class="mb-6">
-            <p class="text-sm text-gray-300 mb-4">Best for:</p>
-            <ul class="space-y-2 text-sm text-gray-300">
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                $1M-$20M+ revenue
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                VC-backed companies
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Businesses preparing for fundraising, M&A, or audits
-              </li>
-              <li class="flex items-center">
-                <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-2" />
-                Companies needing mature finance processes
-              </li>
-            </ul>
-          </div>
+            <div class="mb-8">
+              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
+              <ul class="space-y-3 text-sm text-[#797979]">
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>$1M-$20M+ revenue</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>VC-backed companies</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Businesses preparing for fundraising, M&A, or audits</span>
+                </li>
+                <li class="flex items-start">
+                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Companies needing mature finance processes</span>
+                </li>
+              </ul>
+            </div>
 
-          <div class="mb-8">
-            <button 
-              class="text-[#ed7c00] text-sm font-medium mb-4 flex items-center cursor-pointer w-full justify-between"
-              onclick="toggleExpansion('premium-mobile')"
-            >
-              <span>Everything STANDARD Plan Plus</span>
-              <span id="premium-mobile-arrow" class="transition-transform duration-300">▼</span>
-            </button>
-            
-            <!-- Expandable Content -->
-            <div id="premium-mobile-content" class="hidden overflow-hidden transition-all duration-300">
-              <div class="space-y-3 pt-4 border-t border-gray-600">
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-gray-300">Cash Flow Tracking (Deep Forecasting)</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-gray-300">KPI Dashboards (Advanced)</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-gray-300">Investor Reporting</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-gray-300">Board-Ready Financials</span>
-                </div>
-                <div class="flex items-center">
-                  <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3" />
-                  <span class="text-sm text-gray-300">Forecasting & Modeling (Full)</span>
+            <div class="mb-8">
+              <button 
+                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
+                onclick="toggleExpansion('premium-mobile')"
+              >
+                <span>Everything STANDARD Plan Plus</span>
+                <img src={downArrowIcon.src} alt="Expand" id="premium-mobile-arrow" class="w-4 h-4 transition-transform duration-300" />
+              </button>
+              
+              <!-- Expandable Content -->
+              <div id="premium-mobile-content" class="hidden overflow-hidden transition-all duration-300">
+                <div class="space-y-3 pt-4 border-t border-gray-200">
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Cash Flow Tracking (Deep Forecasting)</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">KPI Dashboards (Advanced)</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Investor Reporting</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Board-Ready Financials</span>
+                  </div>
+                  <div class="flex items-start">
+                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                    <span class="text-sm text-[#797979]">Forecasting & Modeling (Full)</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <button
-            class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-lg font-medium hover:bg-[#d66a00] transition-colors"
-            onclick="window.location.href='/contact'"
-          >
-            Connect
-          </button>
+            <button
+              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
+              onclick="window.location.href='/contact'"
+            >
+              Connect
+            </button>
+          </div>
         </div>
       </div>
 
@@ -595,9 +626,9 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
 
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Project-Based Pricing Card 1 -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="bg-white rounded-2xl p-8 shadow-sm project-pricing-card">
             <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-[#ed7c00] rounded-full flex items-center justify-center mr-4">
+              <div class="w-12 h-12 bg-[#ed7c00] rounded-full flex items-center justify-center mr-4 project-number-circle">
                 <span class="text-white font-bold text-lg">01</span>
               </div>
               <h3 class="text-xl font-semibold text-[#151515]">Project-Based Pricing</h3>
@@ -625,9 +656,9 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
           </div>
 
           <!-- Project-Based Pricing Card 2 -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="bg-white rounded-2xl p-8 shadow-sm project-pricing-card">
             <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-[#ed7c00] rounded-full flex items-center justify-center mr-4">
+              <div class="w-12 h-12 bg-[#ed7c00] rounded-full flex items-center justify-center mr-4 project-number-circle">
                 <span class="text-white font-bold text-lg">02</span>
               </div>
               <h3 class="text-xl font-semibold text-[#151515]">Project-Based Pricing</h3>
@@ -661,7 +692,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     <div class="bg-white py-16 -mx-4 sm:-mx-6 lg:-mx-8 mb-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="overflow-x-auto">
-          <table class="w-full max-w-5xl mx-auto">
+          <table class="w-full max-w-5xl mx-auto feature-table">
             <thead>
               <tr class="border-b border-gray-200">
                 <th class="text-left py-6 px-6 text-[#151515] font-semibold text-lg w-1/4">Feature</th>
@@ -1123,5 +1154,104 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   
   .partnership-hover {
     transition: opacity 0.3s ease;
+  }
+  
+  /* Mobile responsive styles for Feature Comparison Table */
+  @media (max-width: 767px) {
+    .feature-table th,
+    .feature-table td {
+      padding: 12px 8px;
+      font-size: 0.875rem;
+    }
+    
+    .feature-table th:first-child,
+    .feature-table td:first-child {
+      padding-left: 12px;
+    }
+    
+    .feature-table th:last-child,
+    .feature-table td:last-child {
+      padding-right: 12px;
+    }
+    
+    .feature-table .text-lg {
+      font-size: 0.875rem;
+    }
+    
+    .feature-table .text-3xl {
+      font-size: 1.5rem;
+    }
+    
+    .feature-table .px-4.py-2 {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+    }
+    
+    .feature-table .w-6.h-6 {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    
+    .feature-table .text-xs {
+      font-size: 0.65rem;
+    }
+    
+    /* Adjust table header for small screens */
+    .feature-table thead th {
+      white-space: nowrap;
+    }
+    
+    /* Reduce padding on very small screens */
+    @media (max-width: 480px) {
+      .feature-table th,
+      .feature-table td {
+        padding: 8px 4px;
+        font-size: 0.75rem;
+      }
+      
+      .feature-table .text-lg {
+        font-size: 0.75rem;
+      }
+      
+      .feature-table .text-3xl {
+        font-size: 1.25rem;
+      }
+      
+      .feature-table .px-4.py-2 {
+        padding: 0.125rem 0.25rem;
+        font-size: 0.65rem;
+      }
+    }
+  }
+  
+  /* Mobile improvements for Project-Based Pricing Section */
+  @media (max-width: 767px) {
+    .project-pricing-card {
+      padding: 1.5rem;
+    }
+    
+    .project-pricing-card .text-3xl {
+      font-size: 1.875rem;
+    }
+    
+    .project-number-circle {
+      width: 3rem;
+      height: 3rem;
+      min-width: 3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-pricing-card {
+      padding: 1.25rem;
+    }
+    
+    .project-pricing-card .text-3xl {
+      font-size: 1.5rem;
+    }
+    
+    .project-pricing-card .text-xl {
+      font-size: 1.125rem;
+    }
   }
 </style>
