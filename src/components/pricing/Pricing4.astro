@@ -336,279 +336,298 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       </div>
 
       <!-- Desktop: Three cards in a row -->
-      <div class="hidden md:flex gap-6 justify-center items-start max-w-6xl mx-auto">
+      <div class="hidden md:flex gap-6 justify-center items-stretch max-w-6xl mx-auto">
         <!-- Basic Plan Card -->
-        <div class="pricing-card flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:z-10 overflow-hidden">
-          <!-- Orange Header -->
-          <div class="bg-[#ed7c00] px-6 py-8 text-center text-white">
-            <div class="flex justify-center mb-4">
-              <img src={basicIcon.src} alt="Basic Plan Icon" class="w-12 h-12" />
-            </div>
-            <h3 class="text-lg font-bold uppercase tracking-wide">BASIC PLAN</h3>
-          </div>
-          
+        <div class="group flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer">
           <!-- Card Content -->
-          <div class="px-6 py-8">
-            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
-              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
-            </p>
+          <div class="p-8 h-full flex flex-col">
+            <!-- Header -->
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">BASIC PLAN</h3>
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Early-Stage Founders</p>
+            </div>
 
+            <!-- Price -->
             <div class="text-center mb-8">
-              <div class="flex items-baseline justify-center gap-1 mb-2">
-                <span
-                  id="basic-price"
-                  class="text-4xl font-bold text-[#151515]"
-                >$800-$1,200</span>
-                <span
-                  id="basic-period"
-                  class="text-lg text-[#797979]"
-                > / month</span>
+              <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                $800–$1,200 <span class="text-lg font-normal">/ month</span>
               </div>
             </div>
 
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
-              <ul class="space-y-3 text-sm text-[#797979]">
+            <!-- Best For Section -->
+            <div class="mb-6 flex-grow">
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+              <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Pre-revenue to $500k revenue</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Solo founders, consultants, early startups</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Businesses needing clean books + monthly reporting <br/><br/><br/></span>
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Businesses needing clean books + monthly reporting</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mb-8">
-              <button 
-                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
-                onclick="toggleExpansion('basic')"
-              >
-                <span>What's included</span>
-                <img src={downArrowIcon.src} alt="Expand" id="basic-arrow" class="w-4 h-4 transition-transform duration-300" />
-              </button>
-              
-              <!-- Expandable Content -->
-              <div id="basic-content" class="hidden overflow-hidden transition-all duration-300">
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Monthly Bookkeeping</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Monthly Financials</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Payroll Processing</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Basic Financial Reporting</span>
+            <!-- Expandable Section -->
+            <div class="mb-6">
+              <div class="group/expand relative">
+                <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>What's included</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Shows on Hover -->
+                <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Monthly Bookkeeping</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Monthly Financials</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Payroll Processing</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Basic Financial Reporting</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button
-              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
-              onclick="window.location.href='/contact'"
-            >
+            <!-- CTA Button -->
+            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
               Connect
             </button>
           </div>
         </div>
 
-        <!-- Standard Plan Card (Most Popular) -->
-        <div class="pricing-card flex-1 max-w-sm bg-white rounded-2xl shadow-lg relative transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:z-10 overflow-hidden">
-          
-          <!-- Orange Header -->
-          <div class="bg-[#ed7c00] px-6 py-8 pt-10 text-center text-white">
-            <div class="flex justify-center mb-4">
-              <img src={standardIcon.src} alt="Standard Plan Icon" class="w-12 h-12" />
-            </div>
-            <h3 class="text-base font-bold uppercase tracking-wide whitespace-nowrap">STANDARD PLAN (Most Popular)</h3>
-          </div>
+        <!-- Standard Plan Card -->
+        <div class="group flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
           
           <!-- Card Content -->
-          <div class="px-6 py-8">
-            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
-              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
-            </p>
+          <div class="p-8 h-full flex flex-col">
+            <!-- Header -->
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">STANDARD PLAN</h3>
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Growing Companies</p>
+            </div>
 
+            <!-- Price -->
             <div class="text-center mb-8">
-              <div class="flex items-baseline justify-center gap-1 mb-2">
-                <span
-                  id="standard-price"
-                  class="text-4xl font-bold text-[#151515]"
-                >$1,500-$2,500</span>
-                <span
-                  id="standard-period"
-                  class="text-lg text-[#797979]"
-                > / month</span>
+              <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                $1,500–$2,500 <span class="text-lg font-normal">/ month</span>
               </div>
             </div>
 
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
-              <ul class="space-y-3 text-sm text-[#797979]">
+            <!-- Best For Section -->
+            <div class="mb-6 flex-grow">
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+              <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>$500k-$5M in revenue</span>
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>$500k–$5M in revenue</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Founder-led companies scaling operations</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Companies with AP/AR volume and recurring reporting needs<br/><br/><br/></span>
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Companies with AP/AR volume and recurring reporting needs</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mb-8">
-              <button 
-                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
-                onclick="toggleExpansion('standard')"
-              >
-                <span>Everything BASIC Plan Plus</span>
-                <img src={downArrowIcon.src} alt="Expand" id="standard-arrow" class="w-4 h-4 transition-transform duration-300" />
-              </button>
-              
-              <!-- Expandable Content -->
-              <div id="standard-content" class="hidden overflow-hidden transition-all duration-300">
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Cash Flow Tracking</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">AP / AR Management</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">KPI Dashboards</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Dedicated U.S. Manager</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">CFO Guidance</span>
+            <!-- Expandable Section -->
+            <div class="mb-6">
+              <div class="group/expand relative">
+                <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>Everything BASIC Plan Plus</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Shows on Hover -->
+                <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Cash Flow Tracking</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>AP / AR Management</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>KPI Dashboards</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Dedicated U.S. Manager</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>CFO Guidance</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button
-              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
-              onclick="window.location.href='/contact'"
-            >
+            <!-- CTA Button -->
+            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
               Connect
             </button>
           </div>
         </div>
 
         <!-- Premium CFO Plan Card -->
-        <div class="pricing-card flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:z-10 overflow-hidden">
-          <!-- Orange Header -->
-          <div class="bg-[#ed7c00] px-6 py-8 text-center text-white">
-            <div class="flex justify-center mb-4">
-              <img src={premiumIcon.src} alt="Premium CFO Plan Icon" class="w-12 h-12" />
-            </div>
-            <h3 class="text-lg font-bold uppercase tracking-wide">PREMIUM CFO PLAN</h3>
+        <div class="group flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
+          <!-- Most Popular Badge -->
+          <div class="absolute top-3 left-1/2 transform -translate-x-1/2 bg-[#ed7c00] text-white text-xs font-bold px-4 py-2 rounded-full z-10">
+            Most Popular
           </div>
-          
           <!-- Card Content -->
-          <div class="px-6 py-8">
-            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
-              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
-            </p>
+          <div class="p-8 h-full flex flex-col pt-12">
+            <!-- Header -->
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">PREMIUM CFO PLAN</h3>
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Strategic Scaling</p>
+            </div>
 
+            <!-- Price -->
             <div class="text-center mb-8">
-              <div class="flex items-baseline justify-center gap-1 mb-2">
-                <span
-                  id="premium-price"
-                  class="text-4xl font-bold text-[#151515]"
-                >$3,000-$4,500</span>
-                <span
-                  id="premium-period"
-                  class="text-lg text-[#797979]"
-                > / month</span>
+              <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                $3,000–$4,500 <span class="text-lg font-normal">/ month</span>
               </div>
             </div>
 
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
-              <ul class="space-y-3 text-sm text-[#797979]">
+            <!-- Best For Section -->
+            <div class="mb-6 flex-grow">
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+              <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>$1M-$20M+ revenue</span>
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>$1M–$20M+ revenue</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>VC-backed companies</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Businesses preparing for fundraising, M&A, or audits</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Companies needing mature finance processes</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mb-8">
-              <button 
-                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
-                onclick="toggleExpansion('premium')"
-              >
-                <span>Everything BASIC Plan Plus</span>
-                <img src={downArrowIcon.src} alt="Expand" id="premium-arrow" class="w-4 h-4 transition-transform duration-300" />
-              </button>
-              
-              <!-- Expandable Content -->
-              <div id="premium-content" class="hidden overflow-hidden transition-all duration-300">
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Cash Flow Tracking (Deep Forecasting)</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">KPI Dashboards (Advanced)</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Investor Reporting</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Board-Ready Financials</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Forecasting & Modeling (Full)</span>
+            <!-- Expandable Section -->
+            <div class="mb-6">
+              <div class="group/expand relative">
+                <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>Everything STANDARD Plan Plus</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Shows on Hover -->
+                <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Cash Flow Tracking (Deep Forecasting)</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>KPI Dashboards (Advanced)</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Investor Reporting</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Board-Ready Financials</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Forecasting & Modeling (Full)</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button
-              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
-              onclick="window.location.href='/contact'"
-            >
+            <!-- CTA Button -->
+            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
               Connect
             </button>
           </div>
@@ -1090,7 +1109,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     }
   }
 
-  // Make toggleExpansion available globally
+  // Make functions available globally
   (window as any).toggleExpansion = toggleExpansion;
 
   // Add event listener to toggle
