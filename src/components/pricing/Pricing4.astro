@@ -645,63 +645,93 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
 
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Project-Based Pricing Card 1 -->
-          <div class="group bg-white rounded-2xl p-8 shadow-sm project-pricing-card flex flex-col h-full transition-all duration-300 hover:bg-[#151515] hover:shadow-xl cursor-pointer">
+          <div class="group bg-white rounded-2xl p-8 shadow-sm project-pricing-card transition-all duration-300 ease-in-out hover:bg-[#ed7c00] hover:shadow-xl cursor-pointer">
+            <!-- Header Section -->
             <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-[#ed7c00] rounded-full flex items-center justify-center mr-4 project-number-circle">
-                <span class="text-white font-bold text-lg">01</span>
+              <div class="w-12 h-12 bg-[#ed7c00] group-hover:bg-white rounded-full flex items-center justify-center mr-4 project-number-circle transition-all duration-300 ease-in-out">
+                <span class="text-white group-hover:text-[#ed7c00] font-bold text-lg transition-colors duration-300 ease-in-out">01</span>
               </div>
-              <h3 class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300">Project-Based Pricing</h3>
+              <h3 class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out">Project-Based Pricing</h3>
             </div>
             
-            <p class="text-[#797979] mb-6 group-hover:text-gray-300 transition-colors duration-300 flex-grow">
-              One-time or short-term engagements for cleanups, setups, acquisitions & 
-              audits and other special projects.
-            </p>
-            
-            <div class="mb-6">
-              <p class="text-sm text-[#797979] mb-2 group-hover:text-gray-300 transition-colors duration-300">Starting at</p>
-              <p class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
-                $1,000+ <span class="text-lg font-normal text-[#797979] group-hover:text-gray-300 transition-colors duration-300">(custom quote)</span>
+            <!-- Description Section - Fixed Height -->
+            <div class="h-16 mb-6">
+              <p class="text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">
+                One-time or short-term engagements for cleanups, setups, acquisitions & 
+                audits and other special projects.
               </p>
             </div>
             
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-2 group-hover:text-gray-300 transition-colors duration-300">✓ Projects include:</p>
+            <!-- Pricing Section - Locked Height Grid -->
+            <div class="grid grid-rows-0 mb-6 h-24">
+              <!-- Label Row - Fixed Height -->
+              <div class="flex items-end h-6">
+                <p class="text-sm text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">Starting at</p>
+              </div>
+              <!-- Value Row - Fixed Height with Overflow Control -->
+              <div class="flex items-start h-20 overflow-hidden">
+                <p class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">
+                  $1,000+ <span class="text-lg font-normal text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">(custom quote)</span>
+                </p>
+              </div>
             </div>
             
-            <button class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] rounded-lg font-medium hover:bg-[#ed7c00] hover:text-white transition-colors group-hover:bg-[#ed7c00] group-hover:text-white group-hover:border-[#ed7c00] mt-auto">
-              Request a Custom Project Quote
-            </button>
+            <!-- Features Section -->
+            <div class="mb-8">
+              <p class="text-sm text-[#797979] mb-2 group-hover:text-orange-100 transition-colors duration-300 ease-in-out">✓ Projects include:</p>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="mt-auto">
+              <button class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] group-hover:bg-white group-hover:text-[#ed7c00] group-hover:border-white rounded-lg font-medium transition-all duration-300 ease-in-out">
+                Request a Custom Project Quote
+              </button>
+            </div>
           </div>
 
           <!-- Project-Based Pricing Card 2 -->
-          <div class="group bg-white rounded-2xl p-8 shadow-sm project-pricing-card flex flex-col h-full transition-all duration-300 hover:bg-[#151515] hover:shadow-xl cursor-pointer">
+          <div class="group bg-white rounded-2xl p-8 shadow-sm project-pricing-card transition-all duration-300 ease-in-out hover:bg-[#ed7c00] hover:shadow-xl cursor-pointer">
+            <!-- Header Section -->
             <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-[#ed7c00] rounded-full flex items-center justify-center mr-4 project-number-circle">
-                <span class="text-white font-bold text-lg">02</span>
+              <div class="w-12 h-12 bg-[#ed7c00] group-hover:bg-white rounded-full flex items-center justify-center mr-4 project-number-circle transition-all duration-300 ease-in-out">
+                <span class="text-white group-hover:text-[#ed7c00] font-bold text-lg transition-colors duration-300 ease-in-out">02</span>
               </div>
-              <h3 class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300">Project-Based Pricing</h3>
+              <h3 class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out">Project-Based Pricing</h3>
             </div>
             
-            <p class="text-[#797979] mb-6 group-hover:text-gray-300 transition-colors duration-300 flex-grow">
-              Fractional software accountants at a fixed monthly cost — tailored to fit 
-              your team and systems.
-            </p>
-            
-            <div class="mb-6">
-              <p class="text-sm text-[#797979] mb-2 group-hover:text-gray-300 transition-colors duration-300">Pricing</p>
-              <p class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
-                Usually $0-$0 below U.S. hiring costs
+            <!-- Description Section - Fixed Height -->
+            <div class="h-16 mb-6">
+              <p class="text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">
+                Fractional software accountants at a fixed monthly cost — tailored to fit 
+                your team and systems.
               </p>
             </div>
             
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-2 group-hover:text-gray-300 transition-colors duration-300">✓ Plans available:</p>
+            <!-- Pricing Section - Locked Height Grid -->
+            <div class="grid grid-rows-0 mb-6 h-24">
+              <!-- Label Row - Fixed Height -->
+              <div class="flex items-end h-6">
+                <p class="text-sm text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">Pricing</p>
+              </div>
+              <!-- Value Row - Fixed Height with Overflow Control -->
+              <div class="flex items-start h-20 overflow-hidden">
+                <p class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">
+                  Usually $0-$0 below U.S. hiring costs
+                </p>
+              </div>
             </div>
             
-            <button class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] rounded-lg font-medium hover:bg-[#ed7c00] hover:text-white transition-colors group-hover:bg-[#ed7c00] group-hover:text-white group-hover:border-[#ed7c00] mt-auto">
-              Request a Custom Project Quote
-            </button>
+            <!-- Features Section -->
+            <div class="mb-8">
+              <p class="text-sm text-[#797979] mb-2 group-hover:text-orange-100 transition-colors duration-300 ease-in-out">✓ Plans available:</p>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="mt-auto">
+              <button class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] group-hover:bg-white group-hover:text-[#ed7c00] group-hover:border-white rounded-lg font-medium transition-all duration-300 ease-in-out">
+                Request a Custom Project Quote
+              </button>
+            </div>
           </div>
         </div>
       </div>
