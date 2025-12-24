@@ -1155,6 +1155,18 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   .partnership-hover {
     transition: opacity 0.3s ease;
   }
+
+  /* Project pricing card hover animation */
+  .project-pricing-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+  }
+
+  .project-pricing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
   
   /* Mobile responsive styles for Feature Comparison Table */
   @media (max-width: 767px) {
