@@ -55,280 +55,298 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
 
     <!-- Pricing Cards Container -->
     <div class="relative w-full mb-16">
-      <!-- Mobile: Stack vertically -->
+      <!-- Mobile: Stack vertically with desktop-style cards -->
       <div class="block md:hidden space-y-6">
         <!-- Card 1: Basic Plan - Mobile -->
-        <div class="pricing-card w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
-          <!-- Orange Header -->
-          <div class="bg-[#ed7c00] px-6 py-8 text-center text-white">
-            <div class="flex justify-center mb-4">
-              <img src={basicIcon.src} alt="Basic Plan Icon" class="w-12 h-12" />
-            </div>
-            <h3 class="text-lg font-bold uppercase tracking-wide">BASIC PLAN</h3>
-          </div>
-          
+        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer">
           <!-- Card Content -->
-          <div class="px-6 py-8">
-            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
-              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
-            </p>
+          <div class="p-8 h-full flex flex-col">
+            <!-- Header -->
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">BASIC PLAN</h3>
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Early-Stage Founders</p>
+            </div>
 
+            <!-- Price -->
             <div class="text-center mb-8">
-              <div class="flex items-baseline justify-center gap-1 mb-2">
-                <span
-                  id="basic-price-mobile"
-                  class="text-4xl font-bold text-[#151515]"
-                >$800-$1,200</span>
-                <span
-                  id="basic-period-mobile"
-                  class="text-lg text-[#797979]"
-                > / month</span>
+              <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                $800–$1,200 <span class="text-lg font-normal">/ month</span>
               </div>
             </div>
 
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
-              <ul class="space-y-3 text-sm text-[#797979]">
+            <!-- Best For Section -->
+            <div class="mb-6 flex-grow">
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+              <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Pre-revenue to $500k revenue</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Solo founders, consultants, early startups</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Businesses needing clean books + monthly reporting</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mb-8">
-              <button 
-                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
-                onclick="toggleExpansion('basic-mobile')"
-              >
-                <span>What's included</span>
-                <img src={downArrowIcon.src} alt="Expand" id="basic-mobile-arrow" class="w-4 h-4 transition-transform duration-300" />
-              </button>
-              
-              <!-- Expandable Content -->
-              <div id="basic-mobile-content" class="hidden overflow-hidden transition-all duration-300">
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Monthly Bookkeeping</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Monthly Financials</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Payroll Processing</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Basic Financial Reporting</span>
+            <!-- Expandable Section -->
+            <div class="mb-6">
+              <div class="group/expand relative">
+                <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>What's included</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Shows on Hover -->
+                <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Monthly Bookkeeping</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Monthly Financials</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Payroll Processing</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Basic Financial Reporting</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button
-              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
-              onclick="window.location.href='/contact'"
-            >
+            <!-- CTA Button -->
+            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
               Connect
             </button>
           </div>
         </div>
 
-        <!-- Card 2: Standard Plan (Most Popular) - Mobile -->
-        <div class="pricing-card w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg relative overflow-hidden">
-          
-          <!-- Orange Header -->
-          <div class="bg-[#ed7c00] px-6 py-8 pt-10 text-center text-white">
-            <div class="flex justify-center mb-4">
-              <img src={standardIcon.src} alt="Standard Plan Icon" class="w-12 h-12" />
-            </div>
-            <h3 class="text-base font-bold uppercase tracking-wide whitespace-nowrap">STANDARD PLAN (Most Popular)</h3>
-          </div>
-          
+        <!-- Card 2: Standard Plan - Mobile -->
+        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
           <!-- Card Content -->
-          <div class="px-6 py-8">
-            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
-              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
-            </p>
+          <div class="p-8 h-full flex flex-col">
+            <!-- Header -->
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">STANDARD PLAN</h3>
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Growing Companies</p>
+            </div>
 
+            <!-- Price -->
             <div class="text-center mb-8">
-              <div class="flex items-baseline justify-center gap-1 mb-2">
-                <span
-                  id="standard-price-mobile"
-                  class="text-4xl font-bold text-[#151515]"
-                >$1,500-$2,500</span>
-                <span
-                  id="standard-period-mobile"
-                  class="text-lg text-[#797979]"
-                > / month</span>
+              <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                $1,500–$2,500 <span class="text-lg font-normal">/ month</span>
               </div>
             </div>
 
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
-              <ul class="space-y-3 text-sm text-[#797979]">
+            <!-- Best For Section -->
+            <div class="mb-6 flex-grow">
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+              <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>$500k-$5M in revenue</span>
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>$500k–$5M in revenue</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Founder-led companies scaling operations</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Companies with AP/AR volume and recurring reporting needs</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mb-8">
-              <button 
-                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
-                onclick="toggleExpansion('standard-mobile')"
-              >
-                <span>Everything BASIC Plan Plus</span>
-                <img src={downArrowIcon.src} alt="Expand" id="standard-mobile-arrow" class="w-4 h-4 transition-transform duration-300" />
-              </button>
-              
-              <!-- Expandable Content -->
-              <div id="standard-mobile-content" class="hidden overflow-hidden transition-all duration-300">
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Cash Flow Tracking</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">AP / AR Management</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">KPI Dashboards</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Dedicated U.S. Manager</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">CFO Guidance</span>
+            <!-- Expandable Section -->
+            <div class="mb-6">
+              <div class="group/expand relative">
+                <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>Everything BASIC Plan Plus</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Shows on Hover -->
+                <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Cash Flow Tracking</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>AP / AR Management</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>KPI Dashboards</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Dedicated U.S. Manager</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>CFO Guidance</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button
-              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
-              onclick="window.location.href='/contact'"
-            >
+            <!-- CTA Button -->
+            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
               Connect
             </button>
           </div>
         </div>
 
         <!-- Card 3: Premium CFO Plan - Mobile -->
-        <div class="pricing-card w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
-          <!-- Orange Header -->
-          <div class="bg-[#ed7c00] px-6 py-8 text-center text-white">
-            <div class="flex justify-center mb-4">
-              <img src={premiumIcon.src} alt="Premium CFO Plan Icon" class="w-12 h-12" />
-            </div>
-            <h3 class="text-lg font-bold uppercase tracking-wide">PREMIUM CFO PLAN</h3>
+        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
+          <!-- Most Popular Badge -->
+          <div class="absolute top-3 left-1/2 transform -translate-x-1/2 bg-[#ed7c00] text-white text-xs font-bold px-4 py-2 rounded-full z-10">
+            Most Popular
           </div>
-          
           <!-- Card Content -->
-          <div class="px-6 py-8">
-            <p class="text-center text-[#151515] text-base leading-relaxed mb-8">
-              Strategic finance + execution. Your full accounting team + outsourced CFO at a fraction of U.S. hiring costs.
-            </p>
+          <div class="p-8 h-full flex flex-col pt-12">
+            <!-- Header -->
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">PREMIUM CFO PLAN</h3>
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Strategic Scaling</p>
+            </div>
 
+            <!-- Price -->
             <div class="text-center mb-8">
-              <div class="flex items-baseline justify-center gap-1 mb-2">
-                <span
-                  id="premium-price-mobile"
-                  class="text-4xl font-bold text-[#151515]"
-                >$3,000-$4,500</span>
-                <span
-                  id="premium-period-mobile"
-                  class="text-lg text-[#797979]"
-                > / month</span>
+              <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                $3,000–$4,500 <span class="text-lg font-normal">/ month</span>
               </div>
             </div>
 
-            <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-4 font-medium">Best for :</p>
-              <ul class="space-y-3 text-sm text-[#797979]">
+            <!-- Best For Section -->
+            <div class="mb-6 flex-grow">
+              <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+              <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>$1M-$20M+ revenue</span>
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>$1M–$20M+ revenue</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>VC-backed companies</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Businesses preparing for fundraising, M&A, or audits</span>
                 </li>
                 <li class="flex items-start">
-                  <img src={vectorIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
+                  <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                   <span>Companies needing mature finance processes</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mb-8">
-              <button 
-                class="text-[#151515] text-sm font-medium mb-4 flex items-center justify-between cursor-pointer w-full py-2"
-                onclick="toggleExpansion('premium-mobile')"
-              >
-                <span>Everything STANDARD Plan Plus</span>
-                <img src={downArrowIcon.src} alt="Expand" id="premium-mobile-arrow" class="w-4 h-4 transition-transform duration-300" />
-              </button>
-              
-              <!-- Expandable Content -->
-              <div id="premium-mobile-content" class="hidden overflow-hidden transition-all duration-300">
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Cash Flow Tracking (Deep Forecasting)</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">KPI Dashboards (Advanced)</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Investor Reporting</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Board-Ready Financials</span>
-                  </div>
-                  <div class="flex items-start">
-                    <img src={checkIcon.src} alt="Included" class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" />
-                    <span class="text-sm text-[#797979]">Forecasting & Modeling (Full)</span>
+            <!-- Expandable Section -->
+            <div class="mb-6">
+              <div class="group/expand relative">
+                <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>Everything STANDARD Plan Plus</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Shows on Hover -->
+                <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                  <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Cash Flow Tracking (Deep Forecasting)</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>KPI Dashboards (Advanced)</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Investor Reporting</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Board-Ready Financials</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Forecasting & Modeling (Full)</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button
-              class="w-full py-3 px-6 bg-[#ed7c00] text-white rounded-xl font-semibold hover:bg-[#d66a00] transition-colors"
-              onclick="window.location.href='/contact'"
-            >
+            <!-- CTA Button -->
+            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
               Connect
             </button>
           </div>
@@ -740,8 +758,12 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     <!-- Feature Comparison Table -->
     <div class="bg-white py-16 -mx-4 sm:-mx-6 lg:-mx-8 mb-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="overflow-x-auto">
-          <table class="w-full max-w-5xl mx-auto feature-table pricing-table-unified" id="pricing-table">
+        <!-- Mobile scroll hint -->
+        <div class="block md:hidden text-center mb-4">
+          <p class="text-sm text-gray-500">← Scroll horizontally to see all features →</p>
+        </div>
+        <div class="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+          <table class="w-full min-w-[600px] max-w-5xl mx-auto feature-table pricing-table-unified" id="pricing-table">
             <thead>
               <tr class="border-b border-gray-200 transition-all duration-300">
                 <th class="text-left py-6 px-6 text-[#151515] font-semibold text-lg w-1/4">Feature</th>
@@ -1153,6 +1175,86 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   // Initialize with monthly pricing (toggle unchecked by default)
   document.addEventListener("DOMContentLoaded", () => {
     updatePricing(false);
+    initScrollAnimations();
+  });
+
+  // Scroll-triggered animations for mobile
+  function initScrollAnimations(): void {
+    // Check if device is mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    if (!isMobile) return; // Only apply on mobile devices
+
+    // Create intersection observer for scroll animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -20px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          entry.target.classList.remove('animate-out');
+        } else {
+          // Don't hide headers and important content
+          if (!entry.target.matches('h1, h2, h3, .text-center.mb-12')) {
+            entry.target.classList.remove('animate-in');
+            entry.target.classList.add('animate-out');
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe pricing cards - but not headers
+    const pricingCards = document.querySelectorAll('.pricing-card:not(.text-center), .group:not(.text-center)');
+    pricingCards.forEach((card, index) => {
+      // Only add animation classes to non-header elements
+      if (!card.matches('h1, h2, h3, .text-center.mb-12')) {
+        card.classList.add('scroll-animate');
+        card.setAttribute('data-delay', (index * 100).toString());
+        observer.observe(card);
+      }
+    });
+
+    // Observe table sections
+    const table = document.getElementById('pricing-table');
+    if (table) {
+      table.classList.add('scroll-animate');
+      observer.observe(table);
+    }
+
+    // Observe project pricing cards
+    const projectCards = document.querySelectorAll('.project-pricing-card');
+    projectCards.forEach((card, index) => {
+      card.classList.add('scroll-animate');
+      card.setAttribute('data-delay', (index * 150).toString());
+      observer.observe(card);
+    });
+
+    // Observe partnership cards
+    const partnershipCards = document.querySelectorAll('.partnership-card');
+    partnershipCards.forEach((card, index) => {
+      card.classList.add('scroll-animate');
+      card.setAttribute('data-delay', (index * 100).toString());
+      observer.observe(card);
+    });
+
+    // Ensure headers are always visible
+    const headers = document.querySelectorAll('h1, h2, h3, .text-center.mb-12');
+    headers.forEach(header => {
+      header.style.opacity = '1';
+      header.style.transform = 'none';
+    });
+  }
+
+  // Re-initialize on window resize
+  window.addEventListener('resize', () => {
+    // Debounce resize events
+    clearTimeout((window as any).resizeTimeout);
+    (window as any).resizeTimeout = setTimeout(() => {
+      initScrollAnimations();
+    }, 250);
   });
 </script>
 
@@ -1219,15 +1321,47 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   
   /* Mobile responsive styles for Feature Comparison Table */
   @media (max-width: 767px) {
+    /* Enhanced mobile scrolling */
+    .overflow-x-auto {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #d1d5db #f3f4f6;
+    }
+    
+    /* Custom scrollbar for webkit browsers */
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: #f3f4f6;
+      border-radius: 3px;
+    }
+    
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 3px;
+    }
+    
+    .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+    
     .feature-table th,
     .feature-table td {
       padding: 12px 8px;
       font-size: 0.875rem;
+      white-space: nowrap;
     }
     
     .feature-table th:first-child,
     .feature-table td:first-child {
       padding-left: 12px;
+      min-width: 140px;
+      position: sticky;
+      left: 0;
+      background: white;
+      z-index: 2;
     }
     
     .feature-table th:last-child,
@@ -1260,6 +1394,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     /* Adjust table header for small screens */
     .feature-table thead th {
       white-space: nowrap;
+      min-width: 120px;
     }
     
     /* Reduce padding on very small screens */
@@ -1268,6 +1403,11 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       .feature-table td {
         padding: 8px 4px;
         font-size: 0.75rem;
+      }
+      
+      .feature-table th:first-child,
+      .feature-table td:first-child {
+        min-width: 120px;
       }
       
       .feature-table .text-lg {
@@ -1393,5 +1533,151 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   .table-hover-premium .premium-column *,
   .table-hover-premium .premium-cell * {
     color: white !important;
+  }
+
+  /* Mobile scroll animations */
+  @media (max-width: 768px) {
+    /* Initial state for scroll animations - but keep headers visible */
+    .scroll-animate:not(.text-center):not(h1):not(h2):not(h3) {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animate in when visible */
+    .scroll-animate.animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Animate out when not visible - but keep some opacity */
+    .scroll-animate.animate-out:not(.text-center):not(h1):not(h2):not(h3) {
+      opacity: 0.7;
+      transform: translateY(5px);
+    }
+
+    /* Keep headers always visible */
+    .text-center.mb-12,
+    h1, h2, h3, h4, h5, h6 {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    /* Staggered animation delays */
+    .scroll-animate[data-delay="0"] { transition-delay: 0ms; }
+    .scroll-animate[data-delay="100"] { transition-delay: 100ms; }
+    .scroll-animate[data-delay="150"] { transition-delay: 150ms; }
+    .scroll-animate[data-delay="200"] { transition-delay: 200ms; }
+    .scroll-animate[data-delay="250"] { transition-delay: 250ms; }
+    .scroll-animate[data-delay="300"] { transition-delay: 300ms; }
+
+    /* Enhanced card animations - start visible */
+    .pricing-card.scroll-animate,
+    .group.scroll-animate {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pricing-card.scroll-animate.animate-in,
+    .group.scroll-animate.animate-in {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    /* Project card animations - start visible */
+    .project-pricing-card.scroll-animate {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-pricing-card.scroll-animate.animate-in {
+      transform: translateX(0) rotateY(0deg);
+      opacity: 1;
+    }
+
+    /* Partnership card animations - start visible */
+    .partnership-card.scroll-animate {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .partnership-card.scroll-animate.animate-in {
+      transform: translateY(0) rotateX(0deg);
+      opacity: 1;
+    }
+
+    /* Table animation - start visible */
+    #pricing-table.scroll-animate {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #pricing-table.scroll-animate.animate-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Button hover effects on mobile */
+    .pricing-card button,
+    .project-pricing-card button {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pricing-card button:active,
+    .project-pricing-card button:active {
+      transform: scale(0.95);
+    }
+
+    /* Smooth color transitions for mobile */
+    .group {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .group:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enhanced mobile table scroll indicator */
+    .overflow-x-auto::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .overflow-x-auto::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .pricing-card,
+    .project-pricing-card,
+    .partnership-card {
+      transition: none !important;
+      transform: none !important;
+      animation: none !important;
+    }
   }
 </style>
