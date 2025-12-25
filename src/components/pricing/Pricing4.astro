@@ -348,7 +348,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             </div>
 
             <!-- CTA Button -->
-            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
+            <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
               Connect
             </button>
           </div>
@@ -505,7 +505,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             </div>
 
             <!-- CTA Button -->
-            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
+            <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
               Connect
             </button>
           </div>
@@ -648,7 +648,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             </div>
 
             <!-- CTA Button -->
-            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
+            <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
               Connect
             </button>
           </div>
@@ -806,7 +806,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             </div>
 
             <!-- CTA Button -->
-            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
+            <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
               Connect
             </button>
           </div>
@@ -964,7 +964,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             </div>
 
             <!-- CTA Button -->
-            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
+            <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
               Connect
             </button>
           </div>
@@ -1107,7 +1107,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             </div>
 
             <!-- CTA Button -->
-            <button class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white">
+            <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
               Connect
             </button>
           </div>
@@ -1223,7 +1223,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             
             <!-- CTA Button -->
             <div class="mt-auto">
-              <button class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] group-hover:bg-white group-hover:text-[#ed7c00] group-hover:border-white rounded-lg font-medium transition-all duration-300 ease-in-out">
+              <button onclick="scrollToContact()" class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] group-hover:bg-white group-hover:text-[#ed7c00] group-hover:border-white rounded-lg font-medium transition-all duration-300 ease-in-out cursor-pointer">
                 Request a Custom Project Quote
               </button>
             </div>
@@ -1299,7 +1299,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             
             <!-- CTA Button -->
             <div class="mt-auto">
-              <button class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] group-hover:bg-white group-hover:text-[#ed7c00] group-hover:border-white rounded-lg font-medium transition-all duration-300 ease-in-out">
+              <button onclick="scrollToContact()" class="w-full py-3 px-6 bg-transparent border border-[#ed7c00] text-[#ed7c00] group-hover:bg-white group-hover:text-[#ed7c00] group-hover:border-white rounded-lg font-medium transition-all duration-300 ease-in-out cursor-pointer">
                 Request a Custom Project Quote
               </button>
             </div>
@@ -1893,6 +1893,21 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       }, 100);
     });
   });
+
+  // Function to scroll to contact section with offset
+  function scrollToContact() {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      const offsetTop = contactSection.offsetTop - 40; // 30px offset
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  // Make scrollToContact function available globally
+  (window as any).scrollToContact = scrollToContact;
 </script>
 
 <style>
