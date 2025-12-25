@@ -20,9 +20,134 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   }
   
   .pricing-card:hover {
-    transform: scale(1.02) translateZ(0);
+    transform: scale(1.05) translateZ(0);
     z-index: 10;
     position: relative;
+  }
+
+  /* Fixed height container for expandable sections */
+  .expandable-section {
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Expandable content positioned absolutely to not affect card height */
+  .expandable-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: inherit;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  /* Show expandable content on hover */
+  .expandable-section:hover .expandable-content {
+    opacity: 1;
+    max-height: 400px;
+    pointer-events: auto;
+  }
+
+  /* Ensure the card background color is inherited in expanded content */
+  .group:hover .expandable-content {
+    background: #151515;
+    color: white;
+  }
+
+  .group .expandable-content {
+    background: white;
+    color: #151515;
+  }
+
+  /* Special handling for project-based pricing cards - HEIGHT EXPANSION */
+  .project-pricing-card {
+    height: auto;
+    overflow: visible;
+    transition: all 0.4s ease-in-out;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-pricing-card .mb-8:last-of-type {
+    flex-grow: 1;
+  }
+
+  .project-pricing-card .expandable-content {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    z-index: auto;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    pointer-events: none;
+    margin-top: 0.5rem;
+    padding: 0;
+  }
+
+  .project-pricing-card .expandable-section:hover .expandable-content,
+  .project-pricing-card .expandable-section.expanded .expandable-content {
+    opacity: 1;
+    max-height: 500px;
+    pointer-events: auto;
+    padding: 0.75rem 0;
+  }
+
+  /* Orange background for project card expanded content when card is hovered */
+  .project-pricing-card:hover .expandable-content {
+    background-color: rgba(237, 124, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .project-pricing-card:hover .expandable-content span {
+    color: white;
+  }
+
+  .project-pricing-card:hover .expandable-content .text-orange-500 {
+    color: white !important;
+  }
+
+  /* Remove card scaling for project cards */
+  .project-pricing-card.expandable-hovered {
+    transform: none;
+    z-index: auto;
+    position: static;
+  }
+
+  /* Arrow rotation on hover */
+  .expandable-section:hover .expand-arrow,
+  .expandable-section.expanded .expand-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* Mobile-specific styles for project cards */
+  @media (max-width: 768px) {
+    .project-pricing-card .expandable-section {
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .project-pricing-card .expandable-section:active {
+      opacity: 0.8;
+    }
+  }
+
+  /* Desktop hover styles */
+  @media (min-width: 769px) {
+    .project-pricing-card .expandable-section:hover {
+      opacity: 0.9;
+    }
   }
 </style>
 
@@ -75,7 +200,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       <!-- Mobile: Stack vertically with desktop-style cards -->
       <div class="block md:hidden space-y-6">
         <!-- Card 1: Basic Plan - Mobile -->
-        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer">
+        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.05] overflow-hidden cursor-pointer">
           <!-- Card Content -->
           <div class="p-8 h-full flex flex-col">
             <!-- Header -->
@@ -230,7 +355,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
         </div>
 
         <!-- Card 2: Standard Plan - Mobile -->
-        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
+        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.05] overflow-hidden cursor-pointer relative">
           <!-- Card Content -->
           <div class="p-8 h-full flex flex-col">
             <!-- Header -->
@@ -387,7 +512,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
         </div>
 
         <!-- Card 3: Premium CFO Plan - Mobile -->
-        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
+        <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.05] overflow-hidden cursor-pointer relative">
           <!-- Most Popular Badge -->
           <div class="absolute top-3 left-1/2 transform -translate-x-1/2 bg-[#ed7c00] text-white text-xs font-bold px-4 py-2 rounded-full z-10">
             Most Popular
@@ -998,7 +1123,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
           <p class="text-lg text-[#797979]">Choose the Accounting Model That Fits Your Project or Team</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
           <!-- Project-Based Pricing Card 1 -->
           <div class="group bg-white rounded-2xl p-8 shadow-sm project-pricing-card transition-all duration-300 ease-in-out hover:bg-[#ed7c00] hover:shadow-xl cursor-pointer">
             <!-- Header Section -->
@@ -1012,8 +1137,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             <!-- Description Section - Fixed Height -->
             <div class="h-16 mb-6">
               <p class="text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">
-                One-time or short-term engagements for cleanups, setups, acquisitions & 
-                audits and other special projects.
+                One-time or short-term engagements for cleanups, rebuilds, migrations & audits.
               </p>
             </div>
             
@@ -1025,15 +1149,76 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
               </div>
               <!-- Value Row - Fixed Height with Overflow Control -->
               <div class="flex items-start h-20 overflow-hidden">
-                <p class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">
-                  $1,000+ <span class="text-lg font-normal text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">(custom quote)</span>
+                <p class="text-2xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">
+                  $1,000+ <span class="text-base font-normal text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">(custom quote)</span>
                 </p>
               </div>
             </div>
             
             <!-- Features Section -->
             <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-2 group-hover:text-orange-100 transition-colors duration-300 ease-in-out">✓ Projects include:</p>
+              <div class="expandable-section">
+                <div class="flex items-center justify-between text-[#797979] group-hover:text-orange-100 transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>✓ Projects include:</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 expand-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Positioned Absolutely -->
+                <div class="expandable-content">
+                  <div class="p-4 space-y-2 text-sm">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Clean-ups & catch-up bookkeeping</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Software migration (QuickBooks → Xero, or Xero → QBO)</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Chart of accounts rebuild</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Financial statement restatement</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Due diligence preparation</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Audit readiness</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Systems automation & workflow design</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Controller or CFO consulting</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <!-- CTA Button -->
@@ -1051,14 +1236,13 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
               <div class="w-12 h-12 bg-[#ed7c00] group-hover:bg-white rounded-full flex items-center justify-center mr-4 project-number-circle transition-all duration-300 ease-in-out">
                 <span class="text-white group-hover:text-[#ed7c00] font-bold text-lg transition-colors duration-300 ease-in-out">02</span>
               </div>
-              <h3 class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out">Project-Based Pricing</h3>
+              <h3 class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">Full-time Accounting <br/>Staffing (FTE model)</h3>
             </div>
             
             <!-- Description Section - Fixed Height -->
             <div class="h-16 mb-6">
               <p class="text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out">
-                Fractional software accountants at a fixed monthly cost — tailored to fit 
-                your team and systems.
+                Dedicated offshore accountants at a fixed monthly cost — trained on U.S. GAAP and your systems.
               </p>
             </div>
             
@@ -1070,15 +1254,47 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
               </div>
               <!-- Value Row - Fixed Height with Overflow Control -->
               <div class="flex items-start h-20 overflow-hidden">
-                <p class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">
-                  Usually $0-$0 below U.S. hiring costs
+                <p class="text-xl font-semibold text-[#151515] group-hover:text-white transition-colors duration-300 ease-in-out leading-tight">
+                  Customized based on experience, hours, and scope.
+                  <span class="text-sm font-normal text-[#797979] group-hover:text-orange-100 transition-colors duration-300 ease-in-out block mt-1">(Usually 40–60% below U.S. hiring costs)</span>
                 </p>
               </div>
             </div>
             
             <!-- Features Section -->
             <div class="mb-8">
-              <p class="text-sm text-[#797979] mb-2 group-hover:text-orange-100 transition-colors duration-300 ease-in-out">✓ Plans available:</p>
+              <div class="expandable-section">
+                <div class="flex items-center justify-between text-[#797979] group-hover:text-orange-100 transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                  <span>✓ Roles available:</span>
+                  <svg class="w-4 h-4 transition-transform duration-300 expand-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+                
+                <!-- Expanded Content - Positioned Absolutely -->
+                <div class="expandable-content">
+                  <div class="p-4 space-y-2 text-sm">
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Full-time Bookkeeper</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Senior Accountant</span>
+                    </div>
+                    <div class="flex items-start">
+                      <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>Accounting Manager</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <!-- CTA Button -->
@@ -1592,6 +1808,90 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     (window as any).resizeTimeout = setTimeout(() => {
       initScrollAnimations();
     }, 250);
+  });
+
+  // Add hover effect for project card expandable sections
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectCards = document.querySelectorAll('.project-pricing-card');
+    
+    projectCards.forEach(card => {
+      const expandableSections = card.querySelectorAll('.expandable-section');
+      
+      expandableSections.forEach(section => {
+        // Desktop: hover behavior
+        if (window.innerWidth > 768) {
+          section.addEventListener('mouseenter', () => {
+            section.classList.add('expanded');
+          });
+          
+          section.addEventListener('mouseleave', () => {
+            section.classList.remove('expanded');
+          });
+        } else {
+          // Mobile: click behavior
+          section.addEventListener('click', (e) => {
+            e.preventDefault();
+            section.classList.toggle('expanded');
+            
+            // Close other expanded sections in the same card
+            expandableSections.forEach(otherSection => {
+              if (otherSection !== section) {
+                otherSection.classList.remove('expanded');
+              }
+            });
+          });
+        }
+      });
+    });
+
+    // Handle window resize to switch between hover and click
+    window.addEventListener('resize', () => {
+      const projectCards = document.querySelectorAll('.project-pricing-card');
+      
+      projectCards.forEach(card => {
+        const expandableSections = card.querySelectorAll('.expandable-section');
+        
+        expandableSections.forEach(section => {
+          // Remove all event listeners by cloning the element
+          const newSection = section.cloneNode(true);
+          section.parentNode?.replaceChild(newSection, section);
+        });
+      });
+      
+      // Re-initialize with new behavior
+      setTimeout(() => {
+        const projectCards = document.querySelectorAll('.project-pricing-card');
+        
+        projectCards.forEach(card => {
+          const expandableSections = card.querySelectorAll('.expandable-section');
+          
+          expandableSections.forEach(section => {
+            if (window.innerWidth > 768) {
+              // Desktop: hover
+              section.addEventListener('mouseenter', () => {
+                section.classList.add('expanded');
+              });
+              
+              section.addEventListener('mouseleave', () => {
+                section.classList.remove('expanded');
+              });
+            } else {
+              // Mobile: click
+              section.addEventListener('click', (e) => {
+                e.preventDefault();
+                section.classList.toggle('expanded');
+                
+                expandableSections.forEach(otherSection => {
+                  if (otherSection !== section) {
+                    otherSection.classList.remove('expanded');
+                  }
+                });
+              });
+            }
+          });
+        });
+      }, 100);
+    });
   });
 </script>
 
