@@ -2392,51 +2392,60 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       const pricingCards = document.querySelectorAll('.group');
       const expandableSections = document.querySelectorAll('.group\\/expand, .group\\/addons');
       
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      
       // Handle pricing card touch interactions
       pricingCards.forEach(card => {
         if (card.classList.contains('w-full') || card.classList.contains('flex-1')) {
           let touchTimeout;
           let isActive = false;
           
-          // Touch start - activate card
+          // Touch start - record position and time
           card.addEventListener('touchstart', function(e) {
-            // Prevent default to avoid scrolling issues
-            e.preventDefault();
+            touchStartY = e.touches[0].clientY;
+            touchStartTime = Date.now();
+          }, { passive: true });
+          
+          // Touch end - check if it was a tap (not scroll)
+          card.addEventListener('touchend', function(e) {
+            const touchEndY = e.changedTouches[0].clientY;
+            const touchEndTime = Date.now();
+            const touchDuration = touchEndTime - touchStartTime;
+            const touchDistance = Math.abs(touchEndY - touchStartY);
             
-            // Clear any existing timeout
-            clearTimeout(touchTimeout);
-            
-            // Deactivate all other cards first
-            pricingCards.forEach(otherCard => {
-              if (otherCard !== card) {
-                otherCard.classList.remove('mobile-touch-active');
-              }
-            });
-            
-            // Toggle current card
-            if (isActive) {
-              card.classList.remove('mobile-touch-active');
-              isActive = false;
-            } else {
-              card.classList.add('mobile-touch-active');
-              isActive = true;
+            // Only activate if it was a quick tap with minimal movement
+            if (touchDuration < 300 && touchDistance < 10) {
+              // Clear any existing timeout
+              clearTimeout(touchTimeout);
               
-              // Auto-deactivate after 3 seconds
-              touchTimeout = setTimeout(() => {
+              // Deactivate all other cards first
+              pricingCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                  otherCard.classList.remove('mobile-touch-active');
+                }
+              });
+              
+              // Toggle current card
+              if (isActive) {
                 card.classList.remove('mobile-touch-active');
                 isActive = false;
-              }, 3000);
+              } else {
+                card.classList.add('mobile-touch-active');
+                isActive = true;
+                
+                // Auto-deactivate after 4 seconds
+                touchTimeout = setTimeout(() => {
+                  card.classList.remove('mobile-touch-active');
+                  isActive = false;
+                }, 4000);
+              }
             }
-          }, { passive: false });
-          
-          // Touch end - keep the state
-          card.addEventListener('touchend', function(e) {
-            e.preventDefault();
-          }, { passive: false });
+          }, { passive: true });
         }
       });
       
-      // Handle expandable sections
+      // Handle expandable sections with click events instead of touch
       expandableSections.forEach(section => {
         const trigger = section.querySelector('.cursor-pointer');
         const content = section.querySelector('.opacity-0');
@@ -2445,8 +2454,8 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
         if (trigger && content) {
           let isExpanded = false;
           
-          trigger.addEventListener('touchstart', function(e) {
-            e.preventDefault();
+          // Use click event which works well on mobile without blocking scroll
+          trigger.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent card activation
             
             // Toggle expansion
@@ -2473,26 +2482,30 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
               if (arrow) arrow.classList.add('mobile-expand-active');
               isExpanded = true;
             }
-          }, { passive: false });
+          });
         }
       });
       
-      // Handle taps outside cards to deactivate
-      document.addEventListener('touchstart', function(e) {
+      // Handle taps outside cards to deactivate (using click for better compatibility)
+      document.addEventListener('click', function(e) {
         const isInsideCard = e.target.closest('.group');
-        if (!isInsideCard) {
-          // Deactivate all cards
-          pricingCards.forEach(card => {
-            card.classList.remove('mobile-touch-active');
-          });
-          
-          // Close all expanded sections
-          expandableSections.forEach(section => {
-            const content = section.querySelector('.opacity-0');
-            const arrow = section.querySelector('svg');
-            if (content) content.classList.remove('mobile-expand-active');
-            if (arrow) arrow.classList.remove('mobile-expand-active');
-          });
+        const isExpandTrigger = e.target.closest('.cursor-pointer');
+        
+        if (!isInsideCard || isExpandTrigger) {
+          // Deactivate all cards if clicking outside or on expand triggers
+          if (!isInsideCard) {
+            pricingCards.forEach(card => {
+              card.classList.remove('mobile-touch-active');
+            });
+            
+            // Close all expanded sections
+            expandableSections.forEach(section => {
+              const content = section.querySelector('.opacity-0');
+              const arrow = section.querySelector('svg');
+              if (content) content.classList.remove('mobile-expand-active');
+              if (arrow) arrow.classList.remove('mobile-expand-active');
+            });
+          }
         }
       });
       
@@ -2500,15 +2513,6 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       const style = document.createElement('style');
       style.textContent = `
         @media (max-width: 768px) {
-          .group:active {
-            opacity: 0.9;
-            transform: scale(0.98);
-          }
-          
-          .cursor-pointer:active {
-            opacity: 0.7;
-          }
-          
           /* Smooth transitions for mobile interactions */
           .group {
             transition: all 0.3s ease-in-out;
@@ -2523,6 +2527,13 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             min-height: 44px;
             display: flex;
             align-items: center;
+            -webkit-tap-highlight-color: rgba(237, 124, 0, 0.2);
+          }
+          
+          /* Better touch feedback */
+          .cursor-pointer:active {
+            opacity: 0.7;
+            transform: scale(0.98);
           }
         }
       `;
