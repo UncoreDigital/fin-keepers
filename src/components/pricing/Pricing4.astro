@@ -158,6 +158,46 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   .partnership-hover {
     border-radius: 16px; /* Match the card border radius */
   }
+
+  /* Mobile touch states */
+  @media (max-width: 768px) {
+    .mobile-touch-active {
+      background-color: #151515 !important;
+      color: white !important;
+      transform: scale(1.02) !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .mobile-touch-active h3,
+    .mobile-touch-active p,
+    .mobile-touch-active span,
+    .mobile-touch-active .text-\[\#151515\] {
+      color: white !important;
+    }
+
+    .mobile-touch-active .text-\[\#797979\] {
+      color: rgb(209, 213, 219) !important;
+    }
+
+    .mobile-touch-active .text-orange-500 {
+      color: white !important;
+    }
+
+    .mobile-touch-active button {
+      background-color: #ed7c00 !important;
+      color: white !important;
+    }
+
+    .mobile-expand-active {
+      opacity: 1 !important;
+      max-height: 500px !important;
+      pointer-events: auto !important;
+    }
+
+    .mobile-expand-active .expand-arrow {
+      transform: rotate(180deg) !important;
+    }
+  }
 </style>
 
 <div class="main-container bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mx-auto">
@@ -2343,3 +2383,150 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     }
   }
 </style>
+
+<script>
+  // Mobile touch interactions for pricing cards
+  if ('ontouchstart' in window) {
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all pricing cards (both mobile and desktop versions)
+      const pricingCards = document.querySelectorAll('.group');
+      const expandableSections = document.querySelectorAll('.group\\/expand, .group\\/addons');
+      
+      // Handle pricing card touch interactions
+      pricingCards.forEach(card => {
+        if (card.classList.contains('w-full') || card.classList.contains('flex-1')) {
+          let touchTimeout;
+          let isActive = false;
+          
+          // Touch start - activate card
+          card.addEventListener('touchstart', function(e) {
+            // Prevent default to avoid scrolling issues
+            e.preventDefault();
+            
+            // Clear any existing timeout
+            clearTimeout(touchTimeout);
+            
+            // Deactivate all other cards first
+            pricingCards.forEach(otherCard => {
+              if (otherCard !== card) {
+                otherCard.classList.remove('mobile-touch-active');
+              }
+            });
+            
+            // Toggle current card
+            if (isActive) {
+              card.classList.remove('mobile-touch-active');
+              isActive = false;
+            } else {
+              card.classList.add('mobile-touch-active');
+              isActive = true;
+              
+              // Auto-deactivate after 3 seconds
+              touchTimeout = setTimeout(() => {
+                card.classList.remove('mobile-touch-active');
+                isActive = false;
+              }, 3000);
+            }
+          }, { passive: false });
+          
+          // Touch end - keep the state
+          card.addEventListener('touchend', function(e) {
+            e.preventDefault();
+          }, { passive: false });
+        }
+      });
+      
+      // Handle expandable sections
+      expandableSections.forEach(section => {
+        const trigger = section.querySelector('.cursor-pointer');
+        const content = section.querySelector('.opacity-0');
+        const arrow = section.querySelector('svg');
+        
+        if (trigger && content) {
+          let isExpanded = false;
+          
+          trigger.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent card activation
+            
+            // Toggle expansion
+            if (isExpanded) {
+              content.classList.remove('mobile-expand-active');
+              if (arrow) arrow.classList.remove('mobile-expand-active');
+              isExpanded = false;
+            } else {
+              // Close other expanded sections in the same card
+              const parentCard = section.closest('.group');
+              if (parentCard) {
+                const otherSections = parentCard.querySelectorAll('.group\\/expand, .group\\/addons');
+                otherSections.forEach(otherSection => {
+                  if (otherSection !== section) {
+                    const otherContent = otherSection.querySelector('.opacity-0');
+                    const otherArrow = otherSection.querySelector('svg');
+                    if (otherContent) otherContent.classList.remove('mobile-expand-active');
+                    if (otherArrow) otherArrow.classList.remove('mobile-expand-active');
+                  }
+                });
+              }
+              
+              content.classList.add('mobile-expand-active');
+              if (arrow) arrow.classList.add('mobile-expand-active');
+              isExpanded = true;
+            }
+          }, { passive: false });
+        }
+      });
+      
+      // Handle taps outside cards to deactivate
+      document.addEventListener('touchstart', function(e) {
+        const isInsideCard = e.target.closest('.group');
+        if (!isInsideCard) {
+          // Deactivate all cards
+          pricingCards.forEach(card => {
+            card.classList.remove('mobile-touch-active');
+          });
+          
+          // Close all expanded sections
+          expandableSections.forEach(section => {
+            const content = section.querySelector('.opacity-0');
+            const arrow = section.querySelector('svg');
+            if (content) content.classList.remove('mobile-expand-active');
+            if (arrow) arrow.classList.remove('mobile-expand-active');
+          });
+        }
+      });
+      
+      // Add visual feedback for touch interactions
+      const style = document.createElement('style');
+      style.textContent = `
+        @media (max-width: 768px) {
+          .group:active {
+            opacity: 0.9;
+            transform: scale(0.98);
+          }
+          
+          .cursor-pointer:active {
+            opacity: 0.7;
+          }
+          
+          /* Smooth transitions for mobile interactions */
+          .group {
+            transition: all 0.3s ease-in-out;
+          }
+          
+          .opacity-0 {
+            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+          }
+          
+          /* Ensure touch targets are large enough */
+          .cursor-pointer {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  }
+</script>
