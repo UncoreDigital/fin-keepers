@@ -46,6 +46,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
+    margin-top: 0.5rem;
   }
 
   /* Show expandable content on hover */
@@ -64,6 +65,29 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   .group .expandable-content {
     background: white;
     color: #151515;
+  }
+
+  /* Ensure main pricing cards maintain fixed height and proper z-index */
+  .pricing-card {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    min-height: 600px; /* Set a consistent minimum height */
+  }
+
+  .pricing-card:hover {
+    z-index: 30;
+  }
+
+  .pricing-card .expandable-section {
+    position: relative;
+  }
+
+  /* Ensure cards don't affect each other's height */
+  @media (min-width: 768px) {
+    .pricing-cards-container .pricing-card {
+      align-self: flex-start; /* Prevent stretching */
+    }
   }
 
   /* Special handling for project-based pricing cards - HEIGHT EXPANSION */
@@ -705,7 +729,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       </div>
 
       <!-- Desktop: Three cards in a row -->
-      <div class="hidden md:flex gap-6 justify-center items-stretch max-w-6xl mx-auto pricing-cards-container">
+      <div class="hidden md:flex gap-6 justify-center items-start max-w-6xl mx-auto pricing-cards-container">
         <!-- Basic Plan Card -->
         <div class="pricing-card group flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl overflow-hidden cursor-pointer transform-gpu">
           <!-- Card Content -->
