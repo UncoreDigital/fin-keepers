@@ -134,13 +134,22 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   }
 
   .project-pricing-card:hover .expandable-content span {
-    /* color: white; */
-    color: black;
+    color: white;
   }
 
   .project-pricing-card:hover .expandable-content .text-orange-500 {
-    /* color: white !important; */
-    color: black !important;
+    color: white !important;
+  }
+
+  /* Mobile-specific overrides for project pricing card hover colors */
+  @media (max-width: 768px) {
+    .project-pricing-card:hover .expandable-content span {
+      color: black !important;
+    }
+
+    .project-pricing-card:hover .expandable-content .text-orange-500 {
+      color: black !important;
+    }
   }
 
   /* Remove card scaling for project cards */
