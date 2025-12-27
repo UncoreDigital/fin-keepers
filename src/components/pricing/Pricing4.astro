@@ -154,6 +154,22 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     transform: rotate(180deg);
   }
 
+  /* Dot navigation styles */
+  .swipe-dot {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .swipe-dot.active {
+    background-color: #ed7c00 !important;
+    transform: scale(1.2);
+  }
+  
+  .swipe-dot:hover {
+    background-color: #ed7c00;
+    opacity: 0.7;
+  }
+
   /* Mobile-specific styles for project cards */
   @media (max-width: 768px) {
     .project-pricing-card .expandable-section {
@@ -271,7 +287,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     <!-- Pricing Cards Container -->
     <div class="relative w-full mb-16">
       <!-- Mobile: Stack vertically with desktop-style cards -->
-      <div class="block md:hidden space-y-6">
+      <div class="hidden space-y-6">
         <!-- Card 1: Basic Plan - Mobile -->
         <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.05] overflow-hidden cursor-pointer">
           <!-- Card Content -->
@@ -728,8 +744,487 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
         </div>
       </div>
 
+      
+
+      <!-- Mobile: Swipeable Cards -->
+      <div class="block md:hidden">
+        
+        <!-- Swipeable Cards Container -->
+        <div class="swipe-container relative overflow-hidden">
+          <div class="swipe-wrapper flex transition-transform duration-300 ease-out" id="swipeWrapper">
+            <!-- Card 1: Basic Plan - Swipe Version -->
+            <div class="swipe-slide w-full flex-shrink-0 px-4">
+              <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer">
+                <!-- Card Content -->
+                <div class="p-8 h-full flex flex-col">
+                  <!-- Header -->
+                  <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">BASIC PLAN</h3>
+                    <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Early-Stage Founders</p>
+                  </div>
+
+                  <!-- Price -->
+                  <div class="text-center mb-8">
+                    <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                      $800–$1,200 <span class="text-lg font-normal">/ month</span>
+                    </div>
+                  </div>
+
+                  <!-- Best For Section -->
+                  <div class="mb-6 flex-grow">
+                    <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+                    <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Pre-revenue to $500k revenue</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Solo founders, consultants, early startups</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Businesses needing clean books + monthly reporting</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Expandable Section -->
+                  <div class="mb-6">
+                    <div class="group/expand relative">
+                      <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                        <span>What's included</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                      </div>
+                      
+                      <!-- Expanded Content - Shows on Hover -->
+                      <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Monthly bookkeeping (QuickBooks Online or Xero)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Bank & credit card reconciliations</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Monthly financial statements (P&L, Balance Sheet, Cash Flow)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Payroll support (Gusto, ADP)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Accounts payable recording</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Receipt management (Dext/Hubdoc)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Email support + monthly check-in</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Tax-ready books for your CPA</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dedicated accounting pod</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add-ons Available Section -->
+                  <div class="mb-6">
+                    <div class="group/addons relative">
+                      <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                        <span>Add-ons available</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover/addons:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                      </div>
+                      
+                      <!-- Expanded Content - Shows on Hover -->
+                      <div class="opacity-0 max-h-0 group-hover/addons:opacity-100 group-hover/addons:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Historical cleanup</span>
+                          </div>
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Catch-up bookkeeping</span>
+                          </div>
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Sales tax setup</span>
+                          </div>
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Inventory management</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Button -->
+                  <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
+                    Connect
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Standard Plan - Swipe Version -->
+            <div class="swipe-slide w-full flex-shrink-0 px-4">
+              <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
+                <!-- Card Content -->
+                <div class="p-8 h-full flex flex-col">
+                  <!-- Header -->
+                  <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">STANDARD PLAN</h3>
+                    <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Growing Companies</p>
+                  </div>
+
+                  <!-- Price -->
+                  <div class="text-center mb-8">
+                    <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                      $1,500–$2,500 <span class="text-lg font-normal">/ month</span>
+                    </div>
+                  </div>
+
+                  <!-- Best For Section -->
+                  <div class="mb-6 flex-grow">
+                    <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+                    <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>$500k–$5M in revenue</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Founder-led companies scaling operations</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Companies with AP/AR volume and recurring reporting needs</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Expandable Section -->
+                  <div class="mb-6">
+                    <div class="group/expand relative">
+                      <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                        <span>Everything BASIC Plan Plus</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                      </div>
+                      
+                      <!-- Expanded Content - Shows on Hover -->
+                      <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Weekly bookkeeping</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Accounts Payable & Receivable processing</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Cash flow tracking and projections</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Custom monthly reporting package</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Department-level reporting (if applicable)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>KPI dashboards (monthly)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dedicated U.S. account manager</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Priority support & faster SLAs</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Budget vs actual reporting</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Support for investor updates & internal management</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add-ons Available Section -->
+                  <div class="mb-6">
+                    <div class="group/addons relative">
+                      <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                        <span>Add-ons available</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover/addons:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                      </div>
+                      
+                      <!-- Expanded Content - Shows on Hover -->
+                      <div class="opacity-0 max-h-0 group-hover/addons:opacity-100 group-hover/addons:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Advanced dashboards (PowerBI, Tableau)</span>
+                          </div>
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Inventory or multi-entity consolidation</span>
+                          </div>
+                          <div class="flex items-start">
+                            <span class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300">•</span>
+                            <span>Revenue recognition & accruals</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Button -->
+                  <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
+                    Connect
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Premium CFO Plan - Swipe Version -->
+            <div class="swipe-slide w-full flex-shrink-0 px-4">
+              <div class="group w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl hover:scale-[1.02] overflow-hidden cursor-pointer relative">
+                <!-- Most Popular Badge -->
+                <div class="absolute top-3 left-1/2 transform -translate-x-1/2 bg-[#ed7c00] text-white text-xs font-bold px-4 py-2 rounded-full z-10">
+                  Most Popular
+                </div>
+                <!-- Card Content -->
+                <div class="p-8 h-full flex flex-col pt-12">
+                  <!-- Header -->
+                  <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300 mb-2">PREMIUM CFO PLAN</h3>
+                    <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">For Strategic Scaling</p>
+                  </div>
+
+                  <!-- Price -->
+                  <div class="text-center mb-8">
+                    <div class="text-3xl font-bold text-[#151515] group-hover:text-white transition-colors duration-300">
+                      $3,000–$4,500 <span class="text-lg font-normal">/ month</span>
+                    </div>
+                  </div>
+
+                  <!-- Best For Section -->
+                  <div class="mb-6 flex-grow">
+                    <p class="text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300 mb-3 font-medium">Best for :</p>
+                    <ul class="space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>$1M–$20M+ revenue</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>VC-backed companies</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Businesses preparing for fundraising, M&A, or audits</span>
+                      </li>
+                      <li class="flex items-start">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Companies needing mature finance processes</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Expandable Section -->
+                  <div class="mb-6">
+                    <div class="group/expand relative">
+                      <div class="flex items-center justify-between text-[#151515] group-hover:text-white transition-colors duration-300 text-sm font-medium mb-2 cursor-pointer hover:text-[#ed7c00] group-hover:hover:text-white">
+                        <span>Everything STANDARD Plan Plus</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover/expand:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                      </div>
+                      
+                      <!-- Expanded Content - Shows on Hover -->
+                      <div class="opacity-0 max-h-0 group-hover/expand:opacity-100 group-hover/expand:max-h-96 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pt-3 space-y-2 text-sm text-[#797979] group-hover:text-gray-300 transition-colors duration-300">
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dedicated part-time CFO</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Monthly CFO strategy sessions</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>13-week cash flow forecasting</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Financial modeling & runway planning</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Board-ready reporting</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Investor reporting package</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>KPI dashboards & performance reviews</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Pricing and margin analysis</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Forecast vs actuals</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Budgeting + scenario modeling</span>
+                          </div>
+                          <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-orange-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Tax advisor coordination (CPA, audit firms)</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CTA Button -->
+                  <button onclick="scrollToContact()" class="w-full py-3 px-6 border-2 border-[#ed7c00] text-[#ed7c00] rounded-lg font-semibold transition-all duration-300 group-hover:bg-[#ed7c00] group-hover:text-white cursor-pointer">
+                    Connect
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dot Navigation -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <button class="swipe-dot w-3 h-3 rounded-full bg-gray-300 transition-all duration-200 active" data-slide="0"></button>
+            <button class="swipe-dot w-3 h-3 rounded-full bg-gray-300 transition-all duration-200" data-slide="1"></button>
+            <button class="swipe-dot w-3 h-3 rounded-full bg-gray-300 transition-all duration-200" data-slide="2"></button>
+          </div>
+        </div>
+      </div>
+
       <!-- Desktop: Three cards in a row -->
-      <div class="hidden md:flex gap-6 justify-center items-start max-w-6xl mx-auto pricing-cards-container">
+      <div class="hidden lg:flex gap-6 justify-center items-start max-w-6xl mx-auto pricing-cards-container">
         <!-- Basic Plan Card -->
         <div class="pricing-card group flex-1 max-w-sm bg-white rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:bg-[#151515] hover:shadow-2xl overflow-hidden cursor-pointer transform-gpu">
           <!-- Card Content -->
@@ -1773,7 +2268,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   // Function to toggle expansion of pricing card content
   function toggleExpansion(cardType: string): void {
     const content = document.getElementById(`${cardType}-content`);
-    const arrow = document.getElementById(`${cardType}-arrow`);
+    const arrow = document.getElementById(`${cardType}-arrow`) as HTMLElement;
     
     if (content && arrow) {
       if (content.classList.contains('hidden')) {
@@ -1803,7 +2298,110 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
   document.addEventListener("DOMContentLoaded", () => {
     updatePricing(false);
     initScrollAnimations();
+    initMobilePricingTabs();
+    initSwipeNavigation();
   });
+
+  // Initialize swipe navigation with dots
+  function initSwipeNavigation(): void {
+    const swipeWrapper = document.getElementById('swipeWrapper') as HTMLElement;
+    const dots = document.querySelectorAll('.swipe-dot') as NodeListOf<HTMLElement>;
+    const tabButtons = document.querySelectorAll('#mobileTabs .tab-button') as NodeListOf<HTMLElement>;
+    const indicators = document.querySelectorAll('.tabs-indicators .indicator') as NodeListOf<HTMLElement>;
+    
+    if (!swipeWrapper || dots.length === 0) return;
+    
+    let currentSlide = 0;
+    const totalSlides = dots.length;
+    
+    // Function to update slide position
+    function updateSlide(slideIndex: number): void {
+      const translateX = -slideIndex * 100;
+      swipeWrapper.style.transform = `translateX(${translateX}%)`;
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideIndex);
+      });
+      
+      // Update tab buttons
+      tabButtons.forEach((btn, index) => {
+        btn.classList.toggle('active-tab', index === slideIndex);
+      });
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === slideIndex);
+      });
+      
+      currentSlide = slideIndex;
+    }
+    
+    // Add click event listeners to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        updateSlide(index);
+      });
+    });
+    
+    // Add click event listeners to tab buttons (sync with dots)
+    tabButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        updateSlide(index);
+      });
+    });
+    
+    // Touch/swipe functionality
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    
+    swipeWrapper.addEventListener('touchstart', (e: Event) => {
+      const touchEvent = e as TouchEvent;
+      startX = touchEvent.touches[0].clientX;
+      startY = touchEvent.touches[0].clientY;
+      isDragging = true;
+    }, { passive: true });
+    
+    swipeWrapper.addEventListener('touchmove', (e: Event) => {
+      if (!isDragging) return;
+      
+      const touchEvent = e as TouchEvent;
+      const currentX = touchEvent.touches[0].clientX;
+      const currentY = touchEvent.touches[0].clientY;
+      const diffX = startX - currentX;
+      const diffY = startY - currentY;
+      
+      // Only handle horizontal swipes
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+    
+    swipeWrapper.addEventListener('touchend', (e: Event) => {
+      if (!isDragging) return;
+      
+      const touchEvent = e as TouchEvent;
+      const endX = touchEvent.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      
+      // Minimum swipe distance
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0 && currentSlide < totalSlides - 1) {
+          // Swipe left - next slide
+          updateSlide(currentSlide + 1);
+        } else if (diffX < 0 && currentSlide > 0) {
+          // Swipe right - previous slide
+          updateSlide(currentSlide - 1);
+        }
+      }
+      
+      isDragging = false;
+    }, { passive: true });
+    
+    // Initialize first slide
+    updateSlide(0);
+  }
 
   // Scroll-triggered animations for mobile
   function initScrollAnimations(): void {
@@ -1868,7 +2466,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
     });
 
     // Ensure headers are always visible
-    const headers = document.querySelectorAll('h1, h2, h3, .text-center.mb-12');
+    const headers = document.querySelectorAll('h1, h2, h3, .text-center.mb-12') as NodeListOf<HTMLElement>;
     headers.forEach(header => {
       header.style.opacity = '1';
       header.style.transform = 'none';
@@ -1883,6 +2481,43 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       initScrollAnimations();
     }, 250);
   });
+
+  // Mobile-only: initialize scrollable pricing tabs and indicators
+  function initMobilePricingTabs(): void {
+    const tabsList = document.getElementById('mobileTabs');
+    if (!tabsList) return;
+
+    const buttons = tabsList.querySelectorAll('.mobile-tab-scroll');
+    const indicators = document.querySelectorAll('.tabs-indicators .indicator');
+
+    // Click to center and activate - this will be handled by initSwipeNavigation
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', () => {
+        // Center the clicked button
+        (btn as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    });
+
+    // Observe which button is primarily visible and sync active state
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const visibleIndex = Array.from(buttons).indexOf(entry.target as Element);
+          if (visibleIndex >= 0) {
+            // This will be handled by the swipe navigation
+          }
+        }
+      });
+    }, { root: tabsList, threshold: 0.6, rootMargin: '-10% 0px -10% 0px' });
+
+    buttons.forEach(b => io.observe(b));
+
+    // Reconnect observer after resize to account for layout changes
+    window.addEventListener('resize', () => {
+      io.disconnect();
+      buttons.forEach(b => io.observe(b));
+    });
+  }
 
   // Add hover effect for project card expandable sections
   document.addEventListener("DOMContentLoaded", () => {
@@ -2079,6 +2714,48 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       font-size: 0.875rem;
       white-space: nowrap;
     }
+
+    /* Mobile-only tabs scroller (pricing) */
+    .tabs-viewport { width: 100%; overflow: hidden; }
+    .tabs-list {
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      overflow-x: auto;
+
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      touch-action: pan-x;
+
+      scrollbar-width: none;
+    }
+
+    .tabs-list::-webkit-scrollbar { display: none; }
+
+    .tabs-list > .tab-button {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      white-space: nowrap;
+      padding: 8px 12px;
+      border-radius: 9999px;
+      background: transparent;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .tab-button.active-tab { color: #ed7c00; font-weight: 700; }
+
+    .tabs-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 8px;
+      list-style: none;
+    }
+
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: #d1d5db; }
+    .indicator.active { background: #ed7c00; }
     
     .feature-table th:first-child,
     .feature-table td:first-child {
@@ -2422,18 +3099,20 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       // Handle pricing card touch interactions
       pricingCards.forEach(card => {
         if (card.classList.contains('w-full') || card.classList.contains('flex-1')) {
-          let touchTimeout;
+          let touchTimeout: number | undefined;
           let isActive = false;
           
           // Touch start - record position and time
-          card.addEventListener('touchstart', function(e) {
-            touchStartY = e.touches[0].clientY;
+          card.addEventListener('touchstart', function(e: Event) {
+            const touchEvent = e as TouchEvent;
+            touchStartY = touchEvent.touches[0].clientY;
             touchStartTime = Date.now();
           }, { passive: true });
           
           // Touch end - check if it was a tap (not scroll)
-          card.addEventListener('touchend', function(e) {
-            const touchEndY = e.changedTouches[0].clientY;
+          card.addEventListener('touchend', function(e: Event) {
+            const touchEvent = e as TouchEvent;
+            const touchEndY = touchEvent.changedTouches[0].clientY;
             const touchEndTime = Date.now();
             const touchDuration = touchEndTime - touchStartTime;
             const touchDistance = Math.abs(touchEndY - touchStartY);
@@ -2441,7 +3120,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
             // Only activate if it was a quick tap with minimal movement
             if (touchDuration < 300 && touchDistance < 10) {
               // Clear any existing timeout
-              clearTimeout(touchTimeout);
+              if (touchTimeout) clearTimeout(touchTimeout);
               
               // Deactivate all other cards first
               pricingCards.forEach(otherCard => {
@@ -2459,7 +3138,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
                 isActive = true;
                 
                 // Auto-deactivate after 4 seconds
-                touchTimeout = setTimeout(() => {
+                touchTimeout = window.setTimeout(() => {
                   card.classList.remove('mobile-touch-active');
                   isActive = false;
                 }, 4000);
@@ -2479,7 +3158,7 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
           let isExpanded = false;
           
           // Use click event which works well on mobile without blocking scroll
-          trigger.addEventListener('click', function(e) {
+          trigger.addEventListener('click', function(e: Event) {
             e.stopPropagation(); // Prevent card activation
             
             // Toggle expansion
@@ -2511,9 +3190,10 @@ import downArrowIcon from "../../../public/img/pricing/down.png";
       });
       
       // Handle taps outside cards to deactivate (using click for better compatibility)
-      document.addEventListener('click', function(e) {
-        const isInsideCard = e.target.closest('.group');
-        const isExpandTrigger = e.target.closest('.cursor-pointer');
+      document.addEventListener('click', function(e: Event) {
+        const target = e.target as HTMLElement;
+        const isInsideCard = target?.closest('.group');
+        const isExpandTrigger = target?.closest('.cursor-pointer');
         
         if (!isInsideCard || isExpandTrigger) {
           // Deactivate all cards if clicking outside or on expand triggers
