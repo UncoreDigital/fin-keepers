@@ -312,28 +312,42 @@ import Footer6 from "../components/Footer6.astro";
           </div>
 
           <!-- Contact Us -->
+          <!-- Contact Us -->
           <div class="mb-0">
             <h2 class="text-3xl font-semibold text-[#04092a] mb-8 font-['Inter']">
               Contact Us
             </h2>
             
-            <div class="bg-gradient-to-br from-[#007164] to-[#005a50] rounded-2xl p-8 text-white">
-              <h3 class="text-2xl font-semibold mb-4 font-['Inter']">
-                Support
-              </h3>
-              <p class="text-lg leading-relaxed mb-6 text-white/90 font-['Inter']">
-                If you require any information or clarification regarding the use of your personal information or this privacy policy, or grievances for the use of your personal information, please contact:
-              </p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 flex items-center justify-center bg-white/20 rounded-lg">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="22,6 12,13 2,6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Support -->
+              <div class="bg-gradient-to-br from-[#007164] to-[#005a50] hover:bg-gradient-to-br hover:from-[#ed7c00] hover:to-[#ed7c00] rounded-2xl p-8 text-white transition-all duration-300 ease-in-out group">
+                <h3 class="text-2xl font-semibold mb-4 font-['Inter']">
+                  Support
+                </h3>
+                <p class="text-lg leading-relaxed mb-6 text-white/90 group-hover:text-white font-['Inter']">
+                  If you require any information or clarification regarding the use of your personal information or this privacy policy, or grievances for the use of your personal information, please contact:
+                </p>
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center bg-white/20 rounded-lg group-hover:bg-white/30">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <polyline points="22,6 12,13 2,6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <a href="mailto:hi@finkeepers.us" class="text-xl font-medium text-white group-hover:text-white transition-colors font-['Inter']">
+                    hi@finkeepers.us
+                  </a>
                 </div>
-                <a href="mailto:hi@finkeepers.us" class="text-xl font-medium text-white hover:text-white/80 transition-colors font-['Inter']">
-                  hi@finkeepers.us
-                </a>
+              </div>
+
+              <!-- Complaints -->
+              <div class="bg-[#f5f7fa] rounded-2xl p-8 border-2 border-[#ed7c00]/20 hover:bg-[#ed7c00] transition-all duration-300 ease-in-out group">
+                <h3 class="text-2xl font-semibold text-[#04092a] mb-4 font-['Inter'] group-hover:text-white">
+                  Complaints
+                </h3>
+                <p class="text-lg text-[#797979] leading-relaxed font-['Inter'] group-hover:text-white">
+                  If you have any queries or complaints regarding the collection, processing, or transfer of personal data/information or this policy, please contact our Data Protection Coordinators.
+                </p>
               </div>
             </div>
           </div>
