@@ -1,18 +1,25 @@
-
 ---
-const modules = import.meta.glob('../../../assets/partners/*.png', { eager: true, as: 'url' });
+const modules = import.meta.glob("../../../assets/partners/*.png", {
+  eager: true,
+  as: "url",
+});
 const logos = Object.values(modules);
 ---
 
 <div class="main-container w-full min-h-[544px] relative mx-auto my-0">
   <div
-    class="w-full h-[570px] bg-[#213d3c] absolute top-0 left-0 overflow-hidden mb-0 lg:mb-2"
+    class="w-full h-[570px] bg-white absolute top-0 left-0 overflow-hidden mb-0 lg:mb-2"
   >
-    <!-- Background pattern remains the same -->
+    <!-- Background pattern -->
     <div
       class="flex w-[1440px] h-[870.759px] flex-col items-start flex-nowrap absolute top-1/2 left-0 translate-x-0 translate-y-[-49.96%]"
     >
-      <div class="w-[1440px] h-[818.759px] shrink-0 opacity-[0.08] relative">
+      <!-- Decreased opacity or hidden pattern since we moved to white bg and pattern source is unknown -->
+      <div
+        class="w-[1440px] h-[818.759px] shrink-0 opacity-[0.05] relative hidden"
+      >
+        <!-- Pattern divs hidden for white background cleanup -->
+
         <div
           class="w-[1835.026px] h-[654.623px] relative z-[12] mt-[327.142px] mr-0 mb-0 ml-[-180.691px]"
         >
@@ -217,10 +224,10 @@ const logos = Object.values(modules);
       >
         <!-- Text Content (Left Side) -->
         <div
-          class="flex flex-col gap-3 text-white font-bold items-start lg:items-start text-center lg:text-left lg:flex-1 max-w-[744px]"
+          class="flex flex-col gap-3 text-[#0e2726] font-bold items-start lg:items-start text-center lg:text-left lg:flex-1 max-w-[744px]"
         >
           <!-- Heading -->
-           <h1
+          <h1
             class="text-[52px] font-bold tracking-tight font-['Inter'] leading-none"
           >
             <span class="block leading-[42px]"
@@ -233,30 +240,28 @@ const logos = Object.values(modules);
 
           <!-- Paragraph -->
           <p
-            class="hero-para font-inter opacity-0 text-white text-sm text-left sm:text-base md:text-lg leading-[1.6] max-w-[90%] lg:max-w-[546px] z-[4]"
+            class="hero-para font-inter opacity-0 text-[#0e2726] text-sm text-left sm:text-base md:text-lg leading-[1.6] max-w-[90%] lg:max-w-[546px] z-[4]"
           >
-            We blend expert accountants with smart technology  <br
-              class="hidden sm:block"
-            />  to keep your books clean, accurate, and fully compliant.
-
+            We combine experienced professionals with tech-enabled solutions to
+            keep your books clean, accurate, and fully compliant.
           </p>
 
           <!-- CTA Button -->
           <div class="mt-2 sm:mt-3 lg:mt-4 mb-5 sm:mb-0">
             <button
-        id="contact-scroll-btn"
-        class="flex w-[220px] sm:w-[280px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300"
-      >
-        <span
-          class="text-[13px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] whitespace-nowrap"
-        >
-          Book a Free Consultation
-        </span>
-      </button>
+              id="contact-scroll-btn"
+              class="flex w-[220px] sm:w-[280px] h-[44px] sm:h-[50px] px-[15px] justify-center items-center bg-[#ed7c00] rounded-[8px] cursor-pointer border border-transparent hover:bg-transparent hover:border-[#ed7c00] text-white hover:text-[#ed7c00] transition duration-300"
+            >
+              <span
+                class="text-[13px] sm:text-[18px] font-semibold leading-[20px] sm:leading-[24px] whitespace-nowrap"
+              >
+                Book a Free Consultation
+              </span>
+            </button>
           </div>
         </div>
 
-       <!-- Hero Image (Right Side) -->
+        <!-- Hero Image (Right Side) -->
         <!-- <div class="lg:flex-1 flex justify-end hidden sm:block">
           <img
             src="/img/home/hero/1.png"
@@ -281,8 +286,8 @@ const logos = Object.values(modules);
             id="hero-hover-img"
             src="/img/home/hero/1_2.png"
             alt="Hero Hover"
-            class="absolute inset-0 w-full h-full object-contain z-20 
-           opacity-0 transition-all duration-700 ease-in-out 
+            class="absolute inset-0 w-full h-full object-contain z-20
+           opacity-0 transition-all duration-700 ease-in-out
            group-hover:opacity-100 rotate-[5deg]"
           />
         </div>
@@ -291,7 +296,10 @@ const logos = Object.values(modules);
   </div>
 
   <!-- Green Canvas Theme Section -->
-  <div class="w-full h-[70px] sm:h-[50px] bg-[#213d3c] from-[#059669] to-[#10b981] absolute top-[570px] left-0"></div>
+  <div
+    class="w-full h-[70px] sm:h-[50px] bg-[#213d3c] from-[#059669] to-[#10b981] absolute top-[570px] left-0"
+  >
+  </div>
 
   <!-- Trusted Partners Container -->
   <div
@@ -301,18 +309,34 @@ const logos = Object.values(modules);
       class="w-full text-center font-['Inter'] text-[16px] sm:text-[18px] font-semibold leading-[23px] text-[#51506e] z-[81]"
     >
       Technology That Drives Our Client's Success
-
     </span>
 
     <!-- Scrolling container -->
     <div class="relative w-full overflow-hidden z-[82]">
-      <div id="logoSlider" class="flex gap-[40px] sm:gap-[66px] items-center w-max animate-scroll-logos">
-        { logos.map((src, i) => (
-          <img src={src} alt={`partner-${i}`} class="h-[48px] shrink-0 max-w-[180px] object-contain" key={i} />
-        )) }
-        { logos.map((src, i) => (
-          <img src={src} alt={`partner-dup-${i}`} class="h-[48px] shrink-0 max-w-[180px] object-contain" key={'dup-'+i} />
-        )) }
+      <div
+        id="logoSlider"
+        class="flex gap-[40px] sm:gap-[66px] items-center w-max animate-scroll-logos"
+      >
+        {
+          logos.map((src, i) => (
+            <img
+              src={src}
+              alt={`partner-${i}`}
+              class="h-[48px] shrink-0 max-w-[180px] object-contain"
+              key={i}
+            />
+          ))
+        }
+        {
+          logos.map((src, i) => (
+            <img
+              src={src}
+              alt={`partner-dup-${i}`}
+              class="h-[48px] shrink-0 max-w-[180px] object-contain"
+              key={"dup-" + i}
+            />
+          ))
+        }
       </div>
     </div>
   </div>
@@ -360,72 +384,78 @@ const logos = Object.values(modules);
   });
 
   // Add scroll-based image animation for MOBILE ONLY
-  document.addEventListener('DOMContentLoaded', function() {
-    const heroContainer = document.getElementById('hero-image-container');
-    const defaultImg = document.getElementById('hero-default-img');
-    const hoverImg = document.getElementById('hero-hover-img');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const heroContainer = document.getElementById("hero-image-container");
+    const defaultImg = document.getElementById("hero-default-img");
+    const hoverImg = document.getElementById("hero-hover-img");
+
     // Only apply scroll animation on mobile devices (touch devices)
-    if (heroContainer && defaultImg && hoverImg && 'ontouchstart' in window) {
+    if (heroContainer && defaultImg && hoverImg && "ontouchstart" in window) {
       // Create intersection observer for scroll-based animation
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Animate image swap when hero comes into view
-            setTimeout(() => {
-              defaultImg.style.opacity = '0';
-              hoverImg.style.opacity = '1';
-              
-              // Switch back after 2 seconds
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Animate image swap when hero comes into view
               setTimeout(() => {
-                defaultImg.style.opacity = '1';
-                hoverImg.style.opacity = '0';
-              }, 2000);
-            }, 1000); // Delay to let initial animations complete
-          }
-        });
-      }, {
-        threshold: 0.5,
-        rootMargin: '0px 0px -20% 0px'
-      });
-      
+                defaultImg.style.opacity = "0";
+                hoverImg.style.opacity = "1";
+
+                // Switch back after 2 seconds
+                setTimeout(() => {
+                  defaultImg.style.opacity = "1";
+                  hoverImg.style.opacity = "0";
+                }, 2000);
+              }, 1000); // Delay to let initial animations complete
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+          rootMargin: "0px 0px -20% 0px",
+        },
+      );
+
       observer.observe(heroContainer);
     }
   });
 </script>
 
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactBtn = document.getElementById('contact-scroll-btn');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactBtn = document.getElementById("contact-scroll-btn");
+
     if (contactBtn) {
-      contactBtn.addEventListener('click', function() {
+      contactBtn.addEventListener("click", function () {
         // First try to find contact-section
-        let contactSection = document.getElementById('contact-section');
-        
+        let contactSection = document.getElementById("contact-section");
+
         // If not found, try alternative selectors
         if (!contactSection) {
           contactSection = document.querySelector('[id*="contact"]');
         }
         if (!contactSection) {
-          contactSection = document.querySelector('.contact-section');
+          contactSection = document.querySelector(".contact-section");
         }
         if (!contactSection) {
-          contactSection = document.querySelector('footer');
+          contactSection = document.querySelector("footer");
         }
-        
+
         if (contactSection) {
           const yOffset = -40; // 40px offset from the top
-          const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          const y =
+            contactSection.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         } else {
           // Fallback: scroll to bottom of page
-          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
+          window.scrollTo({
+            top: document.body.scrollHeight - window.innerHeight - 40,
+            behavior: "smooth",
+          });
         }
       });
     }
   });
 </script>
-
-

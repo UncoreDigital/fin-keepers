@@ -19,8 +19,8 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
       <p
         class="text-[16px] sm:text-[18px] leading-[27px] text-[#797979] max-w-xl"
       >
-        You said, and we listened. Bookkeeping for small businesses and startups
-        in the U.S.? Finkeepers at your service.
+        Simplified bookkeeping for US startups and small businesses. Finkeepers
+        is at your service.
       </p>
       <button
         id="contact-scroll-btn"
@@ -57,62 +57,70 @@ import HeroImage_2 from "../../../assets/services/book-keeping/hero_2.png";
   </div>
 </div>
 
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactBtn = document.getElementById('contact-scroll-btn');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactBtn = document.getElementById("contact-scroll-btn");
+
     if (contactBtn) {
-      contactBtn.addEventListener('click', function() {
+      contactBtn.addEventListener("click", function () {
         // First try to find contact-section
-        let contactSection = document.getElementById('contact-section');
-        
+        let contactSection = document.getElementById("contact-section");
+
         // If not found, try alternative selectors
         if (!contactSection) {
           contactSection = document.querySelector('[id*="contact"]');
         }
         if (!contactSection) {
-          contactSection = document.querySelector('.contact-section');
+          contactSection = document.querySelector(".contact-section");
         }
         if (!contactSection) {
-          contactSection = document.querySelector('footer');
+          contactSection = document.querySelector("footer");
         }
-        
+
         if (contactSection) {
           const yOffset = -40; // 40px offset from the top
-          const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          const y =
+            contactSection.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         } else {
           // Fallback: scroll to bottom of page
-          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
+          window.scrollTo({
+            top: document.body.scrollHeight - window.innerHeight - 40,
+            behavior: "smooth",
+          });
         }
       });
     }
 
     // Mobile-only scroll animation for hero image
-    if ('ontouchstart' in window) {
-      const heroContainer = document.querySelector('.hero-image-container');
-      const mainImage = document.querySelector('.hero-main-image');
-      const hoverImage = document.querySelector('.hero-hover-image');
+    if ("ontouchstart" in window) {
+      const heroContainer = document.querySelector(".hero-image-container");
+      const mainImage = document.querySelector(".hero-main-image");
+      const hoverImage = document.querySelector(".hero-hover-image");
 
       if (heroContainer && mainImage && hoverImage) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // Swap images after 1 second
-              setTimeout(() => {
-                mainImage.style.opacity = '0';
-                hoverImage.style.opacity = '1';
-                
-                // Swap back after 2 seconds
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Swap images after 1 second
                 setTimeout(() => {
-                  mainImage.style.opacity = '1';
-                  hoverImage.style.opacity = '0';
-                }, 2000);
-              }, 1000);
-            }
-          });
-        }, { threshold: 0.5 });
+                  mainImage.style.opacity = "0";
+                  hoverImage.style.opacity = "1";
+
+                  // Swap back after 2 seconds
+                  setTimeout(() => {
+                    mainImage.style.opacity = "1";
+                    hoverImage.style.opacity = "0";
+                  }, 2000);
+                }, 1000);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
 
         observer.observe(heroContainer);
       }

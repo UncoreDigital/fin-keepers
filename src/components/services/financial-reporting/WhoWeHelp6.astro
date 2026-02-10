@@ -56,7 +56,9 @@ const tabImages = {
         class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
         style="max-width: calc(768px + 500px);"
       >
-        We prepare timely statements, management reports, and performance summaries that reflect your business reality. Every report is clear, insightful, and built to support smarter decisions.
+        We prepare timely statements, management reports, and performance
+        summaries that reflect your business reality. Every report is clear,
+        insightful, and built to support smarter decisions.
       </p>
     </div>
 
@@ -80,7 +82,9 @@ const tabImages = {
         <button class="tab-button" data-tab="tax"
           >Customized Financial Dashboard</button
         >
-        <button class="tab-button" data-tab="reporting">Sustainable Reporting</button>
+        <button class="tab-button" data-tab="reporting"
+          >Sustainable Reporting</button
+        >
       </div>
     </div>
 
@@ -208,7 +212,7 @@ const tabImages = {
     tax: {
       title: "Customized Financial Dashboard",
       description:
-        "Every firm needs a specialized dashboard curated to its financial needs. With the help of real-time visual financial reporting using tools like Power BI or Tableau, Finkeepers will create dashboards that will provide interactive insights instead of static statements.",
+        "We create specialized dashboards tailored to your financial needs. By leveraging powerful tools like Microsoft Power BI and Tableau, Finkeepers transforms your data into interactive, real-time insights—moving beyond static statements to drive smarter decisions.",
       icon: "/img/services/SVG/f4.svg",
       images: tabImages.finance,
     },
@@ -241,7 +245,7 @@ const tabImages = {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.src = content.icon;
-      
+
       // Update dynamic images
       if (content.images) {
         tabImageDefault.src = content.images.default.src;
@@ -265,7 +269,7 @@ const tabImages = {
     const first = tabButtons[0];
     if (first) {
       const key = first.getAttribute("data-tab");
-       if (key) switchTab(key, first);
+      if (key) switchTab(key, first);
     }
   });
 
@@ -287,4 +291,3 @@ const tabImages = {
     .querySelectorAll(".animate-on-scroll, .animate-on-scroll-child")
     .forEach((el) => observer.observe(el));
 </script>
-

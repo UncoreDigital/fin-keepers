@@ -180,6 +180,11 @@
       class="hidden lg:flex gap-[24px] text-white items-center text-[16px] relative"
     >
       <div class="flex items-center gap-[4px]">
+        <a href="/" class="hover:text-[#ed7c00] transition"><span>Home</span></a
+        >
+      </div>
+
+      <div class="flex items-center gap-[4px]">
         <a href="/about" class="hover:text-[#ed7c00] transition"
           ><span>About</span></a
         >
@@ -287,6 +292,26 @@
           ><span>Contact Us</span></a
         >
       </div>
+
+      <!-- Search Icon -->
+      <button
+        aria-label="Search"
+        class="flex items-center justify-center text-white hover:text-[#ed7c00] transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </button>
     </nav>
 
     <!-- Get In Touch Button (Desktop) -->
@@ -303,6 +328,7 @@
     id="mobile-menu"
     class="hidden lg:hidden mt-4 flex flex-col gap-4 text-white px-2"
   >
+    <a href="/" class="hover:text-[#ed7c00] transition">Home</a>
     <a href="/about" class="hover:text-[#ed7c00] transition">About</a>
 
     <!-- Services -->
@@ -350,15 +376,33 @@
 
     <!-- Resources -->
     <div>
-      <button id="mobile-resources-toggle" class="flex justify-between items-center w-full cursor-pointer">
+      <button
+        id="mobile-resources-toggle"
+        class="flex justify-between items-center w-full cursor-pointer"
+      >
         <span>Resources</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      <div id="mobile-resources-menu" class="pl-4 flex flex-col gap-2 mt-2 hidden">
+      <div
+        id="mobile-resources-menu"
+        class="pl-4 flex flex-col gap-2 mt-2 hidden"
+      >
         <a href="/blogs" class="hover:text-[#ed7c00] transition">Blogs</a>
-        <a href="/casestudy" class="hover:text-[#ed7c00] transition">Case Study</a>
+        <a href="/casestudy" class="hover:text-[#ed7c00] transition"
+          >Case Study</a
+        >
       </div>
     </div>
 
@@ -449,22 +493,22 @@
     if (servicesToggle && serviceMenu) {
       const servicesContainer = servicesToggle.parentElement;
       let servicesTimeout;
-      
+
       const showServicesMenu = () => {
         clearTimeout(servicesTimeout);
         if (resourcesMenu) resourcesMenu.classList.add("hidden");
         serviceMenu.classList.remove("hidden");
       };
-      
+
       const hideServicesMenu = () => {
         servicesTimeout = setTimeout(() => {
           serviceMenu.classList.add("hidden");
         }, 100); // 100ms delay
       };
-      
+
       servicesContainer.addEventListener("mouseenter", showServicesMenu);
       servicesContainer.addEventListener("mouseleave", hideServicesMenu);
-      
+
       // Keep menu visible when hovering over the dropdown itself
       serviceMenu.addEventListener("mouseenter", () => {
         clearTimeout(servicesTimeout);
@@ -476,22 +520,22 @@
     if (resourcesToggle && resourcesMenu) {
       const resourcesContainer = resourcesToggle.parentElement;
       let resourcesTimeout;
-      
+
       const showResourcesMenu = () => {
         clearTimeout(resourcesTimeout);
         if (serviceMenu) serviceMenu.classList.add("hidden");
         resourcesMenu.classList.remove("hidden");
       };
-      
+
       const hideResourcesMenu = () => {
         resourcesTimeout = setTimeout(() => {
           resourcesMenu.classList.add("hidden");
         }, 100); // 100ms delay
       };
-      
+
       resourcesContainer.addEventListener("mouseenter", showResourcesMenu);
       resourcesContainer.addEventListener("mouseleave", hideResourcesMenu);
-      
+
       // Keep menu visible when hovering over the dropdown itself
       resourcesMenu.addEventListener("mouseenter", () => {
         clearTimeout(resourcesTimeout);

@@ -1,15 +1,23 @@
 <!-- MAIN CONTAINER -->
 <div class="w-full py-16 px-4 sm:px-6 lg:px-[120px] bg-white mx-auto">
   <div class="flex flex-col items-center gap-6 relative">
-
     <!-- HEADING -->
-    <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#04092A] text-left self-start">
-      And what is our Ikigai? What motivates us…
+    <!-- HEADING -->
+    <h2
+      class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#04092A] text-left self-start"
+    >
+      The Gap We Address
     </h2>
 
     <!-- DESCRIPTION -->
-    <p class="text-sm sm:text-base lg:text-[18px] text-[#5C667A] text-left self-start max-w-[1240px]">
-      After researching the market and receiving queries from startups and SMBs, we found a gap in the U.S. market. Hence, aiding these companies with their financial issues became our Ikigai. The expert team of Finkeepers, a child company of Knowcraft Analytics, is assisting small companies that are starting and are trying to be independent.
+    <p
+      class="text-sm sm:text-base lg:text-[18px] text-[#5C667A] text-left self-start max-w-[1240px]"
+    >
+      Many businesses struggle with the gap between basic bookkeeping and
+      high-level financial strategy. We fill this void by providing commercial
+      value through enterprise-grade financial expertise—making professional
+      accounting, reporting, and CFO services accessible to startups and SMBs of
+      all sizes.
     </p>
 
     <!-- TABS -->
@@ -33,7 +41,6 @@
 
     <!-- CONTENT SECTION -->
     <div class="flex flex-col lg:flex-row w-full max-w-[1200px] gap-8 mt-4">
-
       <!-- LEFT CARD -->
       <div
         id="text-block"
@@ -44,21 +51,32 @@
             id="icon"
             class="w-12 h-12 bg-cover bg-no-repeat"
             style="background-image: url('/img/about/vision.svg')"
-          ></div>
+          >
+          </div>
 
-          <h3 id="title" class="text-2xl font-semibold text-[#151515]">Our Vision</h3>
+          <h3 id="title" class="text-2xl font-semibold text-[#151515]">
+            Our Vision
+          </h3>
         </div>
 
         <p id="description" class="text-base text-[#5C667A] leading-relaxed">
-          At Finkeepers, our motto is to safeguard every startup and SMB’s financial health because having a strong backbone in finance empowers businesses to thrive, scale, and succeed. We aspire to redefine financial consulting in the U.S. by making expert guidance accessible, transparent, and future-ready.
+          At Finkeepers, our vision is to safeguard every startup and SMB’s
+          financial health because having a strong backbone in finance empowers
+          businesses to thrive, scale, and succeed. We aspire to redefine
+          financial consulting in the U.S. by making expert guidance accessible,
+          transparent, and future-ready.
         </p>
 
         <!-- <a href="/contact" class="text-[#ED7C00] font-semibold text-base">Contact Us</a> -->
       </div>
 
       <!-- RIGHT IMAGE BOX -->
-      <div class="bg-[#f5f7fa] rounded-[16px] p-4 flex-1 flex justify-center items-center">
-        <div class="relative group flex items-center justify-center w-full h-full vision-image-container">
+      <div
+        class="bg-[#f5f7fa] rounded-[16px] p-4 flex-1 flex justify-center items-center"
+      >
+        <div
+          class="relative group flex items-center justify-center w-full h-full vision-image-container"
+        >
           <img
             id="image"
             src="/img/about/m4.png"
@@ -73,97 +91,101 @@
           />
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<script type="module">
-  import gsap from "https://cdn.skypack.dev/gsap";
+<script>
+  import { gsap } from "gsap";
 
-  const data = {
-    vision: {
-      title: "Our Vision",
-      description:
-        "At Finkeepers, our motto is to safeguard every Start-up and SME’s financial health because having a strong backbone in finance empowers businesses to thrive, scale, and succeed. We aspire to redefine financial consulting in the U.S. by making expert guidance accessible, transparent, and future-ready.",
-      icon: "/img/about/vision.svg",
-      image: "/img/about/m4.png",
-      hoverImage: "/img/about/m3.png",
-    },
-    mission: {
-      title: "Our Mission",
-      description:
-        "The mission of Finkeepers is to simplify and strengthen the finances of small businesses and startups in the U.S. Our services are curated to the financial needs of a small business, such as bookkeeping, tax management, payroll assistance, temporary CFO services, financial reporting and modelling, and much more.",
-      icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
-      image: "/img/about/m2.png",
-      hoverImage: "/img/about/m1.png",
-    },
-  };
+  document.addEventListener("DOMContentLoaded", () => {
+    const data = {
+      vision: {
+        title: "Our Vision",
+        description:
+          "At Finkeepers, our vision is to safeguard every Start-up and SMBs’s financial health because having a strong backbone in finance empowers businesses to thrive, scale, and succeed. We aspire to redefine financial consulting in the U.S. by making expert guidance accessible, transparent, and future-ready.",
+        icon: "/img/about/vision.svg",
+        image: "/img/about/m4.png",
+        hoverImage: "/img/about/m3.png",
+      },
+      mission: {
+        title: "Our Mission",
+        description:
+          "The mission of Finkeepers is to simplify and strengthen the finances of small businesses and startups in the U.S. Our services are curated to the financial needs of a small business, such as bookkeeping, tax management, payroll assistance, temporary CFO services, financial reporting and modelling, and much more.",
+        icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-02/pjiTWgYf5p.png",
+        image: "/img/about/m2.png",
+        hoverImage: "/img/about/m1.png",
+      },
+    };
 
-  const buttons = document.querySelectorAll(".tab-button");
-  const title = document.getElementById("title");
-  const description = document.getElementById("description");
-  const icon = document.getElementById("icon");
-  const image = document.getElementById("image");
-  const hoverImage = document.getElementById("hover-image");
+    const buttons = document.querySelectorAll(".tab-button");
+    const title = document.getElementById("title");
+    const description = document.getElementById("description");
+    const icon = document.getElementById("icon");
+    const image = document.getElementById("image");
+    const hoverImage = document.getElementById("hover-image");
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const tab = btn.dataset.tab;
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tab = btn.dataset.tab;
 
-      buttons.forEach((b) => {
-        b.classList.remove("bg-[#ED7C00]", "text-white");
-        b.classList.add("text-[#797979]");
-      });
+        buttons.forEach((b) => {
+          b.classList.remove("bg-[#ED7C00]", "text-white");
+          b.classList.add("text-[#797979]");
+        });
 
-      btn.classList.add("bg-[#ED7C00]", "text-white");
-      btn.classList.remove("text-[#797979]");
+        btn.classList.add("bg-[#ED7C00]", "text-white");
+        btn.classList.remove("text-[#797979]");
 
-      const t = data[tab];
+        const t = data[tab];
 
-      gsap.to([title, description, icon], {
-        opacity: 0,
-        duration: 0.3,
-        onComplete: () => {
-          title.textContent = t.title;
-          description.textContent = t.description;
-          icon.style.backgroundImage = `url(${t.icon})`;
-          image.src = t.image;
-          hoverImage.src = t.hoverImage;
+        gsap.to([title, description, icon], {
+          opacity: 0,
+          duration: 0.3,
+          onComplete: () => {
+            title.textContent = t.title;
+            description.textContent = t.description;
+            icon.style.backgroundImage = `url(${t.icon})`;
+            image.src = t.image;
+            hoverImage.src = t.hoverImage;
 
-          gsap.to([title, description, icon], {
-            opacity: 1,
-            duration: 0.4,
-          });
-        },
+            gsap.to([title, description, icon], {
+              opacity: 1,
+              duration: 0.4,
+            });
+          },
+        });
       });
     });
   });
 
   // Mobile-only scroll animation for vision image
-  if ('ontouchstart' in window) {
-    const visionContainer = document.querySelector('.vision-image-container');
-    const mainImage = document.querySelector('.vision-main-image');
-    const hoverImage = document.querySelector('.vision-hover-image');
+  if ("ontouchstart" in window) {
+    const visionContainer = document.querySelector(".vision-image-container");
+    const mainImage = document.querySelector(".vision-main-image");
+    const hoverImage = document.querySelector(".vision-hover-image");
 
     if (visionContainer && mainImage && hoverImage) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Swap images after 1 second
-            setTimeout(() => {
-              mainImage.style.opacity = '0';
-              hoverImage.style.opacity = '1';
-              
-              // Swap back after 2 seconds
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Swap images after 1 second
               setTimeout(() => {
-                mainImage.style.opacity = '1';
-                hoverImage.style.opacity = '0';
-              }, 2000);
-            }, 1000);
-          }
-        });
-      }, { threshold: 0.5 });
+                mainImage.style.opacity = "0";
+                hoverImage.style.opacity = "1";
+
+                // Swap back after 2 seconds
+                setTimeout(() => {
+                  mainImage.style.opacity = "1";
+                  hoverImage.style.opacity = "0";
+                }, 2000);
+              }, 1000);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
 
       observer.observe(visionContainer);
     }

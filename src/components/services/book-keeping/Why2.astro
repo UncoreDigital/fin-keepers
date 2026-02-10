@@ -38,14 +38,19 @@ import WhyImage_2 from "../../../assets/services/book-keeping/why_2.png";
           <span
             class="animate-on-scroll w-full text-[16px] sm:text-[18px] leading-[27px] text-[#5c667a] text-left opacity-0"
           >
-            Finkeepers offer budgeted bookkeeping services for startups, small to mid-sized firms, and PE/VC-backed companies. We deliver GAAP-compliant, audit-ready books and real-time dashboards.
+            Finkeepers offer budgeted bookkeeping services for startups, small
+            to mid-sized firms, and PE/VC-backed companies. We deliver
+            GAAP-compliant, audit-ready, tax-ready books and real-time
+            dashboards.
           </span>
 
           <div
             class="flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center w-full max-w-[1200px]"
           >
             <!-- Image Container with Hover Effect -->
-            <div class="relative group w-full lg:w-[576px] h-auto max-h-[350px] sm:max-h-[400px] lg:max-h-none why-image-container mb-5 sm:mb-0">
+            <div
+              class="relative group w-full lg:w-[576px] h-auto max-h-[350px] sm:max-h-[400px] lg:max-h-none why-image-container mb-5 sm:mb-0"
+            >
               <!-- Default Image -->
               <img
                 src={WhyImage.src}
@@ -94,14 +99,16 @@ import WhyImage_2 from "../../../assets/services/book-keeping/why_2.png";
                     class="animate-on-scroll flex gap-[16px] items-start w-full opacity-0"
                     style={`transition-delay: ${i * 150}ms`}
                   >
-                    <img src={item.icon} alt="FinKeepers" class="w-[32px] h-[32px] shrink-0" />
+                    <img
+                      src={item.icon}
+                      alt="FinKeepers"
+                      class="w-[32px] h-[32px] shrink-0"
+                    />
                     <div class="flex flex-col gap-[8px]">
                       <span class="text-[18px] font-semibold text-[#151515]">
                         {item.title}
                       </span>
-                      <p class="text-[16px] text-[#797979]">
-                        {item.desc}
-                      </p>
+                      <p class="text-[16px] text-[#797979]">{item.desc}</p>
                     </div>
                   </div>
                 ))
@@ -133,29 +140,32 @@ import WhyImage_2 from "../../../assets/services/book-keeping/why_2.png";
   });
 
   // Mobile-only scroll animation for why image
-  if ('ontouchstart' in window) {
-    const whyContainer = document.querySelector('.why-image-container');
-    const mainImage = document.querySelector('.why-main-image');
-    const hoverImage = document.querySelector('.why-hover-image');
+  if ("ontouchstart" in window) {
+    const whyContainer = document.querySelector(".why-image-container");
+    const mainImage = document.querySelector(".why-main-image");
+    const hoverImage = document.querySelector(".why-hover-image");
 
     if (whyContainer && mainImage && hoverImage) {
-      const whyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Swap images after 1 second
-            setTimeout(() => {
-              mainImage.style.opacity = '0';
-              hoverImage.style.opacity = '1';
-              
-              // Swap back after 2 seconds
+      const whyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Swap images after 1 second
               setTimeout(() => {
-                mainImage.style.opacity = '1';
-                hoverImage.style.opacity = '0';
-              }, 2000);
-            }, 1000);
-          }
-        });
-      }, { threshold: 0.5 });
+                mainImage.style.opacity = "0";
+                hoverImage.style.opacity = "1";
+
+                // Swap back after 2 seconds
+                setTimeout(() => {
+                  mainImage.style.opacity = "1";
+                  hoverImage.style.opacity = "0";
+                }, 2000);
+              }, 1000);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
 
       whyObserver.observe(whyContainer);
     }
