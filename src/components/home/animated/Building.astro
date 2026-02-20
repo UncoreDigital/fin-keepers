@@ -6,13 +6,14 @@
     <span
       class="build-title-mobile text-white font-['Inter'] text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-[1.4]"
     >
-      Your Finance Partner From Pre-Revenue to Series B and Beyond<br />
+      Your Finance Partner from inception to exit and Beyond<br />
     </span>
     <span
-  class="build-title-mobile text-white font-['Inter'] text-[16px] sm:text-[30px] lg:text-[36px]"
->
-  Whether you are pre-revenue or post-Series B, our team has walked your path, understands your investor expectations, and knows how to keep your finances audit-ready.<br> We partner with:
-</span>
+      class="build-title-mobile text-white font-['Inter'] text-[16px] sm:text-[30px] lg:text-[36px]"
+    >
+      No matter where you are in your growth journey, we understand investor
+      expectations and keep your finances audit-ready.<br /> We partner with:
+    </span>
     <!-- Cards -->
     <div class="flex flex-col gap-7">
       <!-- Card 1 -->
@@ -29,11 +30,16 @@
               alt="Startups icon"
             />
           </div>
-          <h3 class="card-title text-[20px] font-semibold text-white flex-1">Startups</h3>
+          <h3 class="card-title text-[20px] font-semibold text-white flex-1">
+            Startups
+          </h3>
         </div>
         <div class="text-white px-5 ml-[30px] lg:ml-0">
-          <p class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden">
-            Building strong financial foundations that scale with your early-stage growth.
+          <p
+            class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden"
+          >
+            Building strong financial foundations that scale with your
+            early-stage growth.
           </p>
         </div>
       </div>
@@ -52,11 +58,16 @@
               alt="PE/VC-Backed Companies icon"
             />
           </div>
-          <h3 class="card-title text-[20px] font-semibold text-white flex-1">PE/VC-Backed Companies</h3>
+          <h3 class="card-title text-[20px] font-semibold text-white flex-1">
+            PE/VC-Backed Companies
+          </h3>
         </div>
         <div class="text-white px-5 ml-[30px] lg:ml-0">
-          <p class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden">
-            Scalable finance operations, sharp reporting, and investor-grade visibility at every growth stage.
+          <p
+            class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden"
+          >
+            Scalable finance operations, sharp reporting, and investor-grade
+            visibility at every growth stage.
           </p>
         </div>
       </div>
@@ -75,11 +86,16 @@
               alt="Small & Mid-Sized Businesses icon"
             />
           </div>
-          <h3 class="card-title text-[20px] font-semibold text-white flex-1">Small & Mid-Sized Businesses</h3>
+          <h3 class="card-title text-[20px] font-semibold text-white flex-1">
+            Small & Mid-Sized Businesses
+          </h3>
         </div>
         <div class="text-white px-5 ml-[30px] lg:ml-0">
-          <p class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden">
-            Dependable, affordable financial expertise that strengthens decision-making and keeps you compliant.
+          <p
+            class="card-content text-[14px] leading-6 lg:opacity-100 lg:max-h-none opacity-0 max-h-0 transition-all duration-500 ease-in-out overflow-hidden"
+          >
+            Dependable, affordable financial expertise that strengthens
+            decision-making and keeps you compliant.
           </p>
         </div>
       </div>
@@ -87,7 +103,9 @@
   </div>
 
   <!-- Right Column -->
-  <div class="build-vector-mobile w-full lg:w-[569px] mt-10 lg:mt-0 relative group overflow-hidden rounded-lg">
+  <div
+    class="build-vector-mobile w-full lg:w-[569px] mt-10 lg:mt-0 relative group overflow-hidden rounded-lg"
+  >
     <img
       src="/img/home/build-img.png"
       alt="Sales Chart"
@@ -174,14 +192,14 @@
     // Mobile-specific scroll animations for card content reveal
     const setupMobileAnimations = () => {
       const cards = [card1, card2, card3];
-      
+
       cards.forEach((card, index) => {
         if (card) {
-          const cardContent = card.querySelector('.card-content');
-          
+          const cardContent = card.querySelector(".card-content");
+
           if (cardContent) {
             // Clear any existing ScrollTriggers for this element
-            ScrollTrigger.getAll().forEach(trigger => {
+            ScrollTrigger.getAll().forEach((trigger) => {
               if (trigger.trigger === card) {
                 trigger.kill();
               }
@@ -198,7 +216,7 @@
                     opacity: 1,
                     maxHeight: "200px",
                     duration: 0.6,
-                    ease: "power2.out"
+                    ease: "power2.out",
                   });
                 },
                 onLeave: () => {
@@ -206,7 +224,7 @@
                     opacity: 0,
                     maxHeight: "0px",
                     duration: 0.4,
-                    ease: "power2.in"
+                    ease: "power2.in",
                   });
                 },
                 onEnterBack: () => {
@@ -214,7 +232,7 @@
                     opacity: 1,
                     maxHeight: "200px",
                     duration: 0.6,
-                    ease: "power2.out"
+                    ease: "power2.out",
                   });
                 },
                 onLeaveBack: () => {
@@ -222,15 +240,15 @@
                     opacity: 0,
                     maxHeight: "0px",
                     duration: 0.4,
-                    ease: "power2.in"
+                    ease: "power2.in",
                   });
-                }
+                },
               });
             } else {
               // On desktop, ensure content is always visible
               gsap.set(cardContent, {
                 opacity: 1,
-                maxHeight: "none"
+                maxHeight: "none",
               });
             }
           }
@@ -242,8 +260,8 @@
     setupMobileAnimations();
 
     // Handle window resize to refresh ScrollTrigger and re-setup animations
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
+    let resizeTimeout: ReturnType<typeof setTimeout> | undefined;
+    window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         ScrollTrigger.refresh();

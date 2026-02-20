@@ -27,12 +27,14 @@ const tabImages = {
   tax: {
     default: cashflowImage,
     hover: cashflowImage_2,
-    alt: "Tax Ready Bookkeeping",
-  }
+    alt: "Tax-Ready Bookkeeping Solutions",
+  },
 };
 ---
 
-<div class="main-container bg-[#f5f7fa] pt-16 pb-0 sm:py-16 py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+<div
+  class="main-container bg-[#f5f7fa] pt-16 pb-0 sm:py-16 py-16 px-4 sm:px-6 lg:px-20 mx-auto"
+>
   <div
     class="max-w-screen-xl mx-auto flex flex-col gap-12 sm:gap-16 lg:gap-12 items-center animate-on-scroll opacity-0"
   >
@@ -49,7 +51,9 @@ const tabImages = {
         class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
         style="max-width: calc(768px + 670px);"
       >
-        We provide strategic financial leadership whenever you need it, without the cost of a full-time hire. From budgeting to forecasting, you get expert guidance to strengthen growth and profitability.
+        We provide strategic financial leadership whenever you need it, without
+        the cost of a full-time hire. From budgeting to forecasting, you get
+        expert guidance to strengthen growth and profitability.
       </p>
     </div>
 
@@ -71,6 +75,9 @@ const tabImages = {
           >Strategic Decision Support</button
         >
         <button class="tab-button" data-tab="tax">Compliance Management</button>
+        <button class="tab-button mobile-tab-scroll" data-tab="tax"
+          >Compliance Management</button
+        >
       </div>
     </div>
 
@@ -163,7 +170,7 @@ const tabImages = {
       max-width: 100% !important;
     }
   }
-  
+
   /* Desktop width */
   @media (min-width: 1024px) {
     .mobile-content-box {
@@ -235,12 +242,19 @@ const tabImages = {
 
     // update content
     const content = tabContentData[tabKey];
-    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
+    if (
+      content &&
+      tabTitle &&
+      tabDescription &&
+      tabIcon &&
+      tabImageDefault &&
+      tabImageHover
+    ) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.src = content.icon;
 
-       // Update dynamic images
+      // Update dynamic images
       if (content.images) {
         tabImageDefault.src = content.images.default.src;
         tabImageDefault.alt = content.images.alt;
@@ -285,4 +299,3 @@ const tabImages = {
     .querySelectorAll(".animate-on-scroll, .animate-on-scroll-child")
     .forEach((el) => observer.observe(el));
 </script>
-

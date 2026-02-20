@@ -13,11 +13,16 @@
     <p
       class="text-sm sm:text-base lg:text-[18px] text-[#5C667A] text-left self-start max-w-[1240px]"
     >
-      Many businesses struggle with the gap between basic bookkeeping and
-      high-level financial strategy. We fill this void by providing commercial
-      value through enterprise-grade financial expertise—making professional
-      accounting, reporting, and CFO services accessible to startups and SMBs of
-      all sizes.
+      While working closely with startups and small and mid-sized businesses, we
+      consistently saw the same problem: founders lacked access to reliable,
+      affordable, and scalable accounting support that understood both
+      day-to-day operations and investor expectations. <br /><br />
+      Large firms were expensive and inflexible. Smaller providers often lacked structure,
+      consistency, or the ability to scale with the business. <br /><br />
+      Finkeepers was built to close this gap. Backed by Knowcraft Analytics, we deliver
+      structured accounting services that combine experienced professionals, proven
+      processes, and modern financial software, so growing businesses get clarity
+      at every stage.
     </p>
 
     <!-- TABS -->
@@ -122,39 +127,44 @@
     const title = document.getElementById("title");
     const description = document.getElementById("description");
     const icon = document.getElementById("icon");
-    const image = document.getElementById("image");
-    const hoverImage = document.getElementById("hover-image");
+    const image = document.getElementById("image") as HTMLImageElement;
+    const hoverImage = document.getElementById(
+      "hover-image",
+    ) as HTMLImageElement;
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const tab = btn.dataset.tab;
+        const htmlBtn = btn as HTMLElement;
+        const tab = htmlBtn.dataset.tab as "vision" | "mission";
 
         buttons.forEach((b) => {
           b.classList.remove("bg-[#ED7C00]", "text-white");
           b.classList.add("text-[#797979]");
         });
 
-        btn.classList.add("bg-[#ED7C00]", "text-white");
-        btn.classList.remove("text-[#797979]");
+        htmlBtn.classList.add("bg-[#ED7C00]", "text-white");
+        htmlBtn.classList.remove("text-[#797979]");
 
         const t = data[tab];
 
-        gsap.to([title, description, icon], {
-          opacity: 0,
-          duration: 0.3,
-          onComplete: () => {
-            title.textContent = t.title;
-            description.textContent = t.description;
-            icon.style.backgroundImage = `url(${t.icon})`;
-            image.src = t.image;
-            hoverImage.src = t.hoverImage;
+        if (title && description && icon && image && hoverImage) {
+          gsap.to([title, description, icon], {
+            opacity: 0,
+            duration: 0.3,
+            onComplete: () => {
+              title.textContent = t.title;
+              description.textContent = t.description;
+              icon.style.backgroundImage = `url(${t.icon})`;
+              image.src = t.image;
+              hoverImage.src = t.hoverImage;
 
-            gsap.to([title, description, icon], {
-              opacity: 1,
-              duration: 0.4,
-            });
-          },
-        });
+              gsap.to([title, description, icon], {
+                opacity: 1,
+                duration: 0.4,
+              });
+            },
+          });
+        }
       });
     });
   });
@@ -162,8 +172,12 @@
   // Mobile-only scroll animation for vision image
   if ("ontouchstart" in window) {
     const visionContainer = document.querySelector(".vision-image-container");
-    const mainImage = document.querySelector(".vision-main-image");
-    const hoverImage = document.querySelector(".vision-hover-image");
+    const mainImage = document.querySelector(
+      ".vision-main-image",
+    ) as HTMLElement;
+    const hoverImage = document.querySelector(
+      ".vision-hover-image",
+    ) as HTMLElement;
 
     if (visionContainer && mainImage && hoverImage) {
       const observer = new IntersectionObserver(

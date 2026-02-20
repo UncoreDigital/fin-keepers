@@ -17,37 +17,39 @@ const tabImages = {
   general: {
     default: salesImage,
     hover: salesImage_2,
-    alt: "Daily Bookkeeping & Reconciliations"
+    alt: "Daily Bookkeeping & Reconciliations",
   },
   payables: {
     default: timerImage,
     hover: timerImage_2,
-    alt: "Account Payables and Receivable Management"
+    alt: "Account Payables and Receivable Management",
   },
   bank: {
     default: cashflowImage,
     hover: cashflowImage_2,
-    alt: "Bank Reconciliation"
+    alt: "Bank Reconciliation",
   },
   tax: {
     default: moneyImage,
     hover: moneyImage_2,
-    alt: "Tax Ready Bookkeeping"
+    alt: "Tax-Ready Bookkeeping Solutions",
   },
   reporting: {
     default: cfoImage,
     hover: cfoImage_2,
-    alt: "Financial Reporting"
+    alt: "Financial Reporting",
   },
   new: {
     default: mecr,
     hover: mecr2,
-    alt: "Multi-Entry & Consolidated Reporting"
-  }
+    alt: "Multi-Entry & Consolidated Reporting",
+  },
 };
 ---
 
-<div class="main-container bg-[#f5f7fa] pt-16 pb-0 sm:py-16 px-4 sm:px-6 lg:px-20 mx-auto">
+<div
+  class="main-container bg-[#f5f7fa] pt-16 pb-0 sm:py-16 px-4 sm:px-6 lg:px-20 mx-auto"
+>
   <div
     class="max-w-screen-xl mx-auto flex flex-col gap-6 sm:gap-12 lg:gap-12 items-start animate-on-scroll opacity-0"
   >
@@ -64,7 +66,9 @@ const tabImages = {
         class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
         style="max-width: calc(48rem + 500px);"
       >
-        We handle your daily entries, reconciliations, payables, receivables, and clean month-end closures. Your books stay accurate, organised, and ready for audits or financial planning.
+        We handle your daily entries, reconciliations, payables, receivables,
+        and clean month-end closures. Your books stay accurate, organised, and
+        ready for audits or financial planning.
       </p>
     </div>
 
@@ -73,10 +77,9 @@ const tabImages = {
       class="relative w-full overflow-hidden animate-on-scroll-child opacity-0"
     >
       <div
-  id="tabsContainer"
-  class="hidden sm:flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto"
->
-
+        id="tabsContainer"
+        class="hidden sm:flex overflow-x-auto gap-3 px-4 py-4 sm:px-0 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start sm:justify-center max-w-full mx-auto"
+      >
         <button class="tab-button active-tab" data-tab="general"
           >Daily Bookkeeping</button
         >
@@ -85,7 +88,7 @@ const tabImages = {
         >
         <!--<button class="tab-button" data-tab="bank">Bank Reconciliation</button>-->
         <button class="tab-button" data-tab="tax"
-          >Tax – Ready Bookkeeping</button
+          >Tax-Ready Bookkeeping Solutions</button
         >
         <button class="tab-button" data-tab="reporting"
           >Financial Reporting</button
@@ -95,24 +98,34 @@ const tabImages = {
         >
       </div>
       <!-- Mobile swipe tabs ONLY -->
-<div class="tabs-viewport sm:hidden">
-  <div class="tabs-list" id="mobileTabs">
-    <button class="tab-button active-tab mobile-tab-scroll" data-tab="general">Daily Bookkeeping</button>
-    <button class="tab-button mobile-tab-scroll" data-tab="payables">Account Payables & Receivables</button>
-    <button class="tab-button mobile-tab-scroll" data-tab="tax">Tax – Ready Bookkeeping</button>
-    <button class="tab-button mobile-tab-scroll" data-tab="reporting">Financial Reporting</button>
-    <button class="tab-button mobile-tab-scroll" data-tab="new">Multi-Entry & Consolidated Reporting</button>
-  </div>
+      <div class="tabs-viewport sm:hidden">
+        <div class="tabs-list" id="mobileTabs">
+          <button
+            class="tab-button active-tab mobile-tab-scroll"
+            data-tab="general">Daily Bookkeeping</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="payables"
+            >Account Payables & Receivables</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="tax"
+            >Tax-Ready Bookkeeping Solutions</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="reporting"
+            >Financial Reporting</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="new"
+            >Multi-Entry & Consolidated Reporting</button
+          >
+        </div>
 
-  <ul class="tabs-indicators" aria-hidden>
-    <li class="indicator active"></li>
-    <li class="indicator"></li>
-    <li class="indicator"></li>
-    <li class="indicator"></li>
-    <li class="indicator"></li>
-  </ul>
-</div>
-
+        <ul class="tabs-indicators" aria-hidden>
+          <li class="indicator active"></li>
+          <li class="indicator"></li>
+          <li class="indicator"></li>
+          <li class="indicator"></li>
+          <li class="indicator"></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Tab Content (dynamic area) -->
@@ -142,9 +155,9 @@ const tabImages = {
           id="tabDescription"
           class="text-base sm:text-lg leading-relaxed text-[#797979]"
         >
-          Recording and organizing daily business
-          transactions, including counting of cash,matching income with
-          expenses, and cash/bank reconciliation.
+          Recording and organizing daily business transactions, including
+          counting of cash,matching income with expenses, and cash/bank
+          reconciliation.
         </p>
         <!--  <a href="#" class="text-[#ed7c00] font-semibold text-base sm:text-lg hover:underline">Learn More</a>-->
       </div>
@@ -154,7 +167,9 @@ const tabImages = {
         class="flex justify-center items-center p-4 sm:p-6 bg-[#f5f7fa] rounded-lg lg:rounded-l-none w-full lg:w-1/2 flex-grow group tab-image-container"
         style="margin-top: -20px;"
       >
-        <div class="relative w-full max-w-[280px] aspect-square overflow-hidden">
+        <div
+          class="relative w-full max-w-[280px] aspect-square overflow-hidden"
+        >
           <!-- Default Image -->
           <img
             id="tabImageDefault"
@@ -178,55 +193,55 @@ const tabImages = {
 
 <style>
   /* MOBILE ONLY */
-@media (max-width: 639px) {
-  .tabs-viewport {
-    width: 100%;
-    overflow: hidden;
+  @media (max-width: 639px) {
+    .tabs-viewport {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .tabs-list {
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      overflow-x: auto;
+
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      touch-action: pan-x;
+
+      scrollbar-width: none;
+    }
+
+    .tabs-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tabs-list > .tab-button {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      white-space: nowrap;
+    }
+
+    .tabs-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 8px;
+      list-style: none;
+    }
+
+    .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d1d5db;
+    }
+
+    .indicator.active {
+      background: #ed7c00;
+    }
   }
-
-  .tabs-list {
-    display: flex;
-    gap: 12px;
-    padding: 12px 16px;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    touch-action: pan-x;
-
-    scrollbar-width: none;
-  }
-
-  .tabs-list::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tabs-list > .tab-button {
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    white-space: nowrap;
-  }
-
-  .tabs-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding-top: 8px;
-    list-style: none;
-  }
-
-  .indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #d1d5db;
-  }
-
-  .indicator.active {
-    background: #ed7c00;
-  }
-}
 
   /* Tab button styling */
   .tab-button {
@@ -287,7 +302,7 @@ const tabImages = {
       images: tabImages.bank,
     },
     tax: {
-      title: "Tax – Ready Bookkeeping",
+      title: "Tax-Ready Bookkeeping Solutions",
       description:
         "Keeping the books ready to audit for CPAs and also simplifying IRS tax preparations.",
       icon: "/img/services/SVG/b3.svg",
@@ -325,11 +340,18 @@ const tabImages = {
 
     // update content
     const content = tabContentData[tabKey];
-    if (content && tabTitle && tabDescription && tabIcon && tabImageDefault && tabImageHover) {
+    if (
+      content &&
+      tabTitle &&
+      tabDescription &&
+      tabIcon &&
+      tabImageDefault &&
+      tabImageHover
+    ) {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.src = content.icon;
-      
+
       // Update dynamic images
       if (content.images) {
         tabImageDefault.src = content.images.default.src;
@@ -376,62 +398,70 @@ const tabImages = {
     .forEach((el) => observer.observe(el));
 
   // Mobile-only scroll animation for tab image
-  if ('ontouchstart' in window) {
-    const tabContainer = document.querySelector('.tab-image-container');
-    const mainImage = document.getElementById('tabImageDefault');
-    const hoverImage = document.getElementById('tabImageHover');
+  if ("ontouchstart" in window) {
+    const tabContainer = document.querySelector(".tab-image-container");
+    const mainImage = document.getElementById("tabImageDefault");
+    const hoverImage = document.getElementById("tabImageHover");
 
     if (tabContainer && mainImage && hoverImage) {
-      const tabObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Swap images after 1 second
-            setTimeout(() => {
-              mainImage.style.opacity = '0';
-              hoverImage.style.opacity = '1';
-              
-              // Swap back after 2 seconds
+      const tabObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Swap images after 1 second
               setTimeout(() => {
-                mainImage.style.opacity = '1';
-                hoverImage.style.opacity = '0';
-              }, 2000);
-            }, 1000);
-          }
-        });
-      }, { threshold: 0.5 });
+                mainImage.style.opacity = "0";
+                hoverImage.style.opacity = "1";
+
+                // Swap back after 2 seconds
+                setTimeout(() => {
+                  mainImage.style.opacity = "1";
+                  hoverImage.style.opacity = "0";
+                }, 2000);
+              }, 1000);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
 
       tabObserver.observe(tabContainer);
     }
 
     // Mobile scroll-based tab switching (keep original design)
     const isMobile = () => window.innerWidth < 640;
-    
+
     if (isMobile()) {
-      const mobileTabButtons = document.querySelectorAll('.mobile-tab-scroll');
-      
+      const mobileTabButtons = document.querySelectorAll(".mobile-tab-scroll");
+
       mobileTabButtons.forEach((button, index) => {
-        const scrollObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // Auto-switch to this tab when it comes into view
-              setTimeout(() => {
-                const tabKey = button.getAttribute('data-tab');
-                if (tabKey) {
-                  switchTab(tabKey, button);
-                  
-                  // Update mobile indicators
-                  const indicators = document.querySelectorAll('.tabs-indicators .indicator');
-                  indicators.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                  });
-                }
-              }, 300); // Small delay for smooth transition
-            }
-          });
-        }, { 
-          threshold: 0.7,
-          rootMargin: '-20% 0px -20% 0px'
-        });
+        const scrollObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Auto-switch to this tab when it comes into view
+                setTimeout(() => {
+                  const tabKey = button.getAttribute("data-tab");
+                  if (tabKey) {
+                    switchTab(tabKey, button);
+
+                    // Update mobile indicators
+                    const indicators = document.querySelectorAll(
+                      ".tabs-indicators .indicator",
+                    );
+                    indicators.forEach((dot, i) => {
+                      dot.classList.toggle("active", i === index);
+                    });
+                  }
+                }, 300); // Small delay for smooth transition
+              }
+            });
+          },
+          {
+            threshold: 0.7,
+            rootMargin: "-20% 0px -20% 0px",
+          },
+        );
 
         scrollObserver.observe(button);
       });
@@ -439,21 +469,26 @@ const tabImages = {
   }
   const allTabButtons = document.querySelectorAll(".tab-button");
 
-allTabButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const key = btn.getAttribute("data-tab");
+  allTabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.getAttribute("data-tab");
 
-    document.querySelectorAll(".tab-button").forEach(b =>
-      b.classList.toggle("active-tab", b.getAttribute("data-tab") === key)
-    );
+      document
+        .querySelectorAll(".tab-button")
+        .forEach((b) =>
+          b.classList.toggle("active-tab", b.getAttribute("data-tab") === key),
+        );
 
-    // update indicator (mobile)
-    const indicators = document.querySelectorAll(".tabs-indicators .indicator");
-    indicators.forEach((dot, i) => {
-      dot.classList.toggle("active", i === [...btn.parentElement.children].indexOf(btn));
+      // update indicator (mobile)
+      const indicators = document.querySelectorAll(
+        ".tabs-indicators .indicator",
+      );
+      indicators.forEach((dot, i) => {
+        dot.classList.toggle(
+          "active",
+          i === [...btn.parentElement.children].indexOf(btn),
+        );
+      });
     });
   });
-});
-
 </script>
-

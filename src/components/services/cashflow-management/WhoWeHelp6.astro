@@ -27,8 +27,8 @@ const tabImages = {
   tax: {
     default: oneImage,
     hover: oneImage_2,
-    alt: "Tax Ready Bookkeeping",
-  }
+    alt: "Tax-Ready Bookkeeping Solutions",
+  },
 };
 ---
 
@@ -49,7 +49,9 @@ const tabImages = {
         class="text-base sm:text-lg leading-relaxed text-[#5c667a] font-['Inter']"
         style="max-width: calc(768px + 600px);"
       >
-        We track incoming and outgoing funds with precision and ensure you always know your liquidity position. You get clear cash flow visibility that helps you plan confidently and avoid surprises.
+        We track incoming and outgoing funds with precision and ensure you
+        always know your liquidity position. You get clear cash flow visibility
+        that helps you plan confidently and avoid surprises.
       </p>
     </div>
 
@@ -72,14 +74,23 @@ const tabImages = {
         >
         <button class="tab-button" data-tab="tax">Financial Insights</button>
       </div>
-      
+
       <!-- Mobile swipe tabs ONLY -->
       <div class="tabs-viewport sm:hidden">
         <div class="tabs-list" id="mobileTabs">
-          <button class="tab-button active-tab mobile-tab-scroll" data-tab="general">Liquidity Management</button>
-          <button class="tab-button mobile-tab-scroll" data-tab="payables">Fraud Prevention Expertise</button>
-          <button class="tab-button mobile-tab-scroll" data-tab="bank">Payment - Payables and Receivables</button>
-          <button class="tab-button mobile-tab-scroll" data-tab="tax">Financial Insights</button>
+          <button
+            class="tab-button active-tab mobile-tab-scroll"
+            data-tab="general">Liquidity Management</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="payables"
+            >Fraud Prevention Expertise</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="bank"
+            >Payment - Payables and Receivables</button
+          >
+          <button class="tab-button mobile-tab-scroll" data-tab="tax"
+            >Financial Insights</button
+          >
         </div>
 
         <ul class="tabs-indicators" aria-hidden>
@@ -295,8 +306,8 @@ const tabImages = {
       tabTitle.textContent = content.title;
       tabDescription.textContent = content.description;
       tabIcon.src = content.icon;
-      
-       // Update dynamic images
+
+      // Update dynamic images
       if (content.images) {
         tabImageDefault.src = content.images.default.src;
         tabImageDefault.alt = content.images.alt;
@@ -309,7 +320,7 @@ const tabImages = {
   // Init - only add click listeners for desktop
   tabButtons.forEach((button) => {
     // Only add click listeners for desktop tabs
-    if (!button.classList.contains('mobile-tab-scroll')) {
+    if (!button.classList.contains("mobile-tab-scroll")) {
       button.addEventListener("click", () => {
         const key = button.getAttribute("data-tab");
         if (key) switchTab(key, button);
@@ -345,60 +356,68 @@ const tabImages = {
     .forEach((el) => observer.observe(el));
 
   // Mobile-only scroll animation for tab image
-  if ('ontouchstart' in window) {
-    const tabContainer = document.querySelector('.group');
-    const mainImage = document.getElementById('tabImageDefault');
-    const hoverImage = document.getElementById('tabImageHover');
+  if ("ontouchstart" in window) {
+    const tabContainer = document.querySelector(".group");
+    const mainImage = document.getElementById("tabImageDefault");
+    const hoverImage = document.getElementById("tabImageHover");
 
     if (tabContainer && mainImage && hoverImage) {
-      const tabObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Swap images after 1 second
-            setTimeout(() => {
-              mainImage.style.opacity = '0';
-              hoverImage.style.opacity = '1';
-              
-              // Swap back after 2 seconds
+      const tabObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Swap images after 1 second
               setTimeout(() => {
-                mainImage.style.opacity = '1';
-                hoverImage.style.opacity = '0';
-              }, 2000);
-            }, 1000);
-          }
-        });
-      }, { threshold: 0.5 });
+                mainImage.style.opacity = "0";
+                hoverImage.style.opacity = "1";
+
+                // Swap back after 2 seconds
+                setTimeout(() => {
+                  mainImage.style.opacity = "1";
+                  hoverImage.style.opacity = "0";
+                }, 2000);
+              }, 1000);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
 
       tabObserver.observe(tabContainer);
     }
 
     // Mobile scroll-based tab switching (keep original design)
     if (isMobile()) {
-      const mobileTabButtons = document.querySelectorAll('.mobile-tab-scroll');
-      
+      const mobileTabButtons = document.querySelectorAll(".mobile-tab-scroll");
+
       mobileTabButtons.forEach((button, index) => {
-        const scrollObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // Auto-switch to this tab when it comes into view
-              setTimeout(() => {
-                const tabKey = button.getAttribute('data-tab');
-                if (tabKey) {
-                  switchTab(tabKey, button);
-                  
-                  // Update mobile indicators
-                  const indicators = document.querySelectorAll('.tabs-indicators .indicator');
-                  indicators.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                  });
-                }
-              }, 300); // Small delay for smooth transition
-            }
-          });
-        }, { 
-          threshold: 0.7,
-          rootMargin: '-20% 0px -20% 0px'
-        });
+        const scrollObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Auto-switch to this tab when it comes into view
+                setTimeout(() => {
+                  const tabKey = button.getAttribute("data-tab");
+                  if (tabKey) {
+                    switchTab(tabKey, button);
+
+                    // Update mobile indicators
+                    const indicators = document.querySelectorAll(
+                      ".tabs-indicators .indicator",
+                    );
+                    indicators.forEach((dot, i) => {
+                      dot.classList.toggle("active", i === index);
+                    });
+                  }
+                }, 300); // Small delay for smooth transition
+              }
+            });
+          },
+          {
+            threshold: 0.7,
+            rootMargin: "-20% 0px -20% 0px",
+          },
+        );
 
         scrollObserver.observe(button);
       });
@@ -406,15 +425,17 @@ const tabImages = {
   }
 
   // Desktop-only click handlers
-  const desktopTabButtons = document.querySelectorAll(".tab-button:not(.mobile-tab-scroll)");
+  const desktopTabButtons = document.querySelectorAll(
+    ".tab-button:not(.mobile-tab-scroll)",
+  );
 
   desktopTabButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const key = btn.getAttribute("data-tab");
 
       // Only update desktop buttons
-      desktopTabButtons.forEach(b =>
-        b.classList.toggle("active-tab", b.getAttribute("data-tab") === key)
+      desktopTabButtons.forEach((b) =>
+        b.classList.toggle("active-tab", b.getAttribute("data-tab") === key),
       );
 
       // Switch tab content

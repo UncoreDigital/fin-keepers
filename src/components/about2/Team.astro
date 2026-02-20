@@ -9,27 +9,27 @@
       class="flex w-full gap-4 sm:gap-8 lg:gap-[48px] items-start flex-col lg:flex-row relative mt-0 mr-0 mb-0 ml-0"
     >
       <div
-        class="flex w-full lg:w-[505px] flex-col gap-[40px] items-start shrink-0 flex-nowrap relative z-[1]"
+        class="flex w-full lg:w-[505px] flex-col gap-[40px] items-start shrink-0 flex-nowrap relative z-[10]"
       >
         <span
-          class="flex w-full h-auto justify-start items-start shrink-0 font-['Inter'] text-[24px] sm:text-[30px] lg:text-[36px] font-bold leading-[28px] sm:leading-[36px] lg:leading-[42px] text-[#04092a] relative text-left z-[2]"
+          class="flex w-full h-auto justify-start items-start shrink-0 font-['Inter'] text-[24px] sm:text-[30px] lg:text-[36px] font-bold leading-[28px] sm:leading-[36px] lg:leading-[42px] text-[#04092a] relative text-left z-[11]"
         >
           Meet the Experts Behind Your Success
         </span>
-        <a
+        <!-- <a
           href="/contact"
-          class="flex w-[141px] h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[8px] border-solid border border-[#ed7c00] relative z-[3] hover:bg-[#ed7c00] hover:text-white transition-colors duration-300 group"
+          class="flex w-[141px] h-[50px] pt-0 pr-[24px] pb-0 pl-[24px] flex-col gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[8px] border-solid border border-[#ed7c00] relative z-[12] hover:bg-[#ed7c00] hover:text-white transition-colors duration-300 group cursor-pointer"
         >
           <div
-            class="flex w-[93px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[4]"
+            class="flex w-[93px] h-[40px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[13]"
           >
             <span
-              class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] group-hover:text-white relative text-left whitespace-nowrap z-[5] transition-colors duration-300"
+              class="h-[24px] shrink-0 basis-auto font-['Inter'] text-[18px] font-semibold leading-[24px] text-[#ed7c00] group-hover:text-white relative text-left whitespace-nowrap z-[14] transition-colors duration-300"
             >
               View More
             </span>
           </div>
-        </a>
+        </a> -->
       </div>
       <span
         class="flex w-full lg:w-[647px] h-auto justify-start items-start grow shrink-0 basis-0 font-['Inter'] text-base sm:text-[18px] font-normal leading-[24px] sm:leading-[27px] text-[#5c667a] relative text-left z-[6]"
@@ -308,32 +308,49 @@
 
     // Open modal when team member card is clicked
     teamCards.forEach((card) => {
-      card.addEventListener("click", function () {
-        const memberId = this.getAttribute("data-member");
-        const member = teamMembers[memberId];
+      card.addEventListener("click", () => {
+        const htmlCard = card as HTMLElement;
+        const memberId = htmlCard.getAttribute("data-member");
+        if (!memberId) return;
+        const member = teamMembers[memberId as keyof typeof teamMembers];
 
-        if (member) {
+        const modalName = document.getElementById("modalName");
+        const modalImage = document.getElementById(
+          "modalImage",
+        ) as HTMLImageElement;
+        const modalTagline = document.getElementById("modalTagline");
+        const modalSpotlight = document.getElementById("modalSpotlight");
+        const bioContainer = document.getElementById("modalBio");
+        const expertiseList = document.getElementById("modalExpertise");
+
+        if (
+          member &&
+          modalName &&
+          modalImage &&
+          modalTagline &&
+          modalSpotlight &&
+          bioContainer &&
+          expertiseList &&
+          modal
+        ) {
           // Populate modal content
-          document.getElementById("modalName").textContent = member.name;
-          document.getElementById("modalImage").src = member.image;
-          document.getElementById("modalImage").alt = member.name;
-          document.getElementById("modalTagline").textContent = member.tagline;
-          document.getElementById("modalSpotlight").textContent =
-            member.spotlight;
+          modalName.textContent = member.name;
+          modalImage.src = member.image;
+          modalImage.alt = member.name;
+          modalTagline.textContent = member.tagline;
+          modalSpotlight.textContent = member.spotlight;
 
           // Populate bio paragraphs
-          const bioContainer = document.getElementById("modalBio");
           bioContainer.innerHTML = "";
-          member.bio.forEach((paragraph) => {
+          member.bio.forEach((paragraph: string) => {
             const p = document.createElement("p");
             p.textContent = paragraph;
             bioContainer.appendChild(p);
           });
 
           // Populate expertise list
-          const expertiseList = document.getElementById("modalExpertise");
           expertiseList.innerHTML = "";
-          member.expertise.forEach((item) => {
+          member.expertise.forEach((item: string) => {
             const li = document.createElement("li");
             li.textContent = item;
             expertiseList.appendChild(li);
@@ -348,22 +365,28 @@
 
     // Close modal functionality
     function closeModalFunction() {
-      modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
+      if (modal) {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
     }
 
-    closeModal.addEventListener("click", closeModalFunction);
+    if (closeModal) {
+      closeModal.addEventListener("click", closeModalFunction);
+    }
 
     // Close modal when clicking outside
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        closeModalFunction();
-      }
-    });
+    if (modal) {
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeModalFunction();
+        }
+      });
+    }
 
     // Close modal with Escape key
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
         closeModalFunction();
       }
     });
@@ -377,7 +400,7 @@
           (entries) => {
             entries.forEach((entry, index) => {
               if (entry.isIntersecting) {
-                const card = entry.target;
+                const card = entry.target as HTMLElement;
                 // Stagger the animation with 200ms delay between cards
                 setTimeout(() => {
                   card.style.transform = "scale(1.05)";

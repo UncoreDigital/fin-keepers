@@ -8,7 +8,7 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
   <span
     class="section-title text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-[1.2] text-[#28241f] text-left w-full opacity-0 translate-y-10 ml-0 sm:ml-[50px] lg:ml-[100px]"
   >
-   Finance Consulting: What You Need to Know
+    Finance Consulting: What You Need to Know
   </span>
 
   <div
@@ -37,7 +37,9 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
           data-accordion-content
           class="text-[16px] leading-[22px] text-[#797979] hidden"
         >
-          Finkeepers provides accurate books, real-time financial visibility, and strategic guidance so you can confidently manage cash flow, plan growth, and meet compliance requirements.
+          Finkeepers provides accurate books, real-time financial visibility,
+          and strategic guidance so you can confidently manage cash flow, plan
+          growth, and meet compliance requirements.
         </span>
       </div>
 
@@ -62,8 +64,8 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
           data-accordion-content
           class="text-[16px] leading-[22px] text-[#797979] hidden"
         >
-          Our advisors hold industry certifications such as CPA, CFA, and
-          CMA, ensuring qualified financial expertise.
+          Our advisors hold top industry certifications such as CPA, CFA, and
+          CMA, ensuring you get qualified financial expertise.
         </span>
       </div>
 
@@ -88,7 +90,9 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
           data-accordion-content
           class="text-[16px] leading-[22px] text-[#797979] hidden"
         >
-          Finkeepers is an ISO 27001:2022 certified organization. Information is one of our most valuable assets, and we constantly evaluate our systems to maintain the highest level of information security.
+          Finkeepers is an ISO 27001:2022 certified organization. Information is
+          one of our most valuable assets, and we constantly evaluate our
+          systems to maintain the highest level of information security.
         </span>
       </div>
     </div>
@@ -103,76 +107,74 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
           <span
             class="text-[18px] font-semibold text-[#212121] leading-[24.3px]"
           >
-            What is the process for working with your firm?<br></br>
-          </span>
-          <button
-            data-accordion-toggle
-            class="accordion-toggle px-[10px] py-[4px] text-[18px] font-bold leading-[24px] bg-[#f5f7fa] text-[#212121] rounded-[8px] cursor-pointer transition-colors duration-300"
+            What is the process for working with your firm?<br /></span
           >
-            +
-          </button>
         </div>
-        <span
-          data-accordion-content
-          class="text-[16px]  leading-[22px] text-[#797979] hidden"
+        <button
+          data-accordion-toggle
+          class="accordion-toggle px-[10px] py-[4px] text-[18px] font-bold leading-[24px] bg-[#f5f7fa] text-[#212121] rounded-[8px] cursor-pointer transition-colors duration-300"
         >
-          The process starts with consultation, followed by a tailored plan,
-          onboarding, and continuous support.
-        </span>
+          +
+        </button>
       </div>
-
-      <!-- Card 4 -->
-      <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
+      <span
+        data-accordion-content
+        class="text-[16px] leading-[22px] text-[#797979] hidden"
       >
-        <div class="flex justify-between items-center w-full">
-          <span
-            class="text-[18px] font-semibold text-[#212121] leading-[24.3px]"
-          >
-            How do you charge for your services?<br></br>
-          </span>
-          <button
-            data-accordion-toggle
-            class="accordion-toggle px-[10px] py-[4px] text-[18px] font-bold leading-[24px] bg-[#f5f7fa] text-[#212121] rounded-[8px] cursor-pointer transition-colors duration-300"
-          >
-            +
-          </button>
-        </div>
-        <span
-          data-accordion-content
-          class="text-[16px]  leading-[22px] text-[#797979] hidden"
-        >
-          We offer flexible pricing based on project scope and duration. Fixed
-          rates or hourly—whatever suits your needs.
-        </span>
-      </div>
-
-      <!-- Card 6 -->
-      <div
-        class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
-      >
-        <div class="flex justify-between items-center w-full">
-          <span
-            class="text-[18px] font-semibold text-[#212121] leading-[24.3px]"
-          >
-            What if the books are already messy?<br></br>
-          </span>
-          <button
-            data-accordion-toggle
-            class="accordion-toggle px-[10px] py-[4px] text-[18px] font-bold leading-[24px] bg-[#f5f7fa] text-[#212121] rounded-[8px] cursor-pointer transition-colors duration-300"
-          >
-            +
-          </button>
-        </div>
-        <span
-          data-accordion-content
-          class="text-[16px]  leading-[22px] text-[#797979] hidden"
-        >
-          No worries. Finkeepers regularly takes over messy or incomplete books and brings them back to order with clean, compliant, and dependable financial systems.
-        </span>
-      </div>
+        The process starts with consultation, followed by a tailored plan,
+        onboarding, and continuous support.
+      </span>
     </div>
+
+    <!-- Card 4 -->
+    <div
+      class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
+    >
+      <div class="flex justify-between items-center w-full">
+        <span class="text-[18px] font-semibold text-[#212121] leading-[24.3px]">
+          How do you charge for your services?<br /></span
+        >
+      </div>
+      <button
+        data-accordion-toggle
+        class="accordion-toggle px-[10px] py-[4px] text-[18px] font-bold leading-[24px] bg-[#f5f7fa] text-[#212121] rounded-[8px] cursor-pointer transition-colors duration-300"
+      >
+        +
+      </button>
+    </div>
+    <span
+      data-accordion-content
+      class="text-[16px] leading-[22px] text-[#797979] hidden"
+    >
+      We offer flexible pricing based on project scope and duration. Fixed rates
+      or hourly-whatever suits your needs.
+    </span>
   </div>
+
+  <!-- Card 6 -->
+  <div
+    class="accordion-card flex flex-col gap-[16px] bg-white rounded-[16px] border border-[#f5f7fa] shadow-md p-[30px] opacity-0 translate-y-10"
+  >
+    <div class="flex justify-between items-center w-full">
+      <span class="text-[18px] font-semibold text-[#212121] leading-[24.3px]">
+        What if the books are already messy?<br /></span
+      >
+    </div>
+    <button
+      data-accordion-toggle
+      class="accordion-toggle px-[10px] py-[4px] text-[18px] font-bold leading-[24px] bg-[#f5f7fa] text-[#212121] rounded-[8px] cursor-pointer transition-colors duration-300"
+    >
+      +
+    </button>
+  </div>
+  <span
+    data-accordion-content
+    class="text-[16px] leading-[22px] text-[#797979] hidden"
+  >
+    No worries. Finkeepers regularly takes over messy or incomplete books and
+    brings them back to order with clean, compliant, and dependable financial
+    systems.
+  </span>
 </div>
 
 <script>
@@ -210,8 +212,9 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
   });
 
   // Scroll animations
-  gsap.utils.toArray(".section-title, .section-wrapper, .accordion-card").forEach(
-    (el, i) => {
+  gsap.utils
+    .toArray(".section-title, .section-wrapper, .accordion-card")
+    .forEach((el, i) => {
       gsap.to(el, {
         opacity: 1,
         y: 0,
@@ -222,6 +225,5 @@ import { onMount } from "solid-js"; // Astro supports client:load hydration
           start: "top 85%",
         },
       });
-    }
-  );
+    });
 </script>
