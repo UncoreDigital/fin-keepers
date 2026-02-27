@@ -74,19 +74,13 @@
 
     <!-- Right Image and Overlay -->
     <div
-      class="relative w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0 group ml-16 lg:ml-0 hero-image-container"
+      class="relative w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0 ml-16 lg:ml-0 hero-image-container"
     >
       <!-- Main Image -->
       <img
         src="/img/home/sales_2-new.png"
         alt="Smiling woman in business suit"
-        class="w-4/5 max-w-xs sm:max-w-sm lg:w-full lg:max-w-none lg:w-[600px] rounded-[30px] object-cover transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 hero-main-image"
-      />
-      <!-- Hover Image -->
-      <img
-        src="/img/home/sales_2-new.png"
-        alt="Business Woman with tablet and growth charts - Hover"
-        class="absolute top-0 left-0 w-4/5 max-w-xs sm:max-w-sm lg:w-full lg:max-w-none lg:w-[600px] rounded-[30px] object-cover transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60] hero-hover-image"
+        class="w-4/5 max-w-xs sm:max-w-sm lg:w-full lg:max-w-none lg:w-[600px] rounded-[30px] object-cover"
       />
       <div class="mr-20"></div>
       <!-- Overlay Card -->
@@ -135,38 +129,6 @@
           });
         }
       });
-    }
-
-    // Mobile-only scroll animation for hero image
-    if ("ontouchstart" in window) {
-      const heroContainer = document.querySelector(".hero-image-container");
-      const mainImage = document.querySelector(".hero-main-image");
-      const hoverImage = document.querySelector(".hero-hover-image");
-
-      if (heroContainer && mainImage && hoverImage) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Swap images after 1 second
-                setTimeout(() => {
-                  mainImage.style.opacity = "0";
-                  hoverImage.style.opacity = "1";
-
-                  // Swap back after 2 seconds
-                  setTimeout(() => {
-                    mainImage.style.opacity = "1";
-                    hoverImage.style.opacity = "0";
-                  }, 2000);
-                }, 1000);
-              }
-            });
-          },
-          { threshold: 0.5 },
-        );
-
-        observer.observe(heroContainer);
-      }
     }
   });
 </script>
