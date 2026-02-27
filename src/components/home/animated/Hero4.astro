@@ -271,24 +271,14 @@ const logos = Object.values(modules);
         </div> -->
         <div
           id="hero-image-container"
-          class="lg:flex-1 flex justify-center lg:justify-end items-center group relative w-[420px] sm:w-[680px] md:w-[780px] lg:w-[1250px] aspect-[640/420] -mt-[36px] sm:-mt-[31px] lg:-mt-[30px] cursor-pointer"
+          class="lg:flex-1 flex justify-center lg:justify-end items-center relative w-[420px] sm:w-[680px] md:w-[780px] lg:w-[1250px] aspect-[640/420] -mt-[36px] sm:-mt-[31px] lg:-mt-[30px] cursor-pointer"
         >
           <!-- Image 1 (Default) -->
           <img
             id="hero-default-img"
             src="/img/home/hero/1-new.png"
             alt="Hero Default"
-            class="hero-vector-img opacity-0 absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-10 rotate-[5deg]"
-          />
-
-          <!-- Image 2 (On Hover/Touch) -->
-          <img
-            id="hero-hover-img"
-            src="/img/home/hero/1-new.png"
-            alt="Hero Hover"
-            class="absolute inset-0 w-full h-full object-contain z-20
-           opacity-0 transition-all duration-700 ease-in-out
-           group-hover:opacity-100 rotate-[5deg]"
+            class="hero-vector-img absolute inset-0 w-full h-full object-contain z-10 rotate-[5deg]"
           />
         </div>
       </div>
@@ -319,7 +309,7 @@ const logos = Object.values(modules);
     >
       <div
         id="logoSlider"
-        class="flex gap-[80px] sm:gap-[120px] items-center w-max animate-scroll-logos"
+        class="flex gap-[40px] sm:gap-[60px] items-center w-max animate-scroll-logos"
       >
         {
           logos.map((src, i) => (
@@ -385,43 +375,6 @@ const logos = Object.values(modules);
     stagger: 0.15,
     ease: "power2.out",
     delay: 0.3,
-  });
-
-  // Add scroll-based image animation for MOBILE ONLY
-  document.addEventListener("DOMContentLoaded", function () {
-    const heroContainer = document.getElementById("hero-image-container");
-    const defaultImg = document.getElementById("hero-default-img");
-    const hoverImg = document.getElementById("hero-hover-img");
-
-    // Only apply scroll animation on mobile devices (touch devices)
-    if (heroContainer && defaultImg && hoverImg && "ontouchstart" in window) {
-      // Create intersection observer for scroll-based animation
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Animate image swap when hero comes into view
-              setTimeout(() => {
-                defaultImg.style.opacity = "0";
-                hoverImg.style.opacity = "1";
-
-                // Switch back after 2 seconds
-                setTimeout(() => {
-                  defaultImg.style.opacity = "1";
-                  hoverImg.style.opacity = "0";
-                }, 2000);
-              }, 1000); // Delay to let initial animations complete
-            }
-          });
-        },
-        {
-          threshold: 0.5,
-          rootMargin: "0px 0px -20% 0px",
-        },
-      );
-
-      observer.observe(heroContainer);
-    }
   });
 </script>
 

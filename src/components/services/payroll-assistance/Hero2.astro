@@ -20,9 +20,9 @@ import HeroImage_2 from "../../../assets/services/book-keeping/timer_2-new.png";
         class="text-[16px] sm:text-[18px] leading-[27px] text-[#797979] max-w-xl"
       >
         At Finkeepers, we know your people are the foundation of your business.
-        Our experts ensure accurate, timely, and compliant
-        salary management, helping you boost employee satisfaction and retention
-        while you focus on growth.
+        Our experts ensure accurate, timely, and compliant salary management,
+        helping you boost employee satisfaction and retention while you focus on
+        growth.
       </p>
       <button
         id="contact-scroll-btn"
@@ -38,54 +38,51 @@ import HeroImage_2 from "../../../assets/services/book-keeping/timer_2-new.png";
 
     {/* Right Image and Overlapping Cards Area */}
     <div
-      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-10 lg:mt-0 order-1 lg:order-2 group"
+      class="relative w-full lg:w-1/2 flex justify-center items-center h-[350px] sm:h-[450px] lg:h-[500px] mt-10 lg:mt-0 order-1 lg:order-2"
     >
       {/* Default Image */}
       <img
         src={HeroImage.src}
         alt="Business Woman with tablet and growth charts"
-        class="w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-[50]"
-      />
-
-      {/* Hover Image */}
-      <img
-        src={HeroImage_2.src}
-        alt="Business Woman with tablet and growth charts"
-        class="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-[60]"
+        class="w-full h-full object-contain object-center z-[50]"
       />
     </div>
   </div>
 </div>
 
-
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactBtn = document.getElementById('contact-scroll-btn');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactBtn = document.getElementById("contact-scroll-btn");
+
     if (contactBtn) {
-      contactBtn.addEventListener('click', function() {
+      contactBtn.addEventListener("click", function () {
         // First try to find contact-section
-        let contactSection = document.getElementById('contact-section');
-        
+        let contactSection = document.getElementById("contact-section");
+
         // If not found, try alternative selectors
         if (!contactSection) {
           contactSection = document.querySelector('[id*="contact"]');
         }
         if (!contactSection) {
-          contactSection = document.querySelector('.contact-section');
+          contactSection = document.querySelector(".contact-section");
         }
         if (!contactSection) {
-          contactSection = document.querySelector('footer');
+          contactSection = document.querySelector("footer");
         }
-        
+
         if (contactSection) {
           const yOffset = -40; // 40px offset from the top
-          const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          const y =
+            contactSection.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         } else {
           // Fallback: scroll to bottom of page
-          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 40, behavior: 'smooth' });
+          window.scrollTo({
+            top: document.body.scrollHeight - window.innerHeight - 40,
+            behavior: "smooth",
+          });
         }
       });
     }
