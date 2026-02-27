@@ -252,114 +252,176 @@
       },
     });
 
-    // Contact form submission - Handle both mobile and desktop forms
-    const desktopForm = document.getElementById("contact-form-submit");
-    const mobileForm = document.getElementById("contact-form-submit-mobile");
-    const formMessage = document.getElementById("form-message");
-    const thankYouMessageRight = document.getElementById(
-      "thank-you-message-right",
-    );
-    const submitAnotherButtonRight = document.getElementById(
-      "submit-another-right",
-    );
+    // Helper to show custom toast
+    const showToast = (message: string, type = "success") => {
+      const toast = document.createElement("div");
+      toast.textContent = message;
 
-    // Function to handle form submission
-    function handleFormSubmit(form) {
+      const bgColor = type === "success" ? "#ed7c00" : "#ef4444";
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background-color: ${bgColor};
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        z-index: 9999;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      `;
+
+      document.body.appendChild(toast);
+
+      // Animate in
+      requestAnimationFrame(() => {
+        toast.style.transform = "translateX(-50%) translateY(0)";
+      });
+
+      // Remove after 3.5s
+      setTimeout(() => {
+        toast.style.transform = "translateX(-50%) translateY(100px)";
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    };
+
+    // Contact form submission - Handle both mobile and desktop forms
+    const desktopForm = document.getElementById(
+      "contact-form-submit",
+    ) as HTMLFormElement | null;
+    const mobileForm = document.getElementById(
+      "contact-form-submit-mobile",
+    ) as HTMLFormElement | null;
+
+    function handleFormSubmit(form: HTMLFormElement | null) {
       if (!form) return;
 
-      form.addEventListener("submit", async (e) => {
+      form.addEventListener("submit", async (e: Event) => {
         e.preventDefault();
 
         const formData = new FormData(form);
-        const data = {
-          name: formData.get("name"),
-          email: formData.get("email"),
-          company: formData.get("company"),
-          message: formData.get("message"),
-          subject: "New Lead from Finkeepers Website",
-          // access_key: "YOUR_ACCESS_KEY_HERE" // Please replace with your actual Web3Forms Access Key
-          access_key: "0c92d520-2218-4660-9494-131112678680", // Using a default/demo key or the specific one if found. I will use a placeholder here but formatted as key given I don't have it.
-          // Actually, I'll use the one from a previous task if I can recall it, but I can't.
-          // I will use a placeholder and ASK the user.
-        };
-        // NOTE TO USER: Please replace "YOUR_ACCESS_KEY_HERE" with the valid Web3Forms Access Key for hi@finkeepers.us
-        data.access_key = "YOUR_ACCESS_KEY_HERE";
+        const name = formData.get("name")?.toString().trim() || "";
+        const email = formData.get("email")?.toString().trim() || "";
+        const phone = formData.get("phone")?.toString().trim() || "";
+        const subject = formData.get("subject")?.toString().trim() || "";
+        // Some inputs use "company", we will safely include it if available
+        const company = formData.get("company")?.toString().trim() || "";
+        const message = formData.get("message")?.toString().trim() || "";
 
-        // Basic validation
-        if (!data.name || !data.email || !data.message) {
-          alert("Please fill in all required fields.");
+        // Validation
+        if (!name || !email || !message) {
+          showToast(
+            "Please fill in the Name, Email, and Message fields.",
+            "error",
+          );
           return;
         }
 
-        // Show loading state
-        const submitButton = form.querySelector("button[type='submit']");
-        const originalText = submitButton?.textContent;
+        const submitButton = form.querySelector(
+          "button[type='submit']",
+        ) as HTMLButtonElement | null;
+        const originalText = submitButton ? submitButton.textContent : "";
+        const originalOpacity = submitButton ? submitButton.style.opacity : "1";
+        const originalCursor = submitButton ? submitButton.style.cursor : "";
+
+        // Update UI Button State
         if (submitButton) {
           submitButton.disabled = true;
           submitButton.textContent = "Sending...";
+          submitButton.style.opacity = "0.7";
+          submitButton.style.cursor = "not-allowed";
         }
 
+        const htmlBody = `
+          <div style="font-family: Arial, sans-serif; max-w: 600px; margin: 0 auto;">
+            <h2 style="color: #ed7c00;">New Contact Submission</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+              <tbody>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left; width: 35%;">Name</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${name}</td>
+                </tr>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left;">Email</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${email}</td>
+                </tr>
+                ${
+                  phone
+                    ? `
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left;">Phone Number</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${phone}</td>
+                </tr>`
+                    : ""
+                }
+                ${
+                  company
+                    ? `
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left;">Company</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${company}</td>
+                </tr>`
+                    : ""
+                }
+                ${
+                  subject
+                    ? `
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left;">Subject</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${subject}</td>
+                </tr>`
+                    : ""
+                }
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left; vertical-align: top;">Message</th>
+                  <td style="border: 1px solid #ddd; padding: 12px; white-space: pre-wrap;">${message}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+
+        const payload = {
+          source: "Finkeepers Website Web App",
+          htmlBody: htmlBody,
+        };
+
         try {
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
+          const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbxij8BcsGQ7-hN7qUHlYXE5CbJiFO16LkOrAEAwbon5tN1A_oCDOFH91ehZoVdFsRFQ/exec",
+            {
+              method: "POST",
+              body: JSON.stringify(payload),
             },
-            body: JSON.stringify(data),
-          });
+          );
 
-          const result = await response.json();
-
-          if (result.success) {
-            // Show thank you message logic
-            const thankYouMessageRight = document.getElementById(
-              "thank-you-message-right",
-            );
-
-            // For desktop form (right side)
-            if (form.id === "contact-form-submit" && thankYouMessageRight) {
-              const formContainer = form.parentElement;
-              formContainer.classList.add("hidden");
-              thankYouMessageRight.classList.remove("hidden");
-              thankYouMessageRight.classList.add("flex");
-            } else {
-              // Fallback for mobile or if elements missing
-              alert("Thank you! Your message has been sent successfully.");
-              form.reset();
-            }
-
-            // If it was the desktop form, we might want to reset the form when "Submit Another" is clicked
-            if (form.id === "contact-form-submit") {
-              const submitAnotherBtn = document.getElementById(
-                "submit-another-right",
-              );
-              if (submitAnotherBtn) {
-                submitAnotherBtn.onclick = () => {
-                  thankYouMessageRight.classList.add("hidden");
-                  thankYouMessageRight.classList.remove("flex");
-                  form.parentElement.classList.remove("hidden");
-                  form.reset();
-                };
-              }
-            }
-          } else {
-            throw new Error(result.message || "Something went wrong");
+          if (!response.ok) {
+            throw new Error("Failed to send submission");
           }
+
+          // Reset form and show success
+          form.reset();
+          showToast("Thank you! Your message has been sent.", "success");
         } catch (error) {
-          console.error(error);
-          alert("Submission failed. Please try again later.");
+          console.error("Submission Error:", error);
+          showToast("Submission failed. Please try again later.", "error");
         } finally {
-          // Reset button state
+          // Restore UI Button State
           if (submitButton) {
             submitButton.disabled = false;
-            submitButton.textContent = originalText || "Talk to our Experts";
+            if (originalText !== null) submitButton.textContent = originalText;
+            submitButton.style.opacity = originalOpacity || "1";
+            submitButton.style.cursor = originalCursor || "";
           }
         }
       });
     }
 
-    // Handle both forms
+    // Initialize logic
     handleFormSubmit(desktopForm);
     handleFormSubmit(mobileForm);
   });

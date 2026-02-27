@@ -174,48 +174,142 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+    const form = document.querySelector("form") as HTMLFormElement;
     const thankYouMessage = document.getElementById("thank-you-message");
-    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButton = form
+      ? (form.querySelector('button[type="submit"]') as HTMLButtonElement)
+      : null;
+
+    // Helper to show custom toast
+    const showToast = (message: string, type = "success") => {
+      const toast = document.createElement("div");
+      toast.textContent = message;
+
+      const bgColor = type === "success" ? "#ed7c00" : "#ef4444";
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background-color: ${bgColor};
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        z-index: 9999;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      `;
+
+      document.body.appendChild(toast);
+
+      // Animate in
+      requestAnimationFrame(() => {
+        toast.style.transform = "translateX(-50%) translateY(0)";
+      });
+
+      // Remove after 3.5s
+      setTimeout(() => {
+        toast.style.transform = "translateX(-50%) translateY(100px)";
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    };
 
     if (form && thankYouMessage && submitButton) {
-      form.addEventListener("submit", function (e) {
+      form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         // Get form inputs
-        const fullName = form.querySelector("#fullname").value.trim();
-        const email = form.querySelector("#email").value.trim();
-        const message = form.querySelector("#message").value.trim();
+        const fullNameInput = form.querySelector(
+          "#fullname",
+        ) as HTMLInputElement;
+        const emailInput = form.querySelector("#email") as HTMLInputElement;
+        const messageInput = form.querySelector(
+          "#message",
+        ) as HTMLTextAreaElement;
+
+        const fullName = fullNameInput ? fullNameInput.value.trim() : "";
+        const email = emailInput ? emailInput.value.trim() : "";
+        const message = messageInput ? messageInput.value.trim() : "";
 
         // Basic validation
         if (!fullName || !email || !message) {
-          alert("Please fill in all fields.");
+          showToast("Please fill in all fields.", "error");
           return;
         }
 
         // Show loading state
-        const originalText = submitButton.textContent;
-        submitButton.textContent = "Submitting...";
-        submitButton.disabled = true;
+        const originalText = submitButton.textContent || "Submit";
+        const originalOpacity = submitButton.style.opacity || "1";
+        const originalCursor = submitButton.style.cursor || "";
 
-        // Simulate form submission (replace with actual form submission logic)
-        setTimeout(() => {
+        submitButton.textContent = "Sending...";
+        submitButton.disabled = true;
+        submitButton.style.opacity = "0.7";
+        submitButton.style.cursor = "not-allowed";
+
+        const htmlBody = `
+          <div style="font-family: Arial, sans-serif; max-w: 600px; margin: 0 auto;">
+            <h2 style="color: #ed7c00;">New Contact Submission</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+              <tbody>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left; width: 35%;">Name</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${fullName}</td>
+                </tr>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left;">Email</th>
+                  <td style="border: 1px solid #ddd; padding: 12px;">${email}</td>
+                </tr>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 12px; background-color: #f9fafb; text-align: left; vertical-align: top;">Message</th>
+                  <td style="border: 1px solid #ddd; padding: 12px; white-space: pre-wrap;">${message}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+
+        const payload = {
+          source: "Finkeepers Contact Page",
+          htmlBody: htmlBody,
+        };
+
+        try {
+          const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbxij8BcsGQ7-hN7qUHlYXE5CbJiFO16LkOrAEAwbon5tN1A_oCDOFH91ehZoVdFsRFQ/exec",
+            {
+              method: "POST",
+              body: JSON.stringify(payload),
+            },
+          );
+
+          if (!response.ok) {
+            throw new Error("Failed to send submission");
+          }
+
           // Hide form inputs
           const formInputs = form.querySelectorAll("input, textarea, button");
           formInputs.forEach((input) => {
             if (input !== submitButton) {
-              input.style.display = "none";
+              (input as HTMLElement).style.display = "none";
             }
           });
 
           // Hide the title and description
-          const formHeader = form.querySelector(".flex.flex-col.gap-3");
+          const formHeader = form.querySelector(
+            ".flex.flex-col.gap-3",
+          ) as HTMLElement;
           if (formHeader) {
             formHeader.style.display = "none";
           }
 
           // Hide the input container
-          const inputContainer = form.querySelector(".flex.flex-col.gap-4");
+          const inputContainer = form.querySelector(
+            ".flex.flex-col.gap-4",
+          ) as HTMLElement;
           if (inputContainer) {
             inputContainer.style.display = "none";
           }
@@ -227,14 +321,16 @@
           thankYouMessage.classList.remove("hidden");
           thankYouMessage.classList.add("flex");
 
-          // Reset form after 5 seconds (optional)
+          showToast("Thank you! Your message has been sent.", "success");
+
+          // Reset form after 5 seconds
           setTimeout(() => {
             // Reset form
             form.reset();
 
             // Show form elements again
             formInputs.forEach((input) => {
-              input.style.display = "";
+              (input as HTMLElement).style.display = "";
             });
 
             if (formHeader) {
@@ -252,8 +348,23 @@
             // Hide thank you message
             thankYouMessage.classList.add("hidden");
             thankYouMessage.classList.remove("flex");
+
+            // Re-enable in case we need it
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            submitButton.style.opacity = originalOpacity;
+            submitButton.style.cursor = originalCursor;
           }, 5000);
-        }, 1000); // Simulate 1 second processing time
+        } catch (error) {
+          console.error("Submission Error:", error);
+          showToast("Submission failed. Please try again later.", "error");
+
+          // Reset button state immediately on error
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+          submitButton.style.opacity = originalOpacity;
+          submitButton.style.cursor = originalCursor;
+        }
       });
     }
   });
