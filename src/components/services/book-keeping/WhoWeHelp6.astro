@@ -72,13 +72,10 @@ const tabImages = {
       </p>
     </div>
 
-    <!-- Tabs -->
-    <div
-      class="relative w-full overflow-hidden animate-on-scroll-child opacity-0"
-    >
+    <div class="relative w-full animate-on-scroll-child opacity-0">
       <div
         id="tabsContainer"
-        class="hidden sm:flex gap-3 px-4 py-4 sm:py-6 scrollbar-hide scroll-smooth bg-white justify-start max-w-full overflow-x-auto whitespace-nowrap w-max mx-auto"
+        class="hidden sm:flex gap-3 px-6 py-4 sm:py-6 overflow-x-auto whitespace-nowrap scroll-smooth bg-white w-full custom-scrollbar"
       >
         <button class="tab-button active-tab" data-tab="general"
           >Daily Bookkeeping</button
@@ -274,6 +271,22 @@ const tabImages = {
   }
   .animate-fade-up {
     animation: fade-up 0.8s ease-out forwards;
+  }
+
+  /* Custom Scrollbar for Tabs */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ed7c00;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #d96b00;
   }
 </style>
 
